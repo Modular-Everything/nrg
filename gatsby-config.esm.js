@@ -21,7 +21,6 @@ export default {
     `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-axe`,
-    `gatsby-plugin-transition-link`,
     `gatsby-plugin-sitemap`,
     {
       resolve: `gatsby-plugin-manifest`,
