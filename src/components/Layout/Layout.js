@@ -4,6 +4,7 @@ import PropTypes from 'prop-types';
 import 'normalize.css';
 import GlobalStyles from '../../styles/GlobalStyles';
 import Typography from '../../styles/Typography';
+import Header from '../Header';
 
 //
 
@@ -23,4 +24,5 @@ export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-};
+  };   
+ 
