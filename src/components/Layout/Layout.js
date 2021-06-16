@@ -24,5 +24,4 @@ export default Layout;
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  };   
- 
+};
