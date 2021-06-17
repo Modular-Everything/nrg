@@ -22,6 +22,7 @@ export default {
     `gatsby-plugin-sharp`,
     `gatsby-plugin-react-axe`,
     `gatsby-plugin-sitemap`,
+    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
