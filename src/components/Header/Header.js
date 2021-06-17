@@ -1,11 +1,15 @@
-import React from "react";
-import styled from "styled-components";
+import React from 'react';
+import styled from 'styled-components';
+
+import Container from '../Container';
 
 //
 
-const Header = () => {
-  return <HeaderSC>Header</HeaderSC>;
-};
+const Header = () => (
+  <HeaderSC>
+    <Container>Header</Container>
+  </HeaderSC>
+);
 
 export default Header;
 

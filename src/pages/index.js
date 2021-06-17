@@ -1,10 +1,14 @@
 import React from 'react';
 
-// 
+import Container from '../components/Container';
+
+//
 
 const HomePage = () => (
   <>
-    <p>Hello!</p>
+    <Container>
+      <p>Hello!</p>
+    </Container>
   </>
 );
 

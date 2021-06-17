@@ -4,12 +4,13 @@ import { createGlobalStyle } from 'styled-components';
 
 const GlobalStyles = createGlobalStyle`
   :root {
+    /* Colours and themes */
     --white: #fff;
     --black: #000;
-    --yellow: #ffcc66;
-    --grey: #efefef;
-
     --highlight: var(--yellow);
+
+    /* Gutters and spacings */
+    --gutter: 1.6rem;
   }
 
   html {
