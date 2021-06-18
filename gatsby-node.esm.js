@@ -37,6 +37,42 @@ async function turnPagesIntoPages({ graphql, actions }) {
 
 //
 
+async function turnPostsIntoPages({ graphql, actions }) {
+  const template = path.resolve('./src/templates/post.js');
+
+  const { data } = await graphql(`
+    {
+      posts: allSanityPost {
+        nodes {
+          title
+          slug {
+            current
+          }
+          _id
+        }
+      }
+    }]
+  `);
+
+  data.posts.nodes.forEach((post) => {
+    console.info(`Creating post: "${post.title}"...`);
+
+    const slug = post.slug.current;
+
+    actions.createPage({
+      path: `news/${slug}`,
+      component: template,
+      context: {
+        id: post._id,
+        slug,
+      },
+    });
+  });
+}
+
+//
+
 export async function createPages(params) {
   await turnPagesIntoPages(params);
+  await turnPostsIntoPages(params);
 }
