@@ -25,7 +25,7 @@ const Clamp = styled.div`
     width: 85%;
   }
 
-  @media (min-width: 1024px) {
+  @media (min-width: 1080px) {
     width: 75%;
   }
 `;
