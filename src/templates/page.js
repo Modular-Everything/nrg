@@ -1,39 +1,39 @@
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
-import Container from '../components/Container';
+// import PropTypes from 'prop-types';
+// import { graphql } from 'gatsby';
+// import Container from '../components/Container';
 
-//
+// //
 
-export const query = graphql`
-  query ($slug: String!) {
-    page: sanityPage(slug: { current: { eq: $slug } }) {
-      title
-    }
-  }
-`;
+// export const query = graphql`
+//   query ($slug: String!) {
+//     page: sanityPage(slug: { current: { eq: $slug } }) {
+//       title
+//     }
+//   }
+// `;
 
-const Page = ({ data }) => {
-  if (!data) {
-    throw Error;
-  }
+// const Page = ({ data }) => {
+//   if (!data) {
+//     throw Error;
+//   }
 
-  const { page } = data;
+//   const { page } = data;
 
-  return (
-    <>
-      <Container>
-        <p>{page && page.title}</p>
-      </Container>
-    </>
-  );
-};
+//   return (
+//     <>
+//       <Container>
+//         <p>{page && page.title}</p>
+//       </Container>
+//     </>
+//   );
+// };
 
-export default Page;
+// export default Page;
 
-Page.propTypes = {
-  data: PropTypes.object,
-};
+// Page.propTypes = {
+//   data: PropTypes.object,
+// };
 
-Page.defaultProps = {
-  data: null,
-};
+// Page.defaultProps = {
+//   data: null,
+// };
