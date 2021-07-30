@@ -42,4 +42,17 @@ export const parameters = {
   viewport: {
     viewports: INITIAL_VIEWPORTS,
   },
+  backgrounds: {
+    default: 'light',
+    values: [
+      {
+        name: 'dark',
+        value: '#181818',
+      },
+      {
+        name: 'light',
+        value: '#fff',
+      },
+    ],
+  },
 }
