@@ -14,10 +14,6 @@ import * as S from './styles';
 const BodyCopy = ({ title, copy, columns }) => {
   if (!copy) return null;
 
-  const Copy = () => {};
-
-  console.log(<Copy />);
-
   return (
     <S.BodyCopy>
       {/* An optional title */}
