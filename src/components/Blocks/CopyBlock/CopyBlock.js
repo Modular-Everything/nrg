@@ -1,7 +1,8 @@
 import PropTypes from 'prop-types';
+import * as S from './styles';
 import Copy from '../../Copy';
 import Container from '../../Container';
-import * as S from './styles';
+import Image from '../../Image';
 
 //
 
@@ -13,7 +14,7 @@ const CopyBlock = ({ title, copy, columns, image }) => (
           <Copy title={title} copy={copy} columns={columns} />
         </div>
         <div>
-          <img src={image.url} alt={image.alt} />
+          <Image data={{ url: image.url, alt: image.alt }} />
         </div>
       </S.CopyWithImage>
     ) : (
