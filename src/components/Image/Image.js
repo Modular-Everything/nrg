@@ -3,10 +3,10 @@ import * as S from './styles';
 
 //
 
-const Image = ({ data }) => <S.Img src={data.url} alt={data.alt} />;
+const Image = ({ source }) => <S.Img src={source.url} alt={source.alt} />;
 
 export default Image;
 
 Image.propTypes = {
-  data: PropTypes.object.isRequired,
+  source: PropTypes.object.isRequired,
 };

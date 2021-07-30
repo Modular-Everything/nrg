@@ -14,7 +14,7 @@ const CopyBlock = ({ title, copy, columns, image }) => (
           <Copy title={title} copy={copy} columns={columns} />
         </div>
         <div>
-          <Image data={{ url: image.url, alt: image.alt }} />
+          <Image source={{ url: image.url, alt: image.alt }} />
         </div>
       </S.CopyWithImage>
     ) : (
