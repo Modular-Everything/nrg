@@ -27,10 +27,9 @@ const Copy = ({ title, copy, columns }) => {
           ))}
         </S.SingleColumn>
       ) : (
-        <S.MultiColumn columns={columns} as="p">
+        <S.MultiColumn columns={columns}>
           {copy.map((paragraph) => (
-            // Note the space at the end of the {paragraph}
-            <>{paragraph} </>
+            <p>{paragraph}</p>
           ))}
         </S.MultiColumn>
       )}

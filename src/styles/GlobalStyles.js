@@ -14,12 +14,17 @@ const GlobalStyles = createGlobalStyle`
     --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
     /* Gutters and spacings */
-    --gutter: 1.6rem;
+    --gutter: 0.8rem;
     --column: 10%;
 
     /* Fonts */
     --primary: 'Simplon BP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
     --display: 'Grotesque MT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+
+    /* Responsive overrides */
+    @media (min-width: 768px) {
+      --gutter: 1.6rem;
+    }
   }
 
   html {

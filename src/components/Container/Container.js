@@ -18,9 +18,16 @@ const Contained = styled.div`
 `;
 
 const Clamp = styled.div`
-  width: 75%;
   max-width: 68rem;
   margin: 0 auto;
+
+  @media (min-width: 768px) {
+    width: 85%;
+  }
+
+  @media (min-width: 1024px) {
+    width: 75%;
+  }
 `;
 
 const Container = ({ children, className, clamp }) => (
