@@ -1,6 +1,6 @@
 import PropTypes from 'prop-types';
-import Copy from '../Copy';
-import Container from '../Container';
+import Copy from '../../Copy';
+import Container from '../../Container';
 import * as S from './styles';
 
 //
