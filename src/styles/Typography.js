@@ -28,9 +28,17 @@ const Typography = createGlobalStyle`
     font-display: swap;
   }
 
+  @font-face {
+    font-family: 'Central Avenue';
+    font-style:  normal;
+    font-weight: 700;
+    src: url("../fonts/CentralAvenue-Bold.woff2") format("woff2"),
+        url("../fonts/CentralAvenue-Bold.woff") format("woff");
+  }
+
   html {
     color: var(--black);
-    font-family: var(--primary);
+    font-family: var(--simplon);
   }
 
   h1, h2, h3, h4, h5, h6 {

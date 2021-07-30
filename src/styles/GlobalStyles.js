@@ -23,8 +23,10 @@ const GlobalStyles = createGlobalStyle`
     }
 
     /* Fonts */
-    --primary: 'Simplon BP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
-    --display: 'Grotesque MT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --system: -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --simplon: 'Simplon BP', var(--system);
+    --grotesque: 'Grotesque MT Std', var(--system);
+    --avenue: 'Central Avenue', var(--system);
   }
 
   html {
