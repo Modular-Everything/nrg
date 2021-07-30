@@ -1,5 +1,7 @@
 import { action } from "@storybook/addon-actions"
 import { addDecorator } from '@storybook/react';
+import { INITIAL_VIEWPORTS } from '@storybook/addon-viewport';
+
 import GlobalStyles from '../src/styles/GlobalStyles';
 import Typography from '../src/styles/Typography';
 
@@ -36,5 +38,8 @@ export const parameters = {
       color: /(background|color)$/i,
       date: /Date$/,
     },
+  },
+  viewport: {
+    viewports: INITIAL_VIEWPORTS,
   },
 }
