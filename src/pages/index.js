@@ -11,10 +11,12 @@ const Homepage = () => {
 
   return (
     <>
-      <h1>NRG</h1>
+      <AutoLayout>
+        <Container>
+          <h1>NRG</h1>
+        </Container>
 
-      <Container>
-        <AutoLayout>
+        <Container clamp>
           <BodyCopy
             title="Copy Title Here"
             copy={[
@@ -23,8 +25,8 @@ const Homepage = () => {
             ]}
             columns={1}
           />
-        </AutoLayout>
-      </Container>
+        </Container>
+      </AutoLayout>
     </>
   );
 };

@@ -17,8 +17,16 @@ const Contained = styled.div`
   )}
 `;
 
-const Container = ({ children, className }) => (
-  <Contained className={className}>{children}</Contained>
+const Clamp = styled.div`
+  width: 75%;
+  max-width: 68rem;
+  margin: 0 auto;
+`;
+
+const Container = ({ children, className, clamp }) => (
+  <Contained className={className}>
+    {clamp ? <Clamp>{children}</Clamp> : <>{children}</>}
+  </Contained>
 );
 
 export default Container;
@@ -27,9 +35,11 @@ export default Container;
 
 Container.defaultProps = {
   className: null,
+  clamp: false,
 };
 
 Container.propTypes = {
   children: PropTypes.node.isRequired,
   className: PropTypes.string,
+  clamp: PropTypes.bool,
 };
