@@ -7,6 +7,7 @@ const GlobalStyles = createGlobalStyle`
     /* Colours and themes */
     --white: #fff;
     --black: #181818;
+    --grey: #616161;
     --highlight: var(--yellow);
     
     /* Rounded corners etc */
