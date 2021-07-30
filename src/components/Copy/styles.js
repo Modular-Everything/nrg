@@ -2,7 +2,7 @@ import styled from 'styled-components';
 
 //
 
-export const BodyCopy = styled.section`
+export const Copy = styled.section`
   p {
     font-size: 1.8rem;
     line-height: 2.4rem;
@@ -28,5 +28,5 @@ export const SingleColumn = styled.div`
 
 export const MultiColumn = styled.div`
   columns: ${({ columns }) => columns};
-  column-gap: var(--gutter);
+  column-gap: calc(var(--gutter) * 1.5);
 `;

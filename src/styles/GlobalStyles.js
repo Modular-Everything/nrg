@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     /* Colours and themes */
     --white: #fff;
-    --black: #000;
+    --black: #181818;
     --highlight: var(--yellow);
 
     /* Gutters and spacings */

@@ -11,11 +11,11 @@ import * as S from './styles';
  * @returns A single, or multiple, column(s) of copy with an optional title.
  */
 
-const BodyCopy = ({ title, copy, columns }) => {
+const Copy = ({ title, copy, columns }) => {
   if (!copy) return null;
 
   return (
-    <S.BodyCopy>
+    <S.Copy>
       {/* An optional title */}
       {title && <S.Title as="h2">{title}</S.Title>}
 
@@ -29,23 +29,24 @@ const BodyCopy = ({ title, copy, columns }) => {
       ) : (
         <S.MultiColumn columns={columns} as="p">
           {copy.map((paragraph) => (
-            <>{paragraph}</>
+            // Note the space at the end of the {paragraph}
+            <>{paragraph} </>
           ))}
         </S.MultiColumn>
       )}
-    </S.BodyCopy>
+    </S.Copy>
   );
 };
 
-export default BodyCopy;
+export default Copy;
 
-BodyCopy.propTypes = {
+Copy.propTypes = {
   title: PropTypes.string,
   copy: PropTypes.object.isRequired,
   columns: PropTypes.number,
 };
 
-BodyCopy.defaultProps = {
+Copy.defaultProps = {
   title: null,
   columns: 1,
 };
