@@ -11,6 +11,10 @@ const GlobalStyles = createGlobalStyle`
 
     /* Gutters and spacings */
     --gutter: 1.6rem;
+
+    /* Fonts */
+    --primary: 'Simplon BP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
+    --display: 'Grotesque MT Std', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
   }
 
   html {
