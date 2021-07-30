@@ -8,9 +8,14 @@ const GlobalStyles = createGlobalStyle`
     --white: #fff;
     --black: #181818;
     --highlight: var(--yellow);
+    
+    /* Rounded corners etc */
+    --rounded: 0.6rem;
+    --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
     /* Gutters and spacings */
     --gutter: 1.6rem;
+    --column: 10%;
 
     /* Fonts */
     --primary: 'Simplon BP', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, Oxygen, Ubuntu, Cantarell, 'Open Sans', 'Helvetica Neue', sans-serif;
