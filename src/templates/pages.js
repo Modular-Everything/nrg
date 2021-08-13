@@ -2,7 +2,6 @@ import PropTypes from 'prop-types';
 import { graphql } from 'gatsby';
 
 import SiteTitle from '../components/SEO/SiteTitle';
-import Container from '../components/Container';
 import BlockBuilder from '../components/Blocks';
 import AutoLayout from '../components/AutoLayout';
 
@@ -39,11 +38,9 @@ const Page = ({ data }) => {
         />
       )}
 
-      <Container>
-        <AutoLayout>
-          <BlockBuilder blocks={content} />
-        </AutoLayout>
-      </Container>
+      <AutoLayout>
+        <BlockBuilder blocks={content} />
+      </AutoLayout>
     </>
   );
 };
