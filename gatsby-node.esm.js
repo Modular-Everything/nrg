@@ -1,78 +1,40 @@
-// import path from 'path';
+import path from 'path';
 
-// //
+//
 
-// async function turnPagesIntoPages({ graphql, actions }) {
-//   const template = path.resolve('./src/templates/page.js');
+async function turnPagesIntoGatsbyPages({ graphql, actions }) {
+  const template = path.resolve('./src/templates/pages.js');
 
-//   const { data } = await graphql(`
-//     {
-//       pages: allSanityPage {
-//         nodes {
-//           title
-//           slug {
-//             current
-//           }
-//           _id
-//         }
-//       }
-//     }
-//   `);
+  const { data } = await graphql(`
+    {
+      pages: allStrapiPages {
+        nodes {
+          title
+          slug
+          id
+        }
+      }
+    }
+  `);
 
-//   data.pages.nodes.forEach((page) => {
-//     console.info(`Creating page: "${page.title}"...`);
+  data.pages.nodes.forEach((page) => {
+    const { title, slug, id } = page;
 
-//     const slug = page.slug.current;
+    console.info(`⚡ Creating page: ${title} (${slug})`);
 
-//     actions.createPage({
-//       path: slug === 'homepage' ? '/' : slug,
-//       component: template,
-//       context: {
-//         id: page._id,
-//         slug,
-//       },
-//     });
-//   });
-// }
-
-// //
-
-// async function turnPostsIntoPages({ graphql, actions }) {
-//   const template = path.resolve('./src/templates/post.js');
-
-//   const { data } = await graphql(`
-//     {
-//       posts: allSanityPost {
-//         nodes {
-//           title
-//           slug {
-//             current
-//           }
-//           _id
-//         }
-//       }
-//     }]
-//   `);
-
-//   data.posts.nodes.forEach((post) => {
-//     console.info(`Creating post: "${post.title}"...`);
-
-//     const slug = post.slug.current;
-
-//     actions.createPage({
-//       path: `news/${slug}`,
-//       component: template,
-//       context: {
-//         id: post._id,
-//         slug,
-//       },
-//     });
-//   });
-// }
+    actions.createPage({
+      path: slug === 'homepage' ? '/' : slug,
+      component: template,
+      context: {
+        id,
+        slug,
+      },
+    });
+  });
+}
 
 //
 
 export async function createPages(params) {
-  // await turnPagesIntoPages(params);
-  // await turnPostsIntoPages(params);
+  await turnPagesIntoGatsbyPages(params);
 }

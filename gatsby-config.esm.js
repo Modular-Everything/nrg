@@ -36,13 +36,16 @@ export default {
       },
     },
     {
-      resolve: `gatsby-source-sanity`,
+      resolve: `gatsby-source-strapi`,
       options: {
-        projectId: process.env.SANITY_PROJECT_ID,
-        dataset: process.env.SANITY_DATASET,
-        token: process.env.SANITY_TOKEN,
-        overlayDrafts: !isProd,
-        watchMode: !isProd,
+        apiURL: process.env.STRAPI_API_URL,
+        queryLimit: 1000, // Defaults to 100
+        collectionTypes: [`pages`],
+        singleTypes: [`global-seo-settings`],
+        loginData: {
+          identifier: process.env.STRAPI_API_USER,
+          password: process.env.STRAPI_API_PASSWORD,
+        },
       },
     },
     {
