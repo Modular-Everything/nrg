@@ -3,6 +3,8 @@ import { graphql } from 'gatsby';
 
 import SiteTitle from '../components/SEO/SiteTitle';
 import Container from '../components/Container';
+import BlockBuilder from '../components/Blocks';
+import AutoLayout from '../components/AutoLayout';
 
 // ---
 
@@ -10,6 +12,7 @@ export const query = graphql`
   query ($slug: String!) {
     page: strapiPages(slug: { eq: $slug }) {
       title
+      content
       page_seo {
         include_site_title
         site_title_override
@@ -24,7 +27,9 @@ const Page = ({ data }) => {
   }
 
   const { page } = data;
-  const { page_seo: seo } = page;
+  const { page_seo: seo, content } = page;
+
+  console.log(content);
 
   return (
     <>
@@ -37,7 +42,9 @@ const Page = ({ data }) => {
       )}
 
       <Container>
-        <p>{page && page.title}</p>
+        <AutoLayout>
+          <BlockBuilder blocks={content} />
+        </AutoLayout>
       </Container>
     </>
   );
