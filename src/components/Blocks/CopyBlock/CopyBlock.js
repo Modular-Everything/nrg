@@ -32,7 +32,7 @@ export default CopyBlock;
 CopyBlock.propTypes = {
   block: PropTypes.shape({
     title: PropTypes.string,
-    copy: PropTypes.object.isRequired,
+    copy: PropTypes.string.isRequired,
     columns: PropTypes.number,
     image: PropTypes.shape({
       url: PropTypes.string.isRequired,
