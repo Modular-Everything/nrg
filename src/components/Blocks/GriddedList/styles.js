@@ -3,6 +3,10 @@ import Container from '../../Container';
 
 //
 
+export const Wrapper = styled.div`
+  background-color: var(--black);
+`;
+
 export const GridContainer = styled(Container)`
   --spacing: var(--gutter);
   padding: 0 0 var(--spacing) 0;

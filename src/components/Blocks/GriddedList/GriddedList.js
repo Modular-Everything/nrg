@@ -5,38 +5,48 @@ import Title from '../../Title';
 
 //
 
-const GriddedList = ({ title }) => {
-  // * This is temporary
-  const foo = Array.from(Array(8).keys());
+const GriddedList = ({ block }) => {
+  const { title, text } = block;
 
   return (
-    <S.GridContainer>
-      <S.Title>{title && <Title title={title} />}</S.Title>
+    <S.Wrapper>
+      <S.GridContainer>
+        {title && <S.Title>{title && <Title title={title} />}</S.Title>}
 
-      <S.Grid>
-        {foo.map((item, index) => {
-          const num = index + 1;
-          return (
-            <S.Item>
-              <S.Number>
-                {num < 10 && 0}
-                {num}
-              </S.Number>
+        {text && (
+          <S.Grid>
+            {text.map((item, index) => {
+              const num = index + 1;
+              return (
+                <S.Item key={item.id}>
+                  <S.Number>
+                    {num < 10 && 0}
+                    {num}
+                  </S.Number>
 
-              <S.Copy>
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do
-                eiusmod tempor incididunt ut labore et dolore magna aliqua.
-              </S.Copy>
-            </S.Item>
-          );
-        })}
-      </S.Grid>
-    </S.GridContainer>
+                  <S.Copy>{item.text}</S.Copy>
+                </S.Item>
+              );
+            })}
+          </S.Grid>
+        )}
+      </S.GridContainer>
+    </S.Wrapper>
   );
 };
 
 export default GriddedList;
 
 GriddedList.propTypes = {
-  title: PropTypes.string,
+  block: PropTypes.shape({
+    title: PropTypes.string,
+    text: PropTypes.array,
+  }),
+};
+
+GriddedList.defaultProps = {
+  block: {
+    title: null,
+    text: null,
+  },
 };
