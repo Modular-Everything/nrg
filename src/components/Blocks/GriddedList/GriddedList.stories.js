@@ -47,6 +47,6 @@ Default.args = {
     ],
   },
 };
-// Default.parameters = {
-//   backgrounds: { default: 'dark' },
-// };
+Default.parameters = {
+  backgrounds: { default: 'dark' },
+};
