@@ -1,16 +1,16 @@
 import PropTypes from 'prop-types';
 import * as S from './styles';
 
-import Container from '../../Container';
 import Title from '../../Title';
 
 //
 
 const GriddedList = ({ title }) => {
+  // * This is temporary
   const foo = Array.from(Array(8).keys());
 
   return (
-    <Container>
+    <S.GridContainer>
       <S.Title>{title && <Title title={title} />}</S.Title>
 
       <S.Grid>
@@ -31,7 +31,7 @@ const GriddedList = ({ title }) => {
           );
         })}
       </S.Grid>
-    </Container>
+    </S.GridContainer>
   );
 };
 

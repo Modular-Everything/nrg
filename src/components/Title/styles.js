@@ -4,9 +4,10 @@ import styled from 'styled-components';
 
 export const Title = styled.h2`
   font-family: var(--avenue);
-  font-size: 3.2rem;
+  font-size: 4rem;
   font-weight: bold;
-  line-height: 3.2rem;
+  letter-spacing: 0.1ch;
+  line-height: 4rem;
   text-transform: uppercase;
 
   @media (min-width: 768px) {

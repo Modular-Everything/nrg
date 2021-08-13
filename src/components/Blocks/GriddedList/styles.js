@@ -1,20 +1,27 @@
 import styled from 'styled-components';
+import Container from '../../Container';
 
 //
+
+export const GridContainer = styled(Container)`
+  --spacing: var(--gutter);
+  padding: 0 0 var(--spacing) 0;
+
+  @media (min-width: 640px) {
+    padding: var(--spacing) 0;
+    --spacing: calc(var(--gutter) * 3);
+  }
+
+  @media (min-width: 1080px) {
+    --spacing: calc(var(--gutter) * 6);
+  }
+`;
 
 export const Title = styled.div`
   display: flex;
   align-items: center;
-  padding: 4rem 0;
+  padding-bottom: var(--spacing);
   color: var(--white);
-
-  @media (min-width: 640px) {
-    padding: 8rem 0;
-  }
-
-  @media (min-width: 1080px) {
-    padding: 16rem 0;
-  }
 `;
 
 export const Grid = styled.div`
@@ -26,12 +33,17 @@ export const Grid = styled.div`
 `;
 
 export const Number = styled.p`
-  margin-bottom: var(--gutter);
+  margin-bottom: 0;
   color: var(--grey);
   font-family: var(--grotesque);
-  font-size: 1.8rem;
+  font-size: 1.4rem;
   font-weight: bold;
   line-height: 2.4rem;
+
+  @media (min-width: 640px) {
+    margin-bottom: var(--gutter);
+    font-size: 1.8rem;
+  }
 `;
 
 export const Copy = styled.p`
