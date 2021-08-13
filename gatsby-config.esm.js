@@ -3,7 +3,6 @@ import dotenv from 'dotenv';
 //
 
 dotenv.config({ path: '.env' });
-const isProd = process.env.NODE_ENV === 'production';
 
 //
 
