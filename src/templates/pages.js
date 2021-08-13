@@ -29,8 +29,6 @@ const Page = ({ data }) => {
   const { page } = data;
   const { page_seo: seo, content } = page;
 
-  console.log(content);
-
   return (
     <>
       {seo.site_title_override && (
