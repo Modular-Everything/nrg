@@ -1,4 +1,6 @@
 import PropTypes from 'prop-types';
+import ReactMarkdown from 'react-markdown';
+
 import * as S from './styles';
 
 //
@@ -14,6 +16,8 @@ import * as S from './styles';
 const Copy = ({ title, copy, columns }) => {
   if (!copy) return null;
 
+  const RenderedCopy = () => <ReactMarkdown>{copy}</ReactMarkdown>;
+
   return (
     <S.Copy>
       {/* An optional title */}
@@ -22,15 +26,11 @@ const Copy = ({ title, copy, columns }) => {
       {/* Either returns a single column or multi columns */}
       {columns === 1 ? (
         <S.SingleColumn>
-          {copy.map((paragraph) => (
-            <p>{paragraph}</p>
-          ))}
+          <RenderedCopy />
         </S.SingleColumn>
       ) : (
         <S.MultiColumn columns={columns}>
-          {copy.map((paragraph) => (
-            <p>{paragraph}</p>
-          ))}
+          <RenderedCopy />
         </S.MultiColumn>
       )}
     </S.Copy>
@@ -41,7 +41,7 @@ export default Copy;
 
 Copy.propTypes = {
   title: PropTypes.string,
-  copy: PropTypes.object.isRequired,
+  copy: PropTypes.string.isRequired,
   columns: PropTypes.number,
 };
 
