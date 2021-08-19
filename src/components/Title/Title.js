@@ -1,7 +1,8 @@
-import PropTypes from 'prop-types';
-import * as S from './styles';
+import React from "react";
+import PropTypes from "prop-types";
+import * as S from "./Title.styles";
 
-//
+// ---
 
 /**
  *
@@ -23,5 +24,5 @@ Title.propTypes = {
 };
 
 Title.defaultProps = {
-  as: 'h2',
+  as: "h2",
 };

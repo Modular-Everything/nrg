@@ -1,5 +1,7 @@
 import styled from 'styled-components';
 
+// ---
+
 export const CopyWithImage = styled.div`
   display: grid;
   grid-gap: calc(var(--column) * 2);

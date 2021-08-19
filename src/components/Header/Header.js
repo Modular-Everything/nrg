@@ -1,18 +1,13 @@
-import styled from 'styled-components';
+import React from "react";
+import * as S from "./Header.styles";
+import Container from "../Container";
 
-import Container from '../Container';
-
-//
+// ---
 
 const Header = () => (
-  <HeaderSC>
+  <S.Header>
     <Container>Header</Container>
-  </HeaderSC>
+  </S.Header>
 );
 
 export default Header;
-
-const HeaderSC = styled.header`
-  background-color: #111;
-  color: #adff00;
-`;

@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import * as S from './styles';
+import React from "react";
+import PropTypes from "prop-types";
+import * as S from "./GriddedList.styles";
 
-import Title from '../../Title';
+import Title from "../../Title";
 
-//
+// ---
 
 const GriddedList = ({ block }) => {
   const { title, text } = block;
@@ -35,12 +36,15 @@ const GriddedList = ({ block }) => {
   );
 };
 
-export default GriddedList;
-
 GriddedList.propTypes = {
   block: PropTypes.shape({
     title: PropTypes.string,
-    text: PropTypes.array,
+    text: PropTypes.arrayOf(
+      PropTypes.shape({
+        id: PropTypes.number.isRequired,
+        text: PropTypes.string.isRequired,
+      })
+    ),
   }),
 };
 
@@ -50,3 +54,5 @@ GriddedList.defaultProps = {
     text: null,
   },
 };
+
+export default GriddedList;

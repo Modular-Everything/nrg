@@ -1,6 +1,6 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
-//
+// ---
 
 export const Title = styled.h2`
   font-family: var(--avenue);

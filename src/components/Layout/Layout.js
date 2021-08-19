@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import 'normalize.css';
-import GlobalStyles from '../../styles/GlobalStyles';
-import Typography from '../../styles/Typography';
-import Header from '../Header';
+import "normalize.css";
+import GlobalStyles from "../../styles/GlobalStyles";
+import Typography from "../../styles/Typography";
+import Header from "../Header";
 
 //
 
@@ -17,10 +18,8 @@ const Layout = ({ children }) => (
   </>
 );
 
-export default Layout;
-
-//
-
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
 };
+
+export default Layout;

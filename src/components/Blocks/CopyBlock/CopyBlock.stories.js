@@ -1,8 +1,10 @@
 import React from 'react';
 import CopyBlock from './CopyBlock';
 
+// ---
+
 export default {
-  title: 'Copy Blocks/Body Copy',
+  title: 'Blocks/Body Copy',
 };
 
 const Template = (args) => <CopyBlock {...args} />;

@@ -1,10 +1,11 @@
-import PropTypes from 'prop-types';
-import * as S from './styles';
-import Copy from '../../Copy';
-import Container from '../../Container';
-import Image from '../../Image';
+import React from "react";
+import PropTypes from "prop-types";
+import * as S from "./CopyBlock.styles";
+import Copy from "../../Copy";
+import Container from "../../Container";
+import Image from "../../Image";
 
-//
+// ---
 
 const CopyBlock = ({ block }) => {
   const { title, copy, columns, image } = block;
@@ -27,8 +28,6 @@ const CopyBlock = ({ block }) => {
   );
 };
 
-export default CopyBlock;
-
 CopyBlock.propTypes = {
   block: PropTypes.shape({
     title: PropTypes.string,
@@ -48,3 +47,5 @@ CopyBlock.defaultProps = {
     image: null,
   },
 };
+
+export default CopyBlock;

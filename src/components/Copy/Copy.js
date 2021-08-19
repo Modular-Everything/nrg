@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import ReactMarkdown from 'react-markdown';
+import React from "react";
+import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
 
-import * as S from './styles';
+import * as S from "./Copy.styles";
 
-//
+// ---
 
 /**
  *
@@ -37,8 +38,6 @@ const Copy = ({ title, copy, columns }) => {
   );
 };
 
-export default Copy;
-
 Copy.propTypes = {
   title: PropTypes.string,
   copy: PropTypes.string.isRequired,
@@ -49,3 +48,5 @@ Copy.defaultProps = {
   title: null,
   columns: 1,
 };
+
+export default Copy;

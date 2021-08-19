@@ -1,11 +1,12 @@
-import PropTypes from 'prop-types';
-import * as S from './styles';
-import Copy from '../../Copy';
-import Title from '../../Title';
-import Image from '../../Image';
-import BoltIcon from '../../../images/icons/Bolt';
+import React from "react";
+import PropTypes from "prop-types";
+import * as S from "./ImageBlock.styles";
+import Copy from "../../Copy";
+import Title from "../../Title";
+import Image from "../../Image";
+import BoltIcon from "../../../images/icons/Bolt";
 
-//
+// ---
 
 const ImageBlock = ({ image, hasIcon, enlargeIcon, title, copy }) => (
   <S.ImageBlock>
@@ -28,10 +29,11 @@ const ImageBlock = ({ image, hasIcon, enlargeIcon, title, copy }) => (
   </S.ImageBlock>
 );
 
-export default ImageBlock;
-
 ImageBlock.propTypes = {
-  image: PropTypes.object.isRequired,
+  image: PropTypes.shape({
+    url: PropTypes.string.isRequired,
+    alt: PropTypes.string.isRequired,
+  }).isRequired,
   hasIcon: PropTypes.bool,
   enlargeIcon: PropTypes.bool,
   title: PropTypes.string,
@@ -44,3 +46,5 @@ ImageBlock.defaultProps = {
   title: null,
   copy: null,
 };
+
+export default ImageBlock;
