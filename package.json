@@ -14,14 +14,6 @@
     "storybook": "start-storybook -p 6006",
     "build-storybook": "build-storybook"
   },
-  "eslintConfig": {
-    "extends": [
-      "wesbos"
-    ],
-    "rules": {
-      "react/prop-types": 0
-    }
-  },
   "dependencies": {
     "@svgr/webpack": "^5.5.0",
     "babel-plugin-styled-components": "^1.12.0",
