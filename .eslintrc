@@ -1,6 +1,12 @@
 {
-  "extends": ["wesbos"],
+  "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier" // Make sure this is the last
+  ],
   "rules": {
-    "react/jsx-props-no-spreading": "off"
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0
   }
 }
