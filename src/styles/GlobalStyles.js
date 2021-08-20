@@ -1,4 +1,4 @@
-import { createGlobalStyle } from 'styled-components';
+import { createGlobalStyle } from "styled-components";
 
 //
 
@@ -6,7 +6,7 @@ const GlobalStyles = createGlobalStyle`
   :root {
     /* Colours and themes */
     --white: #fff;
-    --black: #181818;
+    --black: #282828;
     --grey: #616161;
     --highlight: var(--yellow);
     
