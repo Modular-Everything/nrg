@@ -1,6 +1,6 @@
 import styled from "styled-components";
-import Container from "../Container";
-import MarqueeText from "../MarqueeText";
+import Container from "../../Core/Container";
+import MarqueeText from "../../Elements/MarqueeText";
 
 // ---
 
