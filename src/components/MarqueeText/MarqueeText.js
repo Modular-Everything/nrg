@@ -1,20 +1,20 @@
 import React from "react";
-// import PropTypes from "prop-types";
+import PropTypes from "prop-types";
+import ReactMarkdown from "react-markdown";
+import * as S from "./MarqueeText.styles";
 
 // ---
 
-const MarqueeText = () => {
-  console.log("MarqueeText");
+const MarqueeText = ({ markdown }) => (
+  <S.MarqueeWrap>
+    <ReactMarkdown>{markdown}</ReactMarkdown>
+    <ReactMarkdown>{markdown}</ReactMarkdown>
+    <ReactMarkdown>{markdown}</ReactMarkdown>
+  </S.MarqueeWrap>
+);
 
-  return (
-    <div>
-      MarqueeText
-      <br />
-      https://css-tricks.com/how-to-do-knockout-text/
-    </div>
-  );
+MarqueeText.propTypes = {
+  markdown: PropTypes.string.isRequired,
 };
-
-MarqueeText.propTypes = {};
 
 export default MarqueeText;
