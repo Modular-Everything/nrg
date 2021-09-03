@@ -5,6 +5,9 @@ import StyledImageBanner from "./StyledImageBanner";
 
 export default {
   title: "Core/StyledImageBanner",
+  parameters: {
+    layout: "fullscreen",
+  },
 };
 
 const Template = (args) => <StyledImageBanner {...args} />;
