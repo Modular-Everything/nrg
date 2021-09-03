@@ -38,6 +38,16 @@ const GlobalStyles = createGlobalStyle`
   body {
     font-size: 2rem;
   }
+
+  p a {
+    transition: 250ms ease text-decoration-color;
+    color: inherit;
+    text-decoration-color: var(--red);
+    
+    &:hover {
+      text-decoration-color: var(--black);
+    }
+  }
 `;
 
 export default GlobalStyles;

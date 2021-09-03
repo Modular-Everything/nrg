@@ -4,12 +4,17 @@ import styled from "styled-components";
 
 export const Copy = styled.section`
   p {
+    color: var(--black);
     font-size: 1.6rem;
     line-height: 2.4rem;
 
     @media (min-width: 1080px) {
       font-size: 1.8rem;
       line-height: 2.4rem;
+    }
+
+    a {
+      color: var(--black);
     }
   }
 `;
