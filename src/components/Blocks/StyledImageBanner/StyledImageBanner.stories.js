@@ -4,7 +4,7 @@ import StyledImageBanner from "./StyledImageBanner";
 // ---
 
 export default {
-  title: "Core/StyledImageBanner",
+  title: "Blocks/StyledImageBanner",
   parameters: {
     layout: "fullscreen",
   },
