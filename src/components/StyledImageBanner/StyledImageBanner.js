@@ -4,7 +4,6 @@ import { BiDownArrowAlt as ArrowDown } from "react-icons/bi";
 import ReactMarkdown from "react-markdown";
 
 import * as S from "./StyledImageBanner.styles";
-import Statement from "../Blocks/Statement";
 
 // ---
 
@@ -21,9 +20,10 @@ const StyledImageBanner = ({
   scrollCopy,
   sitsBelowMenu,
 }) => (
-  <S.StyledImageBanner extraPaddingTop={sitsBelowMenu}>
+  <S.StyledImageBanner makeSpaceForHeader={sitsBelowMenu}>
+    <S.StyledText markdown={styledCopy} />
+
     <S.Inner>
-      <Statement copy={styledCopy} />
       {descriptiveCopy && (
         <S.DescriptiveCopy>
           <ReactMarkdown>{descriptiveCopy}</ReactMarkdown>

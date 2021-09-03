@@ -1,13 +1,26 @@
 import styled from "styled-components";
 import Container from "../Container";
+import MarqueeText from "../MarqueeText";
 
 // ---
 
 export const StyledImageBanner = styled.section`
   --gap: calc(var(--gutter) * 2);
+  --extraGap: calc(var(--gap) * 2);
 
   position: relative;
-  padding: calc(var(--gap) * 2) 0;
+  min-height: 32rem;
+  padding: ${({ makeSpaceForHeader }) =>
+    makeSpaceForHeader ? "14rem 0 var(--extraGap) 0" : "var(--extraGap) 0"};
+`;
+
+export const StyledText = styled(MarqueeText)`
+  --color: #fff;
+  --cut: #000;
+  --blend: screen;
+
+  position: relative;
+  z-index: 20;
 `;
 
 export const Inner = styled(Container)`
@@ -17,7 +30,6 @@ export const Inner = styled(Container)`
   flex-direction: column;
   align-items: center;
   justify-content: center;
-  min-height: 32rem;
 `;
 
 export const DescriptiveCopy = styled.div`
@@ -41,7 +53,7 @@ export const ScrollMore = styled.button`
   color: var(--white);
   font-size: 1.4rem;
   font-weight: 600;
-  letter-spacing: 0.05ch;
+  letter-spacing: 0.025ch;
   line-height: 3.2rem;
   cursor: pointer;
 
