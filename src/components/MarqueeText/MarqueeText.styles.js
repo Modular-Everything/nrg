@@ -3,16 +3,21 @@ import styled from "styled-components";
 // ---
 
 export const MarqueeWrap = styled.section`
+  --color: #000;
+  --cut: #fff;
+  --blend: multiply;
+
   display: flex;
   flex-direction: column;
   align-items: center;
   justify-content: center;
   overflow: hidden;
+  mix-blend-mode: var(--blend);
 
   p {
     width: 100%;
     margin-bottom: var(--gutter);
-    color: #000;
+    color: var(--color);
     font-family: var(--avenue);
     font-size: clamp(7rem, 10vw, 11rem);
     letter-spacing: 0.05ch;
@@ -20,7 +25,6 @@ export const MarqueeWrap = styled.section`
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    mix-blend-mode: multiply;
 
     &:nth-child(1) {
       transform: translateX(-10%);
@@ -46,10 +50,11 @@ export const MarqueeWrap = styled.section`
     align-items: center;
     justify-content: center;
     padding: 0 var(--padding);
-    background-color: #000;
+    background-color: var(--color);
     box-decoration-break: clone;
-    box-shadow: var(--padding) 0 0 #000, calc(var(--padding) * -1) 0 0 #000;
-    color: #fff;
+    box-shadow: var(--padding) 0 0 var(--color),
+      calc(var(--padding) * -1) 0 0 var(--color);
+    color: var(--cut);
     font-weight: normal;
   }
 `;
