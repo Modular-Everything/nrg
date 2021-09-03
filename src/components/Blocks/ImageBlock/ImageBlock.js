@@ -25,7 +25,7 @@ const ImageBlock = ({ image, hasIcon, enlargeIcon, title, copy }) => (
     )}
 
     <S.Background>
-      <Image source={{ url: image.url, alt: image.alt }} />
+      <Image src={image.url} alt={image.alt} />
     </S.Background>
   </S.ImageBlock>
 );

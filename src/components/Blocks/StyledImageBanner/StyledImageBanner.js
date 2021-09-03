@@ -4,6 +4,7 @@ import { BiDownArrowAlt as ArrowDown } from "react-icons/bi";
 import ReactMarkdown from "react-markdown";
 
 import * as S from "./StyledImageBanner.styles";
+import Image from '../../Elements/Image'
 
 // ---
 
@@ -39,7 +40,7 @@ const StyledImageBanner = ({
 
     <S.BG>
       {(sitsBelowMenu || descriptiveCopy) && <S.Skrim />}
-      <img src={backgroundImage} alt="" />
+      <Image src={backgroundImage} alt="" />
     </S.BG>
   </S.StyledImageBanner>
 );

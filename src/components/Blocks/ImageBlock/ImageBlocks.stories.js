@@ -39,8 +39,8 @@ HasLargeIcon.args = {
   enlargeIcon: true,
 };
 
-export const TitleAndCopy = Template.bind({});
-TitleAndCopy.args = {
+export const HasTitle = Template.bind({});
+HasTitle.args = {
   image: {
     url: "https://source.unsplash.com/collection/UMqumgVk9WM/1920x1080",
     alt: "Alt tag",

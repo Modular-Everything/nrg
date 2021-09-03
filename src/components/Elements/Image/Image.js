@@ -4,13 +4,13 @@ import * as S from "./Image.styles";
 
 // ---
 
-const Image = ({ source }) => <S.Img src={source.url} alt={source.alt} />;
+const Image = ({ src, alt, ...rest }) => (
+  <S.Img src={src} alt={alt} {...rest} />
+);
 
 Image.propTypes = {
-  source: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-  }).isRequired,
+  src: PropTypes.string.isRequired,
+  alt: PropTypes.string.isRequired,
 };
 
 export default Image;
