@@ -1,9 +1,10 @@
-import PropTypes from 'prop-types';
-import { graphql } from 'gatsby';
+import React from "react";
+import PropTypes from "prop-types";
+import { graphql } from "gatsby";
 
-import SiteTitle from '../components/SEO/SiteTitle';
-import BlockBuilder from '../components/Blocks';
-import AutoLayout from '../components/AutoLayout';
+import SiteTitle from "../components/Core/SEO/SiteTitle";
+import AutoLayout from "../components/Core/AutoLayout";
+import BlockBuilder from "../components/Blocks";
 
 // ---
 

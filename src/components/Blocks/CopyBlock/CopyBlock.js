@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import * as S from "./CopyBlock.styles";
-import Copy from "../../Copy";
-import Container from "../../Container";
-import Image from "../../Image";
+import Container from "../../Core/Container";
+import Copy from "../../Elements/Copy";
+import Image from "../../Elements/Image";
 
 // ---
 

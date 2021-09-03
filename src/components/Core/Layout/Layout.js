@@ -2,8 +2,8 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import "normalize.css";
-import GlobalStyles from "../../styles/GlobalStyles";
-import Typography from "../../styles/Typography";
+import GlobalStyles from "../../../styles/GlobalStyles";
+import Typography from "../../../styles/Typography";
 import Header from "../Header";
 
 //

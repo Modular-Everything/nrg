@@ -1,23 +1,24 @@
-import React from 'react';
-import PropTypes from 'prop-types';
+import React from "react";
+import PropTypes from "prop-types";
 
-import CopyBlock from './CopyBlock';
-import GriddedList from './GriddedList';
+import CopyBlock from "./CopyBlock";
+import GriddedList from "./GriddedList";
 
 // ---
 
 const BlockBuilder = ({ blocks }) => {
   if (!blocks) return null;
 
-  console.log('ALL BLOCKS:\n', blocks);
+  // eslint-disable-next-line no-console
+  console.log("ALL BLOCKS:\n", blocks);
 
   const COMPONENTS = {
-    'blocks.column-copy': CopyBlock,
-    'blocks.gridded-list': GriddedList,
+    "blocks.column-copy": CopyBlock,
+    "blocks.gridded-list": GriddedList,
   };
 
   return blocks.map((block) => {
-    if (typeof COMPONENTS[block.strapi_component] !== 'undefined') {
+    if (typeof COMPONENTS[block.strapi_component] !== "undefined") {
       return React.createElement(COMPONENTS[block.strapi_component], {
         key: `${block.strapi_component}-${block.id}`,
         block,

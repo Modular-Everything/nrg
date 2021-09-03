@@ -1,9 +1,10 @@
 import React from "react";
 import PropTypes from "prop-types";
+
 import * as S from "./ImageBlock.styles";
-import Copy from "../../Copy";
-import Title from "../../Title";
-import Image from "../../Image";
+import Copy from "../../Elements/Copy";
+import Title from "../../Elements/Title";
+import Image from "../../Elements/Image";
 import BoltIcon from "../../../images/icons/Bolt";
 
 // ---
