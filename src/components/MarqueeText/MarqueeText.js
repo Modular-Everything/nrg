@@ -5,8 +5,8 @@ import * as S from "./MarqueeText.styles";
 
 // ---
 
-const MarqueeText = ({ markdown }) => (
-  <S.MarqueeWrap>
+const MarqueeText = ({ markdown, className }) => (
+  <S.MarqueeWrap className={className}>
     <ReactMarkdown>{markdown}</ReactMarkdown>
     <ReactMarkdown>{markdown}</ReactMarkdown>
     <ReactMarkdown>{markdown}</ReactMarkdown>
@@ -15,6 +15,11 @@ const MarqueeText = ({ markdown }) => (
 
 MarqueeText.propTypes = {
   markdown: PropTypes.string.isRequired,
+  className: PropTypes.string,
+};
+
+MarqueeText.defaultProps = {
+  className: null,
 };
 
 export default MarqueeText;
