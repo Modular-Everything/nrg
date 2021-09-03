@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // ---
 
@@ -34,14 +34,15 @@ export const Copy = styled.div`
 export const Icon = styled.div`
   position: relative;
   z-index: 10;
-  width: ${({ enlarged }) => (enlarged ? '100%' : '20%')};
-  max-width: ${({ enlarged }) => (enlarged ? 'unset' : '9.6rem')};
-  height: ${({ enlarged }) => (enlarged ? '135vh' : 'unset')};
+  width: ${({ enlarged }) => (enlarged ? "100%" : "20%")};
+  max-width: ${({ enlarged }) => (enlarged ? "unset" : "9.6rem")};
+  height: ${({ enlarged }) => (enlarged ? "135vh" : "unset")};
+  pointer-events: none;
 
   svg {
     width: 100%;
     height: 100%;
-    stroke: ${({ outline }) => (outline ? 'var(--white)' : 'transparent')};
-    color: ${({ outline }) => (!outline ? 'var(--white)' : 'transparent')};
+    stroke: ${({ outline }) => (outline ? "var(--white)" : "transparent")};
+    color: ${({ outline }) => (!outline ? "var(--white)" : "transparent")};
   }
 `;
