@@ -16,6 +16,14 @@ export const SectionMarker = styled.section`
   @media (min-width: 1024px) {
     grid-template-columns: minmax(25rem, 25%) 1fr minmax(25rem, 25%);
   }
+
+  p {
+    margin-bottom: var(--gutter);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const Title = styled.h3`
