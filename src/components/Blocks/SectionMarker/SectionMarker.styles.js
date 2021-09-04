@@ -106,6 +106,23 @@ export const Aside = styled.div`
     padding: 0;
   }
 
+  ul {
+    list-style: none;
+
+    li {
+      position: relative;
+      margin-left: 1.6rem;
+
+      &:before {
+        content: "•";
+        position: absolute;
+        left: -1.6rem;
+        color: var(--red);
+        font-size: 1.2rem;
+      }
+    }
+  }
+
   ol {
     list-style: none;
     counter-reset: items;
