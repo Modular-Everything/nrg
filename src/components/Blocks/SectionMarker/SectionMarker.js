@@ -5,14 +5,20 @@ import ReactMarkdown from "react-markdown";
 import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
 import * as S from "./SectionMarker.styles";
-import Container from "../../Core/Container";
 import Bolt from "../../../images/icons/Bolt";
 
 // ---
 
-const SectionMarker = ({ title, mainCopy, link, aside }) => (
-  <Container>
-    <S.SectionMarker>
+const SectionMarker = ({
+  title,
+  mainCopy,
+  link,
+  aside,
+  sectionBgColor,
+  sectionColor,
+}) => (
+  <S.SectionMarker sectionBgColor={sectionBgColor} sectionColor={sectionColor}>
+    <S.SectionMarkerContainer>
       <S.Title>
         <Bolt />
         {title}
@@ -20,14 +26,18 @@ const SectionMarker = ({ title, mainCopy, link, aside }) => (
 
       <S.Copy>
         <ReactMarkdown>{mainCopy}</ReactMarkdown>
-        {link && <Link to={link.url}>{link.label} <ArrowRight /></Link>}
+        {link && (
+          <Link to={link.url}>
+            {link.label} <ArrowRight />
+          </Link>
+        )}
       </S.Copy>
 
       <S.Aside>
         <ReactMarkdown>{aside}</ReactMarkdown>
       </S.Aside>
-    </S.SectionMarker>
-  </Container>
+    </S.SectionMarkerContainer>
+  </S.SectionMarker>
 );
 
 SectionMarker.propTypes = {
@@ -44,11 +54,17 @@ SectionMarker.propTypes = {
   }),
   /** Another string of markdown copy used for smaller bits of copy or lists */
   aside: PropTypes.string,
+  /** An optional background colour -- accepts any CSS colour value including variables */
+  sectionBgColor: PropTypes.string,
+  /** An optional text colour -- accepts any CSS colour value including variables */
+  sectionColor: PropTypes.string,
 };
 
 SectionMarker.defaultProps = {
   link: null,
   aside: null,
+  sectionBgColor: "var(--white)",
+  sectionColor: "var(--black)",
 };
 
 export default SectionMarker;

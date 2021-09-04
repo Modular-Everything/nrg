@@ -1,11 +1,18 @@
 import styled from "styled-components";
+import Container from "../../Core/Container";
 
 // ---
 
 export const SectionMarker = styled.section`
+  --textColor: ${({ sectionColor }) => sectionColor};
+
+  background-color: ${({ sectionBgColor }) => sectionBgColor};
+`;
+
+export const SectionMarkerContainer = styled(Container)`
   display: flex;
   flex-direction: column;
-  padding: calc(var(--gutter) * 2) 0;
+  padding: calc(var(--gutter) * 2) 0 calc(var(--gutter) * 4) 0;
 
   @media (min-width: 768px) {
     display: grid;
@@ -30,7 +37,7 @@ export const Title = styled.h3`
   display: flex;
   flex-direction: column;
   margin-bottom: calc(var(--gutter) * 2);
-  color: var(--black);
+  color: var(--textColor);
   font-family: var(--grotesque);
   font-size: 2.2rem;
   font-weight: bold;
@@ -55,7 +62,7 @@ export const Title = styled.h3`
 
 export const Copy = styled.div`
   margin-bottom: calc(var(--gutter) * 2);
-  color: var(--black);
+  color: var(--textColor);
   font-size: 1.8rem;
   line-height: 2.4rem;
 
@@ -91,7 +98,7 @@ export const Copy = styled.div`
 
 export const Aside = styled.div`
   grid-column: 3 / 3;
-  color: var(--black);
+  color: var(--textColor);
   font-size: 1.8rem;
   line-height: 2.4rem;
 
