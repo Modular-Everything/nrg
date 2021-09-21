@@ -15,7 +15,6 @@ export const MarqueeWrap = styled.section`
   mix-blend-mode: var(--blend);
 
   p {
-    width: 100%;
     margin-bottom: var(--gutter);
     color: var(--color);
     font-family: var(--avenue);
@@ -27,15 +26,17 @@ export const MarqueeWrap = styled.section`
     white-space: nowrap;
 
     &:nth-child(1) {
-      transform: translateX(-10%);
+      align-self: flex-start;
+      transform: translateX(-5vw);
     }
 
     &:nth-child(2) {
-      transform: translateX(-100%);
+      align-self: center;
     }
 
     &:nth-child(3) {
-      transform: translateX(-150%);
+      align-self: flex-end;
+      transform: translateX(5vw);
     }
 
     &:last-of-type {
