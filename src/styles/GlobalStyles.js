@@ -36,6 +36,7 @@ const GlobalStyles = createGlobalStyle`
   }
 
   body {
+    overflow-x: hidden;
     font-size: 2rem;
   }
 
