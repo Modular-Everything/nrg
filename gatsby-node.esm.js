@@ -1,9 +1,9 @@
-import path from 'path';
+import path from "path";
 
 //
 
 async function turnPagesIntoGatsbyPages({ graphql, actions }) {
-  const template = path.resolve('./src/templates/pages.js');
+  const template = path.resolve("./src/templates/pages.js");
 
   const { data } = await graphql(`
     {
@@ -11,7 +11,7 @@ async function turnPagesIntoGatsbyPages({ graphql, actions }) {
         nodes {
           title
           slug
-          id
+          strapiId
         }
       }
     }
@@ -20,10 +20,11 @@ async function turnPagesIntoGatsbyPages({ graphql, actions }) {
   data.pages.nodes.forEach((page) => {
     const { title, slug, id } = page;
 
-    console.info(`⚡ Creating page: ${title} (${slug})`);
+    // eslint-disable-next-line no-console
+    console.info(`⚡ Creating page: [${id}] ${title} (${slug})`);
 
     actions.createPage({
-      path: slug === 'homepage' ? '/' : slug,
+      path: slug === "homepage" ? "/" : slug,
       component: template,
       context: {
         id,

@@ -1,17 +1,17 @@
-import dotenv from 'dotenv';
+import dotenv from "dotenv";
 
 //
 
-dotenv.config({ path: '.env' });
+dotenv.config({ path: ".env" });
 
 //
 
 export default {
   siteMetadata: {
-    title: 'NRG',
-    siteUrl: 'http://localhost:8000',
-    titleTemplate: 'NRG ° %s',
-    description: 'Website Description',
+    title: "NRG",
+    siteUrl: "http://localhost:8000",
+    titleTemplate: "NRG ° %s",
+    description: "Website Description",
   },
 
   plugins: [
@@ -34,17 +34,25 @@ export default {
         icon: `./src/images/favicon.svg`,
       },
     },
+    // {
+    //   resolve: `gatsby-source-strapi`,
+    //   options: {
+    //     apiURL: process.env.STRAPI_API_URL,
+    //     queryLimit: 1000, // Defaults to 100
+    //     collectionTypes: [`pages`],
+    //     // singleTypes: [`global-seo-settings`],
+    //     loginData: {
+    //       identifier: process.env.STRAPI_API_USER,
+    //       password: process.env.STRAPI_API_PASSWORD,
+    //     },
+    //   },
+    // },
     {
-      resolve: `gatsby-source-strapi`,
+      resolve: "gatsby-source-strapi",
       options: {
-        apiURL: process.env.STRAPI_API_URL,
-        queryLimit: 1000, // Defaults to 100
-        collectionTypes: [`pages`],
-        singleTypes: [`global-seo-settings`],
-        loginData: {
-          identifier: process.env.STRAPI_API_USER,
-          password: process.env.STRAPI_API_PASSWORD,
-        },
+        apiURL: "http://localhost:1337",
+        collectionTypes: ["pages"],
+        queryLimit: 1000,
       },
     },
     {
@@ -55,7 +63,7 @@ export default {
       },
     },
     {
-      resolve: 'gatsby-plugin-svgr-svgo',
+      resolve: "gatsby-plugin-svgr-svgo",
       options: {
         inlineSvgOptions: [
           {
@@ -65,14 +73,14 @@ export default {
       },
     },
     {
-      resolve: 'gatsby-plugin-robots-txt',
+      resolve: "gatsby-plugin-robots-txt",
       options: {
         env: {
           development: {
-            policy: [{ userAgent: '*', disallow: ['/'] }],
+            policy: [{ userAgent: "*", disallow: ["/"] }],
           },
           production: {
-            policy: [{ userAgent: '*', allow: '/' }],
+            policy: [{ userAgent: "*", allow: "/" }],
           },
         },
       },

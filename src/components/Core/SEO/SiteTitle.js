@@ -1,25 +1,26 @@
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql, useStaticQuery } from "gatsby";
+// import { graphql, useStaticQuery } from "gatsby";
 import { Helmet } from "react-helmet";
 
 // ---
 
 const SiteTitle = ({ pageTitle, customTitle, includeSiteTitle }) => {
-  const meta = useStaticQuery(graphql`
-    {
-      seo: strapiGlobalSeoSettings(strapiId: { eq: 1 }) {
-        site_title
-      }
-    }
-  `);
+  // const meta = useStaticQuery(graphql`
+  //   {
+  //     seo: strapiGlobalSeoSettings(strapiId: { eq: 1 }) {
+  //       site_title
+  //     }
+  //   }
+  // `);
 
   const title = customTitle || pageTitle;
 
   return (
     <Helmet>
       <title>
-        {includeSiteTitle ? `${title} | ${meta.seo.site_title}` : title}
+        {/* {includeSiteTitle ? `${title} | ${meta.seo.site_title}` : title} */}
+        Test
       </title>
     </Helmet>
   );

@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import { graphql } from "gatsby";
 
-import SiteTitle from "../components/Core/SEO/SiteTitle";
+// import SiteTitle from "../components/Core/SEO/SiteTitle";
 import AutoLayout from "../components/Core/AutoLayout";
 import BlockBuilder from "../components/Blocks";
 
@@ -12,11 +12,11 @@ export const query = graphql`
   query ($slug: String!) {
     page: strapiPages(slug: { eq: $slug }) {
       title
-      content
-      page_seo {
-        include_site_title
-        site_title_override
-      }
+      blocks
+      # page_seo {
+      #   include_site_title
+      #   site_title_override
+      # }
     }
   }
 `;
@@ -27,20 +27,22 @@ const Page = ({ data }) => {
   }
 
   const { page } = data;
-  const { page_seo: seo, content } = page;
+  const { blocks } = page;
+
+  console.log(blocks);
 
   return (
     <>
-      {seo.site_title_override && (
+      {/* {seo.site_title_override && (
         <SiteTitle
           pageTitle={page.title}
           customTitle={seo.site_title_override}
           includeSiteTitle={seo.include_site_title}
         />
-      )}
+      )} */}
 
       <AutoLayout>
-        <BlockBuilder blocks={content} />
+        <BlockBuilder blocks={blocks} />
       </AutoLayout>
     </>
   );

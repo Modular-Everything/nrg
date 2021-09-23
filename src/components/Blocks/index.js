@@ -13,8 +13,8 @@ const BlockBuilder = ({ blocks }) => {
   console.log("ALL BLOCKS:\n", blocks);
 
   const COMPONENTS = {
-    "blocks.column-copy": CopyBlock,
     "blocks.gridded-list": GriddedList,
+    "blocks.body-copy": CopyBlock,
   };
 
   return blocks.map((block) => {
