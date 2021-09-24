@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import CopyBlock from "./CopyBlock";
 import GriddedList from "./GriddedList";
+import StyledImageBanner from "./StyledImageBanner";
 
 // ---
 
@@ -15,6 +16,7 @@ const BlockBuilder = ({ blocks }) => {
   const COMPONENTS = {
     "blocks.gridded-list": GriddedList,
     "blocks.body-copy": CopyBlock,
+    "blocks.styled-image-banner": StyledImageBanner,
   };
 
   return blocks.map((block) => {
@@ -28,7 +30,17 @@ const BlockBuilder = ({ blocks }) => {
     return React.createElement(
       () => (
         <div>
-          The component {block.strapi_component} has not been created yet.
+          The component{" "}
+          <pre
+            style={{
+              backgroundColor: "var(--red)",
+              color: "var(--white)",
+              display: "inline",
+            }}
+          >
+            {block.strapi_component}
+          </pre>{" "}
+          has not been created yet.
         </div>
       ),
       { key: `${block.strapi_component}-${block.id}` }
@@ -37,6 +49,7 @@ const BlockBuilder = ({ blocks }) => {
 };
 
 BlockBuilder.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
   blocks: PropTypes.array.isRequired,
 };
 
