@@ -34,4 +34,5 @@ BannerUsedAsHeader.args = {
   styledCopy:
     "**We do more** than tell stories. We do more than tell **stories.**",
   sitsBelowMenu: true,
+  scrollCopy: "Find out more",
 };
