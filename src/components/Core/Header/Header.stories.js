@@ -33,3 +33,14 @@ export const Default = Template.bind({});
 Default.args = {
   this: null,
 };
+
+export const WithImageBehind = () => (
+  <>
+    <Header />
+    <img
+      src="https://source.unsplash.com/collection/1667713/1920x1080"
+      alt=""
+      style={{ width: "100%" }}
+    />
+  </>
+);
