@@ -1,12 +1,16 @@
 import React from "react";
 import * as S from "./Header.styles";
+
 import Container from "../Container";
+import Logo from "../../../images/Logo";
 
 // ---
 
 const Header = () => (
   <S.Header>
-    <Container>Header</Container>
+    <Container>
+      <Logo />
+    </Container>
   </S.Header>
 );
 
