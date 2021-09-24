@@ -12,7 +12,7 @@ export default {
 
 const Template = (args) => <Footer {...args} />;
 
-export const OneColumn = Template.bind({});
-OneColumn.args = {
+export const Default = Template.bind({});
+Default.args = {
   this: null,
 };

@@ -29,7 +29,7 @@ export default {
 
 const Template = (args) => <Header {...args} />;
 
-export const OneColumn = Template.bind({});
-OneColumn.args = {
+export const Default = Template.bind({});
+Default.args = {
   this: null,
 };
