@@ -27,7 +27,7 @@ const Page = ({ data }) => {
   }
 
   const { page } = data;
-  const { blocks } = page;
+  const { blocks, top, bottom } = page;
 
   console.log(blocks);
 
@@ -42,7 +42,21 @@ const Page = ({ data }) => {
       )} */}
 
       <AutoLayout>
-        <BlockBuilder blocks={blocks} />
+        {top && (
+          <div className="top">
+            <BlockBuilder blocks={top} />
+          </div>
+        )}
+
+        <div className="blocks">
+          <BlockBuilder blocks={blocks} />
+        </div>
+
+        {bottom && (
+          <div className="bottom">
+            <BlockBuilder blocks={bottom} />
+          </div>
+        )}
       </AutoLayout>
     </>
   );

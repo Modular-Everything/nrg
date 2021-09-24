@@ -5,6 +5,7 @@ import "normalize.css";
 import GlobalStyles from "../../../styles/GlobalStyles";
 import Typography from "../../../styles/Typography";
 import Header from "../Header";
+import Footer from "../Footer";
 
 //
 
@@ -15,6 +16,7 @@ const Layout = ({ children }) => (
 
     <Header />
     <main>{children}</main>
+    <Footer />
   </>
 );
 

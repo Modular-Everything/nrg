@@ -3,12 +3,13 @@ import styled from "styled-components";
 // ---
 
 export const AutoLayout = styled.section`
-  display: flex;
-  flex-direction: column;
-  gap: calc(var(--gutter) * 4);
-  margin: calc(var(--gutter) * 2) 0;
+  display: grid;
+  grid-template-areas: "top" "blocks" "bottom";
 
-  &:last-of-type {
-    margin-bottom: 0;
+  .blocks {
+    display: grid;
+    grid-area: blocks;
+    grid-gap: calc(var(--gutter) * 4);
+    margin: calc(var(--gutter) * 2) 0;
   }
 `;
