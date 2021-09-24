@@ -34,13 +34,12 @@ Default.args = {
   this: null,
 };
 
-export const WithImageBehind = () => (
+export const WithImageBehind = (args) => (
   <>
     <Header />
-    <img
-      src="https://source.unsplash.com/collection/1667713/1920x1080"
-      alt=""
-      style={{ width: "100%" }}
-    />
+    <img {...args} alt="" style={{ width: "100%" }} />
   </>
 );
+WithImageBehind.args = {
+  src: "https://source.unsplash.com/collection/1667713/1920x1080",
+};
