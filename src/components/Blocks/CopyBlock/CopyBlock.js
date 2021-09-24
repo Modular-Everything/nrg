@@ -11,8 +11,6 @@ import Image from "../../Elements/Image";
 const CopyBlock = ({ block }) => {
   const { title, copy, columns, image } = block;
 
-  console.log(block);
-
   // Note to self
   // The block.image is an object that contains formats like large, thumbnail, etc
   // I could leverage these and use the Image component to create a srcset for the images
@@ -42,7 +40,7 @@ CopyBlock.propTypes = {
     columns: PropTypes.number,
     image: PropTypes.shape({
       url: PropTypes.string.isRequired,
-      alt: PropTypes.string.isRequired,
+      alt: PropTypes.string,
     }),
   }),
 };
