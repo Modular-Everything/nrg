@@ -42,11 +42,7 @@ const Page = ({ data }) => {
       )} */}
 
       <AutoLayout>
-        {top && (
-          <div className="top">
-            <BlockBuilder blocks={top} />
-          </div>
-        )}
+        <div className="top">{top && <BlockBuilder blocks={top} />}</div>
 
         <div className="blocks">
           <BlockBuilder blocks={blocks} />
