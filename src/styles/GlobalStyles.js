@@ -18,6 +18,7 @@ const GlobalStyles = createGlobalStyle`
     /* Gutters and spacings */
     --gutter: 0.8rem;
     --column: calc(var(--gutter) * 1.5);
+    --header: 14rem;
     
     @media (min-width: 768px) {
       --gutter: 1.6rem;

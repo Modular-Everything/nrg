@@ -6,7 +6,7 @@ import MarqueeText from "../../Elements/MarqueeText";
 
 export const StyledImageBanner = styled.section`
   --gap: calc(var(--gutter) * 2);
-  --extraGap: calc(var(--gap) * 2);
+  --extraGap: var(--header);
 
   position: relative;
   min-height: 32rem;

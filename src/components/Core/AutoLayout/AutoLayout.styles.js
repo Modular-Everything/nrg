@@ -6,6 +6,10 @@ export const AutoLayout = styled.section`
   display: grid;
   grid-template-areas: "top" "blocks" "bottom";
 
+  .top {
+    min-height: var(--header);
+  }
+
   .blocks {
     display: grid;
     grid-area: blocks;
