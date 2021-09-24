@@ -13,6 +13,7 @@ export const query = graphql`
     page: strapiPages(slug: { eq: $slug }) {
       title
       blocks
+      top_block
       # page_seo {
       #   include_site_title
       #   site_title_override
@@ -27,7 +28,7 @@ const Page = ({ data }) => {
   }
 
   const { page } = data;
-  const { blocks, top, bottom } = page;
+  const { blocks, top_block, bottom } = page;
 
   console.log(blocks);
 
@@ -42,7 +43,9 @@ const Page = ({ data }) => {
       )} */}
 
       <AutoLayout>
-        <div className="top">{top && <BlockBuilder blocks={top} />}</div>
+        <div className="top">
+          {top_block && <BlockBuilder blocks={top_block} />}
+        </div>
 
         <div className="blocks">
           <BlockBuilder blocks={blocks} />
