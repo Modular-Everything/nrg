@@ -11,19 +11,15 @@ import Image from "../../Elements/Image";
 const CopyBlock = ({ block }) => {
   const { title, copy, columns, image } = block;
 
-  // Note to self
-  // The block.image is an object that contains formats like large, thumbnail, etc
-  // I could leverage these and use the Image component to create a srcset for the images
-
   return (
     <Container clamp={!image}>
       {image ? (
         <S.CopyWithImage>
           <div>
-            <Copy title={title} copy={copy} columns={columns} />
+            <Copy title={title} copy={copy} columns={1} />
           </div>
           <div>
-            <Image src={image.url} alt={image.alt} />
+            <Image image={image} />
           </div>
         </S.CopyWithImage>
       ) : (
