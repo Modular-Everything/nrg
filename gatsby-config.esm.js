@@ -17,11 +17,10 @@ export default {
   plugins: [
     `gatsby-plugin-styled-components`,
     `gatsby-plugin-react-helmet`,
-    `gatsby-plugin-image`,
     `gatsby-plugin-sharp`,
+    `gatsby-transformer-sharp`,
     `gatsby-plugin-react-axe`,
     `gatsby-plugin-sitemap`,
-    `gatsby-plugin-gatsby-cloud`,
     {
       resolve: `gatsby-plugin-manifest`,
       options: {
@@ -34,19 +33,6 @@ export default {
         icon: `./src/images/favicon.svg`,
       },
     },
-    // {
-    //   resolve: `gatsby-source-strapi`,
-    //   options: {
-    //     apiURL: process.env.STRAPI_API_URL,
-    //     queryLimit: 1000, // Defaults to 100
-    //     collectionTypes: [`pages`],
-    //     // singleTypes: [`global-seo-settings`],
-    //     loginData: {
-    //       identifier: process.env.STRAPI_API_USER,
-    //       password: process.env.STRAPI_API_PASSWORD,
-    //     },
-    //   },
-    // },
     {
       resolve: "gatsby-source-strapi",
       options: {

@@ -12,6 +12,7 @@ import Image from "../../Elements/Image";
  * A banner with an image and some cool looking text
  * Optionally this can sit at the top of the page and include a 'learn more' scroll button
  * If doing so, make sure you pass the "sits_below_menu" prop as true.
+ * The banner image can be a static image URL (string) or a responsive image (object).
  */
 
 const StyledImageBanner = ({ block }) => {
@@ -36,14 +37,14 @@ const StyledImageBanner = ({ block }) => {
 
         {sits_below_menu && (
           <S.ScrollMore type="button">
-            {scroll_copy} <ArrowDown />
+            {scroll_copy || "Learn more"} <ArrowDown />
           </S.ScrollMore>
         )}
       </S.Inner>
 
       <S.BG>
         {(sits_below_menu || descriptive_copy) && <S.Skrim />}
-        <Image src={background_image.url} alt="" />
+        <Image image={background_image} />
       </S.BG>
     </S.StyledImageBanner>
   );
@@ -78,7 +79,7 @@ StyledImageBanner.defaultProps = {
       formats: null,
     },
     descriptive_copy: null,
-    scroll_copy: "Learn more",
+    scroll_copy: null,
     sits_below_menu: false,
   },
 };

@@ -11,6 +11,14 @@ const Template = (args) => <Image {...args} />;
 
 export const Default = Template.bind({});
 Default.args = {
-  src: "https://source.unsplash.com/collection/190727/1080x1080",
-  alt: "A sample image",
+  image: {
+    provider_metadata: {
+      public_id: "nrg/Camping_Experience_dce4616f6f",
+    },
+    formats: {
+      large: {
+        width: 1000,
+      },
+    },
+  },
 };

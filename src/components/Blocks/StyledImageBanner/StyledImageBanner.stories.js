@@ -16,7 +16,14 @@ export const SimpleBanner = Template.bind({});
 SimpleBanner.args = {
   block: {
     background_image: {
-      url: "https://source.unsplash.com/collection/1667713/1920x1080",
+      provider_metadata: {
+        public_id: "nrg/NRG_Demo_de94991d94",
+      },
+      formats: {
+        large: {
+          width: 1000,
+        },
+      },
     },
     styled_copy:
       "**We do more** than tell stories. We do more than tell **stories.**",
@@ -27,7 +34,14 @@ export const BannerWithDescription = Template.bind({});
 BannerWithDescription.args = {
   block: {
     background_image: {
-      url: "https://source.unsplash.com/collection/1667713/1920x1080",
+      provider_metadata: {
+        public_id: "nrg/NRG_Demo_de94991d94",
+      },
+      formats: {
+        large: {
+          width: 1000,
+        },
+      },
     },
     descriptive_copy: `We do more than tell stories.\n\nWe create experiences that people tell stories about.`,
     styled_copy:
@@ -39,7 +53,14 @@ export const BannerUsedAsHeader = Template.bind({});
 BannerUsedAsHeader.args = {
   block: {
     background_image: {
-      url: "https://source.unsplash.com/collection/1667713/1920x1080",
+      provider_metadata: {
+        public_id: "nrg/NRG_Demo_de94991d94",
+      },
+      formats: {
+        large: {
+          width: 1000,
+        },
+      },
     },
     descriptive_copy: `We do more than tell stories.\n\nWe create experiences that people tell stories about.`,
     styled_copy:

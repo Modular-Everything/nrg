@@ -42,8 +42,14 @@ HasImage.args = {
     copy: "Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo veritatis et quasi architecto beatae vitae dicta sun.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
     columns: 1,
     image: {
-      url: "https://source.unsplash.com/random/800x500",
-      alt: "Alt tag",
+      provider_metadata: {
+        public_id: "nrg/Camping_Experience_dce4616f6f",
+      },
+      formats: {
+        large: {
+          width: 1000,
+        },
+      },
     },
   },
 };
