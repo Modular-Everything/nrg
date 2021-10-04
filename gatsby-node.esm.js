@@ -18,16 +18,16 @@ async function turnPagesIntoGatsbyPages({ graphql, actions }) {
   `);
 
   data.pages.nodes.forEach((page) => {
-    const { title, slug, id } = page;
+    const { title, slug, strapiId } = page;
 
     // eslint-disable-next-line no-console
-    console.info(`⚡ Creating page: [${id}] ${title} (${slug})`);
+    console.info(`⚡ Creating page: [${strapiId}] ${title} (${slug})`);
 
     actions.createPage({
       path: slug === "homepage" ? "/" : slug,
       component: template,
       context: {
-        id,
+        strapiId,
         slug,
       },
     });
