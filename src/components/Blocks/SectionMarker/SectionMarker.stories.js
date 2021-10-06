@@ -73,3 +73,15 @@ BulletsInSidebar.args = {
     label: "All our Services",
   },
 };
+
+export const NoTitle = Template.bind({});
+NoTitle.args = {
+  mainCopy:
+    "We are an experiential marketing agency, based in Los Angeles with a national reach.\n\nWorking with some of the most recognizable brands we create meaningful experiences that push boundaries and challenge convention.",
+  aside:
+    "* Community Engagement\n* Event Production\n* Mobile Marketing Tours\n* Brand Installations\n* Pop-up Stores",
+  link: {
+    url: "/",
+    label: "All our Services",
+  },
+};

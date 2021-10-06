@@ -17,14 +17,17 @@ const SectionMarker = ({
   sectionBgColor,
   sectionColor,
 }) => (
-  <S.SectionMarker sectionBgColor={sectionBgColor} sectionColor={sectionColor}>
+  <S.SectionMarker
+    sectionBgColor={sectionBgColor}
+    sectionColor={sectionColor}
+  >
     <S.SectionMarkerContainer>
       <S.Title>
         <Bolt />
-        {title}
+        {title && title}
       </S.Title>
 
-      <S.Copy>
+      <S.Copy hasTitle={!!title}>
         <ReactMarkdown>{mainCopy}</ReactMarkdown>
         {link && (
           <Link to={link.url}>
@@ -33,7 +36,7 @@ const SectionMarker = ({
         )}
       </S.Copy>
 
-      <S.Aside>
+      <S.Aside hasTitle={!!title}>
         <ReactMarkdown>{aside}</ReactMarkdown>
       </S.Aside>
     </S.SectionMarkerContainer>
@@ -42,7 +45,7 @@ const SectionMarker = ({
 
 SectionMarker.propTypes = {
   /** A string of copy */
-  title: PropTypes.string.isRequired,
+  title: PropTypes.string,
   /** A string of markdown copy */
   mainCopy: PropTypes.string.isRequired,
   /** An optional link */
@@ -61,6 +64,7 @@ SectionMarker.propTypes = {
 };
 
 SectionMarker.defaultProps = {
+  title: null,
   link: null,
   aside: null,
   sectionBgColor: "var(--white)",
