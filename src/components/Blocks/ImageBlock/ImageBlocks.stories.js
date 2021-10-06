@@ -15,16 +15,28 @@ const Template = (args) => <ImageBlock {...args} />;
 export const Clean = Template.bind({});
 Clean.args = {
   image: {
-    url: "https://source.unsplash.com/collection/UMqumgVk9WM/1920x1080",
-    alt: "Alt tag",
+    provider_metadata: {
+      public_id: "nrg/Camping_Experience_dce4616f6f",
+    },
+    formats: {
+      large: {
+        width: 1000,
+      },
+    },
   },
 };
 
 export const HasSmallIcon = Template.bind({});
 HasSmallIcon.args = {
   image: {
-    url: "https://source.unsplash.com/collection/UMqumgVk9WM/1920x1080",
-    alt: "Alt tag",
+    provider_metadata: {
+      public_id: "nrg/Camping_Experience_dce4616f6f",
+    },
+    formats: {
+      large: {
+        width: 1000,
+      },
+    },
   },
   hasIcon: true,
 };
@@ -32,8 +44,14 @@ HasSmallIcon.args = {
 export const HasLargeIcon = Template.bind({});
 HasLargeIcon.args = {
   image: {
-    url: "https://source.unsplash.com/collection/UMqumgVk9WM/1920x1080",
-    alt: "Alt tag",
+    provider_metadata: {
+      public_id: "nrg/Camping_Experience_dce4616f6f",
+    },
+    formats: {
+      large: {
+        width: 1000,
+      },
+    },
   },
   hasIcon: true,
   enlargeIcon: true,
@@ -42,8 +60,14 @@ HasLargeIcon.args = {
 export const HasTitle = Template.bind({});
 HasTitle.args = {
   image: {
-    url: "https://source.unsplash.com/collection/UMqumgVk9WM/1920x1080",
-    alt: "Alt tag",
+    provider_metadata: {
+      public_id: "nrg/Camping_Experience_dce4616f6f",
+    },
+    formats: {
+      large: {
+        width: 1000,
+      },
+    },
   },
   title: "Lorem Ipsum",
   copy: [
