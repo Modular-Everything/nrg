@@ -20,9 +20,9 @@ const BlockBuilder = ({ blocks }) => {
   };
 
   return blocks.map((block) => {
-    if (typeof COMPONENTS[block.strapi_component] !== "undefined") {
-      return React.createElement(COMPONENTS[block.strapi_component], {
-        key: `${block.strapi_component}-${block.id}`,
+    if (typeof COMPONENTS[block.__component] !== "undefined") {
+      return React.createElement(COMPONENTS[block.__component], {
+        key: `${block.__component}-${block.id}`,
         block,
       });
     }
@@ -38,12 +38,12 @@ const BlockBuilder = ({ blocks }) => {
               display: "inline",
             }}
           >
-            {block.strapi_component}
+            {block.__component}
           </pre>{" "}
           has not been created yet.
         </div>
       ),
-      { key: `${block.strapi_component}-${block.id}` }
+      { key: `${block.__component}-${block.id}` }
     );
   });
 };

@@ -1,39 +1,24 @@
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
-import { graphql } from "gatsby";
 
+import { fetchAPI } from "../lib/api";
 // import SiteTitle from "../components/Core/SEO/SiteTitle";
+import Layout from "../components/Core/Layout";
 import AutoLayout from "../components/Core/AutoLayout";
 import BlockBuilder from "../components/Blocks";
 
 // ---
 
-export const query = graphql`
-  query ($slug: String!) {
-    page: strapiPages(slug: { eq: $slug }) {
-      title
-      blocks
-      top_block
-      # page_seo {
-      #   include_site_title
-      #   site_title_override
-      # }
-    }
-  }
-`;
-
-const Page = ({ data }) => {
-  if (!data) {
+const Page = ({ page }) => {
+  if (!page) {
     throw Error;
   }
 
-  const { page } = data;
   const { blocks, top_block, bottom } = page;
 
-  console.log(blocks);
-
   return (
-    <>
+    <Layout>
       {/* {seo.site_title_override && (
         <SiteTitle
           pageTitle={page.title}
@@ -57,16 +42,44 @@ const Page = ({ data }) => {
           </div>
         )}
       </AutoLayout>
-    </>
+    </Layout>
   );
 };
 
 Page.propTypes = {
-  data: PropTypes.object,
+  page: PropTypes.shape({
+    blocks: PropTypes.array,
+    top_block: PropTypes.array,
+    bottom: PropTypes.array,
+  }),
 };
 
 Page.defaultProps = {
-  data: null,
+  page: null,
 };
 
 export default Page;
+
+// ---
+
+export async function getStaticPaths() {
+  const pages = await fetchAPI("/pages");
+  console.log(pages);
+
+  return {
+    paths: pages.map((page) => ({
+      params: {
+        page: page.slug === null ? "homepage" : page.slug,
+      },
+    })),
+    fallback: false,
+  };
+}
+
+export async function getStaticProps({ params }) {
+  const pages = await fetchAPI(`/pages?slug=${params.page}`);
+  return {
+    props: { page: pages[0] },
+    revalidate: 1,
+  };
+}

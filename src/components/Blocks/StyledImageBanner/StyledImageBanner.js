@@ -55,11 +55,6 @@ StyledImageBanner.propTypes = {
     /** An object containing a direct URL to an image or a srcset */
     background_image: PropTypes.shape({
       url: PropTypes.string,
-      formats: PropTypes.shape({
-        large: PropTypes.string,
-        medium: PropTypes.string,
-        small: PropTypes.string,
-      }),
     }).isRequired,
     /** A markdown string of copy, displays as a big block of styled copy */
     styled_copy: PropTypes.string.isRequired,
@@ -76,7 +71,6 @@ StyledImageBanner.defaultProps = {
   block: {
     background_image: {
       url: null,
-      formats: null,
     },
     descriptive_copy: null,
     scroll_copy: null,
