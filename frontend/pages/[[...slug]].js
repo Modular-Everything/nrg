@@ -20,13 +20,15 @@ import Layout from "../components/Core/Layout";
 
 // ---
 
-const DynamicPage = ({ sections, metadata, preview, global, pageContext }) => {
+const DynamicPage = ({ metadata, preview, global, pageContext }) => {
   const router = useRouter();
 
   // Check if the required data was provided
-  if (!router.isFallback && !sections?.length) {
-    return <ErrorPage statusCode={404} />;
-  }
+  // todo add top and main sections back in
+  // if (!router.isFallback && !sections?.length) {
+  // if (!router.isFallback) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
 
   // Loading screen (only possible in preview mode)
   if (router.isFallback) {
@@ -35,7 +37,6 @@ const DynamicPage = ({ sections, metadata, preview, global, pageContext }) => {
 
   return (
     <Layout global={global} pageContext={pageContext}>
-      Testing 💩
       {/* Add meta tags for SEO
       <Seo metadata={metadata} /> */}
       {/* Display content sections */}
@@ -87,8 +88,10 @@ export async function getStaticProps(context) {
     return { props: {} };
   }
 
+  console.log(pageData);
+
   // We have the required page data, pass it to the page component
-  const { contentSections, metadata, localizations, slug } = pageData;
+  const { metadata, localizations, slug } = pageData;
 
   const pageContext = {
     locale: pageData.locale,
@@ -103,7 +106,7 @@ export async function getStaticProps(context) {
   return {
     props: {
       preview,
-      sections: contentSections,
+      // sections: contentSections,
       metadata,
       global: globalLocale,
       pageContext: {
