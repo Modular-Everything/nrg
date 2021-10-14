@@ -23,11 +23,8 @@ export default class MyDocument extends Document {
 
   render() {
     return (
-      <Html lang="en">
-        <Head>
-          <title>NRG</title>
-          {this.props.styleTags}
-        </Head>
+      <Html>
+        <Head>{this.props.styleTags}</Head>
 
         <body>
           <Main />
