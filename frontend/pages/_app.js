@@ -27,7 +27,7 @@ const MyApp = ({ Component, pageProps }) => {
       {/* Global site metadata */}
       <DefaultSeo
         titleTemplate={`%s | ${global.metaTitleSuffix}`}
-        title="Page"
+        title={metadata.metaTitle}
         description={metadata.metaDescription}
         openGraph={{
           images: Object.values(metadata.shareImage.formats).map((image) => ({
@@ -36,10 +36,10 @@ const MyApp = ({ Component, pageProps }) => {
             height: image.height,
           })),
         }}
-        twitter={{
-          cardType: metadata.twitterCardType,
-          handle: metadata.twitterUsername,
-        }}
+        // twitter={{
+        //   cardType: metadata.twitterCardType,
+        //   handle: metadata.twitterUsername,
+        // }}
       />
 
       {/* Display the content */}

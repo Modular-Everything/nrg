@@ -1,12 +1,12 @@
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
 // import PropTypes from "prop-types";
-import ErrorPage from "next/error";
+// import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 
 import { getPageData, fetchAPI, getGlobalData } from "../utils/api";
 import { getLocalizedPaths } from "../utils/localize";
-// import SiteTitle from "../components/Core/SEO/SiteTitle";
+import SEO from "../components/Core/SEO";
 import Layout from "../components/Core/Layout";
 // import AutoLayout from "../components/Core/AutoLayout";
 // import BlockBuilder from "../components/Blocks";
@@ -37,8 +37,8 @@ const DynamicPage = ({ metadata, preview, global, pageContext }) => {
 
   return (
     <Layout global={global} pageContext={pageContext}>
-      {/* Add meta tags for SEO
-      <Seo metadata={metadata} /> */}
+      {/* Add meta tags for SEO */}
+      <SEO metadata={metadata} />
       {/* Display content sections */}
       {/* <Sections sections={sections} preview={preview} /> */}
     </Layout>
