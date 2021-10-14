@@ -65,6 +65,8 @@ export default Page;
 export async function getStaticPaths() {
   const pages = await fetchAPI("pages");
 
+  console.log(pages);
+
   return {
     paths: pages.map((page) => ({
       params: {
@@ -77,7 +79,7 @@ export async function getStaticPaths() {
 
 export async function getStaticProps({ params, preview }) {
   const pages = await fetchAPI(`pages?slug=${params.page}`, true);
-  console.log(pages);
+  console.log(params);
 
   return {
     props: { page: pages[0] },
