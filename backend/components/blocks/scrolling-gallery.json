@@ -1,0 +1,17 @@
+{
+  "collectionName": "components_blocks_scrolling_galleries",
+  "info": {
+    "name": "Scrolling Gallery",
+    "icon": "hand-point-right"
+  },
+  "options": {},
+  "attributes": {
+    "Image": {
+      "type": "component",
+      "repeatable": true,
+      "component": "elements.image",
+      "required": true,
+      "min": 2
+    }
+  }
+}

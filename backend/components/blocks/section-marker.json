@@ -1,0 +1,43 @@
+{
+  "collectionName": "components_blocks_section_markers",
+  "info": {
+    "name": "Section Marker",
+    "icon": "bookmark",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "main_copy": {
+      "type": "text",
+      "required": true
+    },
+    "aside": {
+      "type": "richtext"
+    },
+    "text_color": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark"
+      ],
+      "default": "dark",
+      "required": true
+    },
+    "background_color": {
+      "type": "enumeration",
+      "enum": [
+        "light",
+        "dark",
+        "red"
+      ],
+      "default": "light",
+      "required": true
+    },
+    "page": {
+      "model": "page"
+    }
+  }
+}

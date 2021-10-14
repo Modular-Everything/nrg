@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_elements_texts",
+  "info": {
+    "name": "Text",
+    "icon": "pen",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "Text": {
+      "type": "text",
+      "required": true
+    }
+  }
+}

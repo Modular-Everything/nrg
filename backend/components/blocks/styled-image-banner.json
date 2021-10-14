@@ -1,0 +1,36 @@
+{
+  "collectionName": "components_blocks_styled_image_banners",
+  "info": {
+    "name": "Styled Image Banner",
+    "icon": "image",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "styled_copy": {
+      "type": "richtext",
+      "required": true
+    },
+    "descriptive_copy": {
+      "type": "text"
+    },
+    "background_image": {
+      "model": "file",
+      "via": "related",
+      "allowedTypes": [
+        "images"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "sits_below_menu": {
+      "type": "boolean",
+      "default": false,
+      "required": true
+    },
+    "scroll_copy": {
+      "type": "string"
+    }
+  }
+}
