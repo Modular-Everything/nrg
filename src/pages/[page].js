@@ -63,21 +63,22 @@ export default Page;
 // ---
 
 export async function getStaticPaths() {
-  const pages = await fetchAPI("/pages");
-  console.log(pages);
+  const pages = await fetchAPI("pages");
 
   return {
     paths: pages.map((page) => ({
       params: {
-        page: page.slug === null ? "homepage" : page.slug,
+        page: page.slug,
       },
     })),
     fallback: false,
   };
 }
 
-export async function getStaticProps({ params }) {
-  const pages = await fetchAPI(`/pages?slug=${params.page}`);
+export async function getStaticProps({ params, preview }) {
+  const pages = await fetchAPI(`pages?slug=${params.page}`, true);
+  console.log(pages);
+
   return {
     props: { page: pages[0] },
     revalidate: 1,
