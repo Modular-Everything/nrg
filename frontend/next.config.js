@@ -1,6 +1,15 @@
 module.exports = {
   i18n: {
-    locales: ['en', 'fr'],
-    defaultLocale: 'en',
+    locales: ["en"],
+    defaultLocale: "en",
   },
-}
+
+  async rewrites() {
+    return [
+      {
+        source: "/",
+        destination: "/homepage",
+      },
+    ];
+  },
+};
