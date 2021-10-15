@@ -1,7 +1,6 @@
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
-// import PropTypes from "prop-types";
-// import ErrorPage from "next/error";
+import PropTypes from "prop-types";
 import { useRouter } from "next/router";
 
 import { getPageData, fetchAPI, getGlobalData } from "../utils/api";
@@ -65,6 +64,22 @@ const DynamicPage = ({
       </AutoLayout>
     </Layout>
   );
+};
+
+DynamicPage.propTypes = {
+  top_block: PropTypes.object,
+  blocks: PropTypes.object,
+  bottom_block: PropTypes.object,
+  metadata: PropTypes.object.isRequired,
+  preview: PropTypes.object.isRequired,
+  global: PropTypes.object.isRequired,
+  pageContext: PropTypes.object.isRequired,
+};
+
+DynamicPage.defaultProps = {
+  top_block: null,
+  blocks: null,
+  bottom_block: null,
 };
 
 export default DynamicPage;
