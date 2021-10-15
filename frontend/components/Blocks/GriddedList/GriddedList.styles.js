@@ -9,11 +9,13 @@ export const Wrapper = styled.div`
 
 export const GridContainer = styled(Container)`
   --spacing: var(--gutter);
+  height: calc(100% - var(--spacing));
   padding: 0 0 var(--spacing) 0;
 
   @media (min-width: 640px) {
-    padding: var(--spacing) 0;
     --spacing: calc(var(--gutter) * 3);
+    height: calc(100% - (var(--spacing) * 2));
+    padding: var(--spacing) 0;
   }
 
   @media (min-width: 1080px) {
