@@ -8,6 +8,8 @@ import { getPageData, fetchAPI, getGlobalData } from "../utils/api";
 import { getLocalizedPaths } from "../utils/localize";
 import SEO from "../components/Core/SEO";
 import Layout from "../components/Core/Layout";
+import BlockBuilder from "../components/Blocks";
+import AutoLayout from "../components/Core/AutoLayout";
 // import AutoLayout from "../components/Core/AutoLayout";
 // import BlockBuilder from "../components/Blocks";
 
@@ -20,7 +22,15 @@ import Layout from "../components/Core/Layout";
 
 // ---
 
-const DynamicPage = ({ metadata, preview, global, pageContext }) => {
+const DynamicPage = ({
+  top_block,
+  blocks,
+  bottom_block,
+  metadata,
+  preview,
+  global,
+  pageContext,
+}) => {
   const router = useRouter();
 
   // Check if the required data was provided
@@ -41,6 +51,22 @@ const DynamicPage = ({ metadata, preview, global, pageContext }) => {
       <SEO metadata={metadata} />
       {/* Display content sections */}
       {/* <Sections sections={sections} preview={preview} /> */}
+
+      <AutoLayout>
+        <div className="top">
+          {top_block && <BlockBuilder blocks={top_block} />}
+        </div>
+
+        <div className="blocks">
+          <BlockBuilder blocks={blocks} />
+        </div>
+
+        {/* {bottom && (
+          <div className="bottom">
+            <BlockBuilder blocks={bottom} />
+          </div>
+        )} */}
+      </AutoLayout>
     </Layout>
   );
 };
@@ -88,10 +114,9 @@ export async function getStaticProps(context) {
     return { props: {} };
   }
 
-  console.log(pageData);
-
   // We have the required page data, pass it to the page component
-  const { metadata, localizations, slug } = pageData;
+  const { top_block, blocks, bottom_block, metadata, localizations, slug } =
+    pageData;
 
   const pageContext = {
     locale: pageData.locale,
@@ -106,7 +131,9 @@ export async function getStaticProps(context) {
   return {
     props: {
       preview,
-      // sections: contentSections,
+      top_block,
+      blocks,
+      bottom_block,
       metadata,
       global: globalLocale,
       pageContext: {
