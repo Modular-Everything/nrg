@@ -7,7 +7,7 @@ const breakpoints = [375, 640, 768, 1024, 1080];
 export const Container = styled.div`
   position: relative;
   width: calc(100% - calc(var(--gutter) * 2));
-  height: auto;
+  height: 100%;
   margin: 0 auto;
   padding: 0 var(--gutter);
 
