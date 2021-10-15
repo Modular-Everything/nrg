@@ -1,4 +1,4 @@
-import styled from 'styled-components';
+import styled from "styled-components";
 
 // ---
 
@@ -7,7 +7,7 @@ const breakpoints = [375, 640, 768, 1024, 1080];
 export const Container = styled.div`
   position: relative;
   width: calc(100% - calc(var(--gutter) * 2));
-  height: 100%;
+  height: auto;
   margin: 0 auto;
   padding: 0 var(--gutter);
 
