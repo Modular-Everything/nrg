@@ -6,6 +6,7 @@ import { useRouter } from "next/router";
 
 import { getPageData, fetchAPI, getGlobalData } from "../utils/api";
 import { getLocalizedPaths } from "../utils/localize";
+import PreviewBanner from "../components/Elements/PreviewBanner";
 import SEO from "../components/Core/SEO";
 import Layout from "../components/Core/Layout";
 import BlockBuilder from "../components/Blocks";
@@ -33,13 +34,6 @@ const DynamicPage = ({
 }) => {
   const router = useRouter();
 
-  // Check if the required data was provided
-  // todo add top and main sections back in
-  // if (!router.isFallback && !sections?.length) {
-  // if (!router.isFallback) {
-  //   return <ErrorPage statusCode={404} />;
-  // }
-
   // Loading screen (only possible in preview mode)
   if (router.isFallback) {
     return <div className="container">Loading...</div>;
@@ -52,20 +46,22 @@ const DynamicPage = ({
       {/* Display content sections */}
       {/* <Sections sections={sections} preview={preview} /> */}
 
+      {preview && <PreviewBanner />}
+
       <AutoLayout>
         <div className="top">
           {top_block && <BlockBuilder blocks={top_block} />}
         </div>
 
         <div className="blocks">
-          <BlockBuilder blocks={blocks} />
+          <BlockBuilder blocks={blocks} preview={preview} />
         </div>
 
-        {/* {bottom && (
+        {bottom_block && (
           <div className="bottom">
-            <BlockBuilder blocks={bottom} />
+            <BlockBuilder blocks={bottom_block} />
           </div>
-        )} */}
+        )}
       </AutoLayout>
     </Layout>
   );
