@@ -55,9 +55,9 @@ const DynamicPage = ({
 };
 
 DynamicPage.propTypes = {
-  top_block: PropTypes.object,
-  blocks: PropTypes.object,
-  bottom_block: PropTypes.object,
+  top_block: PropTypes.array,
+  blocks: PropTypes.array,
+  bottom_block: PropTypes.array,
   metadata: PropTypes.object.isRequired,
   preview: PropTypes.object.isRequired,
   global: PropTypes.object.isRequired,

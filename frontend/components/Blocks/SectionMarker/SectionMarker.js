@@ -1,6 +1,7 @@
+/* eslint-disable jsx-a11y/anchor-is-valid */
 import React from "react";
 import PropTypes from "prop-types";
-import { Link } from "gatsby";
+import Link from "next/link";
 import ReactMarkdown from "react-markdown";
 import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
@@ -9,66 +10,76 @@ import Bolt from "../../../images/icons/Bolt";
 
 // ---
 
-const SectionMarker = ({
-  title,
-  mainCopy,
-  link,
-  aside,
-  sectionBgColor,
-  sectionColor,
-}) => (
-  <S.SectionMarker
-    sectionBgColor={sectionBgColor}
-    sectionColor={sectionColor}
-  >
-    <S.SectionMarkerContainer>
-      <S.Title>
-        <Bolt />
-        {title && title}
-      </S.Title>
+const SectionMarker = ({ block }) => {
+  const {
+    title,
+    main_copy,
+    main_copy_link,
+    main_copy_link_label,
+    aside,
+    background_color,
+    text_color,
+  } = block;
 
-      <S.Copy hasTitle={!!title}>
-        <ReactMarkdown>{mainCopy}</ReactMarkdown>
-        {link && (
-          <Link to={link.url}>
-            {link.label} <ArrowRight />
-          </Link>
-        )}
-      </S.Copy>
+  return (
+    <S.SectionMarker
+      sectionBgColor={background_color}
+      sectionColor={text_color}
+    >
+      <S.SectionMarkerContainer>
+        <S.Title>
+          <Bolt className="bolt" />
+          {title && title}
+        </S.Title>
 
-      <S.Aside hasTitle={!!title}>
-        <ReactMarkdown>{aside}</ReactMarkdown>
-      </S.Aside>
-    </S.SectionMarkerContainer>
-  </S.SectionMarker>
-);
+        <S.Copy hasTitle={!!title}>
+          <ReactMarkdown>{main_copy}</ReactMarkdown>
+          {main_copy_link && main_copy_link_label && (
+            <Link href={`/${main_copy_link.slug}`}>
+              <a>
+                {main_copy_link_label} <ArrowRight />
+              </a>
+            </Link>
+          )}
+        </S.Copy>
+
+        <S.Aside hasTitle={!!title}>
+          <ReactMarkdown>{aside}</ReactMarkdown>
+        </S.Aside>
+      </S.SectionMarkerContainer>
+    </S.SectionMarker>
+  );
+};
 
 SectionMarker.propTypes = {
-  /** A string of copy */
-  title: PropTypes.string,
-  /** A string of markdown copy */
-  mainCopy: PropTypes.string.isRequired,
-  /** An optional link */
-  link: PropTypes.shape({
-    /** The link URL */
-    url: PropTypes.string.isRequired,
-    /** The link URL */
-    label: PropTypes.string.isRequired,
+  block: PropTypes.objectOf({
+    /** A string of copy */
+    title: PropTypes.string,
+    /** A string of markdown copy */
+    main_copy: PropTypes.string.isRequired,
+    /** Another string of markdown copy used for smaller bits of copy or lists */
+    aside: PropTypes.string,
+    /** An optional background colour -- accepts any CSS colour value including variables */
+    background_color: PropTypes.string,
+    /** An optional text colour -- accepts any CSS colour value including variables */
+    text_color: PropTypes.string,
+    /** An optional page link */
+    main_copy_link: PropTypes.object,
+    /** The label for the link */
+    main_copy_link_label: PropTypes.string,
   }),
-  /** Another string of markdown copy used for smaller bits of copy or lists */
-  aside: PropTypes.string,
-  /** An optional background colour -- accepts any CSS colour value including variables */
-  sectionBgColor: PropTypes.string,
-  /** An optional text colour -- accepts any CSS colour value including variables */
-  sectionColor: PropTypes.string,
 };
 
 SectionMarker.defaultProps = {
-  title: null,
-  link: null,
-  aside: null,
-  sectionBgColor: "var(--white)",
-  sectionColor: "var(--black)",
+  block: {
+    title: null,
+    // link: null,
+    aside: null,
+    background_color: "var(--white)",
+    text_color: "var(--black)",
+    main_copy_link: null,
+    main_copy_link_label: null,
+  },
 };
 
 export default SectionMarker;

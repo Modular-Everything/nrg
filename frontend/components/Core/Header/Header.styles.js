@@ -4,7 +4,7 @@ import Container from "../Container";
 // ---
 
 export const Header = styled.header`
-  position: fixed;
+  position: absolute;
   z-index: 500;
   top: 0;
   width: 100%;
