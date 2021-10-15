@@ -5,38 +5,37 @@ import * as S from "./Image.styles";
 
 // ---
 
-const Image = ({ image, ...rest }) => {
+const Image = ({ image, layout, ...rest }) => {
   if (!image) return null;
-
-  console.log(image);
-
-  return <S.Image src={image} layout="fill" {...rest} />;
+  return (
+    <S.Image
+      src={image.url}
+      layout={layout ?? "responsive"}
+      width={!layout && image.width}
+      height={!layout && image.height}
+      alt={image.alternativeText}
+      {...rest}
+    />
+  );
 };
 
 Image.propTypes = {
   image: PropTypes.shape({
     url: PropTypes.string.isRequired,
-    formats: PropTypes.shape({
-      large: PropTypes.shape({
-        width: PropTypes.number.isRequired,
-      }),
-    }).isRequired,
     title: PropTypes.string,
+    height: PropTypes.number.isRequired,
+    width: PropTypes.number.isRequired,
     alternativeText: PropTypes.string,
-    provider_metadata: PropTypes.shape({
-      public_id: PropTypes.string,
-    }),
   }),
+  layout: PropTypes.string,
 };
 
 Image.defaultProps = {
   image: {
     title: null,
     alternativeText: null,
-    provider_metadata: {
-      public_id: null,
-    },
   },
+  layout: null,
 };
 
 export default Image;
