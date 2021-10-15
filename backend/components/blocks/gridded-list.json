@@ -2,7 +2,8 @@
   "collectionName": "components_blocks_gridded_lists",
   "info": {
     "name": "Gridded List",
-    "icon": "pen-square"
+    "icon": "pen-square",
+    "description": ""
   },
   "options": {},
   "attributes": {
