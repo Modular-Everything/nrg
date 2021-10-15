@@ -10,15 +10,6 @@ import SEO from "../components/Core/SEO";
 import Layout from "../components/Core/Layout";
 import BlockBuilder from "../components/Blocks";
 import AutoLayout from "../components/Core/AutoLayout";
-// import AutoLayout from "../components/Core/AutoLayout";
-// import BlockBuilder from "../components/Blocks";
-
-// import Sections from "@/components/sections";
-// import Seo from "@/components/elements/seo";
-
-// The file is called [[...slug]].js because we're using Next's
-// optional catch all routes feature. See the related docs:
-// https://nextjs.org/docs/routing/dynamic-routes#optional-catch-all-routes
 
 // ---
 
