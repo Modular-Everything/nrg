@@ -10,10 +10,6 @@
     "title": {
       "type": "string"
     },
-    "main_copy": {
-      "type": "text",
-      "required": true
-    },
     "aside": {
       "type": "richtext"
     },
@@ -38,6 +34,10 @@
     },
     "page": {
       "model": "page"
+    },
+    "main_copy": {
+      "type": "richtext",
+      "required": true
     }
   }
 }
