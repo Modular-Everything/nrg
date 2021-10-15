@@ -15,6 +15,6 @@ export const AutoLayout = styled.section`
     display: grid;
     grid-area: blocks;
     grid-gap: calc(var(--gutter) * 4);
-    margin: calc(var(--gutter) * 2) 0;
+    margin: calc(var(--gutter) * 4) 0;
   }
 `;
