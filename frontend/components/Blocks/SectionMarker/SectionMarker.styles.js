@@ -12,7 +12,8 @@ export const SectionMarkerContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   height: calc(100% - (var(--gutter) * 6));
-  padding: calc(var(--gutter) * 2) 0 calc(var(--gutter) * 4) 0;
+  padding-top: calc(var(--gutter) * 2);
+  padding-bottom: calc(var(--gutter) * 4);
 
   @media (min-width: 768px) {
     display: grid;
