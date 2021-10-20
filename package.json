@@ -5,6 +5,7 @@
   "scripts": {
     "develop:backend": "yarn --cwd backend develop",
     "develop:frontend": "wait-on http://localhost:1337/admin && yarn --cwd frontend develop",
+    "develop:storybook": "wait-on http://localhost:3000 && yarn --cwd frontend storybook",
     "develop": "cross-env FORCE_COLOR=1 npm-run-all -l -p develop:*",
     "start": "yarn develop"
   },

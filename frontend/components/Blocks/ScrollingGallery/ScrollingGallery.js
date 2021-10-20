@@ -1,7 +1,7 @@
 import React from "react";
 import PropTypes from "prop-types";
-import "swiper/css";
 import { Swiper, SwiperSlide } from "swiper/react";
+import "swiper/swiper-bundle.min.css";
 
 import * as S from "./ScrollingGallery.styles";
 import Container from "../../Core/Container";

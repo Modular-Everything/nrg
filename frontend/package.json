@@ -7,14 +7,16 @@
     "build": "next build",
     "start": "next start",
     "lint": "next lint",
-    "lint:fix": "next lint --fix"
+    "lint:fix": "next lint --fix",
+    "storybook": "start-storybook -p 6006",
+    "build-storybook": "build-storybook"
   },
   "dependencies": {
     "babel-plugin-styled-components": "^1.13.2",
     "cookie": "^0.4.1",
     "date-fns": "2.14.0",
     "js-cookie": "3.0.0-rc.4",
-    "next": "^11.0.0",
+    "next": "11.1.0",
     "next-seo": "^4.7.1",
     "normalize.css": "^8.0.1",
     "prop-types": "^15.7.2",
@@ -25,9 +27,18 @@
     "styled-components": "^5.3.1",
     "stylelint": "^13.13.1",
     "stylelint-config-property-sort-order-smacss": "^7.1.0",
-    "stylelint-order": "^4.1.0"
+    "stylelint-order": "^4.1.0",
+    "swiper": "6.8.4"
   },
   "devDependencies": {
+    "@babel/core": "^7.15.8",
+    "@storybook/addon-actions": "^6.3.12",
+    "@storybook/addon-essentials": "^6.3.12",
+    "@storybook/addon-links": "^6.3.12",
+    "@storybook/react": "^6.3.12",
+    "babel-loader": "^8.2.2",
+    "chromatic": "^6.0.4",
+    "css-loader": "^6.4.0",
     "eslint": "^7.2.0",
     "eslint-config-airbnb": "18.2.1",
     "eslint-config-next": "^11.0.1",
@@ -37,6 +48,8 @@
     "eslint-plugin-prettier": "^3.4.0",
     "eslint-plugin-react": "^7.21.5",
     "eslint-plugin-react-hooks": "^1.7.0",
-    "prettier": "^2.3.1"
+    "file-loader": "^6.2.0",
+    "prettier": "^2.3.1",
+    "style-loader": "^3.3.0"
   }
 }
