@@ -28,7 +28,7 @@ const ImageBlock = ({ block }) => {
       )}
 
       <S.Background>
-        <Image image={background_image} />
+        <Image image={background_image} layout="fill" />
       </S.Background>
     </S.ImageBlock>
   );
