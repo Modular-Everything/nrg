@@ -42,14 +42,7 @@ HasImage.args = {
     copy: "Sed ut perspiciatis unde omnis iste natus error voluptatem accusantium doloremque laudantium, totam rem aperiam, eaque ipsa quae ab illo veritatis et quasi architecto beatae vitae dicta sun.\n\nNemo enim ipsam voluptatem quia voluptas sit aspernatur aut odit aut fugit, sed quia consequuntur magni dolores eos qui ratione voluptatem sequi nesciunt.",
     columns: 1,
     image: {
-      provider_metadata: {
-        public_id: "nrg/Camping_Experience_dce4616f6f",
-      },
-      formats: {
-        large: {
-          width: 1000,
-        },
-      },
+      url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
     },
   },
 };
