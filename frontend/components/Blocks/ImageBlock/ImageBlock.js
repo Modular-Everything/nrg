@@ -9,43 +9,47 @@ import BoltIcon from "../../../images/icons/Bolt";
 
 // ---
 
-const ImageBlock = ({ image, hasIcon, enlargeIcon, title, copy }) => (
-  <S.ImageBlock>
-    {(title || copy) && (
-      <S.Copy>
-        {title && <Title as="h3" title={title} />}
-        {copy && <Copy copy={copy} />}
-      </S.Copy>
-    )}
+const ImageBlock = ({ block }) => {
+  const { background_image, icon, title, copy } = block;
 
-    {hasIcon && (
-      <S.Icon outline={enlargeIcon} enlarged={enlargeIcon}>
-        <BoltIcon />
-      </S.Icon>
-    )}
+  return (
+    <S.ImageBlock>
+      {(title || copy) && (
+        <S.Copy>
+          {title && <Title as="h3" title={title} />}
+          {copy && <Copy copy={copy} />}
+        </S.Copy>
+      )}
 
-    <S.Background>
-      <Image image={image} />
-    </S.Background>
-  </S.ImageBlock>
-);
+      {(!title || !copy) && icon && (
+        <S.Icon outline={icon === "large"} size={icon}>
+          <BoltIcon />
+        </S.Icon>
+      )}
+
+      <S.Background>
+        <Image image={background_image} />
+      </S.Background>
+    </S.ImageBlock>
+  );
+};
 
 ImageBlock.propTypes = {
-  image: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    alt: PropTypes.string.isRequired,
-  }).isRequired,
-  hasIcon: PropTypes.bool,
-  enlargeIcon: PropTypes.bool,
-  title: PropTypes.string,
-  copy: PropTypes.string,
+  block: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    background_image: PropTypes.object.isRequired,
+    icon: PropTypes.string,
+    title: PropTypes.string,
+    copy: PropTypes.string,
+  }),
 };
 
 ImageBlock.defaultProps = {
-  hasIcon: false,
-  enlargeIcon: false,
-  title: null,
-  copy: null,
+  block: {
+    icon: null,
+    title: null,
+    copy: null,
+  },
 };
 
 export default ImageBlock;

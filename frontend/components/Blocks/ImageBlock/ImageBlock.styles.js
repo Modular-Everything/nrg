@@ -29,14 +29,18 @@ export const Copy = styled.div`
   max-width: 41rem;
   color: var(--white);
   gap: calc(var(--gutter) * 1.5);
+
+  p {
+    color: var(--white);
+  }
 `;
 
 export const Icon = styled.div`
   position: relative;
   z-index: 10;
-  width: ${({ enlarged }) => (enlarged ? "100%" : "20%")};
-  max-width: ${({ enlarged }) => (enlarged ? "unset" : "9.6rem")};
-  height: ${({ enlarged }) => (enlarged ? "135vh" : "unset")};
+  width: ${({ size }) => (size === "large" ? "100%" : "20%")};
+  max-width: ${({ size }) => (size === "large" ? "unset" : "9.6rem")};
+  height: ${({ size }) => (size === "large" ? "135vh" : "unset")};
   pointer-events: none;
 
   svg {

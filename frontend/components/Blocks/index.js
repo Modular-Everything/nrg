@@ -6,6 +6,7 @@ import CopyBlock from "./CopyBlock";
 import GriddedList from "./GriddedList";
 import StyledImageBanner from "./StyledImageBanner";
 import SectionMarker from "./SectionMarker";
+import ImageBlock from "./ImageBlock";
 
 // ---
 
@@ -20,6 +21,7 @@ const BlockBuilder = ({ blocks }) => {
     "blocks.body-copy": CopyBlock,
     "blocks.styled-image-banner": StyledImageBanner,
     "blocks.section-marker": SectionMarker,
+    "blocks.image-block": ImageBlock,
   };
 
   return (

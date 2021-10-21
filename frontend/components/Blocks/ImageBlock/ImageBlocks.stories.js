@@ -14,63 +14,40 @@ const Template = (args) => <ImageBlock {...args} />;
 
 export const Clean = Template.bind({});
 Clean.args = {
-  image: {
-    provider_metadata: {
-      public_id: "nrg/Camping_Experience_dce4616f6f",
-    },
-    formats: {
-      large: {
-        width: 1000,
-      },
+  block: {
+    background_image: {
+      url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
     },
   },
 };
 
 export const HasSmallIcon = Template.bind({});
 HasSmallIcon.args = {
-  image: {
-    provider_metadata: {
-      public_id: "nrg/Camping_Experience_dce4616f6f",
+  block: {
+    background_image: {
+      url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
     },
-    formats: {
-      large: {
-        width: 1000,
-      },
-    },
+    icon: "small",
   },
-  hasIcon: true,
 };
 
 export const HasLargeIcon = Template.bind({});
 HasLargeIcon.args = {
-  image: {
-    provider_metadata: {
-      public_id: "nrg/Camping_Experience_dce4616f6f",
+  block: {
+    background_image: {
+      url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
     },
-    formats: {
-      large: {
-        width: 1000,
-      },
-    },
+    icon: "large",
   },
-  hasIcon: true,
-  enlargeIcon: true,
 };
 
 export const HasTitle = Template.bind({});
 HasTitle.args = {
-  image: {
-    provider_metadata: {
-      public_id: "nrg/Camping_Experience_dce4616f6f",
+  block: {
+    background_image: {
+      url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
     },
-    formats: {
-      large: {
-        width: 1000,
-      },
-    },
+    title: "Lorem Ipsum",
+    copy: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
   },
-  title: "Lorem Ipsum",
-  copy: [
-    "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore.",
-  ],
 };
