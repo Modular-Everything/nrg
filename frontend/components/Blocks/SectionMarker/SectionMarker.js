@@ -59,9 +59,9 @@ SectionMarker.propTypes = {
     main_copy: PropTypes.string.isRequired,
     /** Another string of markdown copy used for smaller bits of copy or lists */
     aside: PropTypes.string,
-    /** An optional background colour -- accepts any CSS colour value including variables */
+    /** An optional background colour -- accepts a string referring to a CSS variable (black, white) */
     background_color: PropTypes.string,
-    /** An optional text colour -- accepts any CSS colour value including variables */
+    /** An optional text colour -- accepts a string referring to a CSS variable (black, white) */
     text_color: PropTypes.string,
     /** An optional page link */
     main_copy_link: PropTypes.object,

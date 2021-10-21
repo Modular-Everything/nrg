@@ -56,7 +56,8 @@ export const SectionMarkerContainer = styled(Container)`
         content: "•";
         position: absolute;
         left: -1.6rem;
-        color: var(--red);
+        color: ${({ sectionBgColor }) =>
+          sectionBgColor === "red" ? "var(--white)" : "var(--red)"};
         font-size: 1.2rem;
       }
     }
