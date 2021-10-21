@@ -1,0 +1,29 @@
+{
+  "collectionName": "components_elements_gallery_items",
+  "info": {
+    "name": "gallery_item",
+    "icon": "vector-square",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "title": {
+      "type": "string"
+    },
+    "image": {
+      "collection": "file",
+      "via": "related",
+      "allowedTypes": [
+        "files",
+        "images",
+        "videos"
+      ],
+      "plugin": "upload",
+      "required": true,
+      "pluginOptions": {}
+    },
+    "link": {
+      "model": "page"
+    }
+  }
+}
