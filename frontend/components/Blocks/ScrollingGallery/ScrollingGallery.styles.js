@@ -77,13 +77,16 @@ export const ScrollingGallery = styled.section`
     width: calc(100% - (var(--gutter) * 4));
     height: calc(100% - (var(--gutter) * 16));
     padding: calc(var(--gutter) * 8) calc(var(--gutter) * 2);
-    box-shadow: 0 0 28px 0 rgba(0, 0, 0, 0.4);
     color: var(--white);
     font-family: var(--avenue);
     font-size: clamp(2.4rem, 6vw, 4.8rem);
     line-height: 1;
     text-align: center;
     text-transform: uppercase;
+
+    h5 {
+      text-shadow: 0 0 28px rgba(0, 0, 0, 0.4);
+    }
   }
 `;
 
