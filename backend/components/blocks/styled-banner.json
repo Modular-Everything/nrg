@@ -1,0 +1,23 @@
+{
+  "collectionName": "components_blocks_styled_banners",
+  "info": {
+    "name": "StyledBanner",
+    "icon": "air-freshener"
+  },
+  "options": {},
+  "attributes": {
+    "background_color": {
+      "type": "enumeration",
+      "enum": [
+        "red",
+        "black"
+      ],
+      "default": "black",
+      "required": true
+    },
+    "styled_copy": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}

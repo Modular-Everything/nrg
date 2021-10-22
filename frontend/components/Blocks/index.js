@@ -9,6 +9,7 @@ import SectionMarker from "./SectionMarker";
 import ImageBlock from "./ImageBlock";
 import ScrollingGallery from "./ScrollingGallery";
 import BoltBlock from "./BoltBlock";
+import StyledBanner from "./StyledBanner/StyledBanner";
 
 // ---
 
@@ -22,6 +23,7 @@ const BlockBuilder = ({ blocks }) => {
     "blocks.gridded-list": GriddedList,
     "blocks.body-copy": CopyBlock,
     "blocks.styled-image-banner": StyledImageBanner,
+    "blocks.styled-banner": StyledBanner,
     "blocks.section-marker": SectionMarker,
     "blocks.image-block": ImageBlock,
     "blocks.scrolling-gallery": ScrollingGallery,

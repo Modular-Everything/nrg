@@ -84,9 +84,12 @@
       },
       "type": "dynamiczone",
       "components": [
-        "blocks.styled-image-banner"
+        "blocks.styled-image-banner",
+        "blocks.styled-banner",
+        "blocks.section-marker",
+        "blocks.image-block"
       ],
-      "max": 1
+      "required": true
     },
     "bottom_block": {
       "pluginOptions": {
