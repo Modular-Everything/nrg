@@ -96,7 +96,8 @@
       },
       "type": "dynamiczone",
       "components": [
-        "blocks.styled-image-banner"
+        "blocks.styled-image-banner",
+        "blocks.bolt"
       ],
       "max": 1
     }
