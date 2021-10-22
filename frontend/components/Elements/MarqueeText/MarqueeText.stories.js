@@ -15,5 +15,5 @@ const Template = (args) => <MarqueeText {...args} />;
 export const SimpleBanner = Template.bind({});
 SimpleBanner.args = {
   markdown:
-    "**We do more** than tell stories. We do more than tell **stories.**",
+    "**We do more** than tell stories\n\nWe do more than tell **stories**.\n\nWe do more **than tell** stories",
 };
