@@ -2,6 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import * as S from "./StyledBanner.styles";
+import Noise from "../../Elements/Noise";
 
 // ---
 
@@ -12,11 +13,10 @@ import * as S from "./StyledBanner.styles";
 const StyledBanner = ({ block }) => {
   const { styled_copy, background_color } = block;
 
-  console.log("test");
-
   return (
     <S.StyledBanner backgroundColor={background_color}>
       <S.StyledText markdown={styled_copy} />
+      <Noise />
     </S.StyledBanner>
   );
 };

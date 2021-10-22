@@ -12,12 +12,13 @@ export const StyledBanner = styled.section`
   position: relative;
   min-height: 32rem;
   padding: var(--extraGap) 0;
+  overflow: hidden;
   background-color: var(--backgroundColor);
 `;
 
 export const StyledText = styled(MarqueeText)`
   --color: #fff;
-  --cut: var(--backgroundColor);
+  --cut: #000;
   --blend: screen;
 
   position: relative;

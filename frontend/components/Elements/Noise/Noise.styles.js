@@ -41,12 +41,13 @@ export const Noise = styled.div`
   }
 
   position: fixed;
-  z-index: -10;
+  z-index: 0;
   top: -100px;
   left: -100px;
   width: calc(100% + 200px);
   height: calc(100% + 200px);
   pointer-events: none;
+  mix-blend-mode: multiply;
 
   &::before {
     content: "";
