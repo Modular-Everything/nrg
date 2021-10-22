@@ -59,7 +59,7 @@ DynamicPage.propTypes = {
   blocks: PropTypes.array,
   bottom_block: PropTypes.array,
   metadata: PropTypes.object.isRequired,
-  preview: PropTypes.object.isRequired,
+  preview: PropTypes.object,
   global: PropTypes.object.isRequired,
   pageContext: PropTypes.object.isRequired,
 };
@@ -68,6 +68,7 @@ DynamicPage.defaultProps = {
   top_block: null,
   blocks: null,
   bottom_block: null,
+  preview: null,
 };
 
 export default DynamicPage;
@@ -108,7 +109,7 @@ export async function getStaticProps(context) {
     preview
   );
 
-  if (pageData == null) {
+  if (pageData === null) {
     // Giving the page no props will trigger a 404 page
     return { props: {} };
   }
