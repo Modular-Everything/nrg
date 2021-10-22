@@ -13,7 +13,7 @@ export const OutlineText = styled.div`
     color: transparent;
     font-family: var(--avenue);
     font-size: clamp(32rem, 50vw, 43rem);
-    line-height: 40rem;
+    line-height: clamp(32rem, 50vw, 40rem);
     text-align: center;
     text-transform: uppercase;
   }

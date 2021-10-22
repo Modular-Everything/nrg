@@ -41,8 +41,12 @@ export const OutlineText = styled(OutlineTextComponent)`
   -webkit-text-stroke-color: #e9e9e9;
   position: absolute;
   z-index: 0;
-  top: 50%;
+  top: 85%;
   left: 0;
   width: 100%;
   height: 100%;
+
+  @media (min-width: 768px) {
+    top: 50%;
+  }
 `;
