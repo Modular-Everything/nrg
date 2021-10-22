@@ -26,6 +26,16 @@ const Layout = ({ children, global }) => {
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  global: PropTypes.shape({
+    // eslint-disable-next-line react/forbid-prop-types
+    footer: PropTypes.object,
+  }),
+};
+
+Layout.defaultProps = {
+  global: {
+    footer: null,
+  },
 };
 
 export default Layout;
