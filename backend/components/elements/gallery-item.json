@@ -11,7 +11,7 @@
       "type": "string"
     },
     "image": {
-      "collection": "file",
+      "model": "file",
       "via": "related",
       "allowedTypes": [
         "files",
@@ -24,6 +24,15 @@
     },
     "link": {
       "model": "page"
+    },
+    "layout_type": {
+      "type": "enumeration",
+      "enum": [
+        "portrait",
+        "landscape"
+      ],
+      "default": "portrait",
+      "required": true
     }
   }
 }

@@ -14,44 +14,47 @@ const Template = (args) => <ScrollingGallery {...args} />;
 
 export const StandardExample = Template.bind({});
 StandardExample.args = {
-  images: [
-    {
-      source: "https://source.unsplash.com/W3SEyZODn8U/1280x720",
-      caption: "Community Engagement",
-    },
-    {
-      source: "https://source.unsplash.com/M_TOzf3lUcA/1280x720",
-      caption: "Event Production",
-    },
-    {
-      source: "https://source.unsplash.com/TuZHdlpJgm4/1280x720",
-      caption: "Brand Installations",
-    },
-    {
-      source: "https://source.unsplash.com/3V8xo5Gbusk/1280x720",
-      caption: "Research",
-    },
-  ],
-};
-
-export const MixedRatios = Template.bind({});
-MixedRatios.args = {
-  images: [
-    {
-      source: "https://source.unsplash.com/W3SEyZODn8U/1280x720",
-      caption: "Community Engagement",
-    },
-    {
-      source: "https://source.unsplash.com/M_TOzf3lUcA/1280x720",
-      caption: "Event Production",
-    },
-    {
-      source: "https://source.unsplash.com/TuZHdlpJgm4/1280x720",
-      caption: "Brand Installations",
-    },
-    {
-      source: "https://source.unsplash.com/3V8xo5Gbusk/1280x720",
-      caption: "Research",
-    },
-  ],
+  block: {
+    layout_type: "tall",
+    items: [
+      {
+        id: 1,
+        image: {
+          url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
+        },
+        layout_type: "portrait",
+        link: null,
+        title: "",
+      },
+      {
+        id: 2,
+        image: {
+          url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
+        },
+        layout_type: "portrait",
+        link: null,
+        title: "",
+      },
+      {
+        id: 3,
+        image: {
+          url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
+        },
+        layout_type: "landscape",
+        link: {
+          slug: "#",
+        },
+        title: "We do more than tell stories",
+      },
+      {
+        id: 4,
+        image: {
+          url: "https://res.cloudinary.com/modular-everything/image/upload/v1634233320/nrg/samantha_gades_f_I_Hoz_N_Wfcvs_unsplash_ea58004c52.jpg",
+        },
+        layout_type: "portrait",
+        link: null,
+        title: "",
+      },
+    ],
+  },
 };

@@ -2,16 +2,26 @@
   "collectionName": "components_blocks_scrolling_galleries",
   "info": {
     "name": "Scrolling Gallery",
-    "icon": "hand-point-right"
+    "icon": "hand-point-right",
+    "description": ""
   },
   "options": {},
   "attributes": {
-    "Image": {
+    "items": {
       "type": "component",
       "repeatable": true,
-      "component": "elements.image",
+      "component": "elements.gallery-item",
       "required": true,
-      "min": 2
+      "min": 1
+    },
+    "layout_type": {
+      "type": "enumeration",
+      "enum": [
+        "standard",
+        "tall"
+      ],
+      "default": "standard",
+      "required": true
     }
   }
 }

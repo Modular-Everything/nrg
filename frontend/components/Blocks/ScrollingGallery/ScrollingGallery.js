@@ -2,33 +2,59 @@ import React from "react";
 import PropTypes from "prop-types";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
+import Link from "next/link";
 
 import * as S from "./ScrollingGallery.styles";
 import Container from "../../Core/Container";
+import Image from "../../Elements/Image";
 
 // ---
 
-const ScrollingGallery = ({ images }) => {
-  if (!images) return null;
+const GalleryItem = ({ item }) => (
+  <S.GalleryImage>
+    {item.title !== "" && (
+      <div className="caption">
+        <h5>{item.title}</h5>
+      </div>
+    )}
+    <div className="background">
+      <Image image={item.image} layout="fill" />
+    </div>
+  </S.GalleryImage>
+);
+
+GalleryItem.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  item: PropTypes.object.isRequired,
+};
+
+// ---
+
+const ScrollingGallery = ({ block }) => {
+  const { layout_type, items } = block;
 
   return (
     <Container>
-      <S.ScrollingGallery>
+      <S.ScrollingGallery className={layout_type}>
         <Swiper slidesPerView="auto" spaceBetween={16}>
-          {images.map((image, index) => (
-            <SwiperSlide>
-              <S.Slide>
+          {/* eslint-disable-next-line react/prop-types */}
+          {items.map((item, index) => (
+            <SwiperSlide key={item.id}>
+              <S.Slide className={item.layout_type}>
                 <p className="index">
-                  {index + 1}/{images.length}
+                  {index + 1}/{items.length}
                 </p>
-                <S.GalleryImage key={index}>
-                  <div className="caption">
-                    <h5>{image.caption}</h5>
-                  </div>
-                  <div className="background">
-                    <img src={image.source} alt="" />
-                  </div>
-                </S.GalleryImage>
+
+                {item.link ? (
+                  <Link href={`/${item.link.slug}`}>
+                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                    <a>
+                      <GalleryItem item={item} />
+                    </a>
+                  </Link>
+                ) : (
+                  <GalleryItem item={item} />
+                )}
               </S.Slide>
             </SwiperSlide>
           ))}
@@ -39,9 +65,27 @@ const ScrollingGallery = ({ images }) => {
 };
 
 ScrollingGallery.propTypes = {
-  images: PropTypes.arrayOf({
-    source: PropTypes.string.isRequired,
-    caption: PropTypes.string.isRequired,
-  }).isRequired,
+  block: PropTypes.shape({
+    layout_type: PropTypes.string.isRequired,
+    items: PropTypes.shape({
+      title: PropTypes.string,
+      link: PropTypes.shape({
+        slug: PropTypes.string,
+      }),
+      // eslint-disable-next-line react/forbid-prop-types
+      image: PropTypes.object.isRequired,
+      layout_type: PropTypes.string.isRequired,
+      length: PropTypes.number.isRequired,
+    }).isRequired,
+  }),
+};
+
+ScrollingGallery.defaultProps = {
+  block: {
+    items: {
+      title: null,
+      link: null,
+    },
+  },
 };
 export default ScrollingGallery;
