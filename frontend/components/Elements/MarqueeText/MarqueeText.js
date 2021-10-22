@@ -8,8 +8,6 @@ import * as S from "./MarqueeText.styles";
 const MarqueeText = ({ markdown, className }) => (
   <S.MarqueeWrap className={className}>
     <ReactMarkdown>{markdown}</ReactMarkdown>
-    <ReactMarkdown>{markdown}</ReactMarkdown>
-    <ReactMarkdown>{markdown}</ReactMarkdown>
   </S.MarqueeWrap>
 );
 
