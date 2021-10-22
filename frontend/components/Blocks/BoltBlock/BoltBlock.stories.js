@@ -4,7 +4,7 @@ import BoltBlock from "./BoltBlock";
 // ---
 
 export default {
-  title: "Blocks/Image Block",
+  title: "Blocks/Bolt Block",
   parameters: {
     layout: "fullscreen",
   },
@@ -12,7 +12,16 @@ export default {
 
 const Template = (args) => <BoltBlock {...args} />;
 
-export const Default = Template.bind({});
-Default.args = {
-  block: {},
+export const Red = Template.bind({});
+Red.args = {
+  block: {
+    background_color: "red",
+  },
+};
+
+export const Black = Template.bind({});
+Black.args = {
+  block: {
+    background_color: "black",
+  },
 };
