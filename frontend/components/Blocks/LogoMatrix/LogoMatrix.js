@@ -7,16 +7,16 @@ import * as S from "./LogoMatrix.styles";
 // ---
 
 const LogoMatrix = ({ block }) => (
-    <S.LogoMatrix>
-      <ul>
-        {block.logos.map(({ image }) => (
-          <li>
-            <Image image={image} />
-          </li>
-        ))}
-      </ul>
-    </S.LogoMatrix>
-  );
+  <S.LogoMatrix>
+    <ul>
+      {block.logos.map(({ image }) => (
+        <li>
+          <Image image={image} layout="fixed" />
+        </li>
+      ))}
+    </ul>
+  </S.LogoMatrix>
+);
 
 LogoMatrix.propTypes = {
   block: PropTypes.shape({
