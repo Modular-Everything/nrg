@@ -11,8 +11,8 @@ const Image = ({ image, layout, ...rest }) => {
     <S.Image
       src={image.url}
       layout={layout ?? "responsive"}
-      width={!layout && image.width}
-      height={!layout && image.height}
+      width={layout !== "fill" && image.width}
+      height={layout !== "fill" && image.height}
       alt={image.alternativeText}
       {...rest}
     />
