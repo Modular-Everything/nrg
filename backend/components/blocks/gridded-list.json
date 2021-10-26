@@ -12,6 +12,18 @@
       "repeatable": true,
       "component": "elements.text",
       "required": true
+    },
+    "layout_type": {
+      "type": "enumeration",
+      "enum": [
+        "dark",
+        "light"
+      ],
+      "default": "dark",
+      "required": true
+    },
+    "title": {
+      "type": "string"
     }
   }
 }
