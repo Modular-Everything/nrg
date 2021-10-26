@@ -44,7 +44,7 @@ const StyledImageBanner = ({ block }) => {
 
       <S.BG>
         {(sits_below_menu || descriptive_copy) && <S.Skrim />}
-        <Image image={background_image} priority layout="fill" />
+        <Image image={background_image} priority layout="fill" quality={100} />
       </S.BG>
     </S.StyledImageBanner>
   );
