@@ -73,7 +73,8 @@
         "blocks.scrolling-gallery",
         "blocks.image-block",
         "blocks.gridded-list",
-        "blocks.body-copy"
+        "blocks.body-copy",
+        "blocks.logo-matrix"
       ]
     },
     "top_block": {
@@ -89,7 +90,8 @@
         "blocks.section-marker",
         "blocks.image-block"
       ],
-      "required": true
+      "required": true,
+      "min": 1
     },
     "bottom_block": {
       "pluginOptions": {

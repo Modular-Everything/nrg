@@ -9,7 +9,8 @@ import SectionMarker from "./SectionMarker";
 import ImageBlock from "./ImageBlock";
 import ScrollingGallery from "./ScrollingGallery";
 import BoltBlock from "./BoltBlock";
-import StyledBanner from "./StyledBanner/StyledBanner";
+import StyledBanner from "./StyledBanner";
+import LogoMatrix from "./LogoMatrix";
 
 // ---
 
@@ -28,6 +29,7 @@ const BlockBuilder = ({ blocks }) => {
     "blocks.image-block": ImageBlock,
     "blocks.scrolling-gallery": ScrollingGallery,
     "blocks.bolt": BoltBlock,
+    "blocks.logo-matrix": LogoMatrix,
   };
 
   return (

@@ -1,0 +1,18 @@
+{
+  "collectionName": "components_blocks_logo_matrices",
+  "info": {
+    "name": "Logo Matrix",
+    "icon": "qrcode",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "logos": {
+      "type": "component",
+      "repeatable": true,
+      "required": true,
+      "component": "elements.image",
+      "min": 1
+    }
+  }
+}
