@@ -4,7 +4,7 @@ import Statement from "./Statement";
 // ---
 
 export default {
-  title: "Blocks/Statement",
+  title: "Elements/Statement",
 };
 
 const Template = (args) => <Statement {...args} />;

@@ -13,6 +13,7 @@ export const Copy = styled.div`
     line-height: 1.1;
     text-align: center;
     text-transform: uppercase;
+    mix-blend-mode: multiply;
   }
 
   strong {
@@ -26,7 +27,7 @@ export const Copy = styled.div`
     box-decoration-break: clone;
     box-shadow: var(--padding) 0 0 var(--black),
       calc(var(--padding) * -1) 0 0 var(--black);
-    color: var(--white);
+    color: #fff;
     font-weight: normal;
   }
 
