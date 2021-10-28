@@ -40,7 +40,7 @@ export const Noise = styled.div`
     }
   }
 
-  position: fixed;
+  position: absolute;
   z-index: 0;
   top: -100px;
   left: -100px;

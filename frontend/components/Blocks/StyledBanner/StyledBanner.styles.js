@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import MarqueeText from "../../Elements/MarqueeText";
+import CustomNoise from "../../Elements/Noise";
 
 // ---
 
@@ -23,4 +24,8 @@ export const StyledText = styled(MarqueeText)`
 
   position: relative;
   z-index: 20;
+`;
+
+export const Noise = styled(CustomNoise)`
+  opacity: 0.5;
 `;

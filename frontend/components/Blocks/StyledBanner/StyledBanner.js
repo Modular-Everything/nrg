@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import * as S from "./StyledBanner.styles";
-import Noise from "../../Elements/Noise";
 
 // ---
 
@@ -16,7 +15,7 @@ const StyledBanner = ({ block }) => {
   return (
     <S.StyledBanner backgroundColor={background_color}>
       <S.StyledText markdown={styled_copy} />
-      <Noise />
+      <S.Noise />
     </S.StyledBanner>
   );
 };
