@@ -74,7 +74,8 @@
         "blocks.image-block",
         "blocks.gridded-list",
         "blocks.body-copy",
-        "blocks.logo-matrix"
+        "blocks.logo-matrix",
+        "blocks.marquee-banner"
       ]
     },
     "top_block": {

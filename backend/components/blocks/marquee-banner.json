@@ -1,0 +1,15 @@
+{
+  "collectionName": "components_blocks_marquee_banners",
+  "info": {
+    "name": "Statement",
+    "icon": "asterisk",
+    "description": ""
+  },
+  "options": {},
+  "attributes": {
+    "text": {
+      "type": "richtext",
+      "required": true
+    }
+  }
+}
