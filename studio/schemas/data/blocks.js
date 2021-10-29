@@ -7,4 +7,5 @@ export default [
   { type: 'scrollingGallery' },
   { type: 'sectionMarker' },
   { type: 'statement' },
+  { type: 'styledImageBanner' },
 ];

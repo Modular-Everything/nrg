@@ -1,18 +1,18 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
+import BlockContent from '@sanity/block-content-to-react';
 import * as S from "./MarqueeText.styles";
 
 // ---
 
-const MarqueeText = ({ markdown, className }) => (
+const MarqueeText = ({ text, className }) => (
   <S.MarqueeWrap className={className}>
-    <ReactMarkdown>{markdown}</ReactMarkdown>
+    <BlockContent blocks={text} />
   </S.MarqueeWrap>
 );
 
 MarqueeText.propTypes = {
-  markdown: PropTypes.string.isRequired,
+  text: PropTypes.string.isRequired,
   className: PropTypes.string,
 };
 

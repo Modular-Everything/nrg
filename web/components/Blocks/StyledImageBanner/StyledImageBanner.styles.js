@@ -27,6 +27,7 @@ export const Inner = styled(Container)`
   display: flex;
   position: relative;
   z-index: 10;
+  height: auto;
   flex-direction: column;
   align-items: center;
   justify-content: center;
