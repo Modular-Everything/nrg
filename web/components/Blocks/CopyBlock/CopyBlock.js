@@ -35,7 +35,6 @@ CopyBlock.propTypes = {
     copy: PropTypes.string.isRequired,
     columns: PropTypes.number,
     image: PropTypes.shape({
-      url: PropTypes.string.isRequired,
       alt: PropTypes.string,
     }),
   }),
