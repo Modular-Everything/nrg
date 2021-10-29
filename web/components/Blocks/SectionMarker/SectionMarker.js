@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-import ReactMarkdown from "react-markdown";
+import BlockContent from '@sanity/block-content-to-react';
 import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
 import * as S from "./SectionMarker.styles";
@@ -13,18 +13,18 @@ import Bolt from "../../../images/icons/Bolt";
 const SectionMarker = ({ block }) => {
   const {
     title,
-    main_copy,
-    main_copy_link,
-    main_copy_link_label,
+    mainCopy,
+    link,
+    linkLabel,
     aside,
-    background_color,
-    text_color,
+    backgroundColor,
+    textColor,
   } = block;
 
   return (
     <S.SectionMarker
-      sectionBgColor={background_color}
-      sectionColor={text_color}
+      sectionBgColor={backgroundColor}
+      sectionColor={textColor}
     >
       <S.SectionMarkerContainer>
         <S.Title>
@@ -33,18 +33,18 @@ const SectionMarker = ({ block }) => {
         </S.Title>
 
         <S.Copy hasTitle={!!title}>
-          <ReactMarkdown>{main_copy}</ReactMarkdown>
-          {main_copy_link && main_copy_link_label && (
-            <Link href={`/${main_copy_link.slug}`}>
+          <BlockContent blocks={mainCopy} />
+          {link && linkLabel && (
+            <Link href={`/${link}`}>
               <a>
-                {main_copy_link_label} <ArrowRight />
+                {linkLabel} <ArrowRight />
               </a>
             </Link>
           )}
         </S.Copy>
 
         <S.Aside hasTitle={!!title}>
-          <ReactMarkdown>{aside}</ReactMarkdown>
+          <BlockContent blocks={aside} />
         </S.Aside>
       </S.SectionMarkerContainer>
     </S.SectionMarker>
@@ -56,17 +56,17 @@ SectionMarker.propTypes = {
     /** A string of copy */
     title: PropTypes.string,
     /** A string of markdown copy */
-    main_copy: PropTypes.string.isRequired,
+    mainCopy: PropTypes.string.isRequired,
     /** Another string of markdown copy used for smaller bits of copy or lists */
     aside: PropTypes.string,
     /** An optional background colour -- accepts a string referring to a CSS variable (black, white) */
-    background_color: PropTypes.string,
+    backgroundColor: PropTypes.string,
     /** An optional text colour -- accepts a string referring to a CSS variable (black, white) */
-    text_color: PropTypes.string,
+    textColor: PropTypes.string,
     /** An optional page link */
-    main_copy_link: PropTypes.object,
+    link: PropTypes.object,
     /** The label for the link */
-    main_copy_link_label: PropTypes.string,
+    linkLabel: PropTypes.string,
   }),
 };
 
@@ -75,10 +75,10 @@ SectionMarker.defaultProps = {
     title: null,
     // link: null,
     aside: null,
-    background_color: "var(--white)",
-    text_color: "var(--black)",
-    main_copy_link: null,
-    main_copy_link_label: null,
+    backgroundColor: "var(--white)",
+    textColor: "var(--black)",
+    link: null,
+    linkLabel: null,
   },
 };
 
