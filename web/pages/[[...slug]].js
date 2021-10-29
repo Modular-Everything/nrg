@@ -32,7 +32,7 @@ const Page = ({ pagedata, preview }) => {
 
 
 
-  const { blocks } = page;
+  const { blocks, topBlocks, bottomBlocks } = page;
 
   return (
     <Layout>
@@ -40,18 +40,18 @@ const Page = ({ pagedata, preview }) => {
 
       <AutoLayout>
         <div className="top">
-          {/* {top_block && <BlockBuilder blocks={top_block} />} */}
+          {topBlocks && <BlockBuilder blocks={topBlocks} />}
         </div>
 
         <div className="blocks">
           <BlockBuilder blocks={blocks} preview={preview} />
         </div>
 
-        {/* {bottom_block && (
-        <div className="bottom">
-          <BlockBuilder blocks={bottom_block} />
-        </div>
-      )} */}
+        {bottomBlocks && (
+          <div className="bottom">
+            <BlockBuilder blocks={bottomBlocks} />
+          </div>
+        )}
       </AutoLayout>
     </Layout>
   );
