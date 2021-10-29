@@ -11,6 +11,7 @@ import ScrollingGallery from "./ScrollingGallery";
 import BoltBlock from "./BoltBlock";
 import StyledBanner from "./StyledBanner";
 import LogoMatrix from "./LogoMatrix";
+import MarqueeBanner from "./MarqueeBanner";
 
 // ---
 
@@ -30,6 +31,7 @@ const BlockBuilder = ({ blocks }) => {
     "scrollingGallery": ScrollingGallery,
     "bolt": BoltBlock,
     "logoMatrix": LogoMatrix,
+    "statement": MarqueeBanner,
   };
 
   return (

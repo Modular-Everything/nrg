@@ -1,6 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
-import ReactMarkdown from "react-markdown";
+import BlockContent from '@sanity/block-content-to-react';
 
 import * as S from "./Statement.styles";
 
@@ -8,7 +8,7 @@ import * as S from "./Statement.styles";
 
 const Statement = ({ copy }) => (
   <S.Copy>
-    <ReactMarkdown>{copy}</ReactMarkdown>
+    <BlockContent blocks={copy} />
   </S.Copy>
 );
 

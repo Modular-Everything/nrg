@@ -6,4 +6,5 @@ export default [
   { type: 'logoMatrix' },
   { type: 'scrollingGallery' },
   { type: 'sectionMarker' },
+  { type: 'statement' },
 ];

@@ -8,12 +8,12 @@ import Container from "../../Core/Container";
 // ---
 
 const MarqueeBanner = ({ block }) => {
-  const { text } = block;
+  const { statement } = block;
 
   return (
     <S.MarqueeBanner>
       <Container>
-        <Statement copy={text} />
+        <Statement copy={statement} />
       </Container>
 
       <S.Noise />
@@ -23,7 +23,8 @@ const MarqueeBanner = ({ block }) => {
 
 MarqueeBanner.propTypes = {
   block: PropTypes.shape({
-    text: PropTypes.string.isRequired,
+    // eslint-disable-next-line react/forbid-prop-types
+    statement: PropTypes.array.isRequired,
   }).isRequired,
 };
 
