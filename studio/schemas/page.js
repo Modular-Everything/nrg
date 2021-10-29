@@ -1,4 +1,6 @@
+import topBlocks from './data/topBlocks';
 import blocks from './data/blocks';
+import bottomBlocks from './data/bottomBlocks';
 
 // ---
 
@@ -21,6 +23,15 @@ export default {
       },
     },
     {
+      name: 'topBlocks',
+      title: 'Top Blocks',
+      type: 'array',
+      of: [...topBlocks],
+      options: {
+        editModal: 'fullscreen'
+      }
+    },
+    {
       name: 'blocks',
       title: 'Blocks',
       type: 'array',
@@ -28,6 +39,15 @@ export default {
       options: {
         editModal: 'fullscreen'
       }
-    }
+    },
+    {
+      name: 'bottomBlocks',
+      title: 'Bottom Blocks',
+      type: 'array',
+      of: [...bottomBlocks],
+      options: {
+        editModal: 'fullscreen'
+      }
+    },
   ],
 };
