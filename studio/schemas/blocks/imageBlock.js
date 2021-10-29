@@ -2,6 +2,9 @@ export default {
   name: 'imageBlock',
   title: 'Image',
   type: 'object',
+  initialValue: () => ({
+    icon: 'hidden',
+  }),
   fields: [
     {
       name: 'title',
@@ -18,7 +21,8 @@ export default {
           title: 'Alt',
           type: 'string',
         }
-      ]
+      ],
+      validation: Rule => Rule.required(),
     },
     {
       name: 'icon',
@@ -27,10 +31,13 @@ export default {
       options: {
         list: [
           { title: 'Large', value: 'large' },
-          { title: 'Small', value: 'small' }
+          { title: 'Small', value: 'small' },
+          { title: 'Hidden', value: 'hidden' },
         ],
-        layout: 'radio'
-      }
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'copy',

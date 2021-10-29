@@ -17,7 +17,8 @@ export default {
           { title: 'Dark', value: 'dark' },
           { title: 'Light', value: 'light' }
         ],
-        layout: 'radio'
+        layout: 'radio',
+        direction: 'horizontal',
       }
     },
     {

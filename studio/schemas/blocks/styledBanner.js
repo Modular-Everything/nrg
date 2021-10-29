@@ -18,7 +18,8 @@ export default {
           { title: 'Red', value: 'red' },
           { title: 'Black', value: 'black' }
         ],
-        layout: 'radio'
+        layout: 'radio',
+        direction: 'horizontal',
       }
     }
   ]

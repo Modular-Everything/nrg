@@ -2,11 +2,16 @@ export default {
   name: 'sectionMarker',
   title: 'Section Marker',
   type: 'object',
+  initialValue: () => ({
+    textColor: 'black',
+    backgroundColor: 'white',
+  }),
   fields: [
     {
       name: 'title',
       title: 'Title',
       type: 'string',
+      validation: Rule => Rule.required(),
     },
     {
       name: 'textColor',
@@ -17,8 +22,10 @@ export default {
           { title: 'White', value: 'white' },
           { title: 'Black', value: 'black' }
         ],
-        layout: 'radio'
-      }
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'backgroundColor',
@@ -29,8 +36,10 @@ export default {
           { title: 'White', value: 'white' },
           { title: 'Black', value: 'black' }
         ],
-        layout: 'radio'
-      }
+        layout: 'radio',
+        direction: 'horizontal',
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'mainCopy',

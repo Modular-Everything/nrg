@@ -12,7 +12,8 @@ export default {
           { title: 'Standard', value: 'standard' },
           { title: 'Tall', value: 'tall' }
         ],
-        layout: 'radio'
+        layout: 'radio',
+        direction: 'horizontal',
       }
     },
     {
@@ -57,7 +58,8 @@ export default {
                   { title: 'Portrait', value: 'portrait' },
                   { title: 'Landscape', value: 'landscape' }
                 ],
-                layout: 'radio'
+                layout: 'radio',
+        direction: 'horizontal',
               }
             }
           ]
