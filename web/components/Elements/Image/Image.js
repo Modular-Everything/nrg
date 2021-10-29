@@ -9,12 +9,16 @@ import * as S from "./Image.styles";
 const Image = ({ image, layout, ...rest }) => {
   if (!image) return null;
 
+  // eslint-disable-next-line no-unused-vars
+  const [assetType, _id, dimensions, filetype] = image.asset._ref.split('-');
+  const [width, height] = dimensions.split('x');
+
   return (
     <S.Image
       src={imageBuilder(image).url()}
       layout={layout ?? "responsive"}
-      width={layout !== "fill" && 1920}
-      height={layout !== "fill" && 1080}
+      width={layout !== "fill" && width}
+      height={layout !== "fill" && height}
       alt={image.alt}
       {...rest}
     />
@@ -23,10 +27,9 @@ const Image = ({ image, layout, ...rest }) => {
 
 Image.propTypes = {
   image: PropTypes.shape({
-    url: PropTypes.string.isRequired,
-    title: PropTypes.string,
-    height: PropTypes.number.isRequired,
-    width: PropTypes.number.isRequired,
+    asset: PropTypes.shape({
+      _ref: PropTypes.string.isRequired,
+    }).isRequired,
     alt: PropTypes.string,
   }),
   layout: PropTypes.string,
@@ -34,7 +37,6 @@ Image.propTypes = {
 
 Image.defaultProps = {
   image: {
-    title: null,
     alt: null,
   },
   layout: null,
