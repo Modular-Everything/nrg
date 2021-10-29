@@ -24,6 +24,7 @@ export const StyledText = styled(MarqueeText)`
 
   position: relative;
   z-index: 20;
+  width: 100%;
 `;
 
 export const Noise = styled(CustomNoise)`

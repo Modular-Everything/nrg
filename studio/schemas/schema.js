@@ -17,6 +17,7 @@ import scrollingGallery from "./blocks/scrollingGallery";
 import sectionMarker from "./blocks/sectionMarker";
 import statement from "./blocks/statement";
 import styledImageBanner from "./blocks/styledImageBanner";
+import styledBanner from "./blocks/styledBanner";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -38,5 +39,6 @@ export default createSchema({
     sectionMarker,
     statement,
     styledImageBanner,
+    styledBanner,
   ]),
 });

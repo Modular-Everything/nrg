@@ -8,4 +8,5 @@ export default [
   { type: 'sectionMarker' },
   { type: 'statement' },
   { type: 'styledImageBanner' },
+  { type: 'styledBanner' },
 ];

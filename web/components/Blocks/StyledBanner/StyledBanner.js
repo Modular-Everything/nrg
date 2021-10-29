@@ -10,11 +10,11 @@ import * as S from "./StyledBanner.styles";
  */
 
 const StyledBanner = ({ block }) => {
-  const { styled_copy, background_color } = block;
+  const { styledCopy, backgroundColor } = block;
 
   return (
-    <S.StyledBanner backgroundColor={background_color}>
-      <S.StyledText markdown={styled_copy} />
+    <S.StyledBanner backgroundColor={backgroundColor}>
+      <S.StyledText text={styledCopy} />
       <S.Noise />
     </S.StyledBanner>
   );
@@ -23,9 +23,9 @@ const StyledBanner = ({ block }) => {
 StyledBanner.propTypes = {
   block: PropTypes.shape({
     /** A string containing a colour variable name (ie. red, black) */
-    background_color: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string.isRequired,
     /** A markdown string of copy, displays as a big block of styled copy */
-    styled_copy: PropTypes.string.isRequired,
+    styledCopy: PropTypes.string.isRequired,
   }).isRequired,
 };
 
