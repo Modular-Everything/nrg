@@ -3,4 +3,5 @@ export default [
   { type: 'bolt' },
   { type: 'griddedList' },
   { type: 'imageBlock' },
+  { type: 'logoMatrix' },
 ];
