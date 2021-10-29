@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import ErrorPage from 'next/error'
 import { useRouter } from "next/router";
 import { groq } from "next-sanity";
 
@@ -12,7 +13,7 @@ import AutoLayout from "../components/Core/AutoLayout";
 // ---
 
 const query = groq`
-*[_type == "page" && slug.current == $slug]
+  *[_type == "page" && slug.current == $slug]
 `;
 
 // ---
@@ -20,12 +21,16 @@ const query = groq`
 const Page = ({ pagedata, preview }) => {
   const router = useRouter();
 
+  if (!router.isFallback && !pagedata) {
+    return <ErrorPage statusCode={404} />
+  }
+
   const { data: page } = usePreviewSubscription(query, {
     initialData: pagedata,
     enabled: preview || router.query.preview !== undefined,
   });
 
-  console.log(page);
+
 
   const { blocks } = page;
 
@@ -54,17 +59,22 @@ const Page = ({ pagedata, preview }) => {
 
 Page.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
-  pagedata: PropTypes.object.isRequired,
+  pagedata: PropTypes.object,
   preview: PropTypes.bool.isRequired,
 };
 
+Page.defaultProps = {
+  pagedata: null,
+}
+
 export async function getStaticProps({ params, preview = false }) {
   const page = await getClient(preview).fetch(query, {
-    slug: params.slug[0],
+    slug: params.slug ? params.slug[0] : null,
   });
+
   return {
     props: {
-      pagedata: page[0],
+      pagedata: page.length > 0 ? page[0] : null,
       preview,
     },
     revalidate: 10,
