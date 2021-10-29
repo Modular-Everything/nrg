@@ -13,6 +13,7 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      validation: Rule => Rule.required(),
     },
     {
       name: "slug",
@@ -21,6 +22,7 @@ export default {
       options: {
         source: "title",
       },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'topBlocks',
@@ -29,7 +31,8 @@ export default {
       of: [...topBlocks],
       options: {
         editModal: 'fullscreen'
-      }
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'blocks',
