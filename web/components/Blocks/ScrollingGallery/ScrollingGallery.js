@@ -11,17 +11,17 @@ import Image from "../../Elements/Image";
 // ---
 
 const GalleryItem = ({ item }) => (
-  <S.GalleryImage>
-    {item.title !== "" && (
-      <div className="caption">
-        <h5>{item.title}</h5>
+    <S.GalleryImage>
+      {item.title !== "" && (
+        <div className="caption">
+          <h5>{item.title}</h5>
+        </div>
+      )}
+      <div className="background">
+        <Image image={item.image} layout="fill" />
       </div>
-    )}
-    <div className="background">
-      <Image image={item.image} layout="fill" />
-    </div>
-  </S.GalleryImage>
-);
+    </S.GalleryImage>
+  );
 
 GalleryItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
@@ -31,16 +31,16 @@ GalleryItem.propTypes = {
 // ---
 
 const ScrollingGallery = ({ block }) => {
-  const { layout_type, items } = block;
+  const { layoutType, items } = block;
 
   return (
     <Container>
-      <S.ScrollingGallery className={layout_type}>
+      <S.ScrollingGallery className={layoutType}>
         <Swiper slidesPerView="auto" spaceBetween={16}>
           {/* eslint-disable-next-line react/prop-types */}
           {items.map((item, index) => (
             <SwiperSlide key={item.id}>
-              <S.Slide className={item.layout_type}>
+              <S.Slide className={item.layoutType}>
                 <p className="index">
                   {index + 1}/{items.length}
                 </p>
@@ -66,7 +66,7 @@ const ScrollingGallery = ({ block }) => {
 
 ScrollingGallery.propTypes = {
   block: PropTypes.shape({
-    layout_type: PropTypes.string.isRequired,
+    layoutType: PropTypes.string.isRequired,
     items: PropTypes.shape({
       title: PropTypes.string,
       link: PropTypes.shape({
@@ -74,7 +74,7 @@ ScrollingGallery.propTypes = {
       }),
       // eslint-disable-next-line react/forbid-prop-types
       image: PropTypes.object.isRequired,
-      layout_type: PropTypes.string.isRequired,
+      layoutType: PropTypes.string.isRequired,
       length: PropTypes.number.isRequired,
     }).isRequired,
   }),

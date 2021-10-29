@@ -13,6 +13,7 @@ import bolt from "./blocks/bolt";
 import griddedList from "./blocks/griddedList";
 import imageBlock from "./blocks/imageBlock";
 import logoMatrix from "./blocks/logoMatrix";
+import scrollingGallery from "./blocks/scrollingGallery";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -30,5 +31,6 @@ export default createSchema({
     griddedList,
     imageBlock,
     logoMatrix,
+    scrollingGallery,
   ]),
 });

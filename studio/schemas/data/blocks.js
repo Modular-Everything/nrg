@@ -4,4 +4,5 @@ export default [
   { type: 'griddedList' },
   { type: 'imageBlock' },
   { type: 'logoMatrix' },
+  { type: 'scrollingGallery' },
 ];
