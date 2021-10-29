@@ -12,7 +12,7 @@ export default {
           { title: 'Red', value: 'red' },
           { title: 'Black', value: 'black' }
         ],
-        layout: 'radio' // <-- defaults to 'dropdown'
+        layout: 'radio'
       }
     }
   ]

@@ -7,10 +7,10 @@ import BoltIcon from "../../../images/icons/Bolt";
 // ---
 
 const BoltBlock = ({ block }) => {
-  const { background_color } = block;
+  const { backgroundColor } = block;
 
   return (
-    <S.BoltBlock backgroundColor={background_color}>
+    <S.BoltBlock backgroundColor={backgroundColor}>
       <S.Icon>
         <BoltIcon />
       </S.Icon>
@@ -22,7 +22,7 @@ const BoltBlock = ({ block }) => {
 
 BoltBlock.propTypes = {
   block: PropTypes.shape({
-    background_color: PropTypes.string.isRequired,
+    backgroundColor: PropTypes.string.isRequired,
   }).isRequired,
 };
 
