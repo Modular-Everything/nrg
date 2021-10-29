@@ -1,3 +1,4 @@
 export default [
-  { type: 'bodyCopy' }
+  { type: 'bodyCopy' },
+  { type: 'bolt' },
 ];
