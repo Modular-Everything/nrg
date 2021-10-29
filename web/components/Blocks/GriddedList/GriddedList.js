@@ -7,11 +7,11 @@ import Title from "../../Elements/Title";
 // ---
 
 const GriddedList = ({ block }) => {
-  const { title, text, layout_type } = block;
+  const { title, text, layoutType } = block;
 
   return (
-    <S.Wrapper className={`wrapper__${layout_type}`}>
-      <S.GridContainer className={`grid__${layout_type}`}>
+    <S.Wrapper className={`wrapper__${layoutType}`}>
+      <S.GridContainer className={`grid__${layoutType}`}>
         {title && (
           <S.Title className="title">
             {title && <Title title={title} />}
@@ -23,13 +23,13 @@ const GriddedList = ({ block }) => {
             {text.map((item, index) => {
               const num = index + 1;
               return (
-                <S.Item key={item.id} className="item">
+                <S.Item key={index} className="item">
                   <S.Number className="number">
                     {num < 10 && 0}
                     {num}
                   </S.Number>
 
-                  <S.Copy className="copy">{item.text}</S.Copy>
+                  <S.Copy className="copy">{item}</S.Copy>
                 </S.Item>
               );
             })}
@@ -49,7 +49,7 @@ GriddedList.propTypes = {
         text: PropTypes.string.isRequired,
       })
     ),
-    layout_type: PropTypes.string.isRequired,
+    layoutType: PropTypes.string.isRequired,
   }),
 };
 

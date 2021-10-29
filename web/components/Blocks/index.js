@@ -22,14 +22,14 @@ const BlockBuilder = ({ blocks }) => {
 
   const COMPONENTS = {
     "bodyCopy": CopyBlock,
-    "blocks.gridded-list": GriddedList,
-    "blocks.styled-image-banner": StyledImageBanner,
-    "blocks.styled-banner": StyledBanner,
-    "blocks.section-marker": SectionMarker,
-    "blocks.image-block": ImageBlock,
-    "blocks.scrolling-gallery": ScrollingGallery,
-    "blocks.bolt": BoltBlock,
-    "blocks.logo-matrix": LogoMatrix,
+    "griddedList": GriddedList,
+    "styledImageBanner": StyledImageBanner,
+    "styledBanner": StyledBanner,
+    "sectionMarker": SectionMarker,
+    "imageBlock": ImageBlock,
+    "scrollingGallery": ScrollingGallery,
+    "bolt": BoltBlock,
+    "logoMatrix": LogoMatrix,
   };
 
   return (
