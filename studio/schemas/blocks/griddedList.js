@@ -2,6 +2,9 @@ export default {
   name: 'griddedList',
   title: 'Gridded List',
   type: 'object',
+  initialValue: () => ({
+    layoutType: 'light',
+  }),
   fields: [
     {
       name: 'title',
@@ -19,7 +22,8 @@ export default {
         ],
         layout: 'radio',
         direction: 'horizontal',
-      }
+      },
+      validation: Rule => Rule.required(),
     },
     {
       name: 'text',
