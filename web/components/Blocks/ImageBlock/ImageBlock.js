@@ -2,7 +2,6 @@ import React from "react";
 import PropTypes from "prop-types";
 
 import * as S from "./ImageBlock.styles";
-import Copy from "../../Elements/Copy";
 import Title from "../../Elements/Title";
 import Image from "../../Elements/Image";
 import BoltIcon from "../../../images/icons/Bolt";
@@ -10,14 +9,14 @@ import BoltIcon from "../../../images/icons/Bolt";
 // ---
 
 const ImageBlock = ({ block }) => {
-  const { background_image, icon, title, copy } = block;
+  const { backgroundImage, icon, title, copy } = block;
 
   return (
     <S.ImageBlock>
       {(title || copy) && (
         <S.Copy>
           {title && <Title as="h3" title={title} />}
-          {copy && <Copy copy={copy} />}
+          {copy && <p>{copy}</p>}
         </S.Copy>
       )}
 
@@ -28,7 +27,7 @@ const ImageBlock = ({ block }) => {
       )}
 
       <S.Background>
-        <Image image={background_image} layout="fill" quality={100} />
+        <Image image={backgroundImage} layout="fill" quality={100} />
       </S.Background>
     </S.ImageBlock>
   );
@@ -37,7 +36,7 @@ const ImageBlock = ({ block }) => {
 ImageBlock.propTypes = {
   block: PropTypes.shape({
     // eslint-disable-next-line react/forbid-prop-types
-    background_image: PropTypes.object.isRequired,
+    backgroundImage: PropTypes.object.isRequired,
     icon: PropTypes.string,
     title: PropTypes.string,
     copy: PropTypes.string,

@@ -11,6 +11,7 @@ import page from "./page";
 import bodyCopy from './blocks/bodyCopy';
 import bolt from "./blocks/bolt";
 import griddedList from "./blocks/griddedList";
+import imageBlock from "./blocks/imageBlock";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -26,5 +27,6 @@ export default createSchema({
     bodyCopy,
     bolt,
     griddedList,
+    imageBlock,
   ]),
 });
