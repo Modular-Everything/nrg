@@ -20,7 +20,7 @@ const ImageBlock = ({ block }) => {
         </S.Copy>
       )}
 
-      {(!title || !copy) && icon && (
+      {(!title || !copy) && icon && icon !== 'hidden' && (
         <S.Icon outline={icon === "large"} size={icon}>
           <BoltIcon />
         </S.Icon>
