@@ -7,6 +7,9 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 // Custom page types
 import page from "./page";
 
+// Custom modules
+import seo from "./seo";
+
 // Custom block types
 import bodyCopy from './blocks/bodyCopy';
 import bolt from "./blocks/bolt";
@@ -28,6 +31,9 @@ export default createSchema({
   types: schemaTypes.concat([
     // Custom page types
     page,
+
+    // Custom modules
+    seo,
 
     // Custom block types
     bodyCopy,

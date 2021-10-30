@@ -1,6 +1,7 @@
 import topBlocks from './data/topBlocks';
 import blocks from './data/blocks';
 import bottomBlocks from './data/bottomBlocks';
+import seo from './seo';
 
 // ---
 
@@ -23,6 +24,11 @@ export default {
         source: "title",
       },
       validation: Rule => Rule.required(),
+    },
+    {
+      name: 'seo',
+      title: 'SEO',
+      type: 'seo',
     },
     {
       name: 'topBlocks',
