@@ -1,0 +1,21 @@
+{
+  // "parser": "babel-eslint",
+  "extends": [
+    "airbnb",
+    "prettier" // Make sure this is the last
+  ],
+  "rules": {
+    "import/prefer-default-export": 0,
+    "react/jsx-filename-extension": 0,
+    "react/jsx-props-no-spreading": 0,
+    "react/no-array-index-key": 0,
+    "no-underscore-dangle": 0,
+    "camelcase": 0
+  },
+  "parserOptions": {
+    "ecmaVersion": 2020
+  },
+  "env": {
+    "browser": true
+  }
+}
