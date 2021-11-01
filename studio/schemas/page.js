@@ -27,7 +27,8 @@ export default {
     },
     {
       name: 'seo',
-      title: 'SEO',
+      title: 'Page SEO',
+      description: 'This will overwrite the default SEO set in Site Settings',
       type: 'seo',
     },
     {

@@ -1,3 +1,4 @@
+/* eslint-disable import/no-unresolved */
 // First, we must import the schema creator
 import createSchema from "part:@sanity/base/schema-creator";
 
@@ -6,6 +7,7 @@ import schemaTypes from "all:part:@sanity/base/schema-type";
 
 // Custom page types
 import page from "./page";
+import siteSettings from "./siteSettings";
 
 // Custom modules
 import seo from "./seo";
@@ -31,6 +33,7 @@ export default createSchema({
   types: schemaTypes.concat([
     // Custom page types
     page,
+    siteSettings,
 
     // Custom modules
     seo,

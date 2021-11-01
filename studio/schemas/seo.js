@@ -58,7 +58,7 @@ export default {
       name: 'jsonSchema',
       title: 'Structured Data',
       type: 'text',
-      description: <>Accepts raw JSON (<a href="https://technicalseo.com/tools/schema-markup-generator/" target="_blank">check out this tool</a>)</>
+      description: <>Accepts raw JSON (<a href="https://technicalseo.com/tools/schema-markup-generator/" target="_blank" rel="noreferrer">check out this tool</a> but omit the script tags)</>
     }
   ]
 }
