@@ -14,7 +14,12 @@ export const AutoLayout = styled.section`
   .blocks {
     display: grid;
     grid-area: blocks;
-    grid-gap: calc(var(--gutter) * 4);
-    margin: calc(var(--gutter) * 4) 0;
+    grid-gap: calc(var(--gutter) * 2);
+    margin: calc(var(--gutter) * 2) 0;
+
+    @media (min-width: 768px) {
+      grid-gap: calc(var(--gutter) * 4);
+      margin: calc(var(--gutter) * 4) 0;
+    }
   }
 `;
