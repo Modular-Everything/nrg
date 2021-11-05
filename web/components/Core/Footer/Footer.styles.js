@@ -34,7 +34,8 @@ export const Footer = styled.footer`
     width: 100%;
 
     @media (min-width: 768px) {
-      display: block;
+      flex-direction: column;
+      align-items: flex-start;
     }
 
     .contact {
