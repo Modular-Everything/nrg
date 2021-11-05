@@ -39,11 +39,25 @@ export const Header = styled.header`
     }
   }
 
-  a {
-    text-decoration: none;
+  a,
+  label {
     color: var(--white);
     font-weight: bold;
     font-size: 2.4rem;
+    cursor: pointer;
+  }
+
+  .menuOpen label span {
+    opacity: 0.5;
+    transition: 250ms ease opacity;
+  }
+
+  input[name="menuItem"] {
+    display: none;
+
+    &:checked + span {
+      opacity: 1;
+    }
   }
 `;
 
