@@ -1,6 +1,15 @@
 import styled from "styled-components";
+import CoreContainer from "../../Core/Container";
 
 // ---
+
+export const Container = styled(CoreContainer)`
+  overflow-x: hidden;
+
+  @media (min-width: 52rem) {
+    overflow-x: visible;
+  }
+`;
 
 export const ScrollingGallery = styled.section`
   cursor: grab;

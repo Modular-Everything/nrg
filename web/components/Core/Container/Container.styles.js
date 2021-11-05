@@ -10,6 +10,7 @@ export const Container = styled.div`
   height: 100%;
   margin: 0 auto;
   padding: 0 var(--gutter);
+  overflow-x: hidden;
 
   ${breakpoints.map(
     (bp) => `@media(min-width: ${bp}px) { max-width: ${bp}px; }`

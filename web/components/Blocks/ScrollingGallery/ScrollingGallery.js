@@ -5,23 +5,22 @@ import "swiper/swiper-bundle.min.css";
 import Link from "next/link";
 
 import * as S from "./ScrollingGallery.styles";
-import Container from "../../Core/Container";
 import Image from "../../Elements/Image";
 
 // ---
 
 const GalleryItem = ({ item }) => (
-    <S.GalleryImage>
-      {item.title !== "" && (
-        <div className="caption">
-          <h5>{item.title}</h5>
-        </div>
-      )}
-      <div className="background">
-        <Image image={item.image} layout="fill" />
+  <S.GalleryImage>
+    {item.title !== "" && (
+      <div className="caption">
+        <h5>{item.title}</h5>
       </div>
-    </S.GalleryImage>
-  );
+    )}
+    <div className="background">
+      <Image image={item.image} layout="fill" />
+    </div>
+  </S.GalleryImage>
+);
 
 GalleryItem.propTypes = {
   // eslint-disable-next-line react/forbid-prop-types
@@ -34,7 +33,7 @@ const ScrollingGallery = ({ block }) => {
   const { layoutType, items } = block;
 
   return (
-    <Container>
+    <S.Container>
       <S.ScrollingGallery className={layoutType}>
         <Swiper slidesPerView="auto" spaceBetween={16}>
           {/* eslint-disable-next-line react/prop-types */}
@@ -60,7 +59,7 @@ const ScrollingGallery = ({ block }) => {
           ))}
         </Swiper>
       </S.ScrollingGallery>
-    </Container>
+    </S.Container>
   );
 };
 

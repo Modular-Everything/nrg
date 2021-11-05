@@ -11,7 +11,7 @@ const GlobalStyles = createGlobalStyle`
     --lt-grey: #F4F4F4;
     --red: #f00;
     --highlight: var(--yellow);
-    
+
     /* Rounded corners etc */
     --rounded: 0.6rem;
     --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
@@ -20,7 +20,7 @@ const GlobalStyles = createGlobalStyle`
     --gutter: 0.8rem;
     --column: calc(var(--gutter) * 1.5);
     --header: 14rem;
-    
+
     @media (min-width: 768px) {
       --gutter: 1.6rem;
       --column: 10%;
@@ -46,7 +46,7 @@ const GlobalStyles = createGlobalStyle`
     transition: 250ms ease text-decoration-color;
     color: inherit;
     text-decoration-color: var(--red);
-    
+
     &:hover {
       text-decoration-color: var(--black);
     }
