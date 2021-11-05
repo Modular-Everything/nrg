@@ -36,7 +36,7 @@ DarkMode.args = {
     },
     aside:
       "1. Community Engagement\n2. Event Production\n3. Mobile Marketing Tours\n4. Brand Installations\n5. Pop-up Stores",
-    background_color: "black",
+    backgroundColor: "black",
     text_color: "white",
   },
 };

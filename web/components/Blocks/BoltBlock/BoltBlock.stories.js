@@ -15,13 +15,13 @@ const Template = (args) => <BoltBlock {...args} />;
 export const Red = Template.bind({});
 Red.args = {
   block: {
-    background_color: "red",
+    backgroundColor: "red",
   },
 };
 
 export const Black = Template.bind({});
 Black.args = {
   block: {
-    background_color: "black",
+    backgroundColor: "black",
   },
 };

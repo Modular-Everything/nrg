@@ -15,7 +15,7 @@ const Template = (args) => <StyledBanner {...args} />;
 export const Default = Template.bind({});
 Default.args = {
   block: {
-    background_color: "black",
+    backgroundColor: "black",
     styled_copy:
       "**We do more** than tell stories\n\nWe do more than tell **stories**.\n\nWe do more **than tell** stories",
   },
