@@ -17,12 +17,12 @@ const GlobalStyles = createGlobalStyle`
     --shadow: 0 4px 10px rgba(0, 0, 0, 0.15);
 
     /* Gutters and spacings */
-    --gutter: 0.8rem;
+    --gutter: 1.6rem;
     --column: calc(var(--gutter) * 1.5);
     --header: 14rem;
 
     @media (min-width: 768px) {
-      --gutter: 1.6rem;
+      /* --gutter: 1.6rem; */
       --column: 10%;
     }
 

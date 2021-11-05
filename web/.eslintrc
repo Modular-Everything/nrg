@@ -10,7 +10,8 @@
     "react/jsx-props-no-spreading": 0,
     "react/no-array-index-key": 0,
     "no-underscore-dangle": 0,
-    "camelcase": 0
+    "camelcase": 0,
+    "jsx-a11y/anchor-is-valid": 0
   },
   "parserOptions": {
     "ecmaVersion": 2020
