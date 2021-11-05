@@ -12,6 +12,9 @@ import Logo from "../../../images/Logo";
 const Header = () => {
   useAppHeight();
 
+  const nav = ["01", "02", "03", "04", "05", "06", "07", "08"];
+  const navAlt = ["01", "02", "03"];
+
   const [activeMenu, setActiveMenu] = useState(null);
   const [overlayOpen, setOverlayOpen] = useState(false);
   const [headerHeight, setHeaderHeight] = useState(0);
@@ -23,11 +26,24 @@ const Header = () => {
   const menuTl = gsap.timeline();
 
   useEffect(() => {
-    setHeaderHeight(useElementHeight(headerRef.current));
-    window.addEventListener("resize", () => setHeaderHeight(headerRef.current));
+    const allNestedMenus = wrapperRef.current.querySelectorAll(".nestedMenu");
+
+    if (headerRef.current) {
+      setHeaderHeight(useElementHeight(headerRef.current));
+
+      window.addEventListener("resize", () =>
+        setHeaderHeight(useElementHeight(headerRef.current))
+      );
+    }
+
+    if (wrapperRef.current) {
+      allNestedMenus.forEach((element) => {
+        gsap.set(element, { opacity: 0 });
+      });
+    }
   }, []);
 
-  function handleMenuFocus(e, menu) {
+  function handleMenuFocus(menu) {
     setActiveMenu(menu);
 
     if (!overlayOpen) {
@@ -78,55 +94,123 @@ const Header = () => {
   }
 
   return (
-    <S.Header ref={headerRef}>
-      <S.HeaderContainer>
-        <Link href="/">
-          <a
-            className="logo"
-            onMouseOver={() => (activeMenu ? handleMenuBlur() : null)}
-            onFocus={() => (activeMenu ? handleMenuBlur() : null)}
+    <>
+      <S.Header
+        ref={headerRef}
+        style={{
+          height: overlayOpen ? "var(--app-height)" : "unset",
+          overflow: overlayOpen ? "auto" : "hidden",
+        }}
+      >
+        <S.HeaderContainer>
+          <div className="menuItems">
+            <Link href="/">
+              <a
+                className="logo"
+                onMouseOver={() => (activeMenu ? handleMenuBlur() : null)}
+                onFocus={() => (activeMenu ? handleMenuBlur() : null)}
+              >
+                <Logo />
+              </a>
+            </Link>
+
+            <nav role="navigation">
+              <ul>
+                <li>
+                  <Link href="/">
+                    <a
+                      onMouseOver={(e) => handleMenuFocus(e, "we-are")}
+                      onFocus={(e) => handleMenuFocus(e, "we-are")}
+                    >
+                      We Are
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/">
+                    <a
+                      onMouseOver={(e) => handleMenuFocus(e, "what")}
+                      onFocus={(e) => handleMenuFocus(e, "what")}
+                    >
+                      What
+                    </a>
+                  </Link>
+                </li>
+                <li>
+                  <Link href="/">
+                    <a
+                      onMouseOver={(e) => handleMenuFocus(e, "we-do")}
+                      onFocus={(e) => handleMenuFocus(e, "we-do")}
+                    >
+                      We Do
+                    </a>
+                  </Link>
+                </li>
+              </ul>
+            </nav>
+          </div>
+        </S.HeaderContainer>
+
+        <S.MenuWrapper ref={wrapperRef}>
+          <S.MenuContent
+            style={{ transform: `translateY(${headerHeight}px)` }}
+            ref={menuRef}
           >
-            <Logo />
-          </a>
-        </Link>
+            <S.MenuContentContainer>
+              <div className="nestedMenu menu--01 menu--we-are">
+                <ol>
+                  {nav.map((index) => (
+                    <li>
+                      <Link href="/">
+                        <a>
+                          <span>{index}</span>
+                          <div className="menu__content--item">
+                            Values &amp; Beliefs
+                          </div>
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </div>
 
-        <nav role="navigation">
-          <ul>
-            <li>
-              <Link href="/">
-                <a
-                  onMouseOver={(e) => handleMenuFocus(e, "We Are")}
-                  onFocus={(e) => handleMenuFocus(e, "We Are")}
-                >
-                  We Are
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a
-                  onMouseOver={(e) => handleMenuFocus(e, "What")}
-                  onFocus={(e) => handleMenuFocus(e, "What")}
-                >
-                  What
-                </a>
-              </Link>
-            </li>
-            <li>
-              <Link href="/">
-                <a
-                  onMouseOver={(e) => handleMenuFocus(e, "We Do")}
-                  onFocus={(e) => handleMenuFocus(e, "We Do")}
-                >
-                  We Do
-                </a>
-              </Link>
-            </li>
-          </ul>
-        </nav>
-      </S.HeaderContainer>
+              <div className="nestedMenu menu--02 menu--what">
+                <ol>
+                  {navAlt.map((index) => (
+                    <li>
+                      <Link href="/">
+                        <a>
+                          <span>{index}</span>
+                          <div className="menu__content--item">
+                            Something Else
+                          </div>
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </div>
 
-      <S.MenuWrapper ref={wrapperRef}>
+              <div className="nestedMenu menu--02 menu--we-do">
+                <ol>
+                  {navAlt.map((index) => (
+                    <li>
+                      <Link href="/">
+                        <a>
+                          <span>{index}</span>
+                          <div className="menu__content--item">
+                            Another Example
+                          </div>
+                        </a>
+                      </Link>
+                    </li>
+                  ))}
+                </ol>
+              </div>
+            </S.MenuContentContainer>
+          </S.MenuContent>
+        </S.MenuWrapper>
+
         <S.Overlay
           className="overlay"
           viewBox="0 0 100 100"
@@ -139,15 +223,8 @@ const Header = () => {
             d="M 0 100 V 100 Q 50 100 100 100 V 100 z"
           />
         </S.Overlay>
-
-        <S.MenuContent
-          style={{ transform: `translateY(${headerHeight}px)` }}
-          ref={menuRef}
-        >
-          <S.MenuContentContainer>Content</S.MenuContentContainer>
-        </S.MenuContent>
-      </S.MenuWrapper>
-    </S.Header>
+      </S.Header>
+    </>
   );
 };
 
