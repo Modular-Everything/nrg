@@ -127,7 +127,10 @@ export const Footer = styled.footer`
       width: 100%;
 
       @media (min-width: 768px) {
-        display: block;
+        display: unset;
+        justify-content: unset;
+        align-items: unset;
+        width: unset;
       }
     }
 
