@@ -4,8 +4,8 @@ import * as S from "./Container.styles";
 
 // ---
 
-const Container = ({ children, className, clamp }) => (
-  <S.Container className={className}>
+const Container = ({ children, className, clamp, ...rest }) => (
+  <S.Container className={className} {...rest}>
     {clamp ? <S.Clamp>{children}</S.Clamp> : <>{children}</>}
   </S.Container>
 );

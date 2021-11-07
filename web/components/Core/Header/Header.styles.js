@@ -29,7 +29,6 @@ export const Header = styled.header`
     display: grid;
     grid-column-gap: calc(var(--gutter));
     grid-row-gap: var(--gutter);
-    position: relative;
     grid-template-columns: 1fr;
     z-index: 700;
 
@@ -82,15 +81,27 @@ export const Overlay = styled.svg`
 `;
 
 export const MenuContent = styled.div`
-  opacity: 0;
   position: absolute;
-  top: 0;
+  top: var(--header);
+  left: 0;
   z-index: 500;
-  width: 100%;
-  margin: calc(var(--gutter) * 3) 0;
+  width: calc(100% - (var(--gutter) * 2));
+  margin: 50% calc(var(--gutter)) calc(var(--gutter) * 3);
+  transition: 500ms ease opacity;
 
   @media (min-width: 768px) {
-    margin: 0;
+    width: 100%;
+    margin: calc(var(--gutter) * 6) 0;
+  }
+
+  &.show {
+    opacity: 1;
+    pointer-events: all;
+  }
+
+  &.hide {
+    opacity: 0;
+    pointer-events: none;
   }
 
   ol {
@@ -116,11 +127,11 @@ export const MenuContent = styled.div`
       padding: calc(var(--gutter) * 2) 0;
       display: flex;
       align-items: flex-start;
+      text-decoration: none;
 
       &:hover {
-        .menu__content--item {
+        div {
           color: var(--white);
-          -webkit-text-stroke: 0;
         }
       }
     }
@@ -132,13 +143,13 @@ export const MenuContent = styled.div`
       margin-top: 1%;
     }
 
-    .menu__content--item {
+    div {
       font-family: var(--avenue);
-      font-size: clamp(3.2rem, 30vw, 5rem);
+      font-size: clamp(3.2rem, 7vw, 5rem);
       text-transform: uppercase;
       margin-left: clamp(calc(var(--gutter) * 2), 15vw, 12rem);
       color: var(--white);
-      transition: 350ms ease color;
+      transition: 500ms ease color;
 
       @supports (-webkit-text-stroke: 1px white) {
         -webkit-text-stroke: 1px var(--white);
@@ -146,20 +157,11 @@ export const MenuContent = styled.div`
       }
     }
   }
-
-  .nestedMenu {
-    position: absolute;
-    top: 0;
-    left: 0;
-    width: 100%;
-  }
-`;
-
-export const MenuContentContainer = styled(Container)`
-  overflow-x: unset;
 `;
 
 export const HeaderContainer = styled(Container)`
+  z-index: 200;
+
   .menuItems {
     min-height: var(--header);
     display: flex;
