@@ -1,23 +1,40 @@
-import S from '@sanity/desk-tool/structure-builder';
-import { FcDocument as PageIcon, FcSettings as SettingsIcon } from 'react-icons/fc';
+import S from "@sanity/desk-tool/structure-builder";
+import {
+  FcDocument as PageIcon,
+  FcAreaChart as SettingsIcon,
+  FcList as MenuIcon,
+} from "react-icons/fc";
 
 // ---
 
 export default () =>
   S.list()
-    .title('Content')
+    .title("Content")
     .items([
       S.listItem()
-        .title('Pages')
+        .title("Pages")
         .icon(PageIcon)
-        .child(S.documentTypeList('page')),
+        .child(S.documentTypeList("page")),
 
       S.divider(),
 
       S.listItem()
-        .title('Site Settings')
+        .title("Menu Settings")
+        .icon(MenuIcon)
+        .child(
+          S.document()
+            .schemaType("menu")
+            .documentId("menuSettings")
+            .title("Menu Settings")
+        ),
+
+      S.listItem()
+        .title("SEO Settings")
         .icon(SettingsIcon)
         .child(
-          S.document().schemaType('siteSettings').documentId('siteSettings').title('Site Settings')
-        )
-    ])
+          S.document()
+            .schemaType("siteSettings")
+            .documentId("siteSettings")
+            .title("SEO Settings")
+        ),
+    ]);

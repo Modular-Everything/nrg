@@ -11,9 +11,11 @@ import siteSettings from "./siteSettings";
 
 // Custom modules
 import seo from "./seo";
+import menu from "./menu";
+import menuItem from "./menuItem";
 
 // Custom block types
-import bodyCopy from './blocks/bodyCopy';
+import bodyCopy from "./blocks/bodyCopy";
 import bolt from "./blocks/bolt";
 import griddedList from "./blocks/griddedList";
 import imageBlock from "./blocks/imageBlock";
@@ -37,6 +39,8 @@ export default createSchema({
 
     // Custom modules
     seo,
+    menu,
+    menuItem,
 
     // Custom block types
     bodyCopy,
