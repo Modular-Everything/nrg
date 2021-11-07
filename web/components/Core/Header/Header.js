@@ -11,25 +11,6 @@ import Logo from "../../../images/Logo";
 
 // ---
 
-const MenuItem = ({ title, link, index }) => (
-  <li>
-    <Link href={link}>
-      <a>
-        <span>0{index + 1}</span>
-        <div>{title}</div>
-      </a>
-    </Link>
-  </li>
-);
-
-MenuItem.propTypes = {
-  title: PropTypes.string.isRequired,
-  link: PropTypes.string.isRequired,
-  index: PropTypes.number.isRequired,
-};
-
-// ---
-
 const Header = ({ menuItems }) => {
   useAppHeight();
 
@@ -122,6 +103,28 @@ const Header = ({ menuItems }) => {
     });
   }, []);
 
+  const MenuItem = ({ title, link, index }) => (
+    <li>
+      <Link href={link === "homepage" ? "/" : link}>
+        <a
+          onClick={() => handleMenuBlur()}
+          onKeyDown={() => handleMenuBlur()}
+          role="link"
+          tabIndex={0}
+        >
+          <span>0{index + 1}</span>
+          <div>{title}</div>
+        </a>
+      </Link>
+    </li>
+  );
+
+  MenuItem.propTypes = {
+    title: PropTypes.string.isRequired,
+    link: PropTypes.string.isRequired,
+    index: PropTypes.number.isRequired,
+  };
+
   return (
     <>
       <Head>
@@ -184,7 +187,7 @@ const Header = ({ menuItems }) => {
                             <MenuItem
                               key={item._key}
                               title={item.title}
-                              link={item.link._ref}
+                              link={item.slug}
                               index={index}
                             />
                           ))}
@@ -209,7 +212,7 @@ const Header = ({ menuItems }) => {
                             <MenuItem
                               key={item._key}
                               title={item.title}
-                              link={item.link._ref}
+                              link={item.slug}
                               index={index}
                             />
                           ))}
@@ -234,7 +237,7 @@ const Header = ({ menuItems }) => {
                             <MenuItem
                               key={item._key}
                               title={item.title}
-                              link={item.link._ref}
+                              link={item.slug}
                               index={index}
                             />
                           ))}

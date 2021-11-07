@@ -14,7 +14,10 @@ import AutoLayout from "../components/Core/AutoLayout";
 // ---
 
 const query = groq`
-  *[_type == "page" && slug.current == $slug]
+  *[_type == "page" && slug.current == $slug] {
+    blocks[] {"slug": link->slug.current, ...},
+    ...
+  }
 `;
 
 // ---
@@ -75,7 +78,11 @@ export async function getStaticProps({ params, preview = false }) {
     props: {
       pagedata: page.length > 0 ? page[0] : null,
       menuItems: await getClient(preview).fetch(
-        groq`*[_type == "menu" && _id == "menuSettings"] { weAre, what, weDo }`
+        groq`*[_type == "menu" && _id == "menuSettings"] {
+          weAre[] {'slug': link->slug.current, ...},
+          what[] {'slug': link->slug.current, ...},
+          weDo[] {'slug': link->slug.current, ...},
+        }`
       ),
       preview,
     },
