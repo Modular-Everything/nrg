@@ -1,7 +1,6 @@
-import topBlocks from './data/topBlocks';
-import blocks from './data/blocks';
-import bottomBlocks from './data/bottomBlocks';
-import seo from './seo';
+import topBlocks from "./data/topBlocks";
+import blocks from "./data/blocks";
+import bottomBlocks from "./data/bottomBlocks";
 
 // ---
 
@@ -14,7 +13,7 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
@@ -23,41 +22,41 @@ export default {
       options: {
         source: "title",
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'seo',
-      title: 'Page SEO',
-      description: 'This will overwrite the default SEO set in Site Settings',
-      type: 'seo',
+      name: "seo",
+      title: "Page SEO",
+      description: "This will overwrite the default SEO set in Site Settings",
+      type: "seo",
     },
     {
-      name: 'topBlocks',
-      title: 'Top Blocks',
-      type: 'array',
+      name: "topBlocks",
+      title: "Top Blocks",
+      type: "array",
       of: [...topBlocks],
       options: {
-        editModal: 'fullscreen'
+        editModal: "fullscreen",
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'blocks',
-      title: 'Blocks',
-      type: 'array',
+      name: "blocks",
+      title: "Blocks",
+      type: "array",
       of: [...blocks],
       options: {
-        editModal: 'fullscreen'
-      }
+        editModal: "fullscreen",
+      },
     },
     {
-      name: 'bottomBlocks',
-      title: 'Bottom Blocks',
-      type: 'array',
+      name: "bottomBlocks",
+      title: "Bottom Blocks",
+      type: "array",
       of: [...bottomBlocks],
       options: {
-        editModal: 'fullscreen'
-      }
+        editModal: "fullscreen",
+      },
     },
   ],
 };
