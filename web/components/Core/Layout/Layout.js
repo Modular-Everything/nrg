@@ -1,3 +1,4 @@
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
 
@@ -9,33 +10,20 @@ import Footer from "../Footer";
 
 //
 
-const Layout = ({ children, global }) => {
-  const { footer } = global;
-
-  return (
+const Layout = ({ children, menuItems }) => (
     <>
       <GlobalStyles />
       <Typography />
 
-      <Header />
+      <Header menuItems={menuItems} />
       <main>{children}</main>
-      <Footer footer={footer} />
+      <Footer />
     </>
   );
-};
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
-  global: PropTypes.shape({
-    // eslint-disable-next-line react/forbid-prop-types
-    footer: PropTypes.object,
-  }),
-};
-
-Layout.defaultProps = {
-  global: {
-    footer: null,
-  },
+  menuItems: PropTypes.object.isRequired,
 };
 
 export default Layout;

@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import PropTypes from "prop-types";
 import Link from "next/link";
 import Head from "next/head";
 import { gsap } from "gsap";
@@ -10,7 +11,26 @@ import Logo from "../../../images/Logo";
 
 // ---
 
-const Header = () => {
+const MenuItem = ({ title, link, index }) => (
+  <li>
+    <Link href={link}>
+      <a>
+        <span>0{index + 1}</span>
+        <div>{title}</div>
+      </a>
+    </Link>
+  </li>
+);
+
+MenuItem.propTypes = {
+  title: PropTypes.string.isRequired,
+  link: PropTypes.string.isRequired,
+  index: PropTypes.number.isRequired,
+};
+
+// ---
+
+const Header = ({ menuItems }) => {
   useAppHeight();
 
   const [activeMenu, setActiveMenu] = useState(null);
@@ -72,7 +92,7 @@ const Header = () => {
   function handleBurgerToggle() {
     if (!overlayOpen) {
       handleMenuFocus("burger");
-      setActiveMenu("we-are");
+      setActiveMenu("weAre");
       headerRef.current.querySelector('input[name="menuItem"]').checked = true;
     } else {
       handleMenuBlur();
@@ -138,10 +158,7 @@ const Header = () => {
                 </a>
               </Link>
 
-              <Hamburger
-                id="we-are"
-                onToggle={() => handleBurgerToggle()}
-              />
+              <Hamburger id="weAre" onToggle={() => handleBurgerToggle()} />
             </div>
 
             <nav
@@ -151,42 +168,26 @@ const Header = () => {
               <form>
                 <ul>
                   <li>
-                    <label htmlFor="we-are">
+                    <label htmlFor="weAre">
                       <input
                         type="radio"
-                        id="we-are"
+                        id="weAre"
                         name="menuItem"
                         onClick={(e) => handleMenuFocus(e)}
                       />
-                      <span>We Are</span>
+                      <div className="menuItem">We Are</div>
                       <S.MenuContent
-                        className={activeMenu === "we-are" ? "show" : "hide"}
+                        className={activeMenu === "weAre" ? "show" : "hide"}
                       >
                         <ol>
-                          <li>
-                            <Link href="/">
-                              <a>
-                                <span>01</span>
-                                <div>Values &amp; Beliefs</div>
-                              </a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/">
-                              <a>
-                                <span>01</span>
-                                <div>Values &amp; Beliefs</div>
-                              </a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/">
-                              <a>
-                                <span>01</span>
-                                <div>Values &amp; Beliefs</div>
-                              </a>
-                            </Link>
-                          </li>
+                          {menuItems.weAre.map((item, index) => (
+                            <MenuItem
+                              key={item._key}
+                              title={item.title}
+                              link={item.link._ref}
+                              index={index}
+                            />
+                          ))}
                         </ol>
                       </S.MenuContent>
                     </label>
@@ -199,48 +200,46 @@ const Header = () => {
                         name="menuItem"
                         onClick={(e) => handleMenuFocus(e)}
                       />
-                      <span>What</span>
+                      <div className="menuItem">What</div>
                       <S.MenuContent
                         className={activeMenu === "what" ? "show" : "hide"}
                       >
                         <ol>
-                          <li>
-                            <Link href="/">
-                              <a>
-                                <span>01</span>
-                                <div>Testing &amp; Beliefs</div>
-                              </a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/">
-                              <a>
-                                <span>01</span>
-                                <div>Testing &amp; Beliefs</div>
-                              </a>
-                            </Link>
-                          </li>
-                          <li>
-                            <Link href="/">
-                              <a>
-                                <span>01</span>
-                                <div>Testing &amp; Beliefs</div>
-                              </a>
-                            </Link>
-                          </li>
+                          {menuItems.what.map((item, index) => (
+                            <MenuItem
+                              key={item._key}
+                              title={item.title}
+                              link={item.link._ref}
+                              index={index}
+                            />
+                          ))}
                         </ol>
                       </S.MenuContent>
                     </label>
                   </li>
                   <li>
-                    <label htmlFor="we-do">
+                    <label htmlFor="weDo">
                       <input
                         type="radio"
-                        id="we-do"
+                        id="weDo"
                         name="menuItem"
                         onClick={(e) => handleMenuFocus(e)}
                       />
-                      <span>We Do</span>
+                      <div className="menuItem">We Do</div>
+                      <S.MenuContent
+                        className={activeMenu === "weDo" ? "show" : "hide"}
+                      >
+                        <ol>
+                          {menuItems.weDo.map((item, index) => (
+                            <MenuItem
+                              key={item._key}
+                              title={item.title}
+                              link={item.link._ref}
+                              index={index}
+                            />
+                          ))}
+                        </ol>
+                      </S.MenuContent>
                     </label>
                   </li>
                 </ul>
@@ -264,6 +263,11 @@ const Header = () => {
       </S.Header>
     </>
   );
+};
+
+Header.propTypes = {
+  // eslint-disable-next-line react/forbid-prop-types
+  menuItems: PropTypes.object.isRequired,
 };
 
 export default Header;

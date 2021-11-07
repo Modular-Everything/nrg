@@ -72,7 +72,7 @@ export const Header = styled.header`
     cursor: pointer;
   }
 
-  .menuOpen label span {
+  .menuOpen label .menuItem {
     opacity: 0.5;
     transition: 250ms ease opacity;
   }
@@ -80,7 +80,7 @@ export const Header = styled.header`
   input[name="menuItem"] {
     display: none;
 
-    &:checked + span {
+    &:checked + .menuItem {
       opacity: 1;
     }
   }

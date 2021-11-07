@@ -1,6 +1,7 @@
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
-import ErrorPage from 'next/error'
+import ErrorPage from "next/error";
 import { useRouter } from "next/router";
 import { groq } from "next-sanity";
 
@@ -18,11 +19,11 @@ const query = groq`
 
 // ---
 
-const Page = ({ pagedata, preview }) => {
+const Page = ({ pagedata, menuItems, preview }) => {
   const router = useRouter();
 
   if (!router.isFallback && !pagedata) {
-    return <ErrorPage statusCode={404} />
+    return <ErrorPage statusCode={404} />;
   }
 
   const { data: page } = usePreviewSubscription(query, {
@@ -30,12 +31,10 @@ const Page = ({ pagedata, preview }) => {
     enabled: preview || router.query.preview !== undefined,
   });
 
-
-
   const { blocks, topBlocks, bottomBlocks } = page;
 
   return (
-    <Layout>
+    <Layout menuItems={menuItems[0]}>
       {/* <SEO metadata={metadata} /> */}
 
       <AutoLayout>
@@ -58,14 +57,14 @@ const Page = ({ pagedata, preview }) => {
 };
 
 Page.propTypes = {
-  // eslint-disable-next-line react/forbid-prop-types
   pagedata: PropTypes.object,
+  menuItems: PropTypes.array.isRequired,
   preview: PropTypes.bool.isRequired,
 };
 
 Page.defaultProps = {
   pagedata: null,
-}
+};
 
 export async function getStaticProps({ params, preview = false }) {
   const page = await getClient(preview).fetch(query, {
@@ -75,6 +74,9 @@ export async function getStaticProps({ params, preview = false }) {
   return {
     props: {
       pagedata: page.length > 0 ? page[0] : null,
+      menuItems: await getClient(preview).fetch(
+        groq`*[_type == "menu" && _id == "menuSettings"] { weAre, what, weDo }`
+      ),
       preview,
     },
     revalidate: 10,
