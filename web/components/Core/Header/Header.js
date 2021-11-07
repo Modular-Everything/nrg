@@ -2,6 +2,7 @@ import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
 import Head from "next/head";
 import { gsap } from "gsap";
+import { Squeeze as Hamburger } from "hamburger-react";
 
 import * as S from "./Header.styles";
 import useAppHeight from "../../../hooks/useAppHeight";
@@ -44,7 +45,7 @@ const Header = () => {
   }
 
   function handleMenuFocus(e) {
-    if (e.target.checked) {
+    if (e?.target?.checked || e === "burger") {
       if (overlayOpen) return;
 
       menuTl
@@ -63,6 +64,16 @@ const Header = () => {
           ease: "power2",
           attr: { d: "M 0 100 V 0 Q 50 0 100 0 V 100 z" },
         });
+    } else {
+      handleMenuBlur();
+    }
+  }
+
+  function handleBurgerToggle() {
+    if (!overlayOpen) {
+      handleMenuFocus("burger");
+      setActiveMenu("we-are");
+      headerRef.current.querySelector('input[name="menuItem"]').checked = true;
     } else {
       handleMenuBlur();
     }
@@ -114,11 +125,24 @@ const Header = () => {
           style={{ overflow: overlayOpen ? "auto" : "hidden" }}
         >
           <div className="menuItems">
-            <Link href="/">
-              <a className="logo">
-                <Logo />
-              </a>
-            </Link>
+            <div className="logo-and-burger">
+              <Link href="/">
+                <a
+                  className="logo"
+                  onClick={() => handleMenuBlur()}
+                  onKeyDown={() => handleMenuBlur()}
+                  role="link"
+                  tabIndex={0}
+                >
+                  <Logo />
+                </a>
+              </Link>
+              <Hamburger
+                className="burger"
+                id="we-are"
+                onToggle={() => handleBurgerToggle()}
+              />
+            </div>
 
             <nav
               role="navigation"
