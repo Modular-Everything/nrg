@@ -2,7 +2,7 @@
 import React from "react";
 import PropTypes from "prop-types";
 import Link from "next/link";
-import BlockContent from '@sanity/block-content-to-react';
+import BlockContent from "@sanity/block-content-to-react";
 import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
 import * as S from "./SectionMarker.styles";
@@ -21,11 +21,10 @@ const SectionMarker = ({ block }) => {
     textColor,
   } = block;
 
+  console.log(block);
+
   return (
-    <S.SectionMarker
-      sectionBgColor={backgroundColor}
-      sectionColor={textColor}
-    >
+    <S.SectionMarker sectionBgColor={backgroundColor} sectionColor={textColor}>
       <S.SectionMarkerContainer>
         <S.Title>
           <Bolt className="bolt" />
