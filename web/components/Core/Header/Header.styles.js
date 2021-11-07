@@ -113,12 +113,11 @@ export const MenuContent = styled.div`
       border-top: 1px solid var(--white);
 
       &:last-of-type {
-        border-bottom: 1px solid var(--white);
-      }
+        margin-bottom: calc(var(--gutter) * 0.5);
 
-      @media (min-width: 768px) {
-        &:last-of-type {
-          border-bottom: 0;
+        @media (min-width: 768px) {
+          margin-bottom: 0;
+          border-bottom: 1px solid var(--white);
         }
       }
     }

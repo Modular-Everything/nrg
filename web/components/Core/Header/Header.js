@@ -1,5 +1,6 @@
 import React, { useState, useEffect, useRef } from "react";
 import Link from "next/link";
+import Head from "next/head";
 import { gsap } from "gsap";
 
 import * as S from "./Header.styles";
@@ -92,6 +93,16 @@ const Header = () => {
 
   return (
     <>
+      <Head>
+        <style>
+          {`
+          body {
+            overflow: ${overlayOpen ? "hidden" : "auto"};
+          }
+        `}
+        </style>
+      </Head>
+
       <S.Header
         ref={headerRef}
         style={{
