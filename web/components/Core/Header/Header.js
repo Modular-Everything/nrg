@@ -137,8 +137,8 @@ const Header = () => {
                   <Logo />
                 </a>
               </Link>
+
               <Hamburger
-                className="burger"
                 id="we-are"
                 onToggle={() => handleBurgerToggle()}
               />

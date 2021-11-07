@@ -16,6 +16,12 @@ export const Header = styled.header`
     justify-content: space-between;
     align-items: flex-start;
 
+    .hamburger-react {
+      @media (min-width: 768px) {
+        display: none;
+      }
+    }
+
     .logo {
       display: flex;
       z-index: 700;
