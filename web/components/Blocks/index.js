@@ -19,19 +19,19 @@ const BlockBuilder = ({ blocks }) => {
   if (!blocks) return null;
 
   // eslint-disable-next-line no-console
-  console.log("BLOCKS:\n", blocks);
+  // console.log("BLOCKS:\n", blocks);
 
   const COMPONENTS = {
-    "bodyCopy": CopyBlock,
-    "griddedList": GriddedList,
-    "styledImageBanner": StyledImageBanner,
-    "styledBanner": StyledBanner,
-    "sectionMarker": SectionMarker,
-    "imageBlock": ImageBlock,
-    "scrollingGallery": ScrollingGallery,
-    "bolt": BoltBlock,
-    "logoMatrix": LogoMatrix,
-    "statement": MarqueeBanner,
+    bodyCopy: CopyBlock,
+    griddedList: GriddedList,
+    styledImageBanner: StyledImageBanner,
+    styledBanner: StyledBanner,
+    sectionMarker: SectionMarker,
+    imageBlock: ImageBlock,
+    scrollingGallery: ScrollingGallery,
+    bolt: BoltBlock,
+    logoMatrix: LogoMatrix,
+    statement: MarqueeBanner,
   };
 
   return (
@@ -40,7 +40,7 @@ const BlockBuilder = ({ blocks }) => {
         if (typeof COMPONENTS[block._type] !== "undefined") {
           return React.createElement(COMPONENTS[block._type], {
             key: `${block._type}-${block._key}`,
-            block
+            block,
           });
         }
 

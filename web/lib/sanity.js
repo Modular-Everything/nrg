@@ -1,6 +1,6 @@
 import {
   createClient,
-  // createPortableTextComponent,
+  createPortableTextComponent,
   createImageUrlBuilder,
   createPreviewSubscriptionHook,
 } from "next-sanity";
@@ -18,21 +18,11 @@ export const imageBuilder = (source) =>
 
 export const usePreviewSubscription = createPreviewSubscriptionHook(config);
 
-// // Set up Portable Text serialization
-// export const PortableText = createPortableTextComponent({
-//   ...config,
-//   // Serializers passed to @sanity/block-content-to-react
-//   // (https://github.com/sanity-io/block-content-to-react)
-//   serializers: {
-//     types: {
-//       code: (props) => (
-//         <pre data-language={props.node.language}>
-//           <code>{props.node.code}</code>
-//         </pre>
-//       )
-//     }
-//   }
-// });
+// Set up Portable Text serialization
+export const PortableText = createPortableTextComponent({
+  ...config,
+  serializers: {},
+});
 
 export const client = createClient(config);
 

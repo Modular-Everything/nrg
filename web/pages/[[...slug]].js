@@ -1,44 +1,55 @@
 /* eslint-disable react/forbid-prop-types */
 import React from "react";
 import PropTypes from "prop-types";
-import ErrorPage from "next/error";
-import { useRouter } from "next/router";
 import { groq } from "next-sanity";
+import ErrorPage from "next/error";
 
-import { getClient, usePreviewSubscription } from "../lib/sanity";
+import { usePreviewSubscription } from "../lib/sanity";
+import { getClient } from "../lib/sanity.server";
 // import SEO from "../components/Core/SEO";
 import Layout from "../components/Core/Layout";
 import BlockBuilder from "../components/Blocks";
 import AutoLayout from "../components/Core/AutoLayout";
+import PreviewBanner from "../components/Core/PreviewBanner";
 
 // ---
 
-const query = groq`
-  *[_type == "page" && slug.current == $slug] {
-    blocks[] {"slug": link->slug.current, ...},
-    ...
+function filterDataToSingleItem(data, preview) {
+  if (!Array.isArray(data)) {
+    return data;
   }
-`;
+
+  if (data.length === 1) {
+    return data[0];
+  }
+
+  if (preview) {
+    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
+  }
+
+  return data[0];
+}
 
 // ---
 
-const Page = ({ pagedata, menuItems, preview }) => {
-  const router = useRouter();
-
-  if (!router.isFallback && !pagedata) {
-    return <ErrorPage statusCode={404} />;
-  }
-
-  const { data: page } = usePreviewSubscription(query, {
-    initialData: pagedata,
-    enabled: preview || router.query.preview !== undefined,
+const Page = ({ data, menuItems, preview }) => {
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    initialData: data?.page,
+    enabled: preview,
   });
+
+  if (!preview && !data) return <ErrorPage />;
+
+  const page = filterDataToSingleItem(previewData, preview);
 
   const { blocks, topBlocks, bottomBlocks } = page;
 
   return (
     <Layout menuItems={menuItems[0]}>
       {/* <SEO metadata={metadata} /> */}
+
+      {preview && <PreviewBanner slug={page?.slug?.current} />}
 
       <AutoLayout>
         <div className="top">
@@ -60,23 +71,42 @@ const Page = ({ pagedata, menuItems, preview }) => {
 };
 
 Page.propTypes = {
-  pagedata: PropTypes.object,
+  data: PropTypes.object,
   menuItems: PropTypes.array.isRequired,
   preview: PropTypes.bool.isRequired,
 };
 
 Page.defaultProps = {
-  pagedata: null,
+  data: null,
 };
 
+// ---
+
+export async function getStaticPaths() {
+  const allSlugsQuery = groq`*[defined(slug.current)][].slug.current`;
+  const pages = await getClient().fetch(allSlugsQuery);
+
+  return {
+    paths: pages.map((slug) => `/${slug}`),
+    fallback: true,
+  };
+}
+
 export async function getStaticProps({ params, preview = false }) {
-  const page = await getClient(preview).fetch(query, {
-    slug: params.slug ? params.slug[0] : null,
-  });
+  const query = `*[_type == 'page' && slug.current == $slug]`;
+  const queryParams = { slug: params.slug[0] };
+  const data = await getClient(preview).fetch(query, queryParams);
+
+  if (data.length === 0) return { notFound: true };
+
+  const page = filterDataToSingleItem(data, preview);
+
+  console.log(page);
 
   return {
     props: {
-      pagedata: page.length > 0 ? page[0] : null,
+      preview,
+      data: { page, query, queryParams },
       menuItems: await getClient(preview).fetch(
         groq`*[_type == "menu" && _id == "menuSettings"] {
           weAre[] {'slug': link->slug.current, ...},
@@ -84,24 +114,7 @@ export async function getStaticProps({ params, preview = false }) {
           weDo[] {'slug': link->slug.current, ...},
         }`
       ),
-      preview,
     },
-    revalidate: 10,
-  };
-}
-
-export async function getStaticPaths() {
-  const paths = await getClient().fetch(groq`
-    *[_type == "page"]
-  `);
-  return {
-    paths:
-      paths.map((path) => ({
-        params: {
-          slug: path.slug.current.split("/"),
-        },
-      })) || [],
-    fallback: true,
   };
 }
 
