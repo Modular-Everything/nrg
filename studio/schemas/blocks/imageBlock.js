@@ -1,48 +1,64 @@
+import React from "react";
+import { FcImageFile as Icon } from "react-icons/fc";
+
+// ---
+
 export default {
-  name: 'imageBlock',
-  title: 'Image',
-  type: 'object',
+  name: "imageBlock",
+  title: "Image",
+  type: "object",
   initialValue: () => ({
-    icon: 'hidden',
+    icon: "hidden",
   }),
   fields: [
     {
-      name: 'title',
-      title: 'Title',
-      type: 'string',
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
-      name: 'backgroundImage',
-      title: 'Background Image',
-      type: 'image',
+      name: "backgroundImage",
+      title: "Background Image",
+      type: "image",
       fields: [
         {
-          name: 'alt',
-          title: 'Alt',
-          type: 'string',
-        }
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
       ],
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'icon',
-      title: 'Icon',
-      type: 'string',
+      name: "icon",
+      title: "Icon",
+      type: "string",
       options: {
         list: [
-          { title: 'Large', value: 'large' },
-          { title: 'Small', value: 'small' },
-          { title: 'Hidden', value: 'hidden' },
+          { title: "Large", value: "large" },
+          { title: "Small", value: "small" },
+          { title: "Hidden", value: "hidden" },
         ],
-        layout: 'radio',
-        direction: 'horizontal',
+        layout: "radio",
+        direction: "horizontal",
       },
-      validation: Rule => Rule.required(),
+      validation: (Rule) => Rule.required(),
     },
     {
-      name: 'copy',
-      title: 'Copy',
-      type: 'string',
-    }
-  ]
-}
+      name: "copy",
+      title: "Copy",
+      type: "string",
+    },
+  ],
+  preview: {
+    select: {
+      title: "title",
+      media: "backgroundImage",
+    },
+    prepare: ({ title, media }) => ({
+      title,
+      media: media || <Icon />,
+      subtitle: "Image Block",
+    }),
+  },
+};
