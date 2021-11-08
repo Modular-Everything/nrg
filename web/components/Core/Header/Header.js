@@ -133,11 +133,10 @@ const Header = ({ menuItems }) => {
 
   useEffect(() => {
     setActiveMenu(null);
-    setOverlayOpen(false);
     setHoverImage(null);
+    setOverlayOpen(false);
 
     const target = headerRef.current.querySelector(".hoverImage");
-
     target.style.opacity = 0;
   }, [router.asPath]);
 
