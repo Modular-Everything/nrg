@@ -138,7 +138,9 @@ const Header = ({ menuItems }) => {
 
     const target = headerRef.current.querySelector(".hoverImage");
     target.style.opacity = 0;
-  }, [router.asPath]);
+
+    console.log(router.query.slug);
+  }, [router.query.slug]);
 
   //
 
@@ -234,7 +236,11 @@ const Header = ({ menuItems }) => {
                 </a>
               </Link>
 
-              <Hamburger id="weAre" onToggle={() => handleBurgerToggle()} />
+              <Hamburger
+                id="weAre"
+                onToggle={() => handleBurgerToggle()}
+                toggled={overlayOpen}
+              />
             </div>
 
             <nav
