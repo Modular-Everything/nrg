@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import Container from "../Container";
+import CustomNoise from "../../Elements/Noise";
 
 // ---
 
@@ -96,7 +97,7 @@ export const MenuWrapper = styled.div`
   transform: translate(0, -101%);
 `;
 
-export const Overlay = styled.svg`
+export const Overlay = styled.div`
   position: fixed;
   top: 0;
   z-index: 100;
@@ -200,4 +201,8 @@ export const HeaderContainer = styled(Container)`
       justify-content: space-between;
     }
   }
+`;
+
+export const Noise = styled(CustomNoise)`
+  opacity: 0;
 `;

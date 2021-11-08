@@ -17,6 +17,7 @@ const Header = ({ menuItems }) => {
   const [activeMenu, setActiveMenu] = useState(null);
   const [overlayOpen, setOverlayOpen] = useState(false);
 
+  const overlayWrapperRef = useRef(null);
   const overlayPath = useRef(null);
   const wrapperRef = useRef(null);
   const headerRef = useRef(null);
@@ -26,6 +27,9 @@ const Header = ({ menuItems }) => {
     setActiveMenu(null);
 
     menuTl
+      .to(overlayWrapperRef.current.children[0], {
+        opacity: 0,
+      })
       .set(overlayPath.current, {
         attr: { d: "M 0 0 V 100 Q 50 100 100 100 V 0 z" },
       })
@@ -64,6 +68,9 @@ const Header = ({ menuItems }) => {
           duration: 0.3,
           ease: "power2",
           attr: { d: "M 0 100 V 0 Q 50 0 100 0 V 100 z" },
+        })
+        .to(overlayWrapperRef.current.children[0], {
+          opacity: 0.5,
         });
     } else {
       handleMenuBlur();
@@ -251,17 +258,20 @@ const Header = ({ menuItems }) => {
           </div>
         </S.HeaderContainer>
 
-        <S.Overlay
-          className="overlay"
-          viewBox="0 0 100 100"
-          preserveAspectRatio="none"
-        >
-          <path
-            ref={overlayPath}
-            className="overlay__path"
-            vectorEffect="non-scaling-stroke"
-            d="M 0 100 V 100 Q 50 100 100 100 V 100 z"
-          />
+        <S.Overlay ref={overlayWrapperRef}>
+          <S.Noise />
+          <svg
+            className="overlay"
+            viewBox="0 0 100 100"
+            preserveAspectRatio="none"
+          >
+            <path
+              ref={overlayPath}
+              className="overlay__path"
+              vectorEffect="non-scaling-stroke"
+              d="M 0 100 V 100 Q 50 100 100 100 V 100 z"
+            />
+          </svg>
         </S.Overlay>
       </S.Header>
     </>
