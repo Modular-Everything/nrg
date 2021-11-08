@@ -19,7 +19,6 @@ const Header = ({ menuItems }) => {
   //
 
   const router = useRouter();
-  const [activePage] = useState(router.asPath);
 
   //
 
