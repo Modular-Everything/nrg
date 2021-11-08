@@ -16,5 +16,12 @@ export default {
       to: [{ type: "page" }],
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "hoverImage",
+      title: "Image",
+      type: "image",
+      description:
+        "The image that appears when you hover the mouse over an item",
+    },
   ],
 };

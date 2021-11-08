@@ -4,6 +4,7 @@ import Link from "next/link";
 import Head from "next/head";
 import { gsap } from "gsap";
 import { Squeeze as Hamburger } from "hamburger-react";
+import Image from "../../Elements/Image";
 
 import * as S from "./Header.styles";
 import useAppHeight from "../../../hooks/useAppHeight";
@@ -14,14 +15,21 @@ import Logo from "../../../images/Logo";
 const Header = ({ menuItems }) => {
   useAppHeight();
 
+  //
+
   const [activeMenu, setActiveMenu] = useState(null);
   const [overlayOpen, setOverlayOpen] = useState(false);
+  const [hoverImage, setHoverImage] = useState(null);
+
+  //
 
   const overlayWrapperRef = useRef(null);
   const overlayPath = useRef(null);
   const wrapperRef = useRef(null);
   const headerRef = useRef(null);
   const menuTl = gsap.timeline();
+
+  //
 
   function handleMenuBlur() {
     setActiveMenu(null);
@@ -48,6 +56,8 @@ const Header = ({ menuItems }) => {
         onComplete: () => setOverlayOpen(false),
       });
   }
+
+  //
 
   function handleMenuFocus(e) {
     if (e?.target?.checked || e === "burger") {
@@ -77,6 +87,8 @@ const Header = ({ menuItems }) => {
     }
   }
 
+  //
+
   function handleBurgerToggle() {
     if (!overlayOpen) {
       handleMenuFocus("burger");
@@ -86,6 +98,8 @@ const Header = ({ menuItems }) => {
       handleMenuBlur();
     }
   }
+
+  //
 
   useEffect(() => {
     const allMenuItems = headerRef.current.querySelectorAll(
@@ -110,27 +124,56 @@ const Header = ({ menuItems }) => {
     });
   }, []);
 
-  const MenuItem = ({ title, link, index }) => (
-    <li>
-      <Link href={link === "homepage" ? "/" : link}>
-        <a
-          onClick={() => handleMenuBlur()}
-          onKeyPress={() => handleMenuBlur()}
-          role="link"
-          tabIndex={index + 1}
-        >
-          <span>0{index + 1}</span>
-          <div>{title}</div>
-        </a>
-      </Link>
-    </li>
-  );
+  //
+
+  const MenuItem = ({ title, link, image, index }) => {
+    function handleImageMove(e) {
+      const target = headerRef.current.querySelector(".hoverImage");
+      target.style.opacity = 1;
+      target.style.transform = `translate(${e.clientX}px, ${e.clientY}px)`;
+    }
+
+    function handleImageOut() {
+      const target = headerRef.current.querySelector(".hoverImage");
+      target.style.opacity = 0;
+    }
+
+    return (
+      <li>
+        <Link href={link === "homepage" ? "/" : link}>
+          <a
+            onMouseMove={(e) => handleImageMove(e)}
+            onFocus={(e) => handleImageMove(e)}
+            onMouseOver={() => setHoverImage(image)}
+            onMouseOut={() => handleImageOut()}
+            onBlur={() => handleImageOut()}
+            onClick={() => handleMenuBlur()}
+            onKeyPress={() => handleMenuBlur()}
+            role="link"
+            tabIndex={index + 1}
+          >
+            <span>0{index + 1}</span>
+            <div>{title}</div>
+          </a>
+        </Link>
+      </li>
+    );
+  };
 
   MenuItem.propTypes = {
     title: PropTypes.string.isRequired,
     link: PropTypes.string.isRequired,
     index: PropTypes.number.isRequired,
+    image: PropTypes.shape({
+      _ref: PropTypes.string,
+    }),
   };
+
+  MenuItem.defaultProps = {
+    image: null,
+  };
+
+  //
 
   return (
     <>
@@ -151,6 +194,10 @@ const Header = ({ menuItems }) => {
           overflow: overlayOpen ? "auto" : "hidden",
         }}
       >
+        <S.HoverImage className="hoverImage">
+          {hoverImage && <Image image={hoverImage} />}
+        </S.HoverImage>
+
         <S.HeaderContainer
           style={{ overflow: overlayOpen ? "auto" : "hidden" }}
         >
@@ -195,6 +242,7 @@ const Header = ({ menuItems }) => {
                               key={item._key}
                               title={item.title}
                               link={item.slug}
+                              image={item.hoverImage}
                               index={index}
                             />
                           ))}
@@ -220,6 +268,7 @@ const Header = ({ menuItems }) => {
                               key={item._key}
                               title={item.title}
                               link={item.slug}
+                              image={item.hoverImage}
                               index={index}
                             />
                           ))}
@@ -245,6 +294,7 @@ const Header = ({ menuItems }) => {
                               key={item._key}
                               title={item.title}
                               link={item.slug}
+                              image={item.hoverImage}
                               index={index}
                             />
                           ))}

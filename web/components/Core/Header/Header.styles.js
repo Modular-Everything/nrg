@@ -102,9 +102,14 @@ export const Overlay = styled.div`
   top: 0;
   z-index: 100;
   pointer-events: none;
-  fill: var(--black);
   width: 100%;
   height: 100%;
+
+  svg {
+    fill: var(--black);
+    width: 100%;
+    height: 100%;
+  }
 `;
 
 export const MenuContent = styled.div`
@@ -205,4 +210,16 @@ export const HeaderContainer = styled(Container)`
 
 export const Noise = styled(CustomNoise)`
   opacity: 0;
+`;
+
+export const HoverImage = styled.div`
+  aspect-ratio: 16/9;
+  width: 30vw;
+  max-width: 50rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  pointer-events: none;
+  z-index: 500;
+  transition: 250ms ease opacity;
 `;
