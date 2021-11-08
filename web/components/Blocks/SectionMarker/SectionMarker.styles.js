@@ -115,14 +115,12 @@ export const Title = styled.h3`
 `;
 
 export const Copy = styled.div`
-  margin-bottom: calc(var(--gutter) * 4);
   color: var(--textColor);
   font-size: 1.8rem;
   line-height: 2.4rem;
 
   @media (min-width: 768px) {
     grid-column: 1 / 3;
-    margin-bottom: 0;
   }
 
   @media (min-width: 1024px) {
@@ -177,6 +175,7 @@ export const Aside = styled.div`
   color: var(--textColor);
   font-size: 1.8rem;
   line-height: 2.4rem;
+  margin-top: calc(var(--gutter) * 2);
 
   @media (min-width: 1024px) {
     grid-column: unset;
