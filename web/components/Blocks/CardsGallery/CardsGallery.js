@@ -24,7 +24,7 @@ const CardsGallery = ({ block }) => {
           scrollbar={{ draggable: true }}
           breakpoints={{
             320: {
-              slidesPerView: 2,
+              slidesPerView: 1,
               spaceBetween: 16,
             },
             768: {
