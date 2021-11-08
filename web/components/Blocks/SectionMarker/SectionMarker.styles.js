@@ -9,14 +9,14 @@ export const SectionMarker = styled.section`
   background-color: var(--${({ sectionBgColor }) => sectionBgColor});
   position: relative;
   overflow: hidden;
+  top: ${({ sectionBgColor }) => (sectionBgColor === "black" ? "-1px" : 0)};
 `;
 
 export const SectionMarkerContainer = styled(Container)`
   display: flex;
   flex-direction: column;
   padding: ${({ extraPadding }) =>
-      extraPadding ? "calc(var(--gutter) * 3)" : 0}
-    0;
+    extraPadding ? "var(--gutter) 0 var(--header) 0" : "0"};
   z-index: 100;
 
   @media (min-width: 768px) {
