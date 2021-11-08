@@ -30,6 +30,7 @@ export const Inner = styled(Container)`
   position: relative;
   z-index: 10;
   height: auto;
+  overflow: visible;
   flex-direction: column;
   align-items: center;
   justify-content: center;
