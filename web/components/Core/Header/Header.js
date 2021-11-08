@@ -108,9 +108,9 @@ const Header = ({ menuItems }) => {
       <Link href={link === "homepage" ? "/" : link}>
         <a
           onClick={() => handleMenuBlur()}
-          onKeyDown={() => handleMenuBlur()}
+          onKeyPress={() => handleMenuBlur()}
           role="link"
-          tabIndex={0}
+          tabIndex={index + 1}
         >
           <span>0{index + 1}</span>
           <div>{title}</div>
@@ -153,7 +153,7 @@ const Header = ({ menuItems }) => {
                 <a
                   className="logo"
                   onClick={() => handleMenuBlur()}
-                  onKeyDown={() => handleMenuBlur()}
+                  onKeyPress={() => handleMenuBlur()}
                   role="link"
                   tabIndex={0}
                 >
