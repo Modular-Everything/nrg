@@ -89,11 +89,15 @@ export const Title = styled.div`
 `;
 
 export const Grid = styled.div`
-  --min: 20ch;
+  --min: 15ch;
 
   display: grid;
   grid-gap: calc(var(--gutter) * 1.5);
   grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+
+  @media (min-width: 768px) {
+    --min: 20ch;
+  }
 `;
 
 export const Number = styled.p`
