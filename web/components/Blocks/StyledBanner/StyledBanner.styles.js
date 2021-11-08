@@ -12,7 +12,7 @@ export const StyledBanner = styled.section`
   display: flex;
   position: relative;
   min-height: 32rem;
-  padding: var(--extraGap) 0;
+  padding: var(--extraGap) 0 calc(var(--extraGap) / 2);
   overflow: hidden;
   background-color: var(--backgroundColor);
 `;
