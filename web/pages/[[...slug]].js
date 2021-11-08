@@ -101,8 +101,6 @@ export async function getStaticProps({ params, preview = false }) {
 
   const page = filterDataToSingleItem(data, preview);
 
-  console.log(page);
-
   return {
     props: {
       preview,
