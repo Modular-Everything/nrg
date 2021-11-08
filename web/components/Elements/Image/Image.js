@@ -1,17 +1,17 @@
 import React from "react";
 import PropTypes from "prop-types";
 
-import { imageBuilder } from '../../../lib/sanity'
+import { imageBuilder } from "../../../lib/sanity";
 import * as S from "./Image.styles";
 
 // ---
 
 const Image = ({ image, layout, ...rest }) => {
-  if (!image) return null;
+  if (!image?.asset) return null;
 
   // eslint-disable-next-line no-unused-vars
-  const [assetType, _id, dimensions, filetype] = image.asset._ref.split('-');
-  const [width, height] = dimensions.split('x');
+  const [assetType, _id, dimensions, filetype] = image?.asset?._ref.split("-");
+  const [width, height] = dimensions.split("x");
 
   return (
     <S.Image
@@ -19,7 +19,7 @@ const Image = ({ image, layout, ...rest }) => {
       layout={layout ?? "responsive"}
       width={layout !== "fill" && width}
       height={layout !== "fill" && height}
-      alt={image.alt}
+      alt={image?.alt}
       {...rest}
     />
   );

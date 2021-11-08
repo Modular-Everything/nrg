@@ -37,7 +37,7 @@ const ScrollingGallery = ({ block }) => {
       <S.ScrollingGallery className={layoutType}>
         <Swiper slidesPerView="auto" spaceBetween={16}>
           {/* eslint-disable-next-line react/prop-types */}
-          {items.map((item, index) => (
+          {items?.map((item, index) => (
             <SwiperSlide key={item.id}>
               <S.Slide className={item.layoutType}>
                 <p className="index">

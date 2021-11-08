@@ -30,6 +30,9 @@ export default {
           name: "item",
           title: "Item",
           type: "object",
+          initialValue: () => ({
+            layoutType: "horizontal",
+          }),
           fields: [
             {
               name: "title",
