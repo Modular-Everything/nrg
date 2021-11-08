@@ -2,6 +2,7 @@ import S from "@sanity/desk-tool/structure-builder";
 import Iframe from "sanity-plugin-iframe-pane";
 import {
   FcDocument as PageIcon,
+  FcLike as ServicesIcon,
   FcAreaChart as SettingsIcon,
   FcList as MenuIcon,
 } from "react-icons/fc";
@@ -29,7 +30,20 @@ export default () =>
       S.listItem()
         .title("Pages")
         .icon(PageIcon)
-        .child(S.documentTypeList("page")),
+        .child(() =>
+          S.documentTypeList("page").filter(
+            `_type == 'page' && section == 'default'`
+          )
+        ),
+
+      S.listItem()
+        .title("Services")
+        .icon(ServicesIcon)
+        .child(() =>
+          S.documentTypeList("page").filter(
+            `_type == 'page' && section == 'services'`
+          )
+        ),
 
       S.divider(),
 

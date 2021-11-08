@@ -8,6 +8,9 @@ export default {
   name: "page",
   title: "Page",
   type: "document",
+  initialValue: () => ({
+    section: "default",
+  }),
   fields: [
     {
       name: "title",
@@ -21,6 +24,18 @@ export default {
       type: "slug",
       options: {
         source: "title",
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "section",
+      title: "Section",
+      type: "string",
+      options: {
+        list: [
+          { title: "Default", value: "default" },
+          { title: "Services", value: "services" },
+        ],
       },
       validation: (Rule) => Rule.required(),
     },
