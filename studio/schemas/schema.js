@@ -25,6 +25,8 @@ import sectionMarker from "./blocks/sectionMarker";
 import statement from "./blocks/statement";
 import styledImageBanner from "./blocks/styledImageBanner";
 import styledBanner from "./blocks/styledBanner";
+import cardsGallery from "./blocks/cardsGallery";
+import cardsGalleryItems from "./elements/cardsGalleryItems";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -41,6 +43,7 @@ export default createSchema({
     seo,
     menu,
     menuItem,
+    cardsGalleryItems,
 
     // Custom block types
     bodyCopy,
@@ -53,5 +56,6 @@ export default createSchema({
     statement,
     styledImageBanner,
     styledBanner,
+    cardsGallery,
   ]),
 });
