@@ -14,7 +14,9 @@ export const SectionMarker = styled.section`
 export const SectionMarkerContainer = styled(Container)`
   display: flex;
   flex-direction: column;
-  /* height: calc(100% - (var(--gutter) * 6)); */
+  padding: ${({ extraPadding }) =>
+      extraPadding ? "calc(var(--gutter) * 3)" : 0}
+    0;
   z-index: 100;
 
   @media (min-width: 768px) {

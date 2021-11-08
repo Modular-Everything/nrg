@@ -7,7 +7,7 @@ export const ImageBlock = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 100vh;
+  height: 90vh;
   overflow: hidden;
   text-align: center;
 `;

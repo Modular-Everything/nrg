@@ -23,7 +23,7 @@ const SectionMarker = ({ block }) => {
 
   return (
     <S.SectionMarker sectionBgColor={backgroundColor} sectionColor={textColor}>
-      <S.SectionMarkerContainer>
+      <S.SectionMarkerContainer extraPadding={backgroundColor === "black"}>
         <S.Title>
           <Bolt className="bolt" />
           {title && title}

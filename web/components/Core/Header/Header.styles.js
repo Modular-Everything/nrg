@@ -11,6 +11,7 @@ export const Header = styled.header`
   width: 100%;
   color: var(--white);
   overflow-x: auto;
+  width: calc(100vw + (var(--gutter) * 2));
 
   .logo-and-burger {
     display: flex;
