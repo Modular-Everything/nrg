@@ -1,5 +1,5 @@
 import styled from "styled-components";
-import NoiseImg from "../../../images/noise.png";
+// import NoiseImg from "../../../images/noise.png";
 
 // ---
 
@@ -57,7 +57,7 @@ export const Noise = styled.div`
     width: calc(100% + 200px);
     height: calc(100% + 200px);
     animation: noise 1s steps(2) infinite;
-    background-image: url(${NoiseImg});
+    background-image: url("/noise.png");
     will-change: transform !important;
   }
 `;
