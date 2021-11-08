@@ -23,7 +23,7 @@ export const StyledText = styled(MarqueeText)`
   --blend: screen;
 
   position: relative;
-  z-index: 20;
+  z-index: 100;
   width: 100%;
 `;
 

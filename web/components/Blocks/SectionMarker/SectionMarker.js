@@ -21,8 +21,6 @@ const SectionMarker = ({ block }) => {
     textColor,
   } = block;
 
-  console.log(block);
-
   return (
     <S.SectionMarker sectionBgColor={backgroundColor} sectionColor={textColor}>
       <S.SectionMarkerContainer>
@@ -46,6 +44,8 @@ const SectionMarker = ({ block }) => {
           <BlockContent blocks={aside} />
         </S.Aside>
       </S.SectionMarkerContainer>
+
+      {backgroundColor === "black" && <S.Noise />}
     </S.SectionMarker>
   );
 };

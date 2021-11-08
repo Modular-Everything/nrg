@@ -152,6 +152,7 @@ export const Container = styled(CoreContainer)`
   display: grid;
   grid-template-columns: 1fr;
   grid-gap: calc(var(--gutter) * 4);
+  z-index: 100;
 
   @media (min-width: 768px) {
     grid-template-columns: repeat(3, 1fr);

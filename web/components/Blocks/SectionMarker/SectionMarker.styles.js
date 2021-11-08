@@ -1,11 +1,14 @@
 import styled from "styled-components";
 import Container from "../../Core/Container";
+import CustomNoise from "../../Elements/Noise";
 
 // ---
 
 export const SectionMarker = styled.section`
   --textColor: var(--${({ sectionColor }) => sectionColor});
   background-color: var(--${({ sectionBgColor }) => sectionBgColor});
+  position: relative;
+  overflow: hidden;
 `;
 
 export const SectionMarkerContainer = styled(Container)`
@@ -14,6 +17,7 @@ export const SectionMarkerContainer = styled(Container)`
   height: calc(100% - (var(--gutter) * 6));
   padding-top: calc(var(--gutter) * 2);
   padding-bottom: calc(var(--gutter) * 4);
+  z-index: 100;
 
   @media (min-width: 768px) {
     display: grid;
@@ -179,4 +183,8 @@ export const Aside = styled.div`
     margin-top: ${({ hasTitle }) =>
       hasTitle ? "calc(4.4rem + (var(--gutter) * 2))" : 0};
   }
+`;
+
+export const Noise = styled(CustomNoise)`
+  opacity: 0.5;
 `;
