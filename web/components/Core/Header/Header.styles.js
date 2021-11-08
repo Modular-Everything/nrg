@@ -214,13 +214,18 @@ export const Noise = styled(CustomNoise)`
 `;
 
 export const HoverImage = styled.div`
-  aspect-ratio: 16/9;
-  width: 30vw;
-  max-width: 50rem;
-  position: absolute;
-  top: 0;
-  left: 0;
-  pointer-events: none;
-  z-index: 500;
-  transition: 250ms ease opacity;
+  display: none;
+
+  @media (min-width: 768px) {
+    aspect-ratio: 16/9;
+    width: 30vw;
+    max-width: 50rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+    z-index: 500;
+    transition: 250ms ease opacity;
+    display: block;
+  }
 `;

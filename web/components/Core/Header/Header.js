@@ -210,7 +210,10 @@ const Header = ({ menuItems }) => {
           overflow: overlayOpen ? "auto" : "hidden",
         }}
       >
-        <S.HoverImage className="hoverImage">
+        <S.HoverImage
+          className="hoverImage"
+          style={{ opacity: overlayOpen ? 1 : 0 }}
+        >
           {hoverImage && <Image image={hoverImage} />}
         </S.HoverImage>
 
