@@ -1,4 +1,5 @@
 import React, { useState, useEffect, useRef } from "react";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
 import Link from "next/link";
 import Head from "next/head";
@@ -14,6 +15,11 @@ import Logo from "../../../images/Logo";
 
 const Header = ({ menuItems }) => {
   useAppHeight();
+
+  //
+
+  const router = useRouter();
+  const [activePage] = useState(router.asPath);
 
   //
 
@@ -126,6 +132,18 @@ const Header = ({ menuItems }) => {
 
   //
 
+  useEffect(() => {
+    setActiveMenu(null);
+    setOverlayOpen(false);
+    setHoverImage(null);
+
+    const target = headerRef.current.querySelector(".hoverImage");
+
+    target.style.opacity = 0;
+  }, [router.asPath]);
+
+  //
+
   const MenuItem = ({ title, link, image, index }) => {
     function handleImageMove(e) {
       const target = headerRef.current.querySelector(".hoverImage");
@@ -206,8 +224,8 @@ const Header = ({ menuItems }) => {
               <Link href="/">
                 <a
                   className="logo"
-                  onClick={() => handleMenuBlur()}
-                  onKeyPress={() => handleMenuBlur()}
+                  onClick={() => (overlayOpen ? handleMenuBlur() : null)}
+                  onKeyPress={() => (overlayOpen ? handleMenuBlur() : null)}
                   role="link"
                   tabIndex={0}
                 >
