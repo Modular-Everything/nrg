@@ -3,7 +3,6 @@ import PropTypes from "prop-types";
 
 import * as S from "./MarqueeBanner.styles";
 import Statement from "../../Elements/Statement";
-import Container from "../../Core/Container";
 
 // ---
 
@@ -12,9 +11,9 @@ const MarqueeBanner = ({ block }) => {
 
   return (
     <S.MarqueeBanner>
-      <Container>
+      <S.Container>
         <Statement copy={statement} />
-      </Container>
+      </S.Container>
 
       <S.Noise />
     </S.MarqueeBanner>

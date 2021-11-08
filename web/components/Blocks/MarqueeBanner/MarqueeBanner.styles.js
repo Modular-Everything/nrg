@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CustomNoise from "../../Elements/Noise";
+import CoreContainer from "../../Core/Container";
 
 // ---
 
@@ -12,4 +13,8 @@ export const MarqueeBanner = styled.section`
 
 export const Noise = styled(CustomNoise)`
   opacity: 0.15;
+`;
+
+export const Container = styled(CoreContainer)`
+  overflow-x: visible;
 `;
