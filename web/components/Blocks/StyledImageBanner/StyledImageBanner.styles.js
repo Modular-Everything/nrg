@@ -10,6 +10,7 @@ export const StyledImageBanner = styled.section`
 
   position: relative;
   min-height: 32rem;
+  overflow-x: hidden;
   padding: ${({ makeSpaceForHeader }) =>
     makeSpaceForHeader ? "14rem 0 var(--extraGap) 0" : "var(--extraGap) 0"};
 `;
@@ -21,6 +22,7 @@ export const StyledText = styled(MarqueeText)`
 
   position: relative;
   z-index: 20;
+  max-width: calc(100vw + var(--gap));
 `;
 
 export const Inner = styled(Container)`
