@@ -68,6 +68,7 @@ export const ScrollingGallery = styled.section`
 
   .swiper-slide {
     height: auto;
+    will-change: opacity;
   }
 
   .swiper-container {

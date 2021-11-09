@@ -7,6 +7,7 @@ import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
 import * as S from "./SectionMarker.styles";
 import Bolt from "../../../images/icons/Bolt";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -23,27 +24,29 @@ const SectionMarker = ({ block }) => {
 
   return (
     <S.SectionMarker sectionBgColor={backgroundColor} sectionColor={textColor}>
-      <S.SectionMarkerContainer extraPadding={backgroundColor === "black"}>
-        <S.Title>
-          <Bolt className="bolt" />
-          {title && title}
-        </S.Title>
+      <FadeIn>
+        <S.SectionMarkerContainer extraPadding={backgroundColor === "black"}>
+          <S.Title>
+            <Bolt className="bolt" />
+            {title && title}
+          </S.Title>
 
-        <S.Copy hasTitle={!!title}>
-          <BlockContent blocks={mainCopy} />
-          {link && linkLabel && (
-            <Link href={`/${link}`}>
-              <a>
-                {linkLabel} <ArrowRight />
-              </a>
-            </Link>
-          )}
-        </S.Copy>
+          <S.Copy hasTitle={!!title}>
+            <BlockContent blocks={mainCopy} />
+            {link && linkLabel && (
+              <Link href={`/${link}`}>
+                <a>
+                  {linkLabel} <ArrowRight />
+                </a>
+              </Link>
+            )}
+          </S.Copy>
 
-        <S.Aside hasTitle={!!title}>
-          <BlockContent blocks={aside} />
-        </S.Aside>
-      </S.SectionMarkerContainer>
+          <S.Aside hasTitle={!!title}>
+            <BlockContent blocks={aside} />
+          </S.Aside>
+        </S.SectionMarkerContainer>
+      </FadeIn>
 
       {backgroundColor === "black" && <S.Noise />}
     </S.SectionMarker>

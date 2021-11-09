@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import * as S from "./GriddedList.styles";
 
 import Title from "../../Elements/Title";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -19,21 +20,23 @@ const GriddedList = ({ block }) => {
         )}
 
         {text && (
-          <S.Grid className="grid">
-            {text.map((item, index) => {
-              const num = index + 1;
-              return (
-                <S.Item key={index} className="item">
-                  <S.Number className="number">
-                    {num < 10 && 0}
-                    {num}
-                  </S.Number>
+          <FadeIn stagger={0.1}>
+            <S.Grid className="grid">
+              {text.map((item, index) => {
+                const num = index + 1;
+                return (
+                  <S.Item key={index} className="item">
+                    <S.Number className="number">
+                      {num < 10 && 0}
+                      {num}
+                    </S.Number>
 
-                  <S.Copy className="copy">{item}</S.Copy>
-                </S.Item>
-              );
-            })}
-          </S.Grid>
+                    <S.Copy className="copy">{item}</S.Copy>
+                  </S.Item>
+                );
+              })}
+            </S.Grid>
+          </FadeIn>
         )}
       </S.GridContainer>
     </S.Wrapper>

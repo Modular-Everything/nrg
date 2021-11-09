@@ -3,11 +3,13 @@ import PropTypes from "prop-types";
 
 import Image from "../../Elements/Image";
 import * as S from "./LogoMatrix.styles";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
 const LogoMatrix = ({ block }) => (
-    <S.LogoMatrix>
+  <S.LogoMatrix>
+    <FadeIn stagger={0.1}>
       <ul>
         {block.logos.map((logo) => (
           <li>
@@ -15,8 +17,9 @@ const LogoMatrix = ({ block }) => (
           </li>
         ))}
       </ul>
-    </S.LogoMatrix>
-  );
+    </FadeIn>
+  </S.LogoMatrix>
+);
 
 LogoMatrix.propTypes = {
   block: PropTypes.shape({

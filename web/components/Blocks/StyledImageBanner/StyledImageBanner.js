@@ -4,6 +4,7 @@ import { BiDownArrowAlt as ArrowDown } from "react-icons/bi";
 
 import * as S from "./StyledImageBanner.styles";
 import Image from "../../Elements/Image";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -14,7 +15,7 @@ import Image from "../../Elements/Image";
  * The banner image can be a static image URL (string) or a responsive image (object).
  */
 
-const StyledImageBanner = ({ block }) => {
+const StyledImageBanner = ({ block, animate }) => {
   const {
     descriptiveCopy,
     scrollLabel,
@@ -46,26 +47,28 @@ const StyledImageBanner = ({ block }) => {
 
   return (
     <S.StyledImageBanner makeSpaceForHeader={sitsBelowMenu} ref={bannerRef}>
-      <S.StyledText text={styledCopy} />
+      <FadeIn animate={animate}>
+        <S.StyledText text={styledCopy} />
 
-      <S.Inner>
-        {descriptiveCopy && (
-          <S.DescriptiveCopy>
-            <p>{descriptiveCopy}</p>
-          </S.DescriptiveCopy>
-        )}
+        <S.Inner>
+          {descriptiveCopy && (
+            <S.DescriptiveCopy>
+              <p>{descriptiveCopy}</p>
+            </S.DescriptiveCopy>
+          )}
 
-        {sitsBelowMenu && (
-          <S.ScrollMore type="button" onClick={() => handleReadMore()}>
-            {scrollLabel || "Learn more"} <ArrowDown />
-          </S.ScrollMore>
-        )}
-      </S.Inner>
+          {sitsBelowMenu && (
+            <S.ScrollMore type="button" onClick={() => handleReadMore()}>
+              {scrollLabel || "Learn more"} <ArrowDown />
+            </S.ScrollMore>
+          )}
+        </S.Inner>
 
-      <S.BG>
-        {(sitsBelowMenu || descriptiveCopy) && <S.Skrim />}
-        <Image image={backgroundImage} priority layout="fill" quality={100} />
-      </S.BG>
+        <S.BG>
+          {(sitsBelowMenu || descriptiveCopy) && <S.Skrim />}
+          <Image image={backgroundImage} priority layout="fill" quality={100} />
+        </S.BG>
+      </FadeIn>
     </S.StyledImageBanner>
   );
 };
@@ -85,6 +88,7 @@ StyledImageBanner.propTypes = {
     /** If set to true, you "learn more" scroll button is accessible and it adds some padding to the top */
     sitsBelowMenu: PropTypes.bool,
   }),
+  animate: PropTypes.bool,
 };
 
 StyledImageBanner.defaultProps = {
@@ -96,6 +100,7 @@ StyledImageBanner.defaultProps = {
     scrollLabel: null,
     sitsBelowMenu: false,
   },
+  animate: true,
 };
 
 export default StyledImageBanner;

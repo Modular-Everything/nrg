@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 
 import * as S from "./BoltBlock.styles";
 import BoltIcon from "../../../images/icons/Bolt";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -11,11 +12,13 @@ const BoltBlock = ({ block }) => {
 
   return (
     <S.BoltBlock backgroundColor={backgroundColor}>
-      <S.Icon>
-        <BoltIcon />
-      </S.Icon>
+      <FadeIn>
+        <S.Icon>
+          <BoltIcon className="boltIcon" />
+        </S.Icon>
 
-      <S.OutlineText text="Creators, Makers Builders" />
+        <S.OutlineText text="Creators, Makers Builders" />
+      </FadeIn>
     </S.BoltBlock>
   );
 };

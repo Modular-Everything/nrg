@@ -6,6 +6,7 @@ import Link from "next/link";
 
 import * as S from "./ScrollingGallery.styles";
 import Image from "../../Elements/Image";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -35,29 +36,31 @@ const ScrollingGallery = ({ block }) => {
   return (
     <S.Container>
       <S.ScrollingGallery className={layoutType}>
-        <Swiper slidesPerView="auto" spaceBetween={16}>
-          {/* eslint-disable-next-line react/prop-types */}
-          {items?.map((item, index) => (
-            <SwiperSlide key={item.id}>
-              <S.Slide className={item.layoutType}>
-                <p className="index">
-                  {index + 1}/{items.length}
-                </p>
+        <FadeIn>
+          <Swiper slidesPerView="auto" spaceBetween={16}>
+            {/* eslint-disable-next-line react/prop-types */}
+            {items?.map((item, index) => (
+              <SwiperSlide key={item.id}>
+                <S.Slide className={item.layoutType}>
+                  <p className="index">
+                    {index + 1}/{items.length}
+                  </p>
 
-                {item.link ? (
-                  <Link href={`/${item.link.slug}`}>
-                    {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
-                    <a>
-                      <GalleryItem item={item} />
-                    </a>
-                  </Link>
-                ) : (
-                  <GalleryItem item={item} />
-                )}
-              </S.Slide>
-            </SwiperSlide>
-          ))}
-        </Swiper>
+                  {item.link ? (
+                    <Link href={`/${item.link.slug}`}>
+                      {/* eslint-disable-next-line jsx-a11y/anchor-is-valid */}
+                      <a>
+                        <GalleryItem item={item} />
+                      </a>
+                    </Link>
+                  ) : (
+                    <GalleryItem item={item} />
+                  )}
+                </S.Slide>
+              </SwiperSlide>
+            ))}
+          </Swiper>
+        </FadeIn>
       </S.ScrollingGallery>
     </S.Container>
   );
