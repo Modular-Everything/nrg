@@ -138,8 +138,6 @@ const Header = ({ menuItems }) => {
 
     const target = headerRef.current.querySelector(".hoverImage");
     target.style.opacity = 0;
-
-    console.log(router.query.slug);
   }, [router.query.slug]);
 
   //

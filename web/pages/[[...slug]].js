@@ -45,8 +45,6 @@ const Page = ({ data, menuItems, globalMetadata, preview }) => {
 
   const { blocks, topBlocks, bottomBlocks } = page;
 
-  console.log(globalMetadata[0]);
-
   return (
     <Layout menuItems={menuItems[0]}>
       <SEO globalMetadata={globalMetadata[0]} customMetadata={page?.seo} />

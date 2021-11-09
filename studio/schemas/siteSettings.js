@@ -32,6 +32,13 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
+      name: "canonicalUrl",
+      title: "Canonical URL",
+      type: "url",
+      description: "Avoid trailing slash",
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "seo",
       title: "Global SEO",
       type: "seo",
