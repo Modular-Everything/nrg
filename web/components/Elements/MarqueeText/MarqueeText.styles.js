@@ -52,6 +52,8 @@ export const MarqueeWrap = styled.section`
     justify-content: center;
     padding: 0 var(--padding);
     background-color: var(--color);
+    border-left: 1px solid var(--color);
+    border-right: 1px solid var(--color);
     box-decoration-break: clone;
     box-shadow: var(--padding) 0 0 var(--color),
       calc(var(--padding) * -1) 0 0 var(--color);
