@@ -1,51 +1,31 @@
+/* eslint-disable react/forbid-prop-types */
 import React from "react";
-import { NextSeo } from "next-seo";
 import PropTypes from "prop-types";
-// import { getStrapiMedia } from "../../../utils/media";
-// import { mediaPropTypes } from "../../../utils/types";
+import { NextSeo } from "next-seo";
 
 // ---
 
-const SEO = ({ metadata }) => {
+const SEO = ({ globalMetadata, customMetadata }) => {
   // Prevent errors if no metadata was set
-  if (!metadata) return null;
+  if (!globalMetadata) return null;
+
+  const metadata = {
+    siteName: globalMetadata.siteName,
+    title: customMetadata?.metaTitle || globalMetadata?.metaTitle,
+  };
 
   return (
     <NextSeo
-      title={metadata.metaTitle}
-      description={metadata.metaDescription}
-      // openGraph={{
-      //   // Title and description are mandatory
-      //   title: metadata.metaTitle,
-      //   description: metadata.metaDescription,
-      //   // Only include OG image if we have it
-      //   // Careful: if you disable image optimization in Strapi, this will break
-      //   ...(metadata.shareImage && {
-      //     images: Object.values(metadata.shareImage.formats).map((image) => ({
-      //       url: getStrapiMedia(image.url),
-      //       width: image.width,
-      //       height: image.height,
-      //     })),
-      //   }),
-      // }}
-      // Only included Twitter data if we have it
-      twitter={{
-        ...(metadata.twitterCardType && { cardType: metadata.twitterCardType }),
-        // Handle is the twitter username of the content creator
-        ...(metadata.twitterUsername && { handle: metadata.twitterUsername }),
-      }}
+      title={`${metadata.title ? `${metadata.title} | ` : ""}${
+        metadata.siteName
+      }`}
     />
   );
 };
 
 SEO.propTypes = {
-  metadata: PropTypes.shape({
-    metaTitle: PropTypes.string.isRequired,
-    metaDescription: PropTypes.string.isRequired,
-    // shareImage: mediaPropTypes,
-    twitterCardType: PropTypes.string,
-    twitterUsername: PropTypes.string,
-  }).isRequired,
+  globalMetadata: PropTypes.object.isRequired,
+  customMetadata: PropTypes.object.isRequired,
 };
 
 export default SEO;

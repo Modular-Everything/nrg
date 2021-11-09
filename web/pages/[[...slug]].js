@@ -6,7 +6,7 @@ import ErrorPage from "next/error";
 
 import { usePreviewSubscription } from "../lib/sanity";
 import { getClient } from "../lib/sanity.server";
-// import SEO from "../components/Core/SEO";
+import SEO from "../components/Core/SEO";
 import Layout from "../components/Core/Layout";
 import BlockBuilder from "../components/Blocks";
 import AutoLayout from "../components/Core/AutoLayout";
@@ -32,7 +32,7 @@ function filterDataToSingleItem(data, preview) {
 
 // ---
 
-const Page = ({ data, menuItems, preview }) => {
+const Page = ({ data, menuItems, globalMetadata, preview }) => {
   const { data: previewData } = usePreviewSubscription(data?.query, {
     params: data?.queryParams ?? {},
     initialData: data?.page,
@@ -45,9 +45,11 @@ const Page = ({ data, menuItems, preview }) => {
 
   const { blocks, topBlocks, bottomBlocks } = page;
 
+  console.log(globalMetadata[0]);
+
   return (
     <Layout menuItems={menuItems[0]}>
-      {/* <SEO metadata={metadata} /> */}
+      <SEO globalMetadata={globalMetadata[0]} customMetadata={page?.seo} />
 
       {preview && <PreviewBanner slug={page?.slug?.current} />}
 
@@ -73,6 +75,7 @@ const Page = ({ data, menuItems, preview }) => {
 Page.propTypes = {
   data: PropTypes.object,
   menuItems: PropTypes.array.isRequired,
+  globalMetadata: PropTypes.object.isRequired,
   preview: PropTypes.bool.isRequired,
 };
 
@@ -111,6 +114,9 @@ export async function getStaticProps({ params, preview = false }) {
           what[] {'slug': link->slug.current, ...},
           weDo[] {'slug': link->slug.current, ...},
         }`
+      ),
+      globalMetadata: await getClient(preview).fetch(
+        groq`*[_type == 'siteSettings' && _id == 'siteSettings']`
       ),
     },
   };
