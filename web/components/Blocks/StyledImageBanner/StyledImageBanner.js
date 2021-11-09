@@ -1,4 +1,4 @@
-import React from "react";
+import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { BiDownArrowAlt as ArrowDown } from "react-icons/bi";
 
@@ -23,8 +23,29 @@ const StyledImageBanner = ({ block }) => {
     backgroundImage,
   } = block;
 
+  const [bannerHeight, setBannerHeight] = useState(0);
+  const bannerRef = useRef(null);
+
+  useEffect(() => {
+    setBannerHeight(bannerRef.current.clientHeight);
+  }, []);
+
+  function handleReadMore() {
+    if (typeof window !== "undefined") {
+      window.addEventListener(
+        "resize",
+        setBannerHeight(bannerRef.current.clientHeight)
+      );
+
+      window.scroll({
+        top: bannerHeight - 32,
+        behavior: "smooth",
+      });
+    }
+  }
+
   return (
-    <S.StyledImageBanner makeSpaceForHeader={sitsBelowMenu}>
+    <S.StyledImageBanner makeSpaceForHeader={sitsBelowMenu} ref={bannerRef}>
       <S.StyledText text={styledCopy} />
 
       <S.Inner>
@@ -35,7 +56,7 @@ const StyledImageBanner = ({ block }) => {
         )}
 
         {sitsBelowMenu && (
-          <S.ScrollMore type="button">
+          <S.ScrollMore type="button" onClick={() => handleReadMore()}>
             {scrollLabel || "Learn more"} <ArrowDown />
           </S.ScrollMore>
         )}
