@@ -1,5 +1,6 @@
 import React from "react";
 import Link from "next/link";
+import { BsLinkedin as LiIcon, BsInstagram as InstaIcon } from "react-icons/bs";
 
 import * as S from "./Footer.styles";
 import Badge from "../../../images/icons/Badge";
@@ -12,17 +13,23 @@ const Footer = () => (
     <S.Container>
       <div className="contact-socials">
         <div className="contact">
-          <a href="/">mail@something.com</a>
-          <a href="/">mail@something.com</a>
+          <Link href="/">
+            <a>madewithnrg.com</a>
+          </Link>
+          <a href="mailto:info@madewithnrg.com">info@madewithnrg.com</a>
         </div>
 
         <div className="socials">
           <ul>
             <li>
-              <a href="/">Instagram</a>
+              <a href="https://instagram.com/madewithnrg">
+                <InstaIcon />
+              </a>
             </li>
             <li>
-              <a href="/">LinkedIn</a>
+              <a href="https://www.linkedin.com/company/nrg-marketing-llc/">
+                <LiIcon />
+              </a>
             </li>
           </ul>
         </div>

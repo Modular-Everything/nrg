@@ -51,6 +51,11 @@ export const Footer = styled.footer`
       margin: 0;
       padding: 0;
 
+      svg {
+        width: 2.4rem;
+        height: 2.4rem;
+      }
+
       li {
         margin-right: var(--gutter);
       }
