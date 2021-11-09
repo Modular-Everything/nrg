@@ -215,6 +215,8 @@ export const Noise = styled(CustomNoise)`
 
 export const HoverImage = styled.div`
   display: none;
+  border-radius: var(--rounded);
+  overflow: hidden;
 
   @media (min-width: 768px) {
     aspect-ratio: 16/9;
@@ -224,7 +226,7 @@ export const HoverImage = styled.div`
     top: 0;
     left: 0;
     pointer-events: none;
-    z-index: 500;
+    z-index: 150;
     transition: 250ms ease opacity;
     display: block;
   }
