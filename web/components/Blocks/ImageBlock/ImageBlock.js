@@ -1,5 +1,7 @@
-import React from "react";
+import React, { useEffect, useRef } from "react";
 import PropTypes from "prop-types";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import * as S from "./ImageBlock.styles";
 import Title from "../../Elements/Title";
@@ -10,9 +12,25 @@ import BoltIcon from "../../../images/icons/Bolt";
 
 const ImageBlock = ({ block }) => {
   const { backgroundImage, icon, title, copy } = block;
+  gsap.registerPlugin(ScrollTrigger);
+
+  const bg = useRef(null);
+
+  useEffect(() => {
+    gsap.to(bg.current.querySelector(".imageblock__bg div"), {
+      yPercent: 25,
+      ease: "none",
+      scrollTrigger: {
+        trigger: bg.current,
+        start: "15%",
+        end: "bottom top",
+        scrub: true,
+      },
+    });
+  }, []);
 
   return (
-    <S.ImageBlock>
+    <S.ImageBlock ref={bg}>
       {(title || copy) && (
         <S.Copy>
           {title && <Title as="h3" title={title} />}
@@ -20,14 +38,14 @@ const ImageBlock = ({ block }) => {
         </S.Copy>
       )}
 
-      {(!title || !copy) && icon && icon !== 'hidden' && (
+      {(!title || !copy) && icon && icon !== "hidden" && (
         <S.Icon outline={icon === "large"} size={icon}>
           <BoltIcon />
         </S.Icon>
       )}
 
-      <S.Background>
-        <Image image={backgroundImage} layout="fill" quality={100} />
+      <S.Background className="imageblock__bg">
+        <Image image={backgroundImage} layout="fill" />
       </S.Background>
     </S.ImageBlock>
   );

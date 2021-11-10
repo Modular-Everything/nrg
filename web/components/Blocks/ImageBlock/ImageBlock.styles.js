@@ -7,18 +7,18 @@ export const ImageBlock = styled.div`
   position: relative;
   align-items: center;
   justify-content: center;
-  height: 90vh;
+  height: 100vh;
   overflow: hidden;
   text-align: center;
 `;
 
 export const Background = styled.div`
   position: absolute;
-  z-index: 5;
+  z-index: -1;
   top: 0;
   left: 0;
-  width: 100%;
-  height: 100%;
+  width: 115%;
+  height: 115%;
 `;
 
 export const Copy = styled.div`
