@@ -14,12 +14,8 @@ const Image = ({ image, layout, ...rest }) => {
 
   return (
     <S.Image
-      src={imageProps.src}
-      blurDataURL={imageProps.blurDataURL}
+      {...imageProps}
       layout={layout ?? "responsive"}
-      width={layout !== "fill" && imageProps.width}
-      height={layout !== "fill" && imageProps.height}
-      // placeholder="blur"
       alt={image?.alt}
       {...rest}
     />
