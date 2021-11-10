@@ -1,5 +1,5 @@
 const previewSecret = "kanzan-tree";
-const remoteUrl = `https://madewithnrg.com/`;
+const remoteUrl = `https://nrg-v2.netlify.app/`;
 const localUrl = `http://localhost:3000`;
 
 export default function resolveProductionUrl(document) {
