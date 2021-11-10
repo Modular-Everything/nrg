@@ -6,25 +6,25 @@ const Typography = createGlobalStyle`
   @font-face {
     font-family: 'Grotesque MT Std';
     font-weight: 700;
-    src: url('/fonts/GrotesqueMTStd-BoldExtended.woff2')
+    src: url('./fonts/GrotesqueMTStd-BoldExtended.woff2')
         format('woff2'),
-      url('/fonts/GrotesqueMTStd-BoldExtended.woff') format('woff');
+      url('./fonts/GrotesqueMTStd-BoldExtended.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
     font-family: 'Simplon BP';
     font-weight: 500;
-    src: url('/fonts/SimplonBP-Medium.woff2') format('woff2'),
-      url('/fonts/SimplonBP-Medium.woff') format('woff');
+    src: url('./fonts/SimplonBP-Medium.woff2') format('woff2'),
+      url('./fonts/SimplonBP-Medium.woff') format('woff');
     font-display: swap;
   }
 
   @font-face {
     font-family: 'Simplon BP';
     font-weight: 700;
-    src: url('/fonts/SimplonBP-Bold.woff2') format('woff2'),
-      url('/fonts/SimplonBP-Bold.woff') format('woff');
+    src: url('./fonts/SimplonBP-Bold.woff2') format('woff2'),
+      url('./fonts/SimplonBP-Bold.woff') format('woff');
     font-display: swap;
   }
 
@@ -32,8 +32,8 @@ const Typography = createGlobalStyle`
     font-family: 'Central Avenue';
     font-style:  normal;
     font-weight: 700;
-    src: url("/fonts/CentralAvenue-Bold.woff2") format("woff2"),
-        url("/fonts/CentralAvenue-Bold.woff") format("woff");
+    src: url("./fonts/CentralAvenue-Bold.woff2") format("woff2"),
+        url("./fonts/CentralAvenue-Bold.woff") format("woff");
   }
 
   html {
