@@ -1,10 +1,11 @@
 import React, { useEffect, useRef, useState } from "react";
 import PropTypes from "prop-types";
 import { BiDownArrowAlt as ArrowDown } from "react-icons/bi";
+import { gsap } from "gsap/dist/gsap";
+import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
 
 import * as S from "./StyledImageBanner.styles";
 import Image from "../../Elements/Image";
-import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -15,7 +16,9 @@ import FadeIn from "../../Animations/FadeIn";
  * The banner image can be a static image URL (string) or a responsive image (object).
  */
 
-const StyledImageBanner = ({ block, animate }) => {
+const StyledImageBanner = ({ block }) => {
+  gsap.registerPlugin(ScrollTrigger);
+
   const {
     descriptiveCopy,
     scrollLabel,
@@ -29,6 +32,12 @@ const StyledImageBanner = ({ block, animate }) => {
 
   useEffect(() => {
     setBannerHeight(bannerRef.current.clientHeight);
+
+    gsap.from(bannerRef.current, {
+      scrollTrigger: { trigger: bannerRef.current, start: "top 80%" },
+      opacity: 0,
+      stagger: 0.5,
+    });
   }, []);
 
   function handleReadMore() {
@@ -47,28 +56,26 @@ const StyledImageBanner = ({ block, animate }) => {
 
   return (
     <S.StyledImageBanner makeSpaceForHeader={sitsBelowMenu} ref={bannerRef}>
-      <FadeIn animate={animate}>
-        <S.StyledText text={styledCopy} />
+      <S.StyledText text={styledCopy} />
 
-        <S.Inner>
-          {descriptiveCopy && (
-            <S.DescriptiveCopy>
-              <p>{descriptiveCopy}</p>
-            </S.DescriptiveCopy>
-          )}
+      <S.Inner>
+        {descriptiveCopy && (
+          <S.DescriptiveCopy>
+            <p>{descriptiveCopy}</p>
+          </S.DescriptiveCopy>
+        )}
 
-          {sitsBelowMenu && (
-            <S.ScrollMore type="button" onClick={() => handleReadMore()}>
-              {scrollLabel || "Learn more"} <ArrowDown />
-            </S.ScrollMore>
-          )}
-        </S.Inner>
+        {sitsBelowMenu && (
+          <S.ScrollMore type="button" onClick={() => handleReadMore()}>
+            {scrollLabel || "Learn more"} <ArrowDown />
+          </S.ScrollMore>
+        )}
+      </S.Inner>
 
-        <S.BG>
-          {(sitsBelowMenu || descriptiveCopy) && <S.Skrim />}
-          <Image image={backgroundImage} priority layout="fill" quality={100} />
-        </S.BG>
-      </FadeIn>
+      <S.BG>
+        {(sitsBelowMenu || descriptiveCopy) && <S.Skrim />}
+        <Image image={backgroundImage} priority layout="fill" quality={100} />
+      </S.BG>
     </S.StyledImageBanner>
   );
 };
@@ -88,7 +95,6 @@ StyledImageBanner.propTypes = {
     /** If set to true, you "learn more" scroll button is accessible and it adds some padding to the top */
     sitsBelowMenu: PropTypes.bool,
   }),
-  animate: PropTypes.bool,
 };
 
 StyledImageBanner.defaultProps = {
@@ -100,7 +106,6 @@ StyledImageBanner.defaultProps = {
     scrollLabel: null,
     sitsBelowMenu: false,
   },
-  animate: true,
 };
 
 export default StyledImageBanner;
