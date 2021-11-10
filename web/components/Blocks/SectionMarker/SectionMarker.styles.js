@@ -179,8 +179,7 @@ export const Aside = styled.div`
 
   @media (min-width: 1024px) {
     grid-column: unset;
-    margin-top: ${({ hasTitle }) =>
-      hasTitle ? "calc(4.4rem + (var(--gutter) * 2))" : 0};
+    margin-top: 0;
   }
 `;
 
