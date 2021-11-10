@@ -15,9 +15,6 @@ const SEO = ({ globalMetadata, customMetadata }) => {
 
   const router = useRouter();
 
-  console.log(router);
-  console.log(globalMetadata);
-
   const siteUrl = globalMetadata.canonicalUrl;
 
   const metadata = {
