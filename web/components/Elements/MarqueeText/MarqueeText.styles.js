@@ -1,6 +1,12 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
 
 // ---
+
+const runner = keyframes`
+	to {
+		transform: translateX(-25%);
+	}
+`;
 
 export const MarqueeWrap = styled.section`
   --color: #000;
@@ -24,20 +30,22 @@ export const MarqueeWrap = styled.section`
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
+    transform: translateX(25%);
+    animation: ${runner} 10s linear infinite;
 
-    &:nth-child(1) {
+    /* &:nth-child(1) {
       align-self: flex-start;
       transform: translateX(-5vw);
-    }
+    } */
 
     &:nth-child(2) {
-      align-self: center;
+      animation-direction: reverse;
     }
 
-    &:nth-child(3) {
+    /* &:nth-child(3) {
       align-self: flex-end;
       transform: translateX(5vw);
-    }
+    } */
 
     &:last-of-type {
       margin-bottom: 0;
