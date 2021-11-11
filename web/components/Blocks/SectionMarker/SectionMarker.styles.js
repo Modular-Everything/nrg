@@ -6,7 +6,9 @@ import CustomNoise from "../../Elements/Noise";
 
 export const SectionMarker = styled.section`
   --textColor: var(--${({ sectionColor }) => sectionColor});
-  background-color: var(--${({ sectionBgColor }) => sectionBgColor});
+  background-color: var(
+    --${({ sectionBgColor }) => (sectionBgColor === "white" ? "transparent" : sectionBgColor)}
+  );
   position: relative;
   overflow: hidden;
   top: ${({ sectionBgColor }) => (sectionBgColor === "black" ? "-1px" : 0)};

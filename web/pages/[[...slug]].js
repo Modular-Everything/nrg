@@ -11,6 +11,7 @@ import Layout from "../components/Core/Layout";
 import BlockBuilder from "../components/Blocks";
 import AutoLayout from "../components/Core/AutoLayout";
 import PreviewBanner from "../components/Core/PreviewBanner";
+import FixedBgText from "../components/Blocks/FixedBgText";
 
 // ---
 
@@ -43,7 +44,7 @@ const Page = ({ data, menuItems, globalMetadata, preview }) => {
 
   const page = filterDataToSingleItem(previewData, preview);
 
-  const { blocks, topBlocks, bottomBlocks } = page;
+  const { blocks, topBlocks, bottomBlocks, backgroundText } = page;
 
   return (
     <Layout menuItems={menuItems[0]}>
@@ -57,6 +58,7 @@ const Page = ({ data, menuItems, globalMetadata, preview }) => {
         </div>
 
         <div className="blocks">
+          {backgroundText && <FixedBgText text={backgroundText} />}
           <BlockBuilder blocks={blocks} preview={preview} />
         </div>
 

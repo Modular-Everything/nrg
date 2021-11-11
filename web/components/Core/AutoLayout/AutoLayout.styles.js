@@ -17,6 +17,7 @@ export const AutoLayout = styled.section`
     grid-area: blocks;
     grid-gap: calc(var(--gutter) * 2);
     margin: calc(var(--gutter) * 2) 0;
+    position: relative;
 
     @media (min-width: 768px) {
       grid-gap: calc(var(--gutter) * 4);

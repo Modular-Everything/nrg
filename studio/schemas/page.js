@@ -73,5 +73,11 @@ export default {
         editModal: "fullscreen",
       },
     },
+    {
+      name: "backgroundText",
+      title: "Background Text",
+      descripion: "The outlined text that sits behind the content",
+      type: "string",
+    },
   ],
 };
