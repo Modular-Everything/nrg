@@ -20,6 +20,7 @@ const SectionMarker = ({ block }) => {
     aside,
     backgroundColor,
     textColor,
+    slug,
   } = block;
 
   return (
@@ -34,7 +35,7 @@ const SectionMarker = ({ block }) => {
           <S.Copy hasTitle={!!title}>
             <BlockContent blocks={mainCopy} />
             {link && linkLabel && (
-              <Link href={`/${link}`}>
+              <Link href={`/${slug === "homepage" ? "" : slug}`}>
                 <a>
                   {linkLabel} <ArrowRight />
                 </a>

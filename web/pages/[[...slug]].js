@@ -96,7 +96,30 @@ export async function getStaticPaths() {
 }
 
 export async function getStaticProps({ params, preview = false }) {
-  const query = `*[_type == 'page' && slug.current == $slug]`;
+  const query = `
+    *[_type == "page" && slug.current == $slug] {
+      ...,
+      topBlocks[] {
+        ...,
+        _type == 'sectionMarker' => {
+          'slug': link->slug.current,
+        },
+      },
+      blocks[] {
+        ...,
+        _type == 'sectionMarker' => {
+          'slug': link->slug.current,
+        },
+      },
+      bottomBlocks[] {
+        ...,
+        _type == 'prevNext' => {
+          'prevSlug': nextLink.link->slug.current,
+          'nextSlug': prevLink.link->slug.current,
+        }
+      }
+    }
+  `;
   const queryParams = { slug: params.slug[0] };
   const data = await getClient(preview).fetch(query, queryParams);
 

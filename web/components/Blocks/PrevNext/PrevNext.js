@@ -32,24 +32,24 @@ PrevNextLink.defaultProps = {
 // ---
 
 const PrevNext = ({ block }) => {
-  const { prevLink, nextLink } = block;
+  const { prevLink, prevSlug, nextLink, nextSlug } = block;
 
   return (
     <FadeIn>
       <S.PrevNext>
-        <Link href="/">
+        <Link href={prevSlug === "homepage" ? "/" : `/${prevSlug}`}>
           <a className="prevNext prev">
             <PrevNextLink
-              subtitle={prevLink.subtitle}
-              label={prevLink.linkLabel}
+              subtitle={prevLink?.subtitle}
+              label={prevLink?.linkLabel}
             />
           </a>
         </Link>
-        <Link href="/">
+        <Link href={nextSlug === "homepage" ? "/" : `/${nextSlug}`}>
           <a className="prevNext next">
             <PrevNextLink
-              subtitle={nextLink.subtitle}
-              label={nextLink.linkLabel}
+              subtitle={nextLink?.subtitle}
+              label={nextLink?.linkLabel}
             />
           </a>
         </Link>
@@ -72,6 +72,8 @@ PrevNext.propTypes = {
       link: PropTypes.shape({}).isRequired,
       linkLabel: PropTypes.string,
     }),
+    nextSlug: PropTypes.string.isRequired,
+    prevSlug: PropTypes.string.isRequired,
   }),
 };
 
