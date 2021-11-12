@@ -13,6 +13,8 @@ import siteSettings from "./siteSettings";
 import seo from "./seo";
 import menu from "./menu";
 import menuItem from "./menuItem";
+import cardsGalleryItems from "./elements/cardsGalleryItems";
+import prevNextLink from "./elements/prevNextLink";
 
 // Custom block types
 import bodyCopy from "./blocks/bodyCopy";
@@ -26,7 +28,7 @@ import statement from "./blocks/statement";
 import styledImageBanner from "./blocks/styledImageBanner";
 import styledBanner from "./blocks/styledBanner";
 import cardsGallery from "./blocks/cardsGallery";
-import cardsGalleryItems from "./elements/cardsGalleryItems";
+import prevNext from "./blocks/prevNext";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -44,6 +46,7 @@ export default createSchema({
     menu,
     menuItem,
     cardsGalleryItems,
+    prevNextLink,
 
     // Custom block types
     bodyCopy,
@@ -57,5 +60,6 @@ export default createSchema({
     styledImageBanner,
     styledBanner,
     cardsGallery,
+    prevNext,
   ]),
 });
