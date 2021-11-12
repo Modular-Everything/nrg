@@ -13,6 +13,7 @@ import StyledBanner from "./StyledBanner";
 import LogoMatrix from "./LogoMatrix";
 import MarqueeBanner from "./MarqueeBanner";
 import CardsGallery from "./CardsGallery";
+import PrevNext from "./PrevNext";
 
 // ---
 
@@ -34,6 +35,7 @@ const BlockBuilder = ({ blocks }) => {
     logoMatrix: LogoMatrix,
     statement: MarqueeBanner,
     cardsGallery: CardsGallery,
+    prevNext: PrevNext,
   };
 
   return (
