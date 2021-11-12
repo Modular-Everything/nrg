@@ -4,6 +4,7 @@ import Link from "next/link";
 import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
 import * as S from "./PrevNext.styles";
+import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
@@ -34,26 +35,28 @@ const PrevNext = ({ block }) => {
   const { prevLink, nextLink } = block;
 
   return (
-    <S.PrevNext>
-      <Link href="/">
-        <a className="prevNext prev">
-          <PrevNextLink
-            subtitle={prevLink.subtitle}
-            label={prevLink.linkLabel}
-          />
-        </a>
-      </Link>
-      <Link href="/">
-        <a className="prevNext next">
-          <PrevNextLink
-            subtitle={nextLink.subtitle}
-            label={nextLink.linkLabel}
-          />
-        </a>
-      </Link>
+    <FadeIn>
+      <S.PrevNext>
+        <Link href="/">
+          <a className="prevNext prev">
+            <PrevNextLink
+              subtitle={prevLink.subtitle}
+              label={prevLink.linkLabel}
+            />
+          </a>
+        </Link>
+        <Link href="/">
+          <a className="prevNext next">
+            <PrevNextLink
+              subtitle={nextLink.subtitle}
+              label={nextLink.linkLabel}
+            />
+          </a>
+        </Link>
 
-      <S.OutlineText text="Creators, Makers, Builders" />
-    </S.PrevNext>
+        <S.OutlineText text="Creators, Makers, Builders" />
+      </S.PrevNext>
+    </FadeIn>
   );
 };
 
