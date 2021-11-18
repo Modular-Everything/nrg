@@ -13,6 +13,8 @@ const Placeholder = () => (
   />
 );
 
+// ---
+
 const Image = ({ image, layout, ...rest }) => {
   if (!image?.asset) return <Placeholder />;
 
