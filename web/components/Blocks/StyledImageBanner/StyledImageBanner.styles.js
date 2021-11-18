@@ -85,6 +85,7 @@ export const BG = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
+  background-color: var(--black);
 
   img {
     position: relative;
@@ -99,7 +100,6 @@ export const BG = styled.div`
     width: 100%;
     overflow: hidden;
     position: relative;
-    background-color: var(--black);
 
     iframe {
       position: absolute;
