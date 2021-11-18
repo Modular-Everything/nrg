@@ -7,6 +7,9 @@ export default {
   name: "styledBanner",
   title: "Styled Banner",
   type: "object",
+  initialValue: () => ({
+    backgroundColor: "black",
+  }),
   fields: [
     {
       name: "styledCopy",
@@ -33,7 +36,7 @@ export default {
       title: "backgroundColor",
     },
     prepare: ({ title }) => ({
-      title: `${title} banner`,
+      title: `${title ? `${title} Banner` : "Banner"}`,
       media: <Icon />,
       subtitle: "Styled Banner",
     }),
