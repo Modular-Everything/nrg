@@ -7,8 +7,14 @@ import * as S from "./Image.styles";
 
 // ---
 
+const Placeholder = () => (
+  <div
+    style={{ backgroundColor: "var(--lt-grey)", width: "100%", height: "100%" }}
+  />
+);
+
 const Image = ({ image, layout, ...rest }) => {
-  if (!image?.asset) return null;
+  if (!image?.asset) return <Placeholder />;
 
   const imageProps = useNextSanityImage(config, image);
 
