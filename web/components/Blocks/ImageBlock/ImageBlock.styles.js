@@ -10,6 +10,7 @@ export const ImageBlock = styled.div`
   height: 100vh;
   overflow: hidden;
   text-align: center;
+  z-index: 50;
 `;
 
 export const Background = styled.div`
