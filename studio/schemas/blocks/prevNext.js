@@ -13,10 +13,12 @@ export default {
     {
       name: "prevLink",
       type: "prevNextLink",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "nextLink",
       type: "prevNextLink",
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {
