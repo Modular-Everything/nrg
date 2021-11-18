@@ -28,5 +28,6 @@ export const StyledText = styled(MarqueeText)`
 `;
 
 export const Noise = styled(CustomNoise)`
-  opacity: 0.5;
+  opacity: ${({ backgroundColor }) =>
+    backgroundColor === "red" ? "0.15" : "0.5"};
 `;

@@ -15,7 +15,7 @@ const StyledBanner = ({ block }) => {
   return (
     <S.StyledBanner backgroundColor={backgroundColor}>
       <S.StyledText text={styledCopy} />
-      <S.Noise />
+      <S.Noise backgroundColor={backgroundColor} />
     </S.StyledBanner>
   );
 };
