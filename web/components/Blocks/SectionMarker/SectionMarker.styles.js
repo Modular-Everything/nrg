@@ -179,6 +179,10 @@ export const Aside = styled.div`
   line-height: 2.4rem;
   margin-top: calc(var(--gutter) * 2);
 
+  @media (min-width: 768px) {
+    margin-top: 0;
+  }
+
   @media (min-width: 1024px) {
     grid-column: unset;
     margin-top: ${({ hasTitle }) =>
