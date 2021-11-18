@@ -7,6 +7,9 @@ export default {
   name: "bolt",
   title: "Bolt",
   type: "object",
+  initialValue: () => ({
+    backgroundColor: "red",
+  }),
   fields: [
     {
       name: "backgroundColor",
