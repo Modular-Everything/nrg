@@ -34,16 +34,16 @@ const CardsGallery = ({ block }) => {
               },
             }}
           >
-            {item.map((card) => (
-              <SwiperSlide key={card._key}>
+            {item?.map((card) => (
+              <SwiperSlide key={card?._key}>
                 <div className="img">
-                  <Image image={card.image} layout="fill" />
+                  <Image image={card?.image} layout="fill" />
                 </div>
 
-                {(card.title || card.subtitle) && (
+                {(card?.title || card?.subtitle) && (
                   <div className="copy">
-                    {card.title && <h5>{card.title}</h5>}
-                    {card.subtitle && <p>{card.subtitle}</p>}
+                    {card?.title && <h5>{card?.title}</h5>}
+                    {card?.subtitle && <p>{card?.subtitle}</p>}
                   </div>
                 )}
               </SwiperSlide>
