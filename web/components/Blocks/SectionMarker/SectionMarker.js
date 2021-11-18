@@ -38,10 +38,10 @@ const SectionMarker = ({ block }) => {
 
           <S.Copy hasTitle={!!title}>
             <BlockContent blocks={mainCopy} />
-            {link && linkLabel && (
+            {link && (
               <Link href={`/${slug === "homepage" ? "" : slug}`}>
                 <a>
-                  {linkLabel} <ArrowRight />
+                  {linkLabel || "Learn more"} <ArrowRight />
                 </a>
               </Link>
             )}
