@@ -23,6 +23,10 @@ export const StyledText = styled(MarqueeText)`
   position: relative;
   z-index: 20;
   max-width: calc(100vw + var(--gap));
+
+  p:nth-child(n + 4) {
+    display: none;
+  }
 `;
 
 export const Inner = styled(Container)`
