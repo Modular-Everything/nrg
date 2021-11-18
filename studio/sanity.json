@@ -14,7 +14,9 @@
     "@sanity/desk-tool",
     "@sanity/production-preview",
     "iframe-pane",
-    "media"
+    "media",
+    "@sanity/dashboard",
+    "netlify-deploy-status-badge"
   ],
   "env": {
     "development": {
@@ -35,6 +37,10 @@
     {
       "implements": "part:@sanity/production-preview/resolve-production-url",
       "path": "./resolveProductionUrl.js"
+    },
+    {
+      "implements": "part:@sanity/dashboard/config",
+      "path": "./dashboardConfig.js"
     }
   ]
 }
