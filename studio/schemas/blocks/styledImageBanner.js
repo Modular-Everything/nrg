@@ -41,6 +41,18 @@ export default {
       type: "text",
     },
     {
+      name: "backgroundType",
+      title: "Background Media Type",
+      type: "string",
+      options: {
+        list: [
+          { title: "Image", value: "image" },
+          { title: "Video", value: "video" },
+        ],
+      },
+      validation: (Rule) => Rule.required(),
+    },
+    {
       name: "backgroundImage",
       title: "Background Image",
       type: "image",
@@ -51,7 +63,18 @@ export default {
           type: "string",
         },
       ],
-      validation: (Rule) => Rule.required(),
+      hidden: ({ parent }) =>
+        !parent?.backgroundType || parent?.backgroundType === "video",
+      // validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "backgroundVideo",
+      title: "Background Video",
+      type: "url",
+      description: "A link to a Vimeo video",
+      hidden: ({ parent }) =>
+        !parent?.backgroundType || parent?.backgroundType === "image",
+      // validation: (Rule) => Rule.required(),
     },
     {
       name: "sitsBelowMenu",

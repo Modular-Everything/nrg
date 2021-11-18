@@ -3,6 +3,7 @@ import PropTypes from "prop-types";
 import { BiDownArrowAlt as ArrowDown } from "react-icons/bi";
 import { gsap } from "gsap/dist/gsap";
 import { ScrollTrigger } from "gsap/dist/ScrollTrigger";
+import getVideoId from "get-video-id";
 
 import * as S from "./StyledImageBanner.styles";
 import Image from "../../Elements/Image";
@@ -24,8 +25,12 @@ const StyledImageBanner = ({ block }) => {
     scrollLabel,
     sitsBelowMenu,
     styledCopy,
+    backgroundType,
     backgroundImage,
+    backgroundVideo,
   } = block;
+
+  console.log(getVideoId(backgroundVideo));
 
   const [bannerHeight, setBannerHeight] = useState(0);
   const bannerRef = useRef(null);
@@ -74,7 +79,24 @@ const StyledImageBanner = ({ block }) => {
 
       <S.BG>
         {(sitsBelowMenu || descriptiveCopy) && <S.Skrim />}
-        <Image image={backgroundImage} priority layout="fill" quality={100} />
+        {backgroundType === "image" && backgroundImage && (
+          <Image image={backgroundImage} priority layout="fill" quality={100} />
+        )}
+        {backgroundType === "video" && backgroundVideo && (
+          <div clasName="videowrap">
+            <iframe
+              src={`https://player.vimeo.com/video/${
+                getVideoId(backgroundVideo).id
+              }?h=0f405f633e&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1&amp;app_id=122963`}
+              title="Vimeo"
+              width="1920"
+              height="1080"
+              frameBorder="0"
+              allow="autoplay; fullscreen; picture-in-picture"
+              allowFullScreen
+            />
+          </div>
+        )}
       </S.BG>
     </S.StyledImageBanner>
   );
@@ -82,10 +104,14 @@ const StyledImageBanner = ({ block }) => {
 
 StyledImageBanner.propTypes = {
   block: PropTypes.shape({
+    /** A string containing a background type, controlling which media this component uses */
+    backgroundType: PropTypes.string.isRequired,
+    /** A string containing a background type, controlling which media this component uses */
+    backgroundVideo: PropTypes.string,
     /** An object containing a direct URL to an image or a srcset */
     backgroundImage: PropTypes.shape({
       url: PropTypes.string,
-    }).isRequired,
+    }),
     /** A markdown string of copy, displays as a big block of styled copy */
     styledCopy: PropTypes.string.isRequired,
     /** A simple string of copy — it accepts markdown but should only really be used for linebreaks. */
@@ -99,6 +125,7 @@ StyledImageBanner.propTypes = {
 
 StyledImageBanner.defaultProps = {
   block: {
+    backgroundVideo: null,
     backgroundImage: {
       url: null,
     },

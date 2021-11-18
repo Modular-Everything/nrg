@@ -10,7 +10,7 @@ export const StyledImageBanner = styled.section`
 
   position: relative;
   min-height: 32rem;
-  overflow-x: hidden;
+  overflow: hidden;
   padding: ${({ makeSpaceForHeader }) =>
     makeSpaceForHeader ? "14rem 0 var(--extraGap) 0" : "var(--extraGap) 0"};
 `;
@@ -92,6 +92,22 @@ export const BG = styled.div`
     width: 100%;
     height: 100%;
     object-fit: cover;
+  }
+
+  .videowrap {
+    height: 100%;
+    width: 100%;
+    overflow: hidden;
+    position: relative;
+    background-color: var(--black);
+
+    iframe {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+      object-fit: fill;
+      transform: translate(-50%, -50%);
+    }
   }
 `;
 
