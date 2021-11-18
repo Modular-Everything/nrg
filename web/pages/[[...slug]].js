@@ -90,7 +90,7 @@ export async function getStaticPaths() {
   const pages = await getClient().fetch(allSlugsQuery);
 
   return {
-    paths: pages.map((slug) => `/${slug}`),
+    paths: pages.map((slug) => `/${slug}`) || [],
     fallback: true,
   };
 }
