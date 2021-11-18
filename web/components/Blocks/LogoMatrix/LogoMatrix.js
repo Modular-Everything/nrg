@@ -11,7 +11,7 @@ const LogoMatrix = ({ block }) => (
   <S.LogoMatrix>
     <FadeIn stagger={0.1}>
       <ul>
-        {block.logos.map((logo) => (
+        {block?.logos?.map((logo) => (
           <li>
             <Image image={logo} layout="fixed" />
           </li>

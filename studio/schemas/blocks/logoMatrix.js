@@ -33,7 +33,7 @@ export default {
       title: "logos",
     },
     prepare: ({ title }) => ({
-      title: `${title.length} logo(s)`,
+      title: title?.length > 0 ? `${title.length} logo(s)` : "Add some logos!",
       media: <Icon />,
       subtitle: "Logo Matrix",
     }),
