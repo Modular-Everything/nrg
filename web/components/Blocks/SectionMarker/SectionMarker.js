@@ -24,7 +24,11 @@ const SectionMarker = ({ block }) => {
   } = block;
 
   return (
-    <S.SectionMarker sectionBgColor={backgroundColor} sectionColor={textColor}>
+    <S.SectionMarker
+      className="block__SectionMarker"
+      sectionBgColor={backgroundColor}
+      sectionColor={textColor}
+    >
       <FadeIn>
         <S.SectionMarkerContainer extraPadding={backgroundColor === "black"}>
           <S.Title>

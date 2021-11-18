@@ -7,6 +7,7 @@ import "normalize.css";
 import Favicon from "../Favicon";
 import GlobalStyles from "../../../styles/GlobalStyles";
 import Typography from "../../../styles/Typography";
+import Stacking from "../../../styles/Stacking";
 import Header from "../Header";
 import Footer from "../Footer";
 
@@ -22,6 +23,7 @@ const Layout = ({ children, menuItems }) => (
 
     <GlobalStyles />
     <Typography />
+    <Stacking />
 
     <Header menuItems={menuItems} />
     <main>{children}</main>
