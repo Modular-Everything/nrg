@@ -50,13 +50,31 @@ export default {
       name: "mainCopy",
       title: "Main Copy",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [],
+          marks: {
+            annotations: [],
+            decorators: [],
+          },
+        },
+      ],
     },
     {
       name: "aside",
       title: "Aside",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [],
+          marks: {
+            annotations: [],
+            decorators: [],
+          },
+        },
+      ],
     },
     {
       name: "linkLabel",
