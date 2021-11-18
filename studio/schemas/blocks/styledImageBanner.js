@@ -1,5 +1,6 @@
 import React from "react";
 import { FcFilm as Icon } from "react-icons/fc";
+import { FaHighlighter as BoldIcon } from "react-icons/fa";
 
 // ---
 
@@ -15,7 +16,23 @@ export default {
       name: "styledCopy",
       title: "Styled Copy",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: "Add background to text",
+                value: "strong",
+                blockEditor: { icon: BoldIcon },
+              },
+            ],
+          },
+        },
+      ],
       validation: (Rule) => Rule.required(),
     },
     {

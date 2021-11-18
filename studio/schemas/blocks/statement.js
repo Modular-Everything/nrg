@@ -1,5 +1,9 @@
 import React from "react";
 import { FcVoicePresentation as Icon } from "react-icons/fc";
+import {
+  FaHighlighter as BoldIcon,
+  FaTextHeight as EmIcon,
+} from "react-icons/fa";
 
 // ---
 
@@ -12,7 +16,28 @@ export default {
       name: "statement",
       title: "Statement",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: "Add background to text",
+                value: "strong",
+                blockEditor: { icon: BoldIcon },
+              },
+              {
+                title: "Add small text",
+                value: "em",
+                blockEditor: { icon: EmIcon },
+              },
+            ],
+          },
+        },
+      ],
     },
   ],
   preview: {
