@@ -7,16 +7,20 @@ export default {
   name: "bodyCopy",
   title: "Body Copy",
   type: "object",
+  initialValue: () => ({
+    columns: 1,
+  }),
   fields: [
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
-    },
     {
       name: "columns",
       title: "Columns",
       type: "number",
+      validation: (Rule) => Rule.min(1).max(2),
+    },
+    {
+      name: "title",
+      title: "Title",
+      type: "string",
     },
     {
       name: "copy",

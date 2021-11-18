@@ -23,7 +23,11 @@ const CopyBlock = ({ block }) => {
           </div>
         </S.CopyWithImage>
       ) : (
-        <Copy title={title} copy={copy} columns={columns} />
+        <Copy
+          title={title}
+          copy={copy}
+          columns={Math.min(2, Math.max(1, columns))}
+        />
       )}
     </Container>
   );
