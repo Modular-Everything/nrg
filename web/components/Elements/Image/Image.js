@@ -9,7 +9,7 @@ import * as S from "./Image.styles";
 
 const Placeholder = () => (
   <div
-    style={{ backgroundColor: "var(--lt-grey)", width: "100%", height: "100%" }}
+    style={{ backgroundColor: "var(--grey)", width: "100%", height: "100%" }}
   />
 );
 
