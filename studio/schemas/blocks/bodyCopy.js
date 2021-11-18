@@ -9,6 +9,11 @@ export default {
   type: "object",
   fields: [
     {
+      name: "title",
+      title: "Title",
+      type: "string",
+    },
+    {
       name: "columns",
       title: "Columns",
       type: "number",
@@ -30,11 +35,6 @@ export default {
           type: "string",
         },
       ],
-    },
-    {
-      name: "title",
-      title: "Title",
-      type: "string",
     },
   ],
   preview: {
