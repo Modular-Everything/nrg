@@ -8,18 +8,22 @@ export default {
   title: "Gridded List",
   type: "object",
   initialValue: () => ({
-    layoutType: "light",
+    layoutType: "dark",
   }),
   fields: [
     {
       name: "title",
       title: "Title",
       type: "string",
+      description:
+        "The title of the list: big, bold, with an aftertaste of currants. Maybe.",
     },
     {
       name: "layoutType",
       title: "Layout Type",
       type: "string",
+      description:
+        "You can set this to 'light' if you want to put it underneath a section marker or something.",
       options: {
         list: [
           { title: "Dark", value: "dark" },
@@ -34,6 +38,7 @@ export default {
       name: "text",
       title: "Text",
       type: "array",
+      description: "The items in the grid.",
       of: [
         {
           name: "text",

@@ -35,7 +35,7 @@ export default {
       name: "canonicalUrl",
       title: "Canonical URL",
       type: "url",
-      description: "Avoid trailing slash",
+      description: "Avoid trailing slash (don't add a / at the end)",
       validation: (Rule) => Rule.required(),
     },
     {

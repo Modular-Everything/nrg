@@ -12,6 +12,8 @@ export default {
       name: "logos",
       title: "Logos",
       type: "array",
+      description:
+        "A list of logos to display in a grid (no links or anything, just images... and I recommend uploading SVG's here or at the very least a PNG)",
       of: [
         {
           name: "logo",

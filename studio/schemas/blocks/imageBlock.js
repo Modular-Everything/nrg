@@ -15,24 +15,20 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      description: "A title to display over the image.",
     },
     {
-      name: "backgroundImage",
-      title: "Background Image",
-      type: "image",
-      fields: [
-        {
-          name: "alt",
-          title: "Alt",
-          type: "string",
-        },
-      ],
-      validation: (Rule) => Rule.required(),
+      name: "copy",
+      title: "Copy",
+      type: "string",
+      description: "Some copy that sits below the title (if you want it).",
     },
     {
       name: "icon",
       title: "Icon",
       type: "string",
+      description:
+        "If you set this to anything other than 'hidden', it will hide the title and copy.",
       options: {
         list: [
           { title: "Large", value: "large" },
@@ -45,9 +41,18 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "copy",
-      title: "Copy",
-      type: "string",
+      name: "backgroundImage",
+      title: "Background Image",
+      type: "image",
+      description: "The image to show behind the text or icon.",
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+      validation: (Rule) => Rule.required(),
     },
   ],
   preview: {

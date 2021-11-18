@@ -16,12 +16,14 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      description: "The title of the section.",
       validation: (Rule) => Rule.required(),
     },
     {
       name: "textColor",
       title: "Text Color",
       type: "string",
+      description: "The color of the text.",
       options: {
         list: [
           { title: "White", value: "white" },
@@ -36,6 +38,8 @@ export default {
       name: "backgroundColor",
       title: "Background Color",
       type: "string",
+      description:
+        "The color of the background (make sure to set the text color too).",
       options: {
         list: [
           { title: "White", value: "white" },
@@ -50,6 +54,7 @@ export default {
       name: "mainCopy",
       title: "Main Copy",
       type: "array",
+      description: "The main bit of copy. You can add lists here if you like.",
       of: [
         {
           type: "block",
@@ -65,6 +70,8 @@ export default {
       name: "aside",
       title: "Aside",
       type: "array",
+      description:
+        "The copy that sits next to (or below on mobile) the main copy. You can add lists here if you like.",
       of: [
         {
           type: "block",
@@ -80,11 +87,14 @@ export default {
       name: "linkLabel",
       title: "Link Label",
       type: "string",
+      description:
+        "The label of the link, or else it defaults to 'Learn more'.",
     },
     {
       name: "link",
       title: "Link",
       type: "reference",
+      description: "Where does this link to? Totally optional.",
       to: [{ type: "page" }],
     },
   ],

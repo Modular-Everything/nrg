@@ -16,6 +16,8 @@ export default {
       name: "statement",
       title: "Statement",
       type: "array",
+      description:
+        "Use the highlight and text height buttons to create styled effects. Try combining them!",
       of: [
         {
           type: "block",

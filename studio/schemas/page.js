@@ -16,12 +16,15 @@ export default {
       name: "title",
       title: "Title",
       type: "string",
+      description: "The title of the page",
       validation: (Rule) => Rule.required(),
     },
     {
       name: "slug",
       title: "Slug",
       type: "slug",
+      description:
+        "Important: Generate the slug BEFORE trying to preview the page.",
       options: {
         source: "title",
       },
@@ -31,6 +34,7 @@ export default {
       name: "section",
       title: "Section",
       type: "string",
+      description: "Mainly only used if you're creating services.",
       options: {
         list: [
           { title: "Default", value: "default" },
@@ -42,7 +46,7 @@ export default {
     {
       name: "seo",
       title: "Page SEO",
-      description: "This will overwrite the default SEO set in Site Settings",
+      description: "This will override the default SEO set in Site Settings",
       type: "seo",
     },
     {
@@ -53,6 +57,8 @@ export default {
       options: {
         editModal: "fullscreen",
       },
+      description:
+        "Blocks that appear underneath/directly below the header/navigation with no spacing between.",
       validation: (Rule) => Rule.required(),
     },
     {
@@ -63,6 +69,8 @@ export default {
       options: {
         editModal: "fullscreen",
       },
+      description:
+        "These blocks all have spacing/gaps between them, above them and below them (generated automatically).",
     },
     {
       name: "bottomBlocks",
@@ -72,6 +80,8 @@ export default {
       options: {
         editModal: "fullscreen",
       },
+      description:
+        "Blocks that sit directly above the footer with no spacing between.",
     },
     {
       name: "backgroundText",

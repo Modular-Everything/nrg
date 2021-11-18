@@ -15,6 +15,7 @@ export default {
       name: "backgroundColor",
       title: "Background Color",
       type: "string",
+      description: "The background color 😉",
       options: {
         list: [
           { title: "Red", value: "red" },

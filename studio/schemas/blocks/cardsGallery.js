@@ -12,6 +12,8 @@ export default {
       name: "item",
       title: "Item",
       type: "array",
+      description:
+        "A list of cards (this was designed originally for a list of staff members, but it's flexible and could be used for something else).",
       of: [{ type: "cardsGalleryItems" }],
     },
   ],

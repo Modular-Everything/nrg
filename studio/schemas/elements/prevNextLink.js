@@ -14,6 +14,7 @@ export default {
       name: "link",
       title: "Link",
       type: "reference",
+      description: "Where does this link to?",
       to: [{ type: "page" }],
       validation: (Rule) => Rule.required(),
     },

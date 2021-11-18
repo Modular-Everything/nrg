@@ -15,6 +15,7 @@ export default {
       name: "layoutType",
       title: "Layout Type",
       type: "string",
+      description: "Standard is pretty small, and tall is pretty big.",
       options: {
         list: [
           { title: "Standard", value: "standard" },
@@ -41,11 +42,13 @@ export default {
               name: "title",
               title: "Title",
               type: "string",
+              description: "An optional title that sits over the image.",
             },
             {
               name: "image",
               title: "Image",
               type: "image",
+              description: "The image on the gallery item.",
               fields: [
                 {
                   name: "alt",
@@ -53,17 +56,22 @@ export default {
                   type: "string",
                 },
               ],
+              validation: (Rule) => Rule.required(),
             },
             {
               name: "link",
               title: "Link",
               type: "reference",
+              description:
+                "Optionally you can click on this item to go somewhere",
               to: [{ type: "page" }],
             },
             {
               name: "layoutType",
               title: "Layout Type",
               type: "string",
+              description:
+                "Portrait is tall, landscape is wide. You can select some portrait and others landscape if you like.",
               options: {
                 list: [
                   { title: "Portrait", value: "portrait" },

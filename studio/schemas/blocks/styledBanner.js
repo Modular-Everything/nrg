@@ -17,11 +17,14 @@ export default {
       title: "Styled Copy",
       type: "array",
       of: [{ type: "block" }],
+      description:
+        "Keep the text on each line nice and long. Maximum of 3 lines. Create a new line by hitting ENTER/RETURN. Use the highlight button to highlight certain words.",
     },
     {
       name: "backgroundColor",
       title: "Background Color",
       type: "string",
+      description: "The color of the background behind the text.",
       options: {
         list: [
           { title: "Red", value: "red" },
@@ -35,6 +38,8 @@ export default {
       name: "sitsBelowMenu",
       title: "Sits below menu?",
       type: "boolean",
+      description:
+        "If on, it adds some extra padding to the top to account for the header. If off, the padding is the same above and below.",
       validation: (Rule) => Rule.required(),
     },
   ],
