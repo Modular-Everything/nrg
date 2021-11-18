@@ -39,6 +39,14 @@ export const SingleColumn = styled.div`
   display: flex;
   flex-direction: column;
   gap: calc(var(--gutter) * 1.5);
+
+  p {
+    margin-bottom: var(--gutter);
+
+    &:last-of-type {
+      margin-bottom: 0;
+    }
+  }
 `;
 
 export const MultiColumn = styled.div`
