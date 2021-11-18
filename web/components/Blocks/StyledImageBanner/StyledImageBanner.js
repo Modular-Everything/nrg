@@ -30,8 +30,6 @@ const StyledImageBanner = ({ block }) => {
     backgroundVideo,
   } = block;
 
-  console.log(getVideoId(backgroundVideo));
-
   const [bannerHeight, setBannerHeight] = useState(0);
   const bannerRef = useRef(null);
 
