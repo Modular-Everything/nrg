@@ -60,7 +60,7 @@ export default {
       validation: (Rule) => Rule.required(),
     },
     {
-      name: "scrolLabel",
+      name: "scrollLabel",
       title: "Scroll Label",
       type: "string",
     },
