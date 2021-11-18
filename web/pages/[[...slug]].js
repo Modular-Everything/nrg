@@ -44,8 +44,6 @@ const Page = ({ data, menuItems, globalMetadata, preview }) => {
 
   const page = filterDataToSingleItem(previewData, preview);
 
-  const { blocks, topBlocks, bottomBlocks, backgroundText } = page;
-
   return (
     <Layout menuItems={menuItems[0]}>
       <SEO globalMetadata={globalMetadata[0]} customMetadata={page?.seo} />
@@ -54,17 +52,17 @@ const Page = ({ data, menuItems, globalMetadata, preview }) => {
 
       <AutoLayout>
         <div className="top">
-          {topBlocks && <BlockBuilder blocks={topBlocks} />}
+          {page?.topBlocks && <BlockBuilder blocks={page?.topBlocks} />}
         </div>
 
         <div className="blocks">
-          {backgroundText && <FixedBgText text={backgroundText} />}
-          <BlockBuilder blocks={blocks} preview={preview} />
+          {page?.backgroundText && <FixedBgText text={page?.backgroundText} />}
+          <BlockBuilder blocks={page?.blocks} preview={preview} />
         </div>
 
-        {bottomBlocks && (
+        {page?.bottomBlocks && (
           <div className="bottom">
-            <BlockBuilder blocks={bottomBlocks} />
+            <BlockBuilder blocks={page?.bottomBlocks} />
           </div>
         )}
       </AutoLayout>
