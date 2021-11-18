@@ -27,6 +27,7 @@ export default {
       title: "Copy",
       type: "array",
       of: [{ type: "block" }],
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "image",
