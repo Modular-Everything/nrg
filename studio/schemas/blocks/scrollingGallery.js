@@ -7,6 +7,9 @@ export default {
   name: "scrollingGallery",
   title: "Scrolling Gallery",
   type: "object",
+  initialValue: () => ({
+    layoutType: "standard",
+  }),
   fields: [
     {
       name: "layoutType",
@@ -30,9 +33,9 @@ export default {
           name: "item",
           title: "Item",
           type: "object",
-          initialValue: () => ({
-            layoutType: "horizontal",
-          }),
+          initialValue: {
+            layoutType: "landscape",
+          },
           fields: [
             {
               name: "title",
@@ -80,7 +83,7 @@ export default {
       title: "items",
     },
     prepare: ({ title }) => ({
-      title: `${title.length} item(s)`,
+      title: title.length > 0 ? `${title.length} item(s)` : "Add an item!",
       media: <Icon />,
       subtitle: "Scrolling Gallery",
     }),
