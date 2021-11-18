@@ -31,14 +31,14 @@ const ImageBlock = ({ block }) => {
 
   return (
     <S.ImageBlock ref={bg}>
-      {(title || copy) && (
+      {(title || copy) && icon === "hidden" && (
         <S.Copy>
           {title && <Title as="h3" title={title} />}
           {copy && <p>{copy}</p>}
         </S.Copy>
       )}
 
-      {(!title || !copy) && icon && icon !== "hidden" && (
+      {icon !== "hidden" && (
         <S.Icon outline={icon === "large"} size={icon}>
           <BoltIcon />
         </S.Icon>
