@@ -5,14 +5,15 @@ import CustomNoise from "../../Elements/Noise";
 // ---
 
 export const StyledBanner = styled.section`
-  --gap: calc(var(--gutter) * 2);
+  --gap: calc(var(--gutter) * 4);
   --extraGap: var(--header);
   --backgroundColor: var(--${({ backgroundColor }) => backgroundColor});
 
   display: flex;
   position: relative;
   min-height: 32rem;
-  padding: var(--extraGap) 0 calc(var(--extraGap) / 2);
+  padding: ${({ makeSpaceForHeader }) =>
+    makeSpaceForHeader ? "var(--header) 0" : "var(--gap) 0"};
   overflow: hidden;
   background-color: var(--backgroundColor);
 `;

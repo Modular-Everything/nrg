@@ -9,6 +9,7 @@ export default {
   type: "object",
   initialValue: () => ({
     backgroundColor: "black",
+    sitsBelowMenu: true,
   }),
   fields: [
     {
@@ -30,13 +31,19 @@ export default {
         direction: "horizontal",
       },
     },
+    {
+      name: "sitsBelowMenu",
+      title: "Sits below menu?",
+      type: "boolean",
+      validation: (Rule) => Rule.required(),
+    },
   ],
   preview: {
     select: {
       title: "backgroundColor",
     },
     prepare: ({ title }) => ({
-      title: `${title ? `${title} Banner` : "Banner"}`,
+      title: `${title} banner`,
       media: <Icon />,
       subtitle: "Styled Banner",
     }),

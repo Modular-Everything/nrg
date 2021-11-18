@@ -10,10 +10,13 @@ import * as S from "./StyledBanner.styles";
  */
 
 const StyledBanner = ({ block }) => {
-  const { styledCopy, backgroundColor } = block;
+  const { styledCopy, backgroundColor, sitsBelowMenu } = block;
 
   return (
-    <S.StyledBanner backgroundColor={backgroundColor}>
+    <S.StyledBanner
+      backgroundColor={backgroundColor}
+      makeSpaceForHeader={sitsBelowMenu}
+    >
       <S.StyledText text={styledCopy} />
       <S.Noise backgroundColor={backgroundColor} />
     </S.StyledBanner>
@@ -26,6 +29,8 @@ StyledBanner.propTypes = {
     backgroundColor: PropTypes.string.isRequired,
     /** A markdown string of copy, displays as a big block of styled copy */
     styledCopy: PropTypes.string.isRequired,
+    /** Whether to add some extra padding to the top or not */
+    sitsBelowMenu: PropTypes.bool.isRequired,
   }).isRequired,
 };
 
