@@ -115,7 +115,9 @@ export async function getStaticProps({ params, preview = false }) {
         ...,
         _type == 'prevNext' => {
           'prevSlug': nextLink.link->slug.current,
+          'prevTitle': nextLink.link->title,
           'nextSlug': prevLink.link->slug.current,
+          'nextTitle': prevLink.link->title,
         }
       }
     }

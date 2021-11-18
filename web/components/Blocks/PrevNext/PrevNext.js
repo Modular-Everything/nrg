@@ -8,10 +8,10 @@ import FadeIn from "../../Animations/FadeIn";
 
 // ---
 
-const PrevNextLink = ({ subtitle, label }) => (
+const PrevNextLink = ({ title, subtitle, label }) => (
   <>
     {subtitle && <h4>{subtitle}</h4>}
-    <h3>NBA 2K20: Welcome to the Next</h3>
+    {title && <h3>{title}</h3>}
     <span className="label">
       {label || "View Project"} <ArrowRight />
     </span>
@@ -20,11 +20,13 @@ const PrevNextLink = ({ subtitle, label }) => (
 );
 
 PrevNextLink.propTypes = {
+  title: PropTypes.string,
   subtitle: PropTypes.string,
   label: PropTypes.string,
 };
 
 PrevNextLink.defaultProps = {
+  title: null,
   subtitle: null,
   label: null,
 };
@@ -32,7 +34,8 @@ PrevNextLink.defaultProps = {
 // ---
 
 const PrevNext = ({ block }) => {
-  const { prevLink, prevSlug, nextLink, nextSlug } = block;
+  const { prevLink, prevTitle, prevSlug, nextLink, nextTitle, nextSlug } =
+    block;
 
   return (
     <FadeIn>
@@ -40,6 +43,7 @@ const PrevNext = ({ block }) => {
         <Link href={prevSlug === "homepage" ? "/" : `/${prevSlug}`}>
           <a className="prevNext prev">
             <PrevNextLink
+              title={prevTitle}
               subtitle={prevLink?.subtitle}
               label={prevLink?.linkLabel}
             />
@@ -48,6 +52,7 @@ const PrevNext = ({ block }) => {
         <Link href={nextSlug === "homepage" ? "/" : `/${nextSlug}`}>
           <a className="prevNext next">
             <PrevNextLink
+              title={nextTitle}
               subtitle={nextLink?.subtitle}
               label={nextLink?.linkLabel}
             />
@@ -62,11 +67,13 @@ const PrevNext = ({ block }) => {
 
 PrevNext.propTypes = {
   block: PropTypes.shape({
+    prevTitle: PropTypes.string,
     prevLink: PropTypes.shape({
       subtitle: PropTypes.string,
       link: PropTypes.shape({}).isRequired,
       linkLabel: PropTypes.string,
     }),
+    nextTitle: PropTypes.string,
     nextLink: PropTypes.shape({
       subtitle: PropTypes.string,
       link: PropTypes.shape({}).isRequired,
@@ -79,10 +86,12 @@ PrevNext.propTypes = {
 
 PrevNext.defaultProps = {
   block: {
+    prevTitle: null,
     prevLink: {
       subtitle: null,
       linkLabel: null,
     },
+    nextTitle: null,
     nextLink: {
       subtitle: null,
       linkLabel: null,
