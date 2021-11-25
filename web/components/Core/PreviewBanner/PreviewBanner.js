@@ -8,7 +8,7 @@ import * as S from "./PreviewBanner.styles";
 
 const PreviewBanner = ({ slug }) => (
   <S.PreviewBanner>
-    <Link href={`/api/exit-preview?slug=/${slug}`}>
+    <Link href="/api/exit-preview">
       <a>Preview Mode Activated!</a>
     </Link>
   </S.PreviewBanner>

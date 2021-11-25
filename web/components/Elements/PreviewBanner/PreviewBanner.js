@@ -1,15 +1,11 @@
 import React from "react";
-import { useRouter } from "next/router";
 
 import * as S from "./PreviewBanner.styles";
 
 // ---
 
 const PreviewBanner = () => {
-  const router = useRouter();
-  const exitURL = `/api/exit-preview?redirect=${encodeURIComponent(
-    router.asPath
-  )}`;
+  const exitURL = `/api/exit-preview`;
 
   return (
     <S.PreviewBanner>
