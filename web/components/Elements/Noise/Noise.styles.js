@@ -57,7 +57,7 @@ export const Noise = styled.div`
     width: calc(100% + 200px);
     height: calc(100% + 200px);
     animation: noise 1s steps(2) infinite;
-    background-image: url("/noise.png");
+    background-image: url("https://persistent-file-storage.s3.eu-west-2.amazonaws.com/nrg/noise.png");
     will-change: transform !important;
   }
 `;
