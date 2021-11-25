@@ -3,6 +3,8 @@ module.exports = {
     domains: ["cdn.sanity.io"],
   },
 
+  generateBuildId: () => "build",
+
   async rewrites() {
     return [
       {
