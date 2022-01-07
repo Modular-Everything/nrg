@@ -33,8 +33,9 @@ const blockFields = `
 `;
 
 export const indexQuery = `
-*[_type == "client"] | order(date desc, _updatedAt desc) {
+*[_type == "page" && slug.current == "homepage" ] | order(date desc, _updatedAt desc) {
   ${commonFields}
+  ${blockFields}
 }`;
 
 export const menuQuery = `
