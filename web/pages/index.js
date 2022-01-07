@@ -14,8 +14,6 @@ import SEO from "../components/Core/SEO";
 // ---
 
 function Index({ data = {}, preview }) {
-  console.log(data);
-
   const slug = data?.index?.slug;
   const {
     data: { index },
@@ -75,38 +73,6 @@ export async function getStaticProps({ preview = false }) {
     },
   };
 }
-
-// export async function getStaticProps({ params, preview = false }) {
-//   const { index } = await getClient(preview).fetch(indexQuery, {
-//     index: params?.index,
-//   });
-
-//   if (!index) {
-//     return { notFound: true };
-//   }
-
-//   const menuItems = await getClient(preview).fetch(menuQuery);
-//   const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);
-
-//   return {
-//     props: {
-//       preview,
-//       data: {
-//         index,
-//         menuItems: menuItems[0],
-//         globalMetaData: globalMetaData[0],
-//       },
-//     },
-//   };
-// }
-
-// export async function getStaticPaths() {
-//   const paths = await sanityClient.fetch(indexSlugsQuery);
-//   return {
-//     paths: paths.map((index) => ({ params: { index } })),
-//     fallback: true,
-//   };
-// }
 
 Index.propTypes = {
   data: PropTypes.object.isRequired,
