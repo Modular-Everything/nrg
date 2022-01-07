@@ -50,6 +50,18 @@ export const globalMetaDataQuery = `
   *[_type == 'siteSettings' && _id == 'siteSettings']
 `;
 
+export const pageQuery = `
+{
+  "page": *[_type == "page" && slug.current == $page][0] {
+    ${commonFields}
+    ${blockFields}
+  },
+}`;
+
+export const pageSlugsQuery = `
+  *[_type == "page" && defined(slug.current)][].slug.current
+`;
+
 export const projectQuery = `
 {
   "project": *[_type == "project" && slug.current == $project][0] {
