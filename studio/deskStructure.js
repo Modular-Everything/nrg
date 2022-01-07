@@ -3,6 +3,8 @@ import Iframe from "sanity-plugin-iframe-pane";
 import {
   FcDocument as PageIcon,
   FcLike as ServicesIcon,
+  FcFlashOn as ProjectsIcon,
+  FcNews as BlogIcon,
   FcAreaChart as SettingsIcon,
   FcList as MenuIcon,
 } from "react-icons/fc";
@@ -30,20 +32,22 @@ export default () =>
       S.listItem()
         .title("Pages")
         .icon(PageIcon)
-        .child(() =>
-          S.documentTypeList("page").filter(
-            `_type == 'page' && section == 'default'`
-          )
-        ),
+        .child(() => S.documentTypeList("page")),
 
       S.listItem()
         .title("Services")
         .icon(ServicesIcon)
-        .child(() =>
-          S.documentTypeList("page").filter(
-            `_type == 'page' && section == 'services'`
-          )
-        ),
+        .child(() => S.documentTypeList("service")),
+
+      S.listItem()
+        .title("Projects")
+        .icon(ProjectsIcon)
+        .child(() => S.documentTypeList("project")),
+
+      S.listItem()
+        .title("Blog")
+        .icon(BlogIcon)
+        .child(() => S.documentTypeList("blog")),
 
       S.divider(),
 

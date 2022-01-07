@@ -29,6 +29,9 @@ import styledImageBanner from "./blocks/styledImageBanner";
 import styledBanner from "./blocks/styledBanner";
 import cardsGallery from "./blocks/cardsGallery";
 import prevNext from "./blocks/prevNext";
+import project from "./project";
+import blog from "./blog";
+import service from "./service";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -39,6 +42,9 @@ export default createSchema({
   types: schemaTypes.concat([
     // Custom page types
     page,
+    project,
+    blog,
+    service,
     siteSettings,
 
     // Custom modules
