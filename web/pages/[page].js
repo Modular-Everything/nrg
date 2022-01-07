@@ -65,8 +65,6 @@ export async function getStaticProps({ params, preview = false }) {
     page: params?.page,
   });
 
-  console.log(page);
-
   if (!page) {
     return { notFound: true };
   }
