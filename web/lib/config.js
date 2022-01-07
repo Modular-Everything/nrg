@@ -1,18 +1,11 @@
 export const config = {
-  /**
-   * Find your project ID and dataset in `sanity.json` in your studio project.
-   * These are considered “public”, but you can use environment variables
-   * if you want differ between local dev and production.
-   *
-   * https://nextjs.org/docs/basic-features/environment-variables
-   * */
+  // Find your project ID and dataset in `sanity.json` in your studio project
   dataset: process.env.NEXT_PUBLIC_SANITY_DATASET || "production",
   projectId: process.env.NEXT_PUBLIC_SANITY_PROJECT_ID,
-  apiVersion: "2021-10-29", // or today's date for latest
-  /**
-   * Set useCdn to `false` if your application require the freshest possible
-   * data always (potentially slightly slower and a bit more expensive).
-   * Authenticated request (like preview) will always bypass the CDN
-   * */
   useCdn: process.env.NODE_ENV === "production",
+  // useCdn == true gives fast, cheap responses using a globally distributed cache.
+  // Set this to false if your application require the freshest possible
+  // data always (potentially slightly slower and a bit more expensive).
+  apiVersion: "2021-11-19",
+  // see https://www.sanity.io/docs/api-versioning for how versioning works
 };

@@ -9,7 +9,7 @@ import { imageBuilder } from "../../../lib/sanity";
 
 // ---
 
-const SEO = ({ globalMetadata, customMetadata }) => {
+const SEO = ({ pageTitle, globalMetadata, customMetadata }) => {
   // Prevent errors if no metadata was set
   if (!globalMetadata) return null;
 
@@ -19,7 +19,8 @@ const SEO = ({ globalMetadata, customMetadata }) => {
 
   const metadata = {
     siteName: globalMetadata.siteName,
-    title: customMetadata?.metaTitle || globalMetadata?.seo.metaTitle,
+    title:
+      customMetadata?.metaTitle || pageTitle || globalMetadata?.seo.metaTitle,
     description: customMetadata?.metaDesc || globalMetadata?.seo.metaDesc,
     structuredData:
       customMetadata?.jsonSchema || globalMetadata?.seo.jsonSchema,
@@ -72,8 +73,13 @@ const SEO = ({ globalMetadata, customMetadata }) => {
 };
 
 SEO.propTypes = {
+  pageTitle: PropTypes.string,
   globalMetadata: PropTypes.object.isRequired,
   customMetadata: PropTypes.object.isRequired,
+};
+
+SEO.defaultProps = {
+  pageTitle: null,
 };
 
 export default SEO;

@@ -260,7 +260,7 @@ const Header = ({ menuItems }) => {
                         className={activeMenu === "weAre" ? "show" : "hide"}
                       >
                         <ol>
-                          {menuItems.weAre.map((item, index) => (
+                          {menuItems?.weAre?.map((item, index) => (
                             <MenuItem
                               key={item._key}
                               title={item.title}
@@ -286,7 +286,7 @@ const Header = ({ menuItems }) => {
                         className={activeMenu === "what" ? "show" : "hide"}
                       >
                         <ol>
-                          {menuItems.what.map((item, index) => (
+                          {menuItems?.what?.map((item, index) => (
                             <MenuItem
                               key={item._key}
                               title={item.title}
@@ -312,7 +312,7 @@ const Header = ({ menuItems }) => {
                         className={activeMenu === "weDo" ? "show" : "hide"}
                       >
                         <ol>
-                          {menuItems.weDo.map((item, index) => (
+                          {menuItems?.weDo?.map((item, index) => (
                             <MenuItem
                               key={item._key}
                               title={item.title}

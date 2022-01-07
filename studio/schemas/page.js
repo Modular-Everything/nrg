@@ -8,9 +8,6 @@ export default {
   name: "page",
   title: "Page",
   type: "document",
-  initialValue: () => ({
-    section: "default",
-  }),
   fields: [
     {
       name: "title",
@@ -27,19 +24,6 @@ export default {
         "Important: Generate the slug BEFORE trying to preview the page.",
       options: {
         source: "title",
-      },
-      validation: (Rule) => Rule.required(),
-    },
-    {
-      name: "section",
-      title: "Section",
-      type: "string",
-      description: "Mainly only used if you're creating services.",
-      options: {
-        list: [
-          { title: "Default", value: "default" },
-          { title: "Services", value: "services" },
-        ],
       },
       validation: (Rule) => Rule.required(),
     },
