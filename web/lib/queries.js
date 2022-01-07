@@ -61,13 +61,14 @@ export const projectSlugsQuery = `
   *[_type == "project" && defined(slug.current)][].slug.current
 `;
 
-export const clientQuery = `
+export const serviceQuery = `
 {
-  "client": *[_type == "client" && slug.current == $client][0] {
+  "service": *[_type == "service" && slug.current == $service][0] {
     ${commonFields}
+    ${blockFields}
   },
 }`;
 
-export const clientSlugsQuery = `
-*[_type == "client" && defined(slug.current)][].slug.current
+export const serviceSlugsQuery = `
+  *[_type == "service" && defined(slug.current)][].slug.current
 `;
