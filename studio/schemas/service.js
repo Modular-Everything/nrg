@@ -5,7 +5,7 @@ import bottomBlocks from "./data/bottomBlocks";
 // ---
 
 export default {
-  name: "service",
+  name: "services",
   title: "Service",
   type: "document",
   fields: [

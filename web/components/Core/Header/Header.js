@@ -156,7 +156,7 @@ const Header = ({ menuItems }) => {
 
     return (
       <li>
-        <Link href={link === "homepage" ? "/" : link}>
+        <Link href={link === "homepage" ? "/" : `/${link}`}>
           <a
             onMouseMove={(e) => handleImageMove(e)}
             onFocus={(e) => handleImageMove(e)}

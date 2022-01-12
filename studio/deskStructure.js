@@ -37,12 +37,12 @@ export default () =>
       S.listItem()
         .title("Services")
         .icon(ServicesIcon)
-        .child(() => S.documentTypeList("service")),
+        .child(() => S.documentTypeList("services")),
 
       S.listItem()
         .title("Projects")
         .icon(ProjectsIcon)
-        .child(() => S.documentTypeList("project")),
+        .child(() => S.documentTypeList("projects")),
 
       S.listItem()
         .title("Blog")

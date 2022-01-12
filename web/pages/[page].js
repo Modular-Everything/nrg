@@ -28,6 +28,8 @@ function Service({ data = {}, preview }) {
     enabled: preview && slug,
   });
 
+  console.log(data);
+
   return (
     <Layout menuItems={data?.menuItems}>
       <SEO

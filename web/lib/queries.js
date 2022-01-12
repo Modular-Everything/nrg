@@ -19,6 +19,7 @@ const blockFields = `
     ...,
     _type == 'sectionMarker' => {
       'slug': link->slug.current,
+      'linkType': link->_type
     },
   },
   bottomBlocks[] {
@@ -76,12 +77,12 @@ export const projectSlugsQuery = `
 
 export const serviceQuery = `
 {
-  "service": *[_type == "service" && slug.current == $service][0] {
+  "service": *[_type == "services" && slug.current == $service][0] {
     ${commonFields}
     ${blockFields}
   },
 }`;
 
 export const serviceSlugsQuery = `
-  *[_type == "service" && defined(slug.current)][].slug.current
+  *[_type == "services" && defined(slug.current)][].slug.current
 `;

@@ -95,7 +95,12 @@ export default {
       title: "Link",
       type: "reference",
       description: "Where does this link to? Totally optional.",
-      to: [{ type: "page" }],
+      to: [
+        { type: "page" },
+        { type: "services" },
+        { type: "blog" },
+        { type: "projects" },
+      ],
     },
   ],
   preview: {

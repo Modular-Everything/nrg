@@ -21,7 +21,16 @@ const SectionMarker = ({ block }) => {
     backgroundColor,
     textColor,
     slug,
+    linkType,
   } = block;
+
+  console.log("linkType", linkType);
+
+  function linkBuilder(pageSlug, type) {
+    const slugLink = pageSlug === "homepage" ? "" : pageSlug;
+    const pageType = type === "page" ? "/" : `/${type}/`;
+    return pageType + slugLink;
+  }
 
   return (
     <S.SectionMarker
@@ -39,7 +48,7 @@ const SectionMarker = ({ block }) => {
           <S.Copy hasTitle={!!title}>
             <BlockContent blocks={mainCopy} />
             {link && (
-              <Link href={`/${slug === "homepage" ? "" : slug}`}>
+              <Link href={linkBuilder(slug, linkType)}>
                 <a>
                   {linkLabel || "Learn more"} <ArrowRight />
                 </a>
