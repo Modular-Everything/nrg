@@ -5,11 +5,34 @@ import * as S from "./MarqueeText.styles";
 
 // ---
 
-const MarqueeText = ({ text, className }) => (
-  <S.MarqueeWrap className={className}>
-    <BlockContent blocks={text} />
-  </S.MarqueeWrap>
-);
+const MarqueeText = ({ text, className }) => {
+  console.log(text);
+
+  // const serializers = {
+  //   types: {
+  //     span: (props) => {
+  //       console.log(props);
+  //       return <p color="red">{props.node.children}</p>;
+  //     },
+  //   },
+  // };
+
+  return (
+    <S.MarqueeWrap className={className}>
+      {/* <BlockContent
+        className="marquee"
+        blocks={text}
+        serializers={serializers}
+      /> */}
+      {text.map((block) => (
+        <div>
+          <BlockContent className="marquee" blocks={block} />
+          <BlockContent className="marquee" blocks={block} />
+        </div>
+      ))}
+    </S.MarqueeWrap>
+  );
+};
 
 MarqueeText.propTypes = {
   text: PropTypes.string.isRequired,

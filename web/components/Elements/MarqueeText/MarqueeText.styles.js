@@ -3,9 +3,8 @@ import styled, { keyframes } from "styled-components";
 // ---
 
 const runner = keyframes`
-	to {
-		transform: translateX(-25%);
-	}
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
 `;
 
 export const MarqueeWrap = styled.section`
@@ -15,10 +14,21 @@ export const MarqueeWrap = styled.section`
 
   display: flex;
   flex-direction: column;
-  align-items: center;
+  align-items: flex-start;
   justify-content: center;
   overflow: hidden;
   mix-blend-mode: var(--blend);
+
+  div {
+    display: flex;
+    transition: 250ms ease all;
+    animation: ${runner} 10s linear infinite;
+    left: 0;
+
+    &:nth-child(2) {
+      animation-direction: reverse;
+    }
+  }
 
   p {
     margin-bottom: var(--gutter);
@@ -30,26 +40,7 @@ export const MarqueeWrap = styled.section`
     text-align: center;
     text-transform: uppercase;
     white-space: nowrap;
-    transform: translateX(25%);
-    animation: ${runner} 10s linear infinite;
-
-    /* &:nth-child(1) {
-      align-self: flex-start;
-      transform: translateX(-5vw);
-    } */
-
-    &:nth-child(2) {
-      animation-direction: reverse;
-    }
-
-    /* &:nth-child(3) {
-      align-self: flex-end;
-      transform: translateX(5vw);
-    } */
-
-    &:last-of-type {
-      margin-bottom: 0;
-    }
+    margin-right: 3.2rem;
   }
 
   strong {
