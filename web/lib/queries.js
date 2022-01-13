@@ -6,6 +6,7 @@ const commonFields = `
   _id,
   title,
   "slug": slug.current,
+  backgroundColor,
 `;
 
 const blockFields = `

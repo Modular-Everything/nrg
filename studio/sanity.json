@@ -16,7 +16,8 @@
     "iframe-pane",
     "media",
     "@sanity/dashboard",
-    "netlify-deploy-status-badge"
+    "netlify-deploy-status-badge",
+    "color-picker"
   ],
   "env": {
     "development": {

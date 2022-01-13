@@ -33,7 +33,7 @@ function Service({ data = {}, preview }) {
   // console.log("page", page);
 
   return (
-    <Layout menuItems={data?.menuItems}>
+    <Layout menuItems={data?.menuItems} bgColor={page?.backgroundColor}>
       <SEO
         pageTitle={page?.title}
         globalMetadata={data?.globalMetaData}

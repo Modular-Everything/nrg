@@ -40,6 +40,7 @@ const GlobalStyles = createGlobalStyle`
   body {
     overflow-x: hidden;
     font-size: 2rem;
+    background-color: var(--white);
   }
 
   p a {

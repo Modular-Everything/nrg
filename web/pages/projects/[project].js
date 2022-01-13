@@ -29,7 +29,7 @@ function Project({ data = {}, preview }) {
   });
 
   return (
-    <Layout menuItems={data?.menuItems}>
+    <Layout menuItems={data?.menuItems} bgColor={project?.backgroundColor}>
       <SEO
         pageTitle={project?.title}
         globalMetadata={data?.globalMetaData}

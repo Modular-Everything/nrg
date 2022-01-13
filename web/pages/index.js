@@ -24,7 +24,7 @@ function Index({ data = {}, preview }) {
   });
 
   return (
-    <Layout menuItems={data?.menuItems}>
+    <Layout menuItems={data?.menuItems} bgColor={index?.backgroundColor}>
       <SEO
         pageTitle={index?.title}
         globalMetadata={data?.globalMetaData}

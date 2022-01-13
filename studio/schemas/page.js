@@ -73,5 +73,11 @@ export default {
       descripion: "The outlined text that sits behind the content",
       type: "string",
     },
+    {
+      name: "backgroundColor",
+      title: "Background Color",
+      type: "colorPicker",
+      description: "The background color of the page.",
+    },
   ],
 };

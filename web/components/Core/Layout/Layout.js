@@ -13,15 +13,21 @@ import Footer from "../Footer";
 
 //
 
-const Layout = ({ children, menuItems }) => (
+const Layout = ({ children, bgColor, menuItems }) => (
   <>
     <Head>
       <meta charSet="utf-8" />
       <meta name="viewport" content="initial-scale=1.0, width=device-width" />
       <Favicon />
+      <style type="text/css">
+        {`
+        body {
+          background-color: ${bgColor || "var(--white)"} !important;
+        }`}
+      </style>
     </Head>
 
-    <GlobalStyles />
+    <GlobalStyles bgColor={bgColor} />
     <Typography />
     <Stacking />
 
@@ -33,7 +39,12 @@ const Layout = ({ children, menuItems }) => (
 
 Layout.propTypes = {
   children: PropTypes.node.isRequired,
+  bgColor: PropTypes.string,
   menuItems: PropTypes.object.isRequired,
+};
+
+Layout.defaultProps = {
+  bgColor: null,
 };
 
 export default Layout;

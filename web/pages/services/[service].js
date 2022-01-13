@@ -29,7 +29,7 @@ function Service({ data = {}, preview }) {
   });
 
   return (
-    <Layout menuItems={data?.menuItems}>
+    <Layout menuItems={data?.menuItems} bgColor={service?.backgroundColor}>
       <SEO
         pageTitle={service?.title}
         globalMetadata={data?.globalMetaData}
