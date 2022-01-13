@@ -66,8 +66,6 @@ export const Header = styled.header`
     }
 
     li {
-      /* text-align: center; */
-
       &.divider {
         width: 1px;
         height: 100%;
