@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import SwiperCore, { Navigation } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/swiper-bundle.min.css";
 import Link from "next/link";
@@ -9,6 +10,8 @@ import Image from "../../Elements/Image";
 import FadeIn from "../../Animations/FadeIn";
 
 // ---
+
+SwiperCore.use([Navigation]);
 
 const GalleryItem = ({ item }) => (
   <S.GalleryImage>
@@ -37,7 +40,7 @@ const ScrollingGallery = ({ block }) => {
     <S.Container>
       <S.ScrollingGallery className={layoutType}>
         <FadeIn>
-          <Swiper slidesPerView="auto" spaceBetween={16}>
+          <Swiper slidesPerView="auto" spaceBetween={16} navigation>
             {/* eslint-disable-next-line react/prop-types */}
             {items?.map((item, index) => (
               <SwiperSlide key={item.id}>

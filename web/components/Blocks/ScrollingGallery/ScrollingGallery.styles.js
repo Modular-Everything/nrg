@@ -12,7 +12,34 @@ export const Container = styled(CoreContainer)`
 `;
 
 export const ScrollingGallery = styled.section`
+  --swiper-theme-color: var(--red);
   cursor: grab;
+  margin-bottom: 4.8rem;
+
+  .swiper-button-prev,
+  .swiper-button-next {
+    top: calc(100% + 2.4rem);
+    left: 0;
+    right: 0;
+    width: 2.4rem;
+
+    &::after {
+      font-size: 2rem;
+    }
+  }
+
+  .swiper-button-next {
+    left: 4.8rem;
+  }
+
+  /* .swiper-button-prev {
+    left: 0;
+  }
+
+  .swiper-button-next {
+    left: 0;
+    right: 0;
+  } */
 
   &.standard {
     height: 32rem;
