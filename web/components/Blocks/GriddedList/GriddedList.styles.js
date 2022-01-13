@@ -5,7 +5,7 @@ import Container from "../../Core/Container";
 
 export const Wrapper = styled.div`
   &.wrapper__light {
-    background-color: var(--white);
+    background-color: transparent;
 
     .number {
       color: var(--red);
