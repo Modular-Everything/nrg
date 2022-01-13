@@ -5,12 +5,7 @@ import styled from "styled-components";
 export const AutoLayout = styled.section`
   display: grid;
   grid-template-areas: "top" "blocks" "bottom";
-
-  .top,
-  .blocks,
-  .bottom {
-    max-width: calc(100vw + (var(--gutter) * 2));
-  }
+  justify-content: center;
 
   .blocks {
     display: grid;

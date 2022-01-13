@@ -10,7 +10,7 @@ export const Footer = styled.footer`
   font-size: 1.8rem;
   position: relative;
   overflow: hidden;
-  width: calc(100vw + (var(--gutter) * 2));
+  width: 100%;
 
   @media (min-width: 768px) {
     font-size: 1.6rem;

@@ -20,6 +20,7 @@ export const SectionMarkerContainer = styled(Container)`
   padding: ${({ extraPadding }) =>
     extraPadding ? "var(--gutter) 0 var(--header) 0" : "0"};
   z-index: 100;
+  width: 100%;
 
   @media (min-width: 768px) {
     display: grid;
