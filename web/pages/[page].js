@@ -25,10 +25,12 @@ function Service({ data = {}, preview }) {
   } = usePreviewSubscription(pageQuery, {
     params: { slug },
     initialData: data,
-    enabled: preview && slug,
+    enabled: false,
   });
 
-  console.log(data);
+  // console.log("slug", slug);
+  // console.log("data", data);
+  // console.log("page", page);
 
   return (
     <Layout menuItems={data?.menuItems}>
@@ -67,12 +69,12 @@ export async function getStaticProps({ params, preview = false }) {
     page: params?.page,
   });
 
+  const menuItems = await getClient(preview).fetch(menuQuery);
+  const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);
+
   if (!page) {
     return { notFound: true };
   }
-
-  const menuItems = await getClient(preview).fetch(menuQuery);
-  const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);
 
   return {
     props: {
