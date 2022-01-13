@@ -8,7 +8,7 @@ import FadeIn from "../../Animations/FadeIn";
 // ---
 
 const BoltBlock = ({ block }) => {
-  const { backgroundColor } = block;
+  const { backgroundColor, boltCopy } = block;
 
   return (
     <S.BoltBlock backgroundColor={backgroundColor}>
@@ -17,7 +17,7 @@ const BoltBlock = ({ block }) => {
           <BoltIcon className="boltIcon" />
         </S.Icon>
 
-        <S.OutlineText text="Creators, Makers Builders" />
+        <S.OutlineText text={boltCopy || "Creators, Makers Builders"} />
       </FadeIn>
     </S.BoltBlock>
   );
@@ -26,7 +26,14 @@ const BoltBlock = ({ block }) => {
 BoltBlock.propTypes = {
   block: PropTypes.shape({
     backgroundColor: PropTypes.string.isRequired,
-  }).isRequired,
+    boltCopy: PropTypes.string,
+  }),
+};
+
+BoltBlock.defaultProps = {
+  block: {
+    boltCopy: null,
+  },
 };
 
 export default BoltBlock;

@@ -26,6 +26,12 @@ export default {
       },
       validation: (Rule) => Rule.required(),
     },
+    {
+      name: "boltCopy",
+      title: "Copy",
+      type: "string",
+      description: "The copy behind the bolt",
+    },
   ],
   preview: {
     select: {
