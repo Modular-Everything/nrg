@@ -1,5 +1,6 @@
 import React from "react";
 import { FcClapperboard as Icon } from "react-icons/fc";
+import { FaHighlighter as BoldIcon } from "react-icons/fa";
 
 // ---
 
@@ -16,9 +17,32 @@ export default {
       name: "styledCopy",
       title: "Styled Copy",
       type: "array",
-      of: [{ type: "block" }],
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: "Highlight",
+                value: "strong",
+                blockEditor: { icon: BoldIcon },
+              },
+            ],
+          },
+        },
+      ],
       description:
         "Keep the text on each line nice and long. Maximum of 3 lines. Create a new line by hitting ENTER/RETURN. Use the highlight button to highlight certain words.",
+    },
+    {
+      name: "speedMod",
+      title: "Speed Modifier",
+      type: "number",
+      description:
+        "You can increase or decrease the speed of the animation (in percent).",
     },
     {
       name: "backgroundColor",

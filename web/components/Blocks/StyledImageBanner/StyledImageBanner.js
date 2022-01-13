@@ -28,6 +28,7 @@ const StyledImageBanner = ({ block }) => {
     backgroundType,
     backgroundImage,
     backgroundVideo,
+    speedMod,
   } = block;
 
   const [bannerHeight, setBannerHeight] = useState(0);
@@ -59,7 +60,7 @@ const StyledImageBanner = ({ block }) => {
 
   return (
     <S.StyledImageBanner makeSpaceForHeader={sitsBelowMenu} ref={bannerRef}>
-      <S.StyledText text={styledCopy} />
+      <S.StyledText speedMod={speedMod} text={styledCopy} />
 
       <S.Inner>
         {descriptiveCopy && (
@@ -118,6 +119,7 @@ StyledImageBanner.propTypes = {
     scrollLabel: PropTypes.string,
     /** If set to true, you "learn more" scroll button is accessible and it adds some padding to the top */
     sitsBelowMenu: PropTypes.bool,
+    speedMod: PropTypes.number,
   }),
 };
 
@@ -130,6 +132,7 @@ StyledImageBanner.defaultProps = {
     descriptiveCopy: null,
     scrollLabel: null,
     sitsBelowMenu: false,
+    speedMod: null,
   },
 };
 

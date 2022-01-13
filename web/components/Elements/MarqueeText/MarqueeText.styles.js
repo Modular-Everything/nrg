@@ -22,7 +22,8 @@ export const MarqueeWrap = styled.section`
   div {
     display: flex;
     transition: 250ms ease all;
-    animation: ${runner} 10s linear infinite;
+    animation: ${runner} calc(10s * ${({ speedMod }) => speedMod * 0.1 || 1})
+      linear infinite;
     left: 0;
 
     &:nth-child(2) {

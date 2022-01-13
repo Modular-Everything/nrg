@@ -27,7 +27,7 @@ export default {
             annotations: [],
             decorators: [
               {
-                title: "Add background to text",
+                title: "Highlight",
                 value: "strong",
                 blockEditor: { icon: BoldIcon },
               },
@@ -36,6 +36,13 @@ export default {
         },
       ],
       validation: (Rule) => Rule.required(),
+    },
+    {
+      name: "speedMod",
+      title: "Speed Modifier",
+      type: "number",
+      description:
+        "You can increase or decrease the speed of the animation (in percent).",
     },
     {
       name: "descriptiveCopy",

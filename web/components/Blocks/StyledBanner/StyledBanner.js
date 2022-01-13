@@ -10,7 +10,7 @@ import * as S from "./StyledBanner.styles";
  */
 
 const StyledBanner = ({ block }) => {
-  const { styledCopy, backgroundColor, sitsBelowMenu } = block;
+  const { styledCopy, speedMod, backgroundColor, sitsBelowMenu } = block;
 
   return (
     <S.StyledBanner
@@ -18,7 +18,7 @@ const StyledBanner = ({ block }) => {
       makeSpaceForHeader={sitsBelowMenu}
       className="block__StyledBanner"
     >
-      <S.StyledText text={styledCopy} />
+      <S.StyledText speedMod={speedMod} text={styledCopy} />
       <S.Noise backgroundColor={backgroundColor} />
     </S.StyledBanner>
   );
@@ -32,7 +32,14 @@ StyledBanner.propTypes = {
     styledCopy: PropTypes.string.isRequired,
     /** Whether to add some extra padding to the top or not */
     sitsBelowMenu: PropTypes.bool.isRequired,
-  }).isRequired,
+    speedMod: PropTypes.number,
+  }),
+};
+
+StyledBanner.defaultProps = {
+  block: {
+    speedMod: null,
+  },
 };
 
 export default StyledBanner;
