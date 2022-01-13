@@ -41,7 +41,7 @@ export const Icon = styled.div`
   z-index: 10;
   width: ${({ size }) => (size === "large" ? "100%" : "20%")};
   max-width: ${({ size }) => (size === "large" ? "unset" : "9.6rem")};
-  height: ${({ size }) => (size === "large" ? "135vh" : "unset")};
+  height: ${({ size }) => (size === "large" ? "90%" : "unset")};
   pointer-events: none;
 
   svg {
