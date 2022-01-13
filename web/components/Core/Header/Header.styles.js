@@ -58,10 +58,20 @@ export const Header = styled.header`
       transition: 250ms ease opacity;
 
       @media (min-width: 768px) {
-        grid-template-columns: repeat(3, 1fr);
-        grid-column-gap: calc(var(--gutter) * 4);
+        grid-template-columns: repeat(5, minmax(min(100%, 1px), auto));
+        grid-column-gap: calc(var(--gutter) * 2);
         opacity: 1;
         pointer-events: all;
+      }
+    }
+
+    li {
+      /* text-align: center; */
+
+      &.divider {
+        width: 1px;
+        height: 100%;
+        background-color: var(--white);
       }
     }
   }
@@ -71,6 +81,7 @@ export const Header = styled.header`
     color: var(--white);
     font-weight: bold;
     font-size: 2.4rem;
+    line-height: 1;
     cursor: pointer;
   }
 

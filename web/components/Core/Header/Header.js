@@ -273,6 +273,7 @@ const Header = ({ menuItems }) => {
                       </S.MenuContent>
                     </label>
                   </li>
+                  <li className="divider" />
                   <li>
                     <label htmlFor="what">
                       <input
@@ -299,6 +300,7 @@ const Header = ({ menuItems }) => {
                       </S.MenuContent>
                     </label>
                   </li>
+                  <li className="divider" />
                   <li>
                     <label htmlFor="weDo">
                       <input
