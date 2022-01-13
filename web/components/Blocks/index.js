@@ -72,7 +72,11 @@ const BlockBuilder = ({ blocks }) => {
 };
 
 BlockBuilder.propTypes = {
-  blocks: PropTypes.array.isRequired,
+  blocks: PropTypes.array,
+};
+
+BlockBuilder.defaultProps = {
+  blocks: null,
 };
 
 export default BlockBuilder;
