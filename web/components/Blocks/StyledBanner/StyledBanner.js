@@ -16,6 +16,7 @@ const StyledBanner = ({ block }) => {
     <S.StyledBanner
       backgroundColor={backgroundColor}
       makeSpaceForHeader={sitsBelowMenu}
+      className="block__StyledBanner"
     >
       <S.StyledText text={styledCopy} />
       <S.Noise backgroundColor={backgroundColor} />
