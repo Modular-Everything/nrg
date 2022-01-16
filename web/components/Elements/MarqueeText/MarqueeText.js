@@ -7,12 +7,13 @@ import * as S from "./MarqueeText.styles";
 
 const MarqueeText = ({ text, className, speedMod }) => (
   <S.MarqueeWrap className={className} speedMod={speedMod}>
-    {text.map((block) => (
-      <div>
-        <BlockContent className="marquee" blocks={block} />
-        <BlockContent className="marquee" blocks={block} />
-      </div>
-    ))}
+    {text &&
+      text.map((block) => (
+        <div>
+          <BlockContent className="marquee" blocks={block} />
+          <BlockContent className="marquee" blocks={block} />
+        </div>
+      ))}
   </S.MarqueeWrap>
 );
 
