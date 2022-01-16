@@ -62,23 +62,31 @@ export const pageSlugsQuery = `
   *[_type == "page" && defined(slug.current)][].slug.current
 `;
 
+export const blogQuery = `
+  *[_type == "blog" && slug.current == $blog][0] {
+    ${commonFields}
+    ${blockFields}
+  }`;
+
+export const blogSlugsQuery = `
+  *[_type == "blog" && defined(slug.current)][].slug.current
+`;
+
 export const projectQuery = `
   *[_type == "project" && slug.current == $project][0] {
     ${commonFields}
     ${blockFields}
-  },
-`;
+  }`;
 
 export const projectSlugsQuery = `
   *[_type == "project" && defined(slug.current)][].slug.current
 `;
 
 export const serviceQuery = `
-  *[_type == "services" && slug.current == $service][0] {
+  *[_type == "service" && slug.current == $service][0] {
     ${commonFields}
     ${blockFields}
-  },
-`;
+  }`;
 
 export const serviceSlugsQuery = `
   *[_type == "services" && defined(slug.current)][].slug.current
