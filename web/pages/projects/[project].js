@@ -27,8 +27,6 @@ function Project({ data = {}, preview }) {
     useGroqBeta: true,
   });
 
-  console.log(project);
-
   return (
     <Layout menuItems={data?.menuItems} bgColor={project?.backgroundColor}>
       <SEO
