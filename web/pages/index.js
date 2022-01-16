@@ -14,13 +14,12 @@ import SEO from "../components/Core/SEO";
 // ---
 
 function Index({ data = {}, preview }) {
-  const slug = data?.index?.slug;
-  const {
-    data: { index },
-  } = usePreviewSubscription(indexQuery, {
-    params: { slug },
-    initialData: data,
+  const slug = data?.page?.slug;
+  const { data: index } = usePreviewSubscription(indexQuery, {
+    params: { index: slug },
+    initialData: data.index,
     enabled: preview && slug,
+    useGroqBeta: true,
   });
 
   return (
