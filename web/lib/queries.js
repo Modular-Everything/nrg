@@ -53,7 +53,7 @@ export const globalMetaDataQuery = `
 `;
 
 export const pageQuery = `
-*[_type == "page" && slug.current == $page][0] {
+  *[_type == "page" && slug.current == $page][0] {
     ${commonFields}
     ${blockFields}
   }`;
@@ -63,24 +63,22 @@ export const pageSlugsQuery = `
 `;
 
 export const projectQuery = `
-{
-  "project": *[_type == "project" && slug.current == $project][0] {
+  *[_type == "project" && slug.current == $project][0] {
     ${commonFields}
     ${blockFields}
   },
-}`;
+`;
 
 export const projectSlugsQuery = `
   *[_type == "project" && defined(slug.current)][].slug.current
 `;
 
 export const serviceQuery = `
-{
-  "service": *[_type == "services" && slug.current == $service][0] {
+  *[_type == "services" && slug.current == $service][0] {
     ${commonFields}
     ${blockFields}
   },
-}`;
+`;
 
 export const serviceSlugsQuery = `
   *[_type == "services" && defined(slug.current)][].slug.current

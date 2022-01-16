@@ -20,13 +20,14 @@ import SEO from "../../components/Core/SEO";
 
 function Project({ data = {}, preview }) {
   const slug = data?.project?.slug;
-  const {
-    data: { project },
-  } = usePreviewSubscription(projectQuery, {
-    params: { slug },
-    initialData: data,
+  const { data: project } = usePreviewSubscription(projectQuery, {
+    params: { project: slug },
+    initialData: data.project,
     enabled: preview && slug,
+    useGroqBeta: true,
   });
+
+  console.log(project);
 
   return (
     <Layout menuItems={data?.menuItems} bgColor={project?.backgroundColor}>
@@ -63,16 +64,16 @@ function Project({ data = {}, preview }) {
 export default Project;
 
 export async function getStaticProps({ params, preview = false }) {
-  const { project } = await getClient(preview).fetch(projectQuery, {
+  const project = await getClient(preview).fetch(projectQuery, {
     project: params?.project,
   });
+
+  const menuItems = await getClient(preview).fetch(menuQuery);
+  const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);
 
   if (!project) {
     return { notFound: true };
   }
-
-  const menuItems = await getClient(preview).fetch(menuQuery);
-  const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);
 
   return {
     props: {

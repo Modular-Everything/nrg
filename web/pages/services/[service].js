@@ -20,12 +20,11 @@ import SEO from "../../components/Core/SEO";
 
 function Service({ data = {}, preview }) {
   const slug = data?.service?.slug;
-  const {
-    data: { service },
-  } = usePreviewSubscription(serviceQuery, {
-    params: { slug },
-    initialData: data,
+  const { data: service } = usePreviewSubscription(serviceQuery, {
+    params: { service: slug },
+    initialData: data.service,
     enabled: preview && slug,
+    useGroqBeta: true,
   });
 
   return (
@@ -63,7 +62,7 @@ function Service({ data = {}, preview }) {
 export default Service;
 
 export async function getStaticProps({ params, preview = false }) {
-  const { service } = await getClient(preview).fetch(serviceQuery, {
+  const service = await getClient(preview).fetch(serviceQuery, {
     service: params?.service,
   });
 
@@ -88,6 +87,7 @@ export async function getStaticProps({ params, preview = false }) {
 
 export async function getStaticPaths() {
   const paths = await sanityClient.fetch(serviceSlugsQuery);
+  console.log(paths);
   return {
     paths: paths.map((service) => ({ params: { service } })),
     fallback: true,
