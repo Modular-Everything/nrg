@@ -13,8 +13,11 @@ export default function preview(req, res) {
 
   res.setPreviewData({});
 
+  const docType = req?.query?.type;
+
   res.writeHead(307, {
-    Location: `/${req?.query?.type}/${req?.query?.slug}` ?? "/",
+    Location:
+      `/${docType === "" ? "" : `${docType}/`}${req?.query?.slug}` ?? "/",
   });
 
   return res.end();
