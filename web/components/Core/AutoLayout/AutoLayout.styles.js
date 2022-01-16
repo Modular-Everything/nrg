@@ -3,8 +3,8 @@ import styled from "styled-components";
 // ---
 
 export const AutoLayout = styled.section`
-  display: grid;
-  grid-template-areas: "top" "blocks" "bottom";
+  /* display: grid; */
+  /* grid-template-areas: "top" "blocks" "bottom"; */
   /* justify-content: center; */
 
   .blocks {
