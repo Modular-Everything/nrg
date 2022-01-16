@@ -73,17 +73,17 @@ export const blogSlugsQuery = `
 `;
 
 export const projectQuery = `
-  *[_type == "project" && slug.current == $project][0] {
+  *[_type == "projects" && slug.current == $project][0] {
     ${commonFields}
     ${blockFields}
   }`;
 
 export const projectSlugsQuery = `
-  *[_type == "project" && defined(slug.current)][].slug.current
+  *[_type == "projects" && defined(slug.current)][].slug.current
 `;
 
 export const serviceQuery = `
-  *[_type == "service" && slug.current == $service][0] {
+  *[_type == "services" && slug.current == $service][0] {
     ${commonFields}
     ${blockFields}
   }`;
