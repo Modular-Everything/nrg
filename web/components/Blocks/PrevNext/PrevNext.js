@@ -40,7 +40,7 @@ const PrevNext = ({ block }) => {
   return (
     <FadeIn>
       <S.PrevNext>
-        <Link href={prevSlug === "homepage" ? "/" : `/${prevSlug}`}>
+        <Link href={prevSlug === "homepage" ? "/" : `/projects/${prevSlug}`}>
           <a className="prevNext prev">
             <PrevNextLink
               title={prevTitle}
@@ -49,7 +49,7 @@ const PrevNext = ({ block }) => {
             />
           </a>
         </Link>
-        <Link href={nextSlug === "homepage" ? "/" : `/${nextSlug}`}>
+        <Link href={nextSlug === "homepage" ? "/" : `/projects/${nextSlug}`}>
           <a className="prevNext next">
             <PrevNextLink
               title={nextTitle}
