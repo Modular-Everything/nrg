@@ -15,7 +15,7 @@ export default {
       title: "Link",
       type: "reference",
       description: "Where does this link to?",
-      to: [{ type: "project" }],
+      to: [{ type: "projects" }],
       validation: (Rule) => Rule.required(),
     },
     {
