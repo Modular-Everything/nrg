@@ -1,3 +1,4 @@
+import topBlocks from "./data/topBlocks";
 import blocks from "./data/blocks";
 import bottomBlocks from "./data/bottomBlocks";
 
@@ -31,6 +32,18 @@ export default {
       title: "Page SEO",
       description: "This will override the default SEO set in Site Settings",
       type: "seo",
+    },
+    {
+      name: "topBlocks",
+      title: "Top Blocks",
+      type: "array",
+      of: [...topBlocks],
+      options: {
+        editModal: "fullscreen",
+      },
+      description:
+        "Blocks that appear underneath/directly below the header/navigation with no spacing between.",
+      validation: (Rule) => Rule.required(),
     },
     {
       name: "blocks",
