@@ -46,6 +46,7 @@ function Service({ data = {}, preview }) {
     params: data?.queryParams ?? {},
     initialData: data?.page,
     enabled: preview,
+    useGroqBeta: true,
   });
 
   // if (!router.isFallback && !data.page?.slug) {

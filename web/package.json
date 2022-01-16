@@ -23,7 +23,7 @@
     "hamburger-react": "^2.4.1",
     "js-cookie": "3.0.0-rc.4",
     "next": "11.1.0",
-    "next-sanity": "^0.4.0",
+    "next-sanity": "^0.4.1-beta.0",
     "next-sanity-image": "^3.1.7",
     "next-seo": "^4.7.1",
     "normalize.css": "^8.0.1",
