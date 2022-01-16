@@ -20,14 +20,14 @@ import SEO from "../components/Core/SEO";
 
 function Service({ data = {}, preview }) {
   const slug = data?.page?.slug;
-  const {
-    data: { page },
-  } = usePreviewSubscription(pageQuery, {
+  const { data: page } = usePreviewSubscription(pageQuery, {
     params: { slug },
     initialData: data,
-    enabled: false,
+    enabled: preview,
     useGroqBeta: true,
   });
+
+  console.log("data", data);
 
   return (
     <Layout menuItems={data?.menuItems} bgColor={page?.backgroundColor}>
@@ -62,9 +62,11 @@ function Service({ data = {}, preview }) {
 export default Service;
 
 export async function getStaticProps({ params, preview = false }) {
-  const { page } = await getClient(preview).fetch(pageQuery, {
+  const page = await getClient(preview).fetch(pageQuery, {
     page: params?.page,
   });
+
+  console.log("PAGE", page);
 
   const menuItems = await getClient(preview).fetch(menuQuery);
   const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);

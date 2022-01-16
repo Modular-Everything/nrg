@@ -53,12 +53,10 @@ export const globalMetaDataQuery = `
 `;
 
 export const pageQuery = `
-{
-  "page": *[_type == "page" && slug.current == $page][0] {
+*[_type == "page" && slug.current == $page][0] {
     ${commonFields}
     ${blockFields}
-  },
-}`;
+  }`;
 
 export const pageSlugsQuery = `
   *[_type == "page" && defined(slug.current)][].slug.current
