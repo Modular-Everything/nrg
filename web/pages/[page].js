@@ -1,4 +1,6 @@
 import React from "react";
+import { useRouter } from "next/router";
+import ErrorPage from "next/error";
 import PropTypes from "prop-types";
 
 import {
@@ -18,15 +20,42 @@ import SEO from "../components/Core/SEO";
 
 // ---
 
+function filterDataToSingleItem(data, preview) {
+  if (!Array.isArray(data)) {
+    return data;
+  }
+
+  if (data.length === 1) {
+    return data[0];
+  }
+
+  if (preview) {
+    return data.find((item) => item._id.startsWith(`drafts.`)) || data[0];
+  }
+
+  return data[0];
+}
+
 function Service({ data = {}, preview }) {
+  const router = useRouter();
+
   const slug = data?.page?.slug;
-  const {
-    data: { page },
-  } = usePreviewSubscription(pageQuery, {
-    params: { slug },
-    initialData: data,
-    enabled: false,
+  console.log(slug);
+
+  const { data: previewData } = usePreviewSubscription(data?.query, {
+    params: data?.queryParams ?? {},
+    initialData: data?.page,
+    enabled: preview,
   });
+
+  // if (!router.isFallback && !data.page?.slug) {
+  //   return <ErrorPage statusCode={404} />;
+  // }
+
+  const page = filterDataToSingleItem(previewData, preview);
+
+  console.log("DATA", data.page);
+  console.log("PAGE", page);
 
   // console.log("slug", slug);
   // console.log("data", data);
@@ -65,9 +94,18 @@ function Service({ data = {}, preview }) {
 export default Service;
 
 export async function getStaticProps({ params, preview = false }) {
-  const { page } = await getClient(preview).fetch(pageQuery, {
-    page: params?.page,
-  });
+  // const { page } = await getClient(preview).fetch(pageQuery, {
+  //   page: params?.page,
+  // });
+
+  console.log(params);
+
+  const queryParams = { page: params.page };
+  const data = await getClient(preview).fetch(pageQuery, queryParams);
+
+  if (data.length === 0) return { notFound: true };
+
+  const page = filterDataToSingleItem(data, preview);
 
   const menuItems = await getClient(preview).fetch(menuQuery);
   const globalMetaData = await getClient(preview).fetch(globalMetaDataQuery);
@@ -81,6 +119,8 @@ export async function getStaticProps({ params, preview = false }) {
       preview,
       data: {
         page,
+        pageQuery,
+        queryParams,
         menuItems: menuItems[0],
         globalMetaData: globalMetaData[0],
       },

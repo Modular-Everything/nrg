@@ -1,5 +1,5 @@
 import S from "@sanity/desk-tool/structure-builder";
-// import Iframe from "sanity-plugin-iframe-pane";
+import Iframe from "sanity-plugin-iframe-pane";
 import {
   FcDocument as PageIcon,
   FcLike as ServicesIcon,
@@ -8,19 +8,19 @@ import {
   FcAreaChart as SettingsIcon,
   FcList as MenuIcon,
 } from "react-icons/fc";
-// import resolveProductionUrl from "./resolveProductionUrl";
+import resolveProductionUrl from "./resolveProductionUrl";
 
 // ---
 
 export const getDefaultDocumentNode = () =>
   S.document().views([
     S.view.form(),
-    // S.view
-    //   .component(Iframe)
-    //   .options({
-    //     url: (doc) => resolveProductionUrl(doc),
-    //   })
-    //   .title("Preview"),
+    S.view
+      .component(Iframe)
+      .options({
+        url: (doc) => resolveProductionUrl(doc),
+      })
+      .title("Preview"),
   ]);
 
 // ---
