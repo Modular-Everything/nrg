@@ -22,6 +22,10 @@ export const PrevNext = styled.section`
     transition: 250ms ease opacity;
     color: var(--white);
 
+    &:hover .image {
+      transform: scale(1.05);
+    }
+
     @media (min-width: 768px) {
       padding: 22rem var(--gutter) 4.8rem var(--gutter);
     }
@@ -35,6 +39,10 @@ export const PrevNext = styled.section`
       text-align: center;
       z-index: 10;
       position: relative;
+    }
+
+    .image {
+      transition: 250ms ease transform;
     }
 
     .skrim,
