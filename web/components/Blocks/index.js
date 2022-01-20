@@ -16,6 +16,7 @@ import CardsGallery from "./CardsGallery";
 import PrevNext from "./PrevNext";
 import { IndexPageCards } from "./IndexPageCards/IndexPageCards";
 import { MediaGallery } from "./MediaGallery/MediaGallery";
+import { PortraitMediaGallery } from "./PortraitMediaGallery/PortraitMediaGallery";
 
 // ---
 
@@ -40,6 +41,7 @@ const BlockBuilder = ({ blocks }) => {
     prevNext: PrevNext,
     indexPageCards: IndexPageCards,
     mediaGallery: MediaGallery,
+    portraitMediaGallery: PortraitMediaGallery,
   };
 
   return (

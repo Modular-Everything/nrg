@@ -1,9 +1,10 @@
 import styled from "styled-components";
 
-export const MediaGallery = styled.section`
+export const PortraitMediaGallery = styled.section`
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--gutter);
+  margin: 0 5.6rem;
 
   @media (min-width: 640px) {
     grid-template-columns: repeat(2, 1fr);
@@ -13,23 +14,11 @@ export const MediaGallery = styled.section`
     position: relative;
     overflow: hidden;
     border-radius: 0.8rem;
+    aspect-ratio: 3/4;
 
     .content {
       height: 100%;
       width: 100%;
-    }
-
-    &.MediaGallery__full {
-      aspect-ratio: 3/2;
-
-      @media (min-width: 640px) {
-        aspect-ratio: 8/5;
-        grid-column: 1 / span 2;
-      }
-    }
-
-    &.MediaGallery__landscape {
-      aspect-ratio: 3/2;
     }
 
     video {
