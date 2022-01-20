@@ -2,7 +2,7 @@ import styled from "styled-components";
 
 // ---
 
-const breakpoints = [375, 640, 768, 1024, 1080];
+const breakpoints = [640, 768, 1024, 1080];
 
 export const Container = styled.div`
   position: relative;
