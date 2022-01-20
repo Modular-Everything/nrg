@@ -34,6 +34,7 @@ import blog from "./blog";
 import services from "./service";
 import indexPageCards from "./blocks/indexPageCards";
 import mediaGallery from "./blocks/mediaGallery";
+import portraitMediaGallery from "./blocks/portraitMediaGallery";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -67,6 +68,7 @@ export default createSchema({
     statement,
     styledImageBanner,
     mediaGallery,
+    portraitMediaGallery,
     styledBanner,
     cardsGallery,
     prevNext,

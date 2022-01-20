@@ -2,8 +2,8 @@ import React from "react";
 import { FcStackOfPhotos as Icon } from "react-icons/fc";
 
 export default {
-  name: "mediaGallery",
-  title: "Media Gallery (standard)",
+  name: "portraitMediaGallery",
+  title: "Media Gallery (portrait)",
   type: "object",
   fields: [
     {
@@ -18,19 +18,6 @@ export default {
           title: "Media Item",
           type: "object",
           fields: [
-            {
-              name: "orientation",
-              title: "Orientation",
-              type: "string",
-              options: {
-                layout: "radio",
-                list: [
-                  { title: "Full-width Landscape", value: "full" },
-                  { title: "Landscape", value: "landscape" },
-                ],
-              },
-              initialValue: "full",
-            },
             {
               name: "mediaType",
               title: "Media Media Type",
@@ -84,7 +71,7 @@ export default {
     prepare: ({ media }) => ({
       title: `${media || 0} Item(s)`,
       media: <Icon />,
-      subtitle: "Media Gallery (standard)",
+      subtitle: "Media Gallery (portrait)",
     }),
   },
 };
