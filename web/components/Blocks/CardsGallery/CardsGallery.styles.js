@@ -58,9 +58,5 @@ export const CardsGallery = styled.section`
 `;
 
 export const Container = styled(CoreContainer)`
-  /* overflow-x: hidden; */
   overflow-x: visible;
-
-  /* @media (min-width: 52rem) {
-  } */
 `;
