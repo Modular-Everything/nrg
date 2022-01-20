@@ -30,6 +30,7 @@ PrevNextLink.propTypes = {
   title: PropTypes.string,
   subtitle: PropTypes.string,
   label: PropTypes.string,
+  bgImage: PropTypes.object.isRequired,
 };
 
 PrevNextLink.defaultProps = {
@@ -79,12 +80,14 @@ PrevNext.propTypes = {
       subtitle: PropTypes.string,
       link: PropTypes.shape({}).isRequired,
       linkLabel: PropTypes.string,
+      bgImage: PropTypes.object.isRequired,
     }),
     nextTitle: PropTypes.string,
     nextLink: PropTypes.shape({
       subtitle: PropTypes.string,
       link: PropTypes.shape({}).isRequired,
       linkLabel: PropTypes.string,
+      bgImage: PropTypes.object.isRequired,
     }),
     nextSlug: PropTypes.string.isRequired,
     prevSlug: PropTypes.string.isRequired,
