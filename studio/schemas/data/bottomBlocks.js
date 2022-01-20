@@ -3,5 +3,4 @@ export default [
   { type: "styledImageBanner" },
   { type: "styledBanner" },
   { type: "bolt" },
-  { type: "prevNext" },
 ];

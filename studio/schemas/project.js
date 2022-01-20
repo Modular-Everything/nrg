@@ -49,7 +49,7 @@ export default {
       name: "blocks",
       title: "Blocks",
       type: "array",
-      of: [...blocks],
+      of: [{ type: "indexPageCards" }, ...blocks],
       options: {
         editModal: "fullscreen",
       },
@@ -60,7 +60,7 @@ export default {
       name: "bottomBlocks",
       title: "Bottom Blocks",
       type: "array",
-      of: [...bottomBlocks],
+      of: [...bottomBlocks, { type: "prevNext" }],
       options: {
         editModal: "fullscreen",
       },

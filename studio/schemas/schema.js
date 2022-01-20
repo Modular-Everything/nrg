@@ -32,6 +32,7 @@ import prevNext from "./blocks/prevNext";
 import projects from "./project";
 import blog from "./blog";
 import services from "./service";
+import indexPageCards from "./blocks/indexPageCards";
 
 // Then we give our schema to the builder and provide the result to Sanity
 export default createSchema({
@@ -67,5 +68,6 @@ export default createSchema({
     styledBanner,
     cardsGallery,
     prevNext,
+    indexPageCards,
   ]),
 });
