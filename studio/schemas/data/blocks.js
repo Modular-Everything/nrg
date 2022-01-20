@@ -1,4 +1,5 @@
 export default [
+  { type: "mediaGallery" },
   { type: "bodyCopy" },
   { type: "bolt" },
   { type: "cardsGallery" },
