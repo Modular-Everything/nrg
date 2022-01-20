@@ -5,17 +5,24 @@ import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 
 import * as S from "./PrevNext.styles";
 import FadeIn from "../../Animations/FadeIn";
+import Image from "../../Elements/Image";
 
 // ---
 
-const PrevNextLink = ({ title, subtitle, label }) => (
+const PrevNextLink = ({ title, subtitle, label, bgImage }) => (
   <>
-    {subtitle && <h4>{subtitle}</h4>}
-    {title && <h3>{title}</h3>}
-    <span className="label">
-      {label || "View Project"} <ArrowRight />
-    </span>
-    <S.Noise />
+    <div className="content">
+      {subtitle && <h4>{subtitle}</h4>}
+      {title && <h3>{title}</h3>}
+      <span className="label">
+        {label || "View Project"} <ArrowRight />
+      </span>
+    </div>
+
+    <div className="image">
+      <div className="skrim" />
+      <Image image={bgImage} priority layout="fill" quality={80} />
+    </div>
   </>
 );
 
@@ -46,6 +53,7 @@ const PrevNext = ({ block }) => {
               title={prevTitle}
               subtitle={prevLink?.subtitle}
               label={prevLink?.linkLabel}
+              bgImage={prevLink?.bgImage}
             />
           </a>
         </Link>
@@ -55,11 +63,10 @@ const PrevNext = ({ block }) => {
               title={nextTitle}
               subtitle={nextLink?.subtitle}
               label={nextLink?.linkLabel}
+              bgImage={nextLink?.bgImage}
             />
           </a>
         </Link>
-
-        <S.OutlineText text="Creators, Makers, Builders" />
       </S.PrevNext>
     </FadeIn>
   );

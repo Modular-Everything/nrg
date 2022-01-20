@@ -1,6 +1,4 @@
 import styled from "styled-components";
-import OutlineTextElement from "../../Elements/OutlineText";
-import NoiseElement from "../../Elements/Noise";
 
 // ---
 
@@ -18,19 +16,47 @@ export const PrevNext = styled.section`
     overflow: hidden;
     position: relative;
     z-index: 100;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    text-align: center;
     padding: 7rem var(--gutter);
     text-decoration: none;
     opacity: 1;
     transition: 250ms ease opacity;
+    color: var(--white);
 
     @media (min-width: 768px) {
-      padding: 14rem var(--gutter);
+      padding: 22rem var(--gutter) 4.8rem var(--gutter);
+    }
+
+    .content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      flex-direction: column;
+      align-items: center;
+      text-align: center;
+      z-index: 10;
+      position: relative;
+    }
+
+    .skrim,
+    .image {
+      position: absolute;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+    }
+
+    .skrim {
+      z-index: 5;
+      background-image: linear-gradient(
+        1.02deg,
+        rgba(0, 0, 0, 0.8) 2.54%,
+        rgba(0, 0, 0, 0) 99.12%
+      );
+    }
+
+    .image {
+      z-index: 0;
     }
 
     h4,
@@ -59,6 +85,7 @@ export const PrevNext = styled.section`
       align-items: center;
       font-size: 1.8rem;
       line-height: 2.4rem;
+      color: var(--red);
 
       svg {
         margin: 0 0 0.4rem 0.8rem;
@@ -70,32 +97,4 @@ export const PrevNext = styled.section`
       transform: translateX(0.4rem);
     }
   }
-
-  .prev {
-    background-color: var(--red);
-    color: var(--white);
-  }
-
-  .next {
-    background-color: var(--lt-grey);
-    color: var(--black);
-  }
-`;
-
-export const OutlineText = styled(OutlineTextElement)`
-  position: absolute;
-  top: -50%;
-  left: -25%;
-  z-index: 150;
-  width: 150%;
-  -webkit-text-stroke: 1px var(--white);
-  display: none;
-
-  @media (min-width: 768px) {
-    display: block;
-  }
-`;
-
-export const Noise = styled(NoiseElement)`
-  opacity: 0.15;
 `;

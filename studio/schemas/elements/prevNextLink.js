@@ -24,5 +24,12 @@ export default {
       type: "string",
       description: 'Defaults to "View Project"',
     },
+    {
+      name: "bgImage",
+      title: "Background Image",
+      type: "image",
+      description: "The image that sits behind the text",
+      validation: (Rule) => Rule.required(),
+    },
   ],
 };
