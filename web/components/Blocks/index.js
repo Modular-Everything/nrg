@@ -17,6 +17,7 @@ import PrevNext from "./PrevNext";
 import { IndexPageCards } from "./IndexPageCards/IndexPageCards";
 import { MediaGallery } from "./MediaGallery/MediaGallery";
 import { PortraitMediaGallery } from "./PortraitMediaGallery/PortraitMediaGallery";
+import { Tags } from "./Tags/Tags";
 
 // ---
 
@@ -42,6 +43,7 @@ const BlockBuilder = ({ blocks }) => {
     indexPageCards: IndexPageCards,
     mediaGallery: MediaGallery,
     portraitMediaGallery: PortraitMediaGallery,
+    tags: Tags,
   };
 
   return (
