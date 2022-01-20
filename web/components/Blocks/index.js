@@ -15,6 +15,7 @@ import MarqueeBanner from "./MarqueeBanner";
 import CardsGallery from "./CardsGallery";
 import PrevNext from "./PrevNext";
 import { IndexPageCards } from "./IndexPageCards/IndexPageCards";
+import { MediaGallery } from "./MediaGallery/MediaGallery";
 
 // ---
 
@@ -38,6 +39,7 @@ const BlockBuilder = ({ blocks }) => {
     cardsGallery: CardsGallery,
     prevNext: PrevNext,
     indexPageCards: IndexPageCards,
+    mediaGallery: MediaGallery,
   };
 
   return (

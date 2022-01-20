@@ -31,6 +31,12 @@ const blockFields = `
         'data': link->{slug, title}
       }
     },
+    media[] {
+      ...,
+      mediaVideo {
+        'data': asset->{mimeType, url}
+      },
+    },
   },
   bottomBlocks[] {
     ...,
