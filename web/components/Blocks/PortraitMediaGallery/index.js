@@ -1,1 +1,1 @@
-export { default } from "./PortraitMediaGallery";
+export * from "./PortraitMediaGallery";

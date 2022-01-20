@@ -1,1 +1,1 @@
-export { default } from "./IndexPageCards";
+export * from "./IndexPageCards";
