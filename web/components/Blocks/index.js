@@ -14,6 +14,7 @@ import LogoMatrix from "./LogoMatrix";
 import MarqueeBanner from "./MarqueeBanner";
 import CardsGallery from "./CardsGallery";
 import PrevNext from "./PrevNext";
+import { IndexPageCards } from "./IndexPageCards/IndexPageCards";
 
 // ---
 
@@ -36,6 +37,7 @@ const BlockBuilder = ({ blocks }) => {
     statement: MarqueeBanner,
     cardsGallery: CardsGallery,
     prevNext: PrevNext,
+    indexPageCards: IndexPageCards,
   };
 
   return (

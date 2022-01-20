@@ -22,6 +22,15 @@ const blockFields = `
       'slug': link->slug.current,
       'linkType': link->_type
     },
+    cards[] {
+      ...,
+      cardVideo {
+        'data': asset->{mimeType, url}
+      },
+      'link': {
+        'data': link->{slug, title}
+      }
+    },
   },
   bottomBlocks[] {
     ...,
