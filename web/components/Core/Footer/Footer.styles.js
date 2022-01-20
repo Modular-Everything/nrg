@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import CoreContainer from "../Container";
+import NoiseElem from "../../Elements/Noise";
 
 // ---
 
@@ -164,4 +165,8 @@ export const Container = styled(CoreContainer)`
     grid-template-columns: repeat(3, 1fr);
     grid-gap: calc(var(--gutter) * 2);
   }
+`;
+
+export const Noise = styled(NoiseElem)`
+  opacity: 0.5;
 `;

@@ -4,7 +4,6 @@ import { BsLinkedin as LiIcon, BsInstagram as InstaIcon } from "react-icons/bs";
 
 import * as S from "./Footer.styles";
 import Badge from "../../../images/icons/Badge";
-import Noise from "../../Elements/Noise";
 
 // ---
 
@@ -62,7 +61,7 @@ const Footer = () => (
       </div>
     </S.Container>
 
-    <Noise />
+    <S.Noise />
   </S.Footer>
 );
 
