@@ -49,7 +49,7 @@ export default {
       name: "blocks",
       title: "Blocks",
       type: "array",
-      of: [{ type: "indexPageCards" }, ...blocks],
+      of: [...blocks],
       options: {
         editModal: "fullscreen",
       },

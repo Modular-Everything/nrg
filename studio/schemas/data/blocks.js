@@ -13,4 +13,5 @@ export default [
   { type: "statement" },
   { type: "styledBanner" },
   { type: "styledImageBanner" },
+  { type: "indexPageCards" },
 ];
