@@ -28,7 +28,8 @@ const blockFields = `
         'data': asset->{mimeType, url}
       },
       'link': {
-        'data': link->{slug, title}
+        'data': link->{slug, title},
+        'linkType': link->_type
       }
     },
     media[] {

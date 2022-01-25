@@ -29,7 +29,12 @@ export default {
               title: "Link",
               type: "reference",
               description: "Where does this link to?",
-              to: [{ type: "projects" }],
+              to: [
+                { type: "projects" },
+                { type: "page" },
+                { type: "blog" },
+                { type: "services" },
+              ],
               validation: (Rule) => Rule.required(),
             },
             {

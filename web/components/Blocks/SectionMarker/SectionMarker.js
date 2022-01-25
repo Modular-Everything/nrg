@@ -8,6 +8,7 @@ import { BiRightArrowAlt as ArrowRight } from "react-icons/bi";
 import * as S from "./SectionMarker.styles";
 import Bolt from "../../../images/icons/Bolt";
 import FadeIn from "../../Animations/FadeIn";
+import { linkBuilder } from "../../../helpers/linkBuilder";
 
 // ---
 
@@ -23,12 +24,6 @@ const SectionMarker = ({ block }) => {
     slug,
     linkType,
   } = block;
-
-  function linkBuilder(pageSlug, type) {
-    const slugLink = pageSlug === "homepage" ? "" : pageSlug;
-    const pageType = type === "page" ? "/" : `/${type}/`;
-    return pageType + slugLink;
-  }
 
   return (
     <S.SectionMarker
