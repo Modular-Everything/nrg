@@ -1,6 +1,11 @@
 {
   "name": "@nrg/web",
   "private": true,
+  "version": "0.0.0",
+  "description": "",
+  "main": "package.json",
+  "author": "Chrish Dunne <hey@chrish.design>",
+  "license": "UNLICENSED",
   "scripts": {
     "dev": "next dev",
     "build": "next build",
@@ -13,7 +18,7 @@
     "react-dom": "17.0.2"
   },
   "devDependencies": {
-    "eslint": "8.9.0",
-    "eslint-config-next": "12.0.10"
+    "eslint": "^8.9.0",
+    "eslint-config-galex": "^3.6.5"
   }
 }

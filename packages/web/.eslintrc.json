@@ -1,3 +1,6 @@
 {
-  "extends": "next/core-web-vitals"
+  "extends": "galex",
+  "rules": {
+    "import/no-namespace": 0
+  }
 }
