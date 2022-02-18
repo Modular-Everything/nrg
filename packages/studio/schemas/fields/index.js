@@ -15,3 +15,23 @@ export const slug = {
     maxLength: 200,
   },
 };
+
+export const blocks = {
+  name: "blocks",
+  title: "Content Blocks",
+  type: "array",
+  of: [
+    { type: "basicMedia" },
+    { type: "bodyCopy" },
+    { type: "carousel" },
+    { type: "divider" },
+    { type: "imageSlideGallery" },
+    { type: "imageTiles" },
+    { type: "landscapeCards" },
+    { type: "largeStatements" },
+    { type: "list" },
+    { type: "logoGrid" },
+    { type: "projectNavigation" },
+    { type: "spacer" },
+  ],
+};

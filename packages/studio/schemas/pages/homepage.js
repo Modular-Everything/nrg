@@ -1,8 +1,8 @@
-import { title } from "../fields";
+import { title, blocks } from "../fields";
 
 export default {
   name: "homepage",
   title: "Homepage",
   type: "document",
-  fields: [title],
+  fields: [title, blocks],
 };
