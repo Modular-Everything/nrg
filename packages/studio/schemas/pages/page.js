@@ -1,8 +1,9 @@
-import { title, slug, blocks } from "../fields";
+import { slugWithType } from "../../helpers/slugWithType";
+import { title, blocks } from "../fields";
 
 export default {
   name: "page",
   title: "Page",
   type: "document",
-  fields: [title, slug, blocks],
+  fields: [title, slugWithType("", "title"), blocks],
 };

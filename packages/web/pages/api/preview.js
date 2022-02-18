@@ -1,5 +1,5 @@
 export default function preview(req, res) {
-  const { secret, slug, slugField } = req.query;
+  const { secret, slug } = req.query;
 
   if (!secret) {
     return res.status(401).json({ message: "No secret token" });
@@ -21,12 +21,6 @@ export default function preview(req, res) {
   // Redirect to the path from the fetched post
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
 
-  // _id based slugs are handled by a different route
-  if (slugField === `_id`) {
-    res.writeHead(307, { Location: slug ? `/id/${slug}` : `/` });
-    return res.end();
-  }
-
-  res.writeHead(307, { Location: slug ? `/${slug}` : `/` });
+  res.writeHead(307, { Location: slug ? `${slug}` : `/` });
   return res.end();
 }

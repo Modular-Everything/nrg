@@ -2,6 +2,7 @@ import { groq } from "next-sanity";
 
 import { Page } from "../components/core/Page";
 import { filterDataToSingleItem } from "../helpers/filterDataToSingleItem";
+import { getQueryFromSlug } from "../helpers/getQueryFromSlug";
 import { usePreviewSubscription } from "../lib/sanity";
 import { getClient } from "../lib/sanity.server";
 
@@ -28,13 +29,24 @@ export default function Home({ data, preview }) {
  * https://www.simeongriggs.dev/nextjs-sanity-slug-patterns
  */
 export async function getStaticPaths() {
-  const allSlugsQuery = groq`*[defined(slug.current)][].slug.current`;
-  const pages = await getClient().fetch(allSlugsQuery);
+  const pageQueries = await getClient().fetch(
+    groq`*[_type in ["homepage", "page", "blogPost", "project", "service"] && defined(slug.current)][].slug.current`
+  );
 
-  return {
-    paths: pages.map((slug) => `/${slug}`),
-    fallback: true,
-  };
+  // Split the slug strings to arrays (as required by Next.js)
+  const paths = pageQueries.map((slug) => ({
+    params: { slug: slug.split("/").filter((p) => p) },
+  }));
+
+  return { paths, fallback: true };
+
+  // const allSlugsQuery = groq`*[defined(slug.current)][].slug.current`;
+  // const pages = await getClient().fetch(allSlugsQuery);
+
+  // return {
+  //   paths: pages.map((slug) => `/${slug}`),
+  //   fallback: true,
+  // };
 }
 
 /**
@@ -51,24 +63,19 @@ export async function getStaticPaths() {
  * It does not need to be set or changed here
  */
 export async function getStaticProps({ params, preview = false }) {
-  const query = groq`*[_type == "page" && slug.current == $slug]`;
-  const queryParams = { slug: params.slug };
-  const data = await getClient(preview).fetch(query, queryParams);
+  const { query, queryParams, docType } = getQueryFromSlug(params.slug);
+  const pageData = await getClient(preview).fetch(query, queryParams);
 
-  // Escape hatch, if our query failed to return data
-  if (!data) {
-    return { notFound: true };
-  }
+  // if (!pageData) {
+  //   return { notFound: true };
+  // }
 
-  // Helper function to reduce all returned documents down to just one
-  const page = filterDataToSingleItem(data, preview);
+  const page = filterDataToSingleItem(pageData, preview);
 
   return {
     props: {
-      // Pass down the "preview mode" boolean to the client-side
       preview,
-      // Pass down the initial content, and our query
-      data: { page, query, queryParams },
+      data: { query, queryParams, docType, page },
     },
   };
 }

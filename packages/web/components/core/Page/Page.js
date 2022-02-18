@@ -16,7 +16,7 @@ export function Page({ data }) {
 
       <main>
         <h1>{data?.title}</h1>
-        Loaded in <pre>Page.js</pre>
+        Loaded in <pre style={{ display: "inline" }}>Page.js</pre>
       </main>
 
       <Footer />
