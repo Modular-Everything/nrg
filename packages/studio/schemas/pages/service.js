@@ -1,8 +1,8 @@
 import { title, slug, blocks } from "../fields";
 
 export default {
-  name: "page",
-  title: "Page",
+  name: "service",
+  title: "Service",
   type: "document",
   fields: [title, slug, blocks],
 };

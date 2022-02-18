@@ -2,6 +2,9 @@ import S from "@sanity/desk-tool/structure-builder";
 import {
   GiHouse as HomepageIcon,
   GiScrollQuill as PageIcon,
+  GiNewspaper as BlogIcon,
+  GiMining as ServiceIcon,
+  GiPaintRoller as ProjectIcon,
 } from "react-icons/gi";
 import Iframe from "sanity-plugin-iframe-pane";
 
@@ -39,6 +42,18 @@ export default function deskStructure() {
         .title("Pages")
         .icon(PageIcon)
         .child(() => S.documentTypeList("page")),
+      S.listItem()
+        .title("Blog Posts")
+        .icon(BlogIcon)
+        .child(() => S.documentTypeList("blogPost")),
+      S.listItem()
+        .title("Projects")
+        .icon(ProjectIcon)
+        .child(() => S.documentTypeList("project")),
+      S.listItem()
+        .title("Services")
+        .icon(ServiceIcon)
+        .child(() => S.documentTypeList("service")),
     ]);
 }
 
