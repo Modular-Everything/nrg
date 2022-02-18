@@ -3,20 +3,23 @@
 import schemaTypes from "all:part:@sanity/base/schema-type";
 import createSchema from "part:@sanity/base/schema-creator";
 
-import BasicMedia from "./blocks/BasicMedia";
-import BodyCopy from "./blocks/BodyCopy";
-import Carousel from "./blocks/Carousel";
-import Divider from "./blocks/Divider";
-import ImageSlideGallery from "./blocks/ImageSlideGallery";
-import ImageTiles from "./blocks/ImageTiles";
-import LandscapeCards from "./blocks/LandscapeCards";
-import LargeStatements from "./blocks/LargeStatements";
-import List from "./blocks/List";
-import LogoGrid from "./blocks/LogoGrid";
-import ProjectNavigation from "./blocks/ProjectNavigation";
-import Spacer from "./blocks/Spacer";
+import basicMedia from "./blocks/BasicMedia";
+import bodyCopy from "./blocks/BodyCopy";
+import carousel from "./blocks/Carousel";
+import divider from "./blocks/Divider";
+import imageSlideGallery from "./blocks/ImageSlideGallery";
+import imageTiles from "./blocks/ImageTiles";
+import landscapeCards from "./blocks/LandscapeCards";
+import largeStatements from "./blocks/LargeStatements";
+import list from "./blocks/List";
+import logoGrid from "./blocks/LogoGrid";
+import projectNavigation from "./blocks/ProjectNavigation";
+import spacer from "./blocks/Spacer";
+import blogPost from "./pages/blogPost";
 import homepage from "./pages/homepage";
 import page from "./pages/page";
+import project from "./pages/project";
+import service from "./pages/service";
 
 // Then import schema types from any plugins that might expose them
 
@@ -28,19 +31,22 @@ export default createSchema({
   // to the ones provided by any plugins that are installed
   types: [
     ...schemaTypes,
+    basicMedia,
+    blogPost,
+    bodyCopy,
+    carousel,
+    divider,
     homepage,
+    imageSlideGallery,
+    imageTiles,
+    landscapeCards,
+    largeStatements,
+    list,
+    logoGrid,
     page,
-    BasicMedia,
-    BodyCopy,
-    Carousel,
-    Divider,
-    ImageSlideGallery,
-    ImageTiles,
-    LandscapeCards,
-    LargeStatements,
-    List,
-    LogoGrid,
-    ProjectNavigation,
-    Spacer,
+    project,
+    projectNavigation,
+    service,
+    spacer,
   ],
 });
