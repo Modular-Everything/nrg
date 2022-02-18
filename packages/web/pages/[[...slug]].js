@@ -39,14 +39,6 @@ export async function getStaticPaths() {
   }));
 
   return { paths, fallback: true };
-
-  // const allSlugsQuery = groq`*[defined(slug.current)][].slug.current`;
-  // const pages = await getClient().fetch(allSlugsQuery);
-
-  // return {
-  //   paths: pages.map((slug) => `/${slug}`),
-  //   fallback: true,
-  // };
 }
 
 /**
