@@ -37,6 +37,15 @@ export default function deskStructure() {
             .schemaType("homepage")
             .documentId("defaultHomepage")
             .title("Homepage")
+            .views([
+              S.view.form(),
+              S.view
+                .component(Iframe)
+                .options({
+                  url: (doc) => resolveProductionUrl(doc),
+                })
+                .title("Preview"),
+            ])
         ),
       S.listItem()
         .title("Pages")
