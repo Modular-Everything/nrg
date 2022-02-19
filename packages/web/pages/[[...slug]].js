@@ -1,5 +1,8 @@
 import { groq } from "next-sanity";
+import Head from "next/head";
 
+import { Footer } from "../components/core/Footer";
+import { Header } from "../components/core/Header";
 import { Page } from "../components/core/Page";
 import { filterDataToSingleItem } from "../helpers/filterDataToSingleItem";
 import { getQueryFromSlug } from "../helpers/getQueryFromSlug";
@@ -17,8 +20,20 @@ export default function Home({ data, preview }) {
   });
 
   const page = filterDataToSingleItem(previewData, preview);
+  const globalSettings = data?.globalSettings;
 
-  return <Page data={page} />;
+  return (
+    <>
+      <Head>
+        <title>{page?.title}</title>
+        <link rel="icon" href="/favicon.ico" />
+      </Head>
+
+      <Header data={globalSettings} />
+      <Page data={page} />
+      <Footer />
+    </>
+  );
 }
 
 /**
@@ -55,19 +70,34 @@ export async function getStaticPaths() {
  * It does not need to be set or changed here
  */
 export async function getStaticProps({ params, preview = false }) {
+  const client = getClient(preview);
   const { query, queryParams, docType } = getQueryFromSlug(params.slug);
-  const pageData = await getClient(preview).fetch(query, queryParams);
+  const pageData = await client.fetch(query, queryParams);
+  const globalSettings = await client.fetch(
+    groq`
+      *[_type == 'globalSettings' && _id == 'globalSettings'][0] {
+        ...,
+        navigation[] {
+          ...,
+          children[] {
+            ...,
+            target->
+          }
+        }
+      }
+    `
+  );
 
-  // if (!pageData) {
-  //   return { notFound: true };
-  // }
+  if (!pageData) {
+    return { notFound: true };
+  }
 
   const page = filterDataToSingleItem(pageData, preview);
 
   return {
     props: {
       preview,
-      data: { query, queryParams, docType, page },
+      data: { query, queryParams, docType, page, globalSettings },
     },
   };
 }
