@@ -2,8 +2,8 @@ import { slugWithType } from "../../helpers/slugWithType";
 import { title, blocks } from "../fields";
 
 export default {
-  name: "blogPost",
-  title: "Blog Post",
+  name: "newsPost",
+  title: "News",
   type: "document",
-  fields: [title, slugWithType("blog", "title"), blocks],
+  fields: [title, slugWithType("news", "title"), blocks],
 };

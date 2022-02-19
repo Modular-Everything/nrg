@@ -3,7 +3,7 @@ import { groq } from "next-sanity";
 export function getQueryFromSlug(slugArray = []) {
   const docQuery = {
     home: groq`*[_type == "homepage" && slug.current == '/'][0]`,
-    blog: groq`*[_type == "blogPost" && slug.current == $slug][0]`,
+    news: groq`*[_type == "newsPost" && slug.current == $slug][0]`,
     page: groq`*[_type == "page" && slug.current == $slug][0]`,
     services: groq`*[_type == "service" && slug.current == $slug][0]`,
     projects: groq`*[_type == "project" && slug.current == $slug][0]`,

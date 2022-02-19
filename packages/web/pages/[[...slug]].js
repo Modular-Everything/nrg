@@ -30,7 +30,7 @@ export default function Home({ data, preview }) {
  */
 export async function getStaticPaths() {
   const pageQueries = await getClient().fetch(
-    groq`*[_type in ["homepage", "page", "blogPost", "project", "service"] && defined(slug.current)][].slug.current`
+    groq`*[_type in ["homepage", "page", "newsPost", "project", "service"] && defined(slug.current)][].slug.current`
   );
 
   // Split the slug strings to arrays (as required by Next.js)

@@ -2,7 +2,7 @@ import S from "@sanity/desk-tool/structure-builder";
 import {
   GiHouse as HomepageIcon,
   GiScrollQuill as PageIcon,
-  GiNewspaper as BlogIcon,
+  GiNewspaper as NewsIcon,
   GiMining as ServiceIcon,
   GiPaintRoller as ProjectIcon,
   GiTreasureMap as SettingsIcon,
@@ -28,7 +28,7 @@ export const getDefaultDocumentNode = () =>
 
 export default function deskStructure() {
   return S.list()
-    .title("Content Manager")
+    .title("Content")
     .items([
       S.listItem()
         .title("Homepage")
@@ -53,9 +53,9 @@ export default function deskStructure() {
         .icon(PageIcon)
         .child(() => S.documentTypeList("page")),
       S.listItem()
-        .title("Blog Posts")
-        .icon(BlogIcon)
-        .child(() => S.documentTypeList("blogPost")),
+        .title("News")
+        .icon(NewsIcon)
+        .child(() => S.documentTypeList("newsPost")),
       S.listItem()
         .title("Projects")
         .icon(ProjectIcon)

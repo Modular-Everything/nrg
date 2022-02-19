@@ -16,8 +16,8 @@ import logoGrid from "./blocks/LogoGrid";
 import projectNavigation from "./blocks/ProjectNavigation";
 import spacer from "./blocks/Spacer";
 import globalSettings from "./globalSettings";
-import blogPost from "./pages/blogPost";
 import homepage from "./pages/homepage";
+import newsPost from "./pages/newsPost";
 import page from "./pages/page";
 import project from "./pages/project";
 import service from "./pages/service";
@@ -33,7 +33,6 @@ export default createSchema({
   types: [
     ...schemaTypes,
     basicMedia,
-    blogPost,
     bodyCopy,
     carousel,
     divider,
@@ -45,6 +44,7 @@ export default createSchema({
     largeStatements,
     list,
     logoGrid,
+    newsPost,
     page,
     project,
     projectNavigation,
