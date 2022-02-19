@@ -15,6 +15,7 @@ import list from "./blocks/List";
 import logoGrid from "./blocks/LogoGrid";
 import projectNavigation from "./blocks/ProjectNavigation";
 import spacer from "./blocks/Spacer";
+import globalSettings from "./globalSettings";
 import blogPost from "./pages/blogPost";
 import homepage from "./pages/homepage";
 import page from "./pages/page";
@@ -36,6 +37,7 @@ export default createSchema({
     bodyCopy,
     carousel,
     divider,
+    globalSettings,
     homepage,
     imageSlideGallery,
     imageTiles,

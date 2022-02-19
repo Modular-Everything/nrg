@@ -5,6 +5,7 @@ import {
   GiNewspaper as BlogIcon,
   GiMining as ServiceIcon,
   GiPaintRoller as ProjectIcon,
+  GiTreasureMap as SettingsIcon,
 } from "react-icons/gi";
 import Iframe from "sanity-plugin-iframe-pane";
 
@@ -63,5 +64,15 @@ export default function deskStructure() {
         .title("Services")
         .icon(ServiceIcon)
         .child(() => S.documentTypeList("service")),
+      S.divider(),
+      S.listItem()
+        .title("Site Settings")
+        .icon(SettingsIcon)
+        .child(
+          S.document()
+            .schemaType("globalSettings")
+            .documentId("globalSettings")
+            .title("Site Settings")
+        ),
     ]);
 }
