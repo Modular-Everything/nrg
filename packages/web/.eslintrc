@@ -2,6 +2,7 @@
   "extends": "galex",
   "rules": {
     "import/no-namespace": 0,
-    "import/no-default-export": 0
+    "import/no-default-export": 0,
+    "jsx-a11y/anchor-is-valid": 0
   }
 }
