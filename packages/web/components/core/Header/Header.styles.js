@@ -67,6 +67,8 @@ export const Nav = styled.nav`
 
   .nav__item--inner {
     white-space: nowrap;
+    font-size: 1.6rem;
+    line-height: 2.4rem;
   }
 
   input[type="radio"] {
@@ -84,6 +86,7 @@ export const Nav = styled.nav`
     cursor: pointer;
     text-transform: uppercase;
     font-size: 2.4rem;
+    font-family: var(--avenue);
     line-height: 3.2rem;
 
     &:hover {
