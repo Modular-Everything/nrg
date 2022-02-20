@@ -30,8 +30,11 @@ export default function Home({ data, preview }) {
       </Head>
 
       <Header data={globalSettings} />
-      <Page data={page} />
-      <Footer />
+
+      <div className="wrapper">
+        <Page data={page} />
+        <Footer />
+      </div>
     </>
   );
 }
