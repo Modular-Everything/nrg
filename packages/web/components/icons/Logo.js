@@ -6,6 +6,7 @@ export function Logo() {
       viewBox="0 0 132 58"
       fill="none"
       xmlns="http://www.w3.org/2000/svg"
+      preserveAspectRatio="xMinYMid meet"
     >
       <path
         fillRule="evenodd"
