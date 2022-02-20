@@ -47,10 +47,6 @@ export const Nav = styled.nav`
     height: 3.2rem;
     width: 0.1rem;
     background-color: #3b3b3b;
-
-    &:last-of-type {
-      display: none;
-    }
   }
 
   .nav__wrap--inner {
@@ -78,11 +74,20 @@ export const Nav = styled.nav`
   input[type="radio"] {
     display: none;
 
-    &:checked + .nav__wrap--inner {
-      transition-delay: 250ms;
-      height: auto;
-      opacity: 1;
-      pointer-events: auto;
+    &:checked {
+      & ~ .nav__item--title {
+        @supports (-webkit-text-stroke: 1px black) {
+          -webkit-text-stroke: 1px var(--nrg-red);
+          -webkit-text-fill-color: transparent;
+        }
+      }
+
+      & ~ .nav__wrap--inner {
+        transition-delay: 250ms;
+        height: auto;
+        opacity: 1;
+        pointer-events: auto;
+      }
     }
   }
 
