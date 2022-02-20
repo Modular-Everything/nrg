@@ -5,10 +5,14 @@ export const Cards = styled.section`
 
   .container {
     --min: 32rem;
-    --gap: 1rem;
+    --gap: 4rem;
 
     display: grid;
     grid-gap: var(--gap);
     grid-template-columns: repeat(auto-fit, minmax(min(100%, var(--min)), 1fr));
+
+    @media (min-width: 697px) {
+      --gap: 1.6rem;
+    }
   }
 `;

@@ -7,6 +7,22 @@ export const Card = styled.article`
     }
   }
 
+  &.portrait {
+    @media (min-width: 697px) {
+      &:first-of-type {
+        margin-left: 15%;
+      }
+
+      &:last-of-type {
+        margin-right: 15%;
+      }
+    }
+
+    .card__image {
+      aspect-ratio: 424/600;
+    }
+  }
+
   .card__image {
     position: relative;
     overflow: hidden;
