@@ -1,12 +1,15 @@
 import PropTypes from "prop-types";
 
+import { getBlock } from "../../../helpers/getBlock";
 import * as S from "./Page.styles";
 
 export function Page({ data }) {
+  console.log(data);
   return (
     <S.Page>
-      <h1>{data?.title}</h1>
-      Loaded in <pre style={{ display: "inline" }}>Page.js</pre>
+      {data?.blocks?.map((block) => {
+        return getBlock(block);
+      })}
     </S.Page>
   );
 }
