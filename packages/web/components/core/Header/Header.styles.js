@@ -6,6 +6,7 @@ export const Header = styled.header`
   background-color: var(--nrg-black);
   color: var(--white);
   position: fixed;
+  z-index: 1000;
   top: 0;
   width: 100%;
 
@@ -31,7 +32,7 @@ export const Nav = styled.nav`
     height: 100%;
     margin: 0;
 
-    &.open input[type="radio"]:checked + .nav__wrap--inner {
+    &.open input[type="radio"]:checked ~ .nav__wrap--inner {
       transition-delay: 0ms;
     }
   }
@@ -69,6 +70,10 @@ export const Nav = styled.nav`
     white-space: nowrap;
     font-size: 1.6rem;
     line-height: 2.4rem;
+
+    a:hover {
+      color: var(--nrg-red);
+    }
   }
 
   input[type="radio"] {
