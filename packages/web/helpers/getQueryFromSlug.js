@@ -1,12 +1,26 @@
 import { groq } from "next-sanity";
 
 export function getQueryFromSlug(slugArray = []) {
+  const blocks = `
+    ...,
+    blocks[] {
+      ...,
+      allCards[] {
+        ...,
+        linkToRef {
+          ...,
+          "link": link->
+        }
+      }
+    }
+  `;
+
   const docQuery = {
-    home: groq`*[_type == "homepage" && slug.current == '/'][0]`,
-    news: groq`*[_type == "newsPost" && slug.current == $slug][0]`,
-    page: groq`*[_type == "page" && slug.current == $slug][0]`,
-    services: groq`*[_type == "service" && slug.current == $slug][0]`,
-    projects: groq`*[_type == "project" && slug.current == $slug][0]`,
+    home: groq`*[_type == "homepage" && slug.current == '/'][0] { ${blocks} }`,
+    news: groq`*[_type == "newsPost" && slug.current == $slug][0] { ${blocks} }`,
+    page: groq`*[_type == "page" && slug.current == $slug][0] { ${blocks} }`,
+    services: groq`*[_type == "service" && slug.current == $slug][0] { ${blocks} }`,
+    projects: groq`*[_type == "project" && slug.current == $slug][0] { ${blocks} }`,
   };
 
   if (slugArray.length === 0) {
