@@ -44,8 +44,13 @@ export const Nav = styled.nav`
   }
 
   .divider {
+    height: 3.2rem;
     width: 0.1rem;
     background-color: #3b3b3b;
+
+    &:last-of-type {
+      display: none;
+    }
   }
 
   .nav__wrap--inner {
@@ -62,7 +67,6 @@ export const Nav = styled.nav`
     flex-direction: column;
     align-items: flex-end;
     top: calc(var(--headerHeight) - var(--navHeight) + 2.4rem);
-    background: black;
   }
 
   .nav__item--inner {

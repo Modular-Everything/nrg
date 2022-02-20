@@ -40,33 +40,41 @@ export function Header({ data }) {
 
         <S.Nav role="navigation">
           <ul className="nav__wrap--outer">
-            {data?.navigation.map((topLevel) => (
-              <li key={topLevel._key} className="nav__item--outer">
-                <label>
-                  <span className="nav__item--title">{topLevel.label}</span>
-                  <input
-                    type="radio"
-                    name="nav"
-                    aria-label="Open Menu"
-                    data-id={topLevel._key}
-                    onClick={(e) =>
-                      handleMenuOpen(e, blackBarRef, {
-                        menu: { activeMenu, setActiveMenu },
-                      })
-                    }
-                  />
-                  <ul className="nav__wrap--inner">
-                    {topLevel.children.map((children) => (
-                      <li key={children._key} className="nav__item--inner">
-                        <Link href={children.target.slug.current}>
-                          <a>{children.label}</a>
-                        </Link>
-                      </li>
-                    ))}
-                  </ul>
-                </label>
-              </li>
-            ))}
+            {data?.navigation.map((topLevel) => {
+              const isLast = data?.navigation.length - 1;
+
+              return (
+                <>
+                  <li key={topLevel._key} className="nav__item--outer">
+                    <label>
+                      <span className="nav__item--title">{topLevel.label}</span>
+                      <input
+                        type="radio"
+                        name="nav"
+                        aria-label="Open Menu"
+                        data-id={topLevel._key}
+                        onClick={(e) =>
+                          handleMenuOpen(e, blackBarRef, {
+                            menu: { activeMenu, setActiveMenu },
+                          })
+                        }
+                      />
+                      <ul className="nav__wrap--inner">
+                        {topLevel.children.map((children) => (
+                          <li key={children._key} className="nav__item--inner">
+                            <Link href={children.target.slug.current}>
+                              <a>{children.label}</a>
+                            </Link>
+                          </li>
+                        ))}
+                      </ul>
+                    </label>
+                  </li>
+
+                  <li className="divider" />
+                </>
+              );
+            })}
           </ul>
         </S.Nav>
       </Container>
