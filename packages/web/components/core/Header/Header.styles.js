@@ -1,27 +1,46 @@
 import styled from "styled-components";
 
 export const Header = styled.header`
+  --navHeight: 4.8rem;
+
   background-color: var(--nrg-black);
   color: var(--white);
-  padding: clamp(1.6rem, 6vw, 4rem) 0;
-  position: relative;
+  position: fixed;
+  top: 0;
+  width: 100%;
 
   .container {
+    height: var(--headerHeight);
     display: flex;
     justify-content: space-between;
+    align-items: center;
   }
 `;
 
 export const Nav = styled.nav`
+  width: 100%;
+  height: 100%;
+
   .nav__wrap--outer {
     display: flex;
     justify-content: flex-end;
+    align-items: center;
     gap: 1.6rem;
     position: relative;
+    width: 100%;
+    height: 100%;
+    margin: 0;
+
+    &.open input[type="radio"]:checked + .nav__wrap--inner {
+      transition-delay: 0ms;
+    }
   }
 
-  .nav__item--outer:last-of-type .nav__wrap--inner {
-    right: 0;
+  .nav__item--outer {
+    position: relative;
+    display: flex;
+    align-items: center;
+    height: var(--navHeight);
   }
 
   .divider {
@@ -30,14 +49,34 @@ export const Nav = styled.nav`
   }
 
   .nav__wrap--inner {
-    display: none;
+    height: 0;
+    opacity: 0;
+    pointer-events: none;
+    transition: 250ms ease all;
+    right: 0;
+    text-align: right;
+    width: 100%;
+    position: absolute;
+    top: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    top: calc(var(--headerHeight) - var(--navHeight) + 2.4rem);
+    background: black;
+  }
+
+  .nav__item--inner {
+    white-space: nowrap;
   }
 
   input[type="radio"] {
     display: none;
 
     &:checked + .nav__wrap--inner {
-      display: flex;
+      transition-delay: 250ms;
+      height: auto;
+      opacity: 1;
+      pointer-events: auto;
     }
   }
 
@@ -54,11 +93,16 @@ export const Nav = styled.nav`
       }
     }
   }
+`;
 
-  .nav__wrap--inner {
-    position: absolute;
-    background-color: var(--black);
-    top: 100%;
-    flex-direction: column;
+export const BlackBar = styled.div`
+  height: var(--headerHeight);
+  width: 100%;
+  background: var(--black);
+  display: block !important;
+  transition: 250ms ease height;
+
+  &.closed {
+    height: 0 !important;
   }
 `;

@@ -4,6 +4,8 @@
   --nrg-black: #191919;
   --nrg-white: var(--white);
   --nrg-red: #ff0000;
+
+  --headerHeight: 13.8rem;
 }
 
 html {
@@ -30,4 +32,9 @@ a {
 ::selection {
   background: var(--nrg-red);
   color: var(--white);
+}
+
+.wrapper {
+  position: relative;
+  top: var(--headerHeight);
 }
