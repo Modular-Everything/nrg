@@ -52,6 +52,7 @@
   --nrg-black: #191919;
   --nrg-white: var(--white);
   --nrg-red: #ff0000;
+  --nrg-lt-grey: #b8b8b8;
 
   --headerHeight: 13.8rem;
 
@@ -72,6 +73,7 @@ body {
   font-family: var(--simplon);
   font-size: 2rem;
   background-color: var(--white);
+  color: var(--nrg-black);
   min-height: 100vh;
   min-height: -webkit-fill-available;
   -webkit-font-smoothing: antialiased;
