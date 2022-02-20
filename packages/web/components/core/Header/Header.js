@@ -32,7 +32,7 @@ export function Header({ data }) {
     <S.Header>
       <Container>
         <Link href="/">
-          <a>
+          <a className="logo">
             <Logo />
           </a>
         </Link>

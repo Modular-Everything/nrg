@@ -15,6 +15,16 @@ export const Header = styled.header`
     display: flex;
     justify-content: space-between;
     align-items: center;
+    gap: 1.2rem;
+  }
+
+  .logo {
+    max-width: 13.2rem;
+    width: 25%;
+
+    svg {
+      width: 100%;
+    }
   }
 `;
 
@@ -26,14 +36,18 @@ export const Nav = styled.nav`
     display: flex;
     justify-content: flex-end;
     align-items: center;
-    gap: 1.6rem;
     position: relative;
+    gap: 0.8rem;
     width: 100%;
     height: 100%;
     margin: 0;
 
     &.open input[type="radio"]:checked ~ .nav__wrap--inner {
       transition-delay: 0ms;
+    }
+
+    @media (min-width: 400px) {
+      gap: 1.6rem;
     }
   }
 
@@ -45,9 +59,13 @@ export const Nav = styled.nav`
   }
 
   .divider {
-    height: 3.2rem;
+    height: 2.4rem;
     width: 0.1rem;
     background-color: #3b3b3b;
+
+    @media (min-width: 400px) {
+      height: 3.2rem;
+    }
   }
 
   .nav__wrap--inner {
@@ -99,7 +117,7 @@ export const Nav = styled.nav`
   .nav__item--title {
     cursor: pointer;
     text-transform: uppercase;
-    font-size: 2.4rem;
+    font-size: clamp(1.8rem, 4vw, 2.4rem);
     font-family: var(--avenue);
     line-height: 3.2rem;
 
