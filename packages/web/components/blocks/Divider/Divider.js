@@ -27,5 +27,9 @@ export function Divider({ data }) {
 }
 
 Divider.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
+};
+
+Divider.defaultProps = {
+  data: null,
 };
