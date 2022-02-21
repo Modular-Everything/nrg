@@ -13,6 +13,7 @@ export const Footer = styled.footer`
   font-size: 1.6rem;
   line-height: 2rem;
   position: relative;
+  overflow: hidden;
   width: 100%;
 
   .container {
