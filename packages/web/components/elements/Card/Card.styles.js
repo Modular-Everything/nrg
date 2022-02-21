@@ -29,10 +29,13 @@ export const Card = styled.article`
     border-radius: 0.8rem;
     box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
     transition: 250ms var(--ease-in-out) box-shadow;
+    z-index: 0;
   }
 
   .card__meta {
     margin-top: 1.2rem;
+    position: relative;
+    z-index: 10;
 
     h4,
     h5 {
