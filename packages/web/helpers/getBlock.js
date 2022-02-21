@@ -37,6 +37,7 @@ export function getBlock(block) {
     blocks[id] &&
     createElement(blocks[id].type, {
       data: block,
+      key: block._key,
     })
   );
 }
