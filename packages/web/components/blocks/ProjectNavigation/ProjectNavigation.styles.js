@@ -89,5 +89,5 @@ export const Skrim = styled.div`
   left: 0;
   width: 100%;
   height: 100%;
-  background: linear-gradient(0, rgba(0, 0, 0, 0.8) 0, rgba(0, 0, 0, 0) 100%);
+  background: linear-gradient(rgba(0, 0, 0, 0), 25%, rgba(0, 0, 0, 0.8));
 `;
