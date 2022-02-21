@@ -41,7 +41,7 @@ export const Card = styled.article`
     h5 {
       font-family: var(--grotesque);
       font-size: 1.6rem;
-      line-height: 2.4rem;
+      line-height: 2rem;
       color: var(--nrg-lt-grey);
       text-transform: uppercase;
     }
