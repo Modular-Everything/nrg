@@ -41,5 +41,5 @@ export function LargeStatements({ data }) {
 }
 
 LargeStatements.propTypes = {
-  data: PropTypes.object.isRequired,
+  data: PropTypes.object,
 };

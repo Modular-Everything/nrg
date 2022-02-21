@@ -33,24 +33,5 @@ export function ProjectNavigation({ data }) {
 }
 
 ProjectNavigation.propTypes = {
-  data: PropTypes.shape({
-    image: PropTypes.object.isRequired,
-    linkToRef: PropTypes.shape({
-      label: PropTypes.string,
-      link: PropTypes.object.isRequired,
-    }),
-    subtitle: PropTypes.string,
-    title: PropTypes.string,
-  }).isRequired,
-};
-
-ProjectNavigation.defaultProps = {
-  data: {
-    linkToRef: {
-      label: null,
-      link: null,
-    },
-    subtitle: null,
-    title: null,
-  },
+  data: PropTypes.object,
 };
