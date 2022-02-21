@@ -15,7 +15,7 @@ export function Divider({ data }) {
         <Container>
           <hr
             style={{
-              color: data?.backgroundColor.includes("red")
+              backgroundColor: data?.backgroundColor.includes("red")
                 ? "var(--nrg-white)"
                 : "var(--nrg-lt-grey)",
             }}
