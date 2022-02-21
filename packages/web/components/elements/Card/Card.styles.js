@@ -27,7 +27,7 @@ export const Card = styled.article`
     position: relative;
     overflow: hidden;
     border-radius: 0.8rem;
-    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
+    box-shadow: var(--drop);
     transition: 250ms var(--ease-in-out) box-shadow;
     z-index: 0;
   }
