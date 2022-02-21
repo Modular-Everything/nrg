@@ -27,6 +27,8 @@ export const Card = styled.article`
     position: relative;
     overflow: hidden;
     border-radius: 0.8rem;
+    box-shadow: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
+    transition: 250ms var(--ease-in-out) box-shadow;
   }
 
   .card__meta {
@@ -71,8 +73,12 @@ export const Card = styled.article`
     }
 
     &:hover {
-      .card__image img {
-        transform: scale(105%);
+      .card__image {
+        box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
+
+        img {
+          transform: scale(105%);
+        }
       }
     }
   }
