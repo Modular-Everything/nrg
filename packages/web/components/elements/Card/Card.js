@@ -2,7 +2,7 @@
 import Link from "next/link";
 import PropTypes from "prop-types";
 
-import { Image } from "../Image/Image";
+import { Image } from "../Image";
 import * as S from "./Card.styles";
 
 export function Card({ data }) {
