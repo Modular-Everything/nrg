@@ -75,6 +75,34 @@ export const statement = {
   // },
 };
 
+export const bodyCopy = {
+  name: "bodyCopy",
+  title: "Body",
+  type: "object",
+  fields: [
+    {
+      name: "copy",
+      title: "Body",
+      type: "array",
+      of: [
+        {
+          type: "block",
+          styles: [
+            { title: "Normal", value: "normal" },
+            { title: "H1", value: "h1" },
+            { title: "H2", value: "h2" },
+          ],
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [],
+          },
+        },
+      ],
+    },
+  ],
+};
+
 export const linkToRef = {
   name: "linkToRef",
   title: "Link",
