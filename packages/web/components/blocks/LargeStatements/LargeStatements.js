@@ -21,6 +21,7 @@ export function LargeStatements({ data }) {
 
         <div
           className="statement"
+          // eslint-disable-next-line react/no-danger
           dangerouslySetInnerHTML={{ __html: data?.svgSnippet }}
         />
 
