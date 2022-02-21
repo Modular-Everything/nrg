@@ -62,6 +62,8 @@
   --simplonNorm: "Simplon Norm", var(--simplon);
   --grotesque: "Grotesque MT Std", var(--system);
   --avenue: "Central Avenue", var(--system);
+
+  --ease-in-out: cubic-bezier(0.785, 0.135, 0.15, 0.86);
 }
 
 @media (min-width: 400px) {

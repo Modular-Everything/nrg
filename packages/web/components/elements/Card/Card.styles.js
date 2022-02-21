@@ -64,4 +64,16 @@ export const Card = styled.article`
       display: block;
     }
   }
+
+  a {
+    .card__image img {
+      transition: 250ms var(--ease-in-out) transform;
+    }
+
+    &:hover {
+      .card__image img {
+        transform: scale(105%);
+      }
+    }
+  }
 `;

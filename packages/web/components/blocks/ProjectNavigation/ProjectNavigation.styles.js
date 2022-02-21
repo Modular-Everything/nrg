@@ -10,6 +10,16 @@ export const ProjectNavigation = styled.section`
 
   a {
     position: relative;
+
+    .projectNav__image img {
+      transition: 250ms var(--ease-in-out) transform;
+    }
+
+    &:hover {
+      .projectNav__image img {
+        transform: scale(105%);
+      }
+    }
   }
 
   .projectNav__image {
