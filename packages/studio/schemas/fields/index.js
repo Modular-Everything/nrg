@@ -13,6 +13,68 @@ export const subtitle = {
   type: "string",
 };
 
+export const svgSnippet = {
+  name: "svgSnippet",
+  title: "SVG Snippet",
+  type: "text",
+  validation: (Rule) =>
+    Rule.required().custom((snippet) => {
+      if (typeof snippet === "undefined") {
+        return true;
+      }
+      return snippet.startsWith("<svg")
+        ? true
+        : "Must be an actual <svg> snippet";
+    }),
+};
+
+export const statement = {
+  name: "statement",
+  title: "Statement",
+  type: "object",
+  fields: [
+    {
+      name: "statement",
+      title: "Statement",
+      type: "array",
+      description:
+        "Use the highlight and text height buttons to create styled effects. Try combining them!",
+      of: [
+        {
+          type: "block",
+          styles: [],
+          lists: [],
+          marks: {
+            annotations: [],
+            decorators: [
+              {
+                title: "Add background to text",
+                value: "strong",
+                // blockEditor: { icon: "🖊" },
+              },
+              {
+                title: "Add small text",
+                value: "em",
+                // blockEditor: { icon: "🤏" },
+              },
+            ],
+          },
+        },
+      ],
+    },
+  ],
+  // preview: {
+  //   select: {
+  //     title: "statement",
+  //   },
+  //   prepare: ({ title }) => ({
+  //     title: `${title[0].children[0].text}...`,
+  //     media: <Icon />,
+  //     subtitle: "Statement",
+  //   }),
+  // },
+};
+
 export const linkToRef = {
   name: "linkToRef",
   title: "Link",
