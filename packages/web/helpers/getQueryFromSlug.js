@@ -10,8 +10,15 @@ export function getQueryFromSlug(slugArray = []) {
         linkToRef {
           ...,
           "link": link->
-        }
-      }
+        },
+      },
+      items[] {
+        ...,
+        linkToRef {
+          ...,
+          "link": link->
+        },
+      },
     }
   `;
 
