@@ -9,6 +9,7 @@ export const List = styled.section`
     font-size: clamp(4rem, 8vw, 7rem);
     line-height: clamp(4rem, 8vw, 7rem);
     margin: 0 0 6.4rem;
+    text-transform: uppercase;
   }
 
   .grid {
