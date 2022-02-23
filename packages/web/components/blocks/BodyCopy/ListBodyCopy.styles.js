@@ -68,7 +68,7 @@ export const ListBodyCopy = styled.section`
         background-color: ${({ theme }) => theme.bullets.background};
         color: ${({ theme }) => theme.bullets.text};
         border-radius: 0.6rem;
-        padding: 1rem 0.8rem 0.8rem 0.8rem;
+        padding: 0.8rem 0.8rem 0.6rem 0.8rem;
         white-space: nowrap;
         overflow: hidden;
         text-overflow: ellipsis;
