@@ -99,7 +99,7 @@ export default {
       name: "linkToRef",
       title: "Call to Action",
       type: "object",
-      hidden: ({ parent }) => parent.layoutType !== "list",
+      hidden: ({ parent }) => parent.layoutType === "body",
       fields: [
         {
           name: "label",
