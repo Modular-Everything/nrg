@@ -16,6 +16,10 @@ export const ProjectNavigation = styled.section`
     }
 
     &:hover {
+      .arrow {
+        transform: translateX(0.8rem);
+      }
+
       .projectNav__image img {
         transform: scale(105%);
       }
@@ -69,15 +73,6 @@ export const ProjectNavigation = styled.section`
       font-weight: 600;
       font-size: clamp(1.8rem, 3vw, 2.8rem);
       line-height: clamp(2rem, 3vw, 3rem);
-    }
-
-    span {
-      font-family: var(--simplon);
-      font-size: 1.6rem;
-      font-weight: 600;
-      line-height: 2.4rem;
-      display: block;
-      color: var(--nrg-red);
     }
   }
 `;

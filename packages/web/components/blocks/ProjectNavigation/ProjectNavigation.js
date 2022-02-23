@@ -2,6 +2,7 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 import { Image } from "../../elements/Image";
+import { LinkToRef } from "../../elements/LinkToRef";
 import * as S from "./ProjectNavigation.styles";
 
 export function ProjectNavigation({ data }) {
@@ -23,7 +24,7 @@ export function ProjectNavigation({ data }) {
             <div className="projectNav__meta">
               {item?.subtitle && <h5>{item.subtitle}</h5>}
               {item?.title && <h4>{item.title}</h4>}
-              <span>{item?.linkToRef?.label || "View Project"} &rarr;</span>
+              <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
             </div>
           </a>
         </Link>

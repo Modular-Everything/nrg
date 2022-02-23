@@ -59,15 +59,6 @@ export const Card = styled.article`
       line-height: clamp(2rem, 3vw, 3rem);
       margin-top: 0.4rem;
     }
-
-    span {
-      font-family: var(--simplon);
-      font-size: 1.6rem;
-      line-height: 2.4rem;
-      color: var(--nrg-red);
-      margin-top: 1.2rem;
-      display: block;
-    }
   }
 
   a {
@@ -76,6 +67,10 @@ export const Card = styled.article`
     }
 
     &:hover {
+      .arrow {
+        transform: translateX(0.8rem);
+      }
+
       .card__image {
         box-shadow: 0 0.8rem 2rem rgba(0, 0, 0, 0.2);
 

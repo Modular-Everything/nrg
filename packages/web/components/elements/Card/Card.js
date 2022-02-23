@@ -3,6 +3,7 @@ import Link from "next/link";
 import PropTypes from "prop-types";
 
 import { Image } from "../Image";
+import { LinkToRef } from "../LinkToRef";
 import * as S from "./Card.styles";
 
 export function Card({ data }) {
@@ -30,7 +31,7 @@ export function Card({ data }) {
         <div className="card__meta">
           {data?.subtitle && <h5>{data.subtitle}</h5>}
           {data?.title && <h4>{data.title}</h4>}
-          <span>{data?.linkToRef?.label || "View Project"} &rarr;</span>
+          <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
         </div>
       </>
     );
