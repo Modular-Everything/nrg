@@ -12,7 +12,6 @@ import {
   List,
   LogoGrid,
   ProjectNavigation,
-  Spacer,
 } from "../components/blocks";
 
 export function getBlock(block) {
@@ -30,7 +29,6 @@ export function getBlock(block) {
     list: <List />,
     logoGrid: <LogoGrid />,
     projectNavigation: <ProjectNavigation />,
-    spacer: <Spacer />,
   };
 
   return (
