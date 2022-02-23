@@ -16,7 +16,7 @@ export const MediaBodyCopy = styled.div`
 
     h2,
     h3 {
-      margin-bottom: 1.4rem;
+      margin-bottom: 1rem;
     }
 
     h2 {
