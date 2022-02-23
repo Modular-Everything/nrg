@@ -16,12 +16,6 @@ export const ListBodyCopy = styled.section`
     }
   }
 
-  .listBody__body {
-    a {
-      color: ${({ theme }) => theme.cta};
-    }
-  }
-
   .listBody__list {
     p {
       display: none;
