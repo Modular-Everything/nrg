@@ -1,4 +1,4 @@
-import { image } from "../fields";
+import { image, linkToRef, bodyCopy } from "../fields";
 
 export default {
   name: "imageTiles",
@@ -8,7 +8,13 @@ export default {
     {
       name: "tiles",
       type: "array",
-      of: [image],
+      of: [
+        {
+          name: "tile",
+          type: "object",
+          fields: [image, bodyCopy, linkToRef],
+        },
+      ],
     },
   ],
 };

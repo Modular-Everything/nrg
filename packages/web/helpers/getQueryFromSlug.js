@@ -19,6 +19,10 @@ export function getQueryFromSlug(slugArray = []) {
           "link": link->slug.current
         },
       },
+      tiles[] {
+        ...,
+        linkToRef {..., "link": link->slug.current},
+      },
       linkToRef {
         ...,
         "link": link->slug.current

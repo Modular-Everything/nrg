@@ -107,7 +107,6 @@ export const linkToRef = {
   name: "linkToRef",
   title: "Link",
   type: "object",
-  validation: (Rule) => Rule.required(),
   fields: [
     {
       name: "label",

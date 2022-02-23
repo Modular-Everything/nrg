@@ -1,19 +1,47 @@
+import { PortableText } from "@portabletext/react";
+import Link from "next/link";
+
 import { Container } from "../../core/Container";
 import { Image } from "../../elements/Image";
+import { LinkToRef } from "../../elements/LinkToRef";
 import * as S from "./ImageTiles.styles";
+
+function Tile({ data }) {
+  return (
+    <>
+      <div className="tile__image">
+        {data.image && (
+          <Image src={data.image} alt="" objectFit="cover" quality={95} />
+        )}
+      </div>
+      {data?.bodyCopy?.copy && (
+        <div className="tile__meta">
+          <PortableText value={data.bodyCopy.copy} />
+          {data?.linkToRef?.link && (
+            <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
+          )}
+        </div>
+      )}
+    </>
+  );
+}
 
 export function ImageTiles({ data }) {
   return (
     <S.ImageTiles>
       <Container>
         {data?.tiles?.map((tile) => (
-          <Image
-            key={tile._key}
-            src={tile}
-            alt=""
-            objectFit="cover"
-            quality={95}
-          />
+          <article key={tile._key}>
+            {tile?.linkToRef?.link ? (
+              <Link href={tile.linkToRef.link}>
+                <a>
+                  <Tile data={tile} />
+                </a>
+              </Link>
+            ) : (
+              <Tile data={tile} />
+            )}
+          </article>
         ))}
       </Container>
     </S.ImageTiles>
