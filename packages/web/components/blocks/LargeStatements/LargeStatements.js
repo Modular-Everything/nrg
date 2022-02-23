@@ -6,7 +6,6 @@ import { Image } from "../../elements/Image";
 import * as S from "./LargeStatements.styles";
 
 export function LargeStatements({ data }) {
-  console.log(data);
   return (
     <S.LargeStatements>
       <Container>
