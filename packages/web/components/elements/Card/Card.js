@@ -40,7 +40,7 @@ export function Card({ data }) {
   return (
     <S.Card className={isLandscape ? "landscape" : "portrait"}>
       {data?.linkToRef?.link?.slug ? (
-        <Link href={data?.linkToRef?.link?.slug?.current}>
+        <Link href={data?.linkToRef?.link?.slug?.current ?? '#'}>
           <a>
             <Content />
           </a>

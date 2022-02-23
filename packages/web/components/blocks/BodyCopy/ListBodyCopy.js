@@ -23,7 +23,7 @@ export function ListBodyCopy({ data, theme }) {
         <div className="listBody__body">
           <PortableText value={data?.copyNoHeadlines?.content} />
           {data?.linkToRef?.link && (
-            <Link href={data?.linkToRef?.link}>
+            <Link href={data?.linkToRef?.link?.slug?.current ?? "#"}>
               <a>
                 <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
               </a>
