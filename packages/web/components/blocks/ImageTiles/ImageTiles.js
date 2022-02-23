@@ -3,7 +3,6 @@ import { Image } from "../../elements/Image";
 import * as S from "./ImageTiles.styles";
 
 export function ImageTiles({ data }) {
-  console.log(data);
   return (
     <S.ImageTiles>
       <Container>
