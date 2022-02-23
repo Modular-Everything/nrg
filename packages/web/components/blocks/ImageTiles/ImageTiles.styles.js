@@ -17,11 +17,13 @@ export const ImageTiles = styled.section`
 
     & > * {
       flex: 1 1 var(--min);
-      position: relative;
-      aspect-ratio: 512/324;
-      border-radius: 0.6rem;
-      overflow: hidden;
-      box-shadow: var(--drop);
+      display: flex;
+
+      span {
+        border-radius: 0.8rem;
+        overflow: hidden;
+        box-shadow: var(--drop);
+      }
     }
   }
 `;

@@ -11,8 +11,8 @@ export function ImageTiles({ data }) {
             key={tile._key}
             src={tile}
             alt=""
-            layout="fill"
             objectFit="cover"
+            quality={95}
           />
         ))}
       </Container>
