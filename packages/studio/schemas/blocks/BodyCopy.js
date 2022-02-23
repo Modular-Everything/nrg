@@ -59,6 +59,14 @@ export default {
       ],
     },
     {
+      name: "bolt",
+      title: "Bolt Icon",
+      type: "boolean",
+      description: "Show or hide the bolt icon",
+      hidden: ({ parent }) => parent.layoutType !== "list",
+      initialValue: true,
+    },
+    {
       name: "headline",
       title: "Headline",
       type: "string",

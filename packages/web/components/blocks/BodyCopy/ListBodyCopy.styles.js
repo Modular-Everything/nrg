@@ -11,8 +11,17 @@ export const ListBodyCopy = styled.section`
   .container {
     @media (min-width: 768px) {
       display: grid;
-      grid-gap: 6.4rem;
+      grid-column-gap: 6.4rem;
+      grid-row-gap: 2.4rem;
       grid-template-columns: minmax(18rem, 15%) 1fr minmax(25rem, 25%);
+    }
+  }
+
+  .listBody__bolt {
+    grid-column: span 3;
+
+    svg path {
+      fill: ${({ theme }) => theme.bolt};
     }
   }
 

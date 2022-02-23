@@ -19,6 +19,7 @@ function getTheme(color) {
       copy: white,
       title: white,
       cta: black,
+      bolt: black,
     },
     black: {
       background: black,
@@ -30,6 +31,7 @@ function getTheme(color) {
       copy: white,
       title: white,
       cta: red,
+      bolt: red,
     },
     white: {
       background: white,
@@ -41,6 +43,7 @@ function getTheme(color) {
       copy: black,
       title: black,
       cta: red,
+      bolt: red,
     },
   };
 
