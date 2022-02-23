@@ -13,7 +13,7 @@ export const BodyCopy = styled.section`
   h2,
   h3 {
     column-span: all;
-    margin: 0 0 4rem;
+    margin: 0 0 4rem 0;
     padding: 0;
   }
 
@@ -36,6 +36,11 @@ export const BodyCopy = styled.section`
 
     &:last-of-type {
       margin: 0;
+    }
+
+    & + h2,
+    & + h3 {
+      margin-top: 4rem;
     }
   }
 `;
