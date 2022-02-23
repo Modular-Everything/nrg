@@ -4,13 +4,6 @@ export const BodyCopy = styled.section`
   padding: 2.4rem 0;
   background-color: ${({ theme }) => theme.background};
 
-  .container {
-    @media (min-width: 640px) {
-      columns: ${({ columns }) => columns};
-      column-gap: 2.4rem;
-    }
-  }
-
   h2,
   h3 {
     column-span: all;
