@@ -12,7 +12,7 @@ export const ListBodyCopy = styled.section`
     display: grid;
     grid-row-gap: 2.4rem;
 
-    @media (min-width: 640px) {
+    @media (min-width: 680px) {
       grid-column-gap: 2.4rem;
       grid-template-columns: minmax(15rem, 20%) 1fr minmax(20rem, 25%);
     }
@@ -28,10 +28,20 @@ export const ListBodyCopy = styled.section`
   }
 
   .listBody__bolt {
-    grid-column: span 3;
+    @media (min-width: 680px) {
+      grid-column: span 3;
+    }
 
     svg path {
       fill: ${({ theme }) => theme.bolt};
+    }
+  }
+
+  .listBody__body p {
+    max-width: 40rem;
+
+    @media (min-width: 680px) {
+      max-width: unset;
     }
   }
 
