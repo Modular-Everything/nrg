@@ -72,7 +72,6 @@ export default {
       fields: [
         {
           name: "content",
-          title: "Content",
           type: "array",
           of: [
             {
@@ -110,6 +109,33 @@ export default {
             { type: "page" },
             { type: "project" },
             { type: "service" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "aside",
+      title: "List Items",
+      type: "object",
+      hidden: ({ parent }) => parent.layoutType !== "list",
+      description: "Only tags and ordered lists will render",
+      fields: [
+        {
+          name: "content",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [],
+              lists: [
+                { title: "Tag List", value: "bullet" },
+                { title: "Ordered List", value: "number" },
+              ],
+              marks: {
+                annotations: [],
+                decorators: [],
+              },
+            },
           ],
         },
       ],
