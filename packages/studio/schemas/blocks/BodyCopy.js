@@ -11,7 +11,6 @@ export default {
       name: "layoutType",
       title: "Layout Type",
       type: "string",
-      initialValue: "body",
       validation: (Rule) => Rule.required(),
       description:
         "This block offers a few configurations. Select the base layout here and customise it from there.",
