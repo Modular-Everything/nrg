@@ -32,14 +32,14 @@ export default {
     },
     {
       name: "copy",
-      title: "Body",
+      title: "Body Copy",
       type: "object",
       hidden: ({ parent }) =>
         parent.layoutType === "list" || !parent.layoutType,
       fields: [
         {
-          name: "copy",
-          title: "Body",
+          name: "content",
+          title: "Content",
           type: "array",
           of: [
             {
@@ -67,13 +67,13 @@ export default {
     },
     {
       name: "copyNoHeadlines",
-      title: "Body",
+      title: "Body Copy",
       type: "object",
       hidden: ({ parent }) => parent.layoutType !== "list",
       fields: [
         {
-          name: "copy",
-          title: "Body",
+          name: "content",
+          title: "Content",
           type: "array",
           of: [
             {
