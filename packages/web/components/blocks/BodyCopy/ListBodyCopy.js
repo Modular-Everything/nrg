@@ -4,8 +4,6 @@ import { Container } from "../../core/Container";
 import * as S from "./ListBodyCopy.styles";
 
 export function ListBodyCopy({ data }) {
-  console.log(data);
-
   return (
     <S.ListBodyCopy>
       <Container>
