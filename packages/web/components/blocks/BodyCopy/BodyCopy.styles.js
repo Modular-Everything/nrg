@@ -14,6 +14,7 @@ export const BodyCopy = styled.section`
   h2 {
     font-size: 2.4rem;
     line-height: 3.2rem;
+    font-weight: 500;
   }
 
   h3 {
