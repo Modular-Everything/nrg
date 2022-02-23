@@ -22,7 +22,7 @@ export function MediaBodyCopy({ data }) {
         </div>
 
         <div className="mediaBody__media">
-          <Image src={data?.image} alt={data?.title || ""} objectFit="cover" />
+          <Image src={data?.image} alt="" objectFit="cover" />
         </div>
       </Container>
     </S.MediaBodyCopy>
