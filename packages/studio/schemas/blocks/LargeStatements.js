@@ -1,11 +1,11 @@
-import { image, svgSnippet } from "../fields";
+import { image, statement } from "../fields";
 
 export default {
   name: "largeStatements",
   title: "Large Statements",
   type: "object",
   fields: [
-    svgSnippet,
+    statement,
     {
       name: "images",
       type: "array",

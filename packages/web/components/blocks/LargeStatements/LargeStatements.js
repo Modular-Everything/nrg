@@ -1,3 +1,4 @@
+import { PortableText } from "@portabletext/react";
 import PropTypes from "prop-types";
 
 import { Container } from "../../core/Container";
@@ -5,6 +6,7 @@ import { Image } from "../../elements/Image";
 import * as S from "./LargeStatements.styles";
 
 export function LargeStatements({ data }) {
+  console.log(data);
   return (
     <S.LargeStatements>
       <Container>
@@ -19,11 +21,9 @@ export function LargeStatements({ data }) {
           </div>
         )}
 
-        <div
-          className="statement"
-          // eslint-disable-next-line react/no-danger
-          dangerouslySetInnerHTML={{ __html: data?.svgSnippet }}
-        />
+        <div className="statement">
+          <PortableText value={data?.statement?.statement} />
+        </div>
 
         {data?.images.length >= 2 && (
           <div className="statement__image statement__image--2">
