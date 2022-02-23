@@ -1,6 +1,6 @@
 import styled from "styled-components";
 
-export const ListBodyCopy = styled.section`
+export const ListBodyCopy = styled.div`
   color: ${({ theme }) => theme.copy};
 
   h3 {
