@@ -58,7 +58,7 @@ Card.propTypes = {
     image: PropTypes.object.isRequired,
     linkToRef: PropTypes.shape({
       label: PropTypes.string,
-      link: PropTypes.object.isRequired,
+      link: PropTypes.string.isRequired,
     }),
     subtitle: PropTypes.string,
     title: PropTypes.string,
