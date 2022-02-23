@@ -50,6 +50,7 @@ export const ImageTiles = styled.section`
       font-family: var(--grotesque);
       font-size: 2.2rem;
       line-height: 2.4rem;
+      margin-top: 0.8rem;
       text-transform: uppercase;
     }
 
