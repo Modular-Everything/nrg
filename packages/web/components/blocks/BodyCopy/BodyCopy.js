@@ -3,15 +3,6 @@ import { ListBodyCopy } from "./ListBodyCopy";
 import { MediaBodyCopy } from "./MediaBodyCopy";
 import { SimpleBodyCopy } from "./SimpleBodyCopy";
 
-function getLayout(type, data, theme) {
-  const layouts = {
-    body: <SimpleBodyCopy data={data} theme={theme} />,
-    list: <ListBodyCopy data={data} theme={theme} />,
-    media: <MediaBodyCopy data={data} theme={theme} />,
-  };
-  return layouts[type] || layouts.body;
-}
-
 function getTheme(color) {
   const red = "var(--nrg-red)";
   const black = "var(--nrg-black)";
@@ -54,6 +45,15 @@ function getTheme(color) {
   };
 
   return theme[color] || theme.white;
+}
+
+function getLayout(type, data, theme) {
+  const layouts = {
+    body: <SimpleBodyCopy data={data} theme={theme} />,
+    list: <ListBodyCopy data={data} theme={theme} />,
+    media: <MediaBodyCopy data={data} theme={theme} />,
+  };
+  return layouts[type] || layouts.body;
 }
 
 export function BodyCopy({ data }) {
