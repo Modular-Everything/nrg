@@ -1,5 +1,22 @@
+import { Container } from "../../core/Container";
+import { Image } from "../../elements/Image";
 import * as S from "./ImageTiles.styles";
 
-export function ImageTiles() {
-  return <S.ImageTiles>ImageTiles</S.ImageTiles>;
+export function ImageTiles({ data }) {
+  console.log(data);
+  return (
+    <S.ImageTiles>
+      <Container>
+        {data?.tiles?.map((tile) => (
+          <Image
+            key={tile._key}
+            src={tile}
+            alt=""
+            layout="fill"
+            objectFit="cover"
+          />
+        ))}
+      </Container>
+    </S.ImageTiles>
+  );
 }
