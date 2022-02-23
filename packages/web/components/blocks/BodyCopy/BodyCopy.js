@@ -21,6 +21,10 @@ function getTheme(color) {
     red: {
       background: red,
       numbers: black,
+      bullets: {
+        text: white,
+        background: black,
+      },
       copy: white,
       title: white,
       cta: black,
@@ -28,6 +32,10 @@ function getTheme(color) {
     black: {
       background: black,
       numbers: red,
+      bullets: {
+        text: black,
+        background: white,
+      },
       copy: white,
       title: white,
       cta: red,
@@ -35,6 +43,10 @@ function getTheme(color) {
     white: {
       background: white,
       numbers: red,
+      bullets: {
+        text: white,
+        background: red,
+      },
       copy: black,
       title: black,
       cta: red,

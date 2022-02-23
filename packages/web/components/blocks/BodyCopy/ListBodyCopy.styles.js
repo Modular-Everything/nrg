@@ -11,8 +11,8 @@ export const ListBodyCopy = styled.section`
   .container {
     @media (min-width: 768px) {
       display: grid;
-      grid-gap: 2.4rem;
-      grid-template-columns: minmax(25rem, 25%) 1fr minmax(25rem, 25%);
+      grid-gap: 6.4rem;
+      grid-template-columns: minmax(18rem, 15%) 1fr minmax(25rem, 25%);
     }
   }
 
@@ -25,6 +25,32 @@ export const ListBodyCopy = styled.section`
   .listBody__list {
     p {
       display: none;
+    }
+
+    ol,
+    ul {
+      margin: 0;
+      padding: 0;
+      list-style: none;
+    }
+
+    ul {
+      display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
+      align-items: flex-start;
+      gap: 0.8rem;
+
+      li {
+        background-color: ${({ theme }) => theme.bullets.background};
+        color: ${({ theme }) => theme.bullets.text};
+        border-radius: 0.6rem;
+        padding: 1rem 0.8rem 0.8rem 0.8rem;
+        white-space: nowrap;
+        overflow: hidden;
+        text-overflow: ellipsis;
+        max-width: 100%;
+      }
     }
 
     ol {
