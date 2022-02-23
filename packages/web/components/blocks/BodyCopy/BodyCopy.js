@@ -1,10 +1,14 @@
 import { Container } from "../../core/Container";
 import * as S from "./BodyCopy.styles";
+import { ListBodyCopy } from "./ListBodyCopy";
+import { MediaBodyCopy } from "./MediaBodyCopy";
 import { SimpleBodyCopy } from "./SimpleBodyCopy";
 
 function getLayout(type, data) {
   const layouts = {
     body: <SimpleBodyCopy data={data} />,
+    list: <ListBodyCopy data={data} />,
+    media: <MediaBodyCopy data={data} />,
   };
   return layouts[type] || layouts.body;
 }
@@ -12,7 +16,13 @@ function getLayout(type, data) {
 export function BodyCopy({ data }) {
   return (
     <S.BodyCopy columns={data?.columns}>
-      <Container style={data?.columns === 1 ? { maxWidth: "68rem" } : {}}>
+      <Container
+        style={
+          data?.layoutType === "body" && data?.columns === 1
+            ? { maxWidth: "68rem" }
+            : {}
+        }
+      >
         {getLayout(data?.layoutType, data)}
       </Container>
     </S.BodyCopy>
