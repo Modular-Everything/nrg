@@ -1,12 +1,14 @@
+import { image } from "../fields";
+
 export default {
   name: "imageTiles",
   title: "Image Tiles",
   type: "object",
   fields: [
     {
-      name: "placeholder",
-      title: "Work in progress",
-      type: "string",
+      name: "tiles",
+      type: "array",
+      of: [image],
     },
   ],
 };
