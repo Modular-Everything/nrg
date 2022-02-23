@@ -29,8 +29,11 @@ export const BodyCopy = styled.section`
     text-transform: uppercase;
   }
 
-  p {
+  p,
+  ul,
+  ol {
     margin: 0 0 1.6rem 0;
+    font-family: var(--simplonNorm);
     font-size: clamp(1.4rem, 3vw, 1.8rem);
     line-height: clamp(2rem, 4vw, 2.4rem);
 
