@@ -9,10 +9,7 @@ export function ProjectNavigation({ data }) {
   return (
     <S.ProjectNavigation>
       {data?.items?.map((item) => (
-        <Link
-          key={item._key}
-          href={item?.linkToRef?.link?.slug?.current ?? "#"}
-        >
+        <Link key={item._key} href={item?.linkToRef?.link ?? "#"}>
           <a>
             <div className="projectNav__image">
               <S.Skrim />

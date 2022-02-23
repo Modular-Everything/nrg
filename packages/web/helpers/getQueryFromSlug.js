@@ -16,7 +16,7 @@ export function getQueryFromSlug(slugArray = []) {
         ...,
         linkToRef {
           ...,
-          "link": link->
+          "link": link->slug.current
         },
       },
       linkToRef {
