@@ -3,19 +3,59 @@ import { ListBodyCopy } from "./ListBodyCopy";
 import { MediaBodyCopy } from "./MediaBodyCopy";
 import { SimpleBodyCopy } from "./SimpleBodyCopy";
 
-function getLayout(type, data) {
+function getLayout(type, data, theme) {
   const layouts = {
-    body: <SimpleBodyCopy data={data} />,
-    list: <ListBodyCopy data={data} />,
-    media: <MediaBodyCopy data={data} />,
+    body: <SimpleBodyCopy data={data} theme={theme} />,
+    list: <ListBodyCopy data={data} theme={theme} />,
+    media: <MediaBodyCopy data={data} theme={theme} />,
   };
   return layouts[type] || layouts.body;
 }
 
+function getTheme(color) {
+  const red = "var(--nrg-red)";
+  const black = "var(--nrg-black)";
+  const white = "var(--nrg-white)";
+
+  const theme = {
+    red: {
+      background: red,
+      numbers: black,
+      copy: white,
+      title: white,
+      cta: black,
+    },
+    black: {
+      background: black,
+      numbers: red,
+      copy: white,
+      title: white,
+      cta: red,
+    },
+    white: {
+      background: white,
+      numbers: red,
+      copy: black,
+      title: black,
+      cta: red,
+    },
+  };
+
+  return theme[color] || theme.white;
+}
+
 export function BodyCopy({ data }) {
+  const themeColor = data.backgroundColor
+    .replace("var(--nrg-", "")
+    .replace(")", "");
+  const theme = getTheme(themeColor);
+
   return (
-    <S.BodyCopy columns={data?.columns}>
-      {getLayout(data?.layoutType, data)}
+    <S.BodyCopy
+      columns={data?.columns}
+      style={{ backgroundColor: theme.background }}
+    >
+      {getLayout(data?.layoutType, data, theme)}
     </S.BodyCopy>
   );
 }

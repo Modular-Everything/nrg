@@ -3,9 +3,9 @@ import { PortableText } from "@portabletext/react";
 import { Container } from "../../core/Container";
 import * as S from "./ListBodyCopy.styles";
 
-export function ListBodyCopy({ data }) {
+export function ListBodyCopy({ data, theme }) {
   return (
-    <S.ListBodyCopy>
+    <S.ListBodyCopy theme={theme}>
       <Container>
         <div className="listBody__headline">
           {data?.headline && <h3>{data.headline}</h3>}

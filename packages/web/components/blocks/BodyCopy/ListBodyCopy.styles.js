@@ -1,8 +1,11 @@
 import styled from "styled-components";
 
 export const ListBodyCopy = styled.section`
+  color: ${({ theme }) => theme.copy};
+
   h3 {
     margin: 0;
+    color: ${({ theme }) => theme.title};
   }
 
   .container {
@@ -10,6 +13,12 @@ export const ListBodyCopy = styled.section`
       display: grid;
       grid-gap: 2.4rem;
       grid-template-columns: minmax(25rem, 25%) 1fr minmax(25rem, 25%);
+    }
+  }
+
+  .listBody__body {
+    a {
+      color: ${({ theme }) => theme.cta};
     }
   }
 
@@ -33,8 +42,10 @@ export const ListBodyCopy = styled.section`
           content: counter(items);
           position: absolute;
           left: calc(1.6rem * -1);
-          font-size: 1rem;
-          color: inherit;
+          top: 0.3rem;
+          font-size: 1.1rem;
+          font-family: var(--simplon);
+          color: ${({ theme }) => theme.numbers};
         }
       }
     }
