@@ -9,12 +9,22 @@ export const ListBodyCopy = styled.section`
   }
 
   .container {
-    @media (min-width: 768px) {
-      display: grid;
-      grid-column-gap: 6.4rem;
-      grid-row-gap: 2.4rem;
-      grid-template-columns: minmax(18rem, 15%) 1fr minmax(25rem, 25%);
+    display: grid;
+    grid-row-gap: 2.4rem;
+
+    @media (min-width: 640px) {
+      grid-column-gap: 2.4rem;
+      grid-template-columns: minmax(15rem, 20%) 1fr minmax(20rem, 25%);
     }
+
+    @media (min-width: 768px) {
+      grid-column-gap: 6.4rem;
+    }
+
+    /* @media (min-width: 900px) {
+
+      grid-template-columns: minmax(18rem, 15%) 1fr minmax(25rem, 25%);
+    } */
   }
 
   .listBody__bolt {
