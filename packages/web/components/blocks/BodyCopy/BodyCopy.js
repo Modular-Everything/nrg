@@ -1,4 +1,3 @@
-import { Container } from "../../core/Container";
 import * as S from "./BodyCopy.styles";
 import { ListBodyCopy } from "./ListBodyCopy";
 import { MediaBodyCopy } from "./MediaBodyCopy";
@@ -16,15 +15,7 @@ function getLayout(type, data) {
 export function BodyCopy({ data }) {
   return (
     <S.BodyCopy columns={data?.columns}>
-      <Container
-        style={
-          data?.layoutType === "body" && data?.columns === 1
-            ? { maxWidth: "68rem" }
-            : {}
-        }
-      >
-        {getLayout(data?.layoutType, data)}
-      </Container>
+      {getLayout(data?.layoutType, data)}
     </S.BodyCopy>
   );
 }
