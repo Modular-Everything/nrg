@@ -1,4 +1,5 @@
-import { bodyCopy } from "../fields";
+import React from "react";
+
 import { brandColors } from "../fields/brandColors";
 
 export default {
@@ -7,12 +8,132 @@ export default {
   type: "object",
   fields: [
     {
+      name: "layoutType",
+      title: "Layout Type",
+      type: "string",
+      initialValue: "body",
+      validation: (Rule) => Rule.required(),
+      description:
+        "This block offers a few configurations. Select the base layout here and customise it from there.",
+      options: {
+        list: [
+          { title: "Body Copy with Columns", value: "body" },
+          { title: "Body Copy with Lists", value: "list" },
+          { title: "Body Copy with Media", value: "media" },
+        ],
+      },
+    },
+    {
       name: "columns",
       type: "number",
       initialValue: 1,
       validation: (Rule) => Rule.required().min(1).max(2),
+      hidden: ({ parent }) => parent.layoutType !== "body",
     },
-    bodyCopy,
+    {
+      name: "copy",
+      title: "Body",
+      type: "object",
+      hidden: ({ parent }) =>
+        parent.layoutType === "list" || !parent.layoutType,
+      fields: [
+        {
+          name: "copy",
+          title: "Body",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [
+                { title: "Normal", value: "normal" },
+                { title: "H2", value: "h2" },
+                { title: "H3", value: "h3" },
+              ],
+              lists: [],
+              marks: {
+                annotations: [],
+                decorators: [],
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "headline",
+      title: "Headline",
+      type: "string",
+      hidden: ({ parent }) => parent.layoutType !== "list",
+    },
+    {
+      name: "copyNoHeadlines",
+      title: "Body",
+      type: "object",
+      hidden: ({ parent }) => parent.layoutType !== "list",
+      fields: [
+        {
+          name: "copy",
+          title: "Body",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [],
+              lists: [],
+              marks: {
+                annotations: [],
+                decorators: [],
+              },
+            },
+          ],
+        },
+      ],
+    },
+    {
+      name: "linkToRef",
+      title: "Call to Action",
+      type: "object",
+      hidden: ({ parent }) => parent.layoutType !== "list",
+      fields: [
+        {
+          name: "label",
+          title: "Label",
+          type: "string",
+          initialValue: "Call to Action",
+        },
+        {
+          name: "link",
+          title: "Link",
+          type: "reference",
+          to: [
+            { type: "newsPost" },
+            { type: "homepage" },
+            { type: "page" },
+            { type: "project" },
+            { type: "service" },
+          ],
+        },
+      ],
+    },
+    {
+      name: "image",
+      title: "Image",
+      type: "image",
+      hidden: ({ parent }) => parent.layoutType !== "media",
+      description: (
+        <span>
+          Consider compressing your images before uploading them. We recommend{" "}
+          <a
+            href="https://squoosh.app/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Squoosh App
+          </a>{" "}
+          for this.
+        </span>
+      ),
+    },
     {
       name: "backgroundColor",
       title: "Background Color",
@@ -20,6 +141,7 @@ export default {
       initialValue: "var(--nrg-white)",
       description: "Font colours adapt automatically",
       validation: (Rule) => Rule.required(),
+      hidden: ({ parent }) => !parent.layoutType,
       options: {
         list: brandColors,
       },
