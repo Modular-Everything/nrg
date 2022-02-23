@@ -8,7 +8,7 @@ import * as S from "./Card.styles";
 
 export function Card({ data }) {
   if (!data?.image || !data?.linkToRef?.link) {
-    return <pre>Error: Missing required image</pre>;
+    return <pre style={{ display: "none" }}>Error: Missing required image</pre>;
   }
 
   const [assetType, _id, dimensions, filetype] =
@@ -40,7 +40,7 @@ export function Card({ data }) {
   return (
     <S.Card className={isLandscape ? "landscape" : "portrait"}>
       {data?.linkToRef?.link?.slug ? (
-        <Link href={data?.linkToRef?.link?.slug?.current ?? '#'}>
+        <Link href={data?.linkToRef?.link?.slug?.current ?? "#"}>
           <a>
             <Content />
           </a>
