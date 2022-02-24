@@ -15,7 +15,7 @@ export function Image({ src, saturate, layout, ...rest }) {
   const [width, height] = dimensions.split("x");
 
   return (
-    <S.Image>
+    <S.Image className="imageElement">
       {saturate && (
         <>
           <div className="apply-skrim" />
