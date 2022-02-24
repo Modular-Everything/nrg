@@ -43,6 +43,12 @@ export function BasicMedia({ data }) {
               )}
             </div>
           )}
+
+          {data?.layoutType.includes("statement") && (
+            <div className="marquee">
+              <PortableText value={data?.statement?.statement} />
+            </div>
+          )}
         </div>
       )}
 

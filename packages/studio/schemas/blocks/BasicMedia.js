@@ -115,6 +115,8 @@ export default {
         },
       ],
     },
+
+    // Call to action link
     {
       name: "linkToRef",
       title: "Link",
@@ -137,6 +139,40 @@ export default {
             { type: "page" },
             { type: "project" },
             { type: "service" },
+          ],
+        },
+      ],
+    },
+
+    // Statement block
+    {
+      name: "statement",
+      title: "Statement",
+      type: "object",
+      hidden: ({ parent }) =>
+        !parent.layoutType || !parent.layoutType.includes("statement"),
+      fields: [
+        {
+          name: "statement",
+          title: "Statement",
+          type: "array",
+          description:
+            "Write the same copy across 3 lines, and add backgrounds to different parts of the text on each line.",
+          of: [
+            {
+              type: "block",
+              styles: [],
+              lists: [],
+              marks: {
+                annotations: [],
+                decorators: [
+                  {
+                    title: "Add background to text",
+                    value: "strong",
+                  },
+                ],
+              },
+            },
           ],
         },
       ],

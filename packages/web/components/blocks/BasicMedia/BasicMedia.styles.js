@@ -1,4 +1,9 @@
-import styled from "styled-components";
+import styled, { keyframes } from "styled-components";
+
+const runner = keyframes`
+  from { transform: translateX(0%); }
+  to { transform: translateX(-50%); }
+`;
 
 export const BasicMedia = styled.div`
   position: relative;
@@ -99,6 +104,53 @@ export const BasicMedia = styled.div`
 
       a:hover .arrow {
         transform: translateX(0.8rem);
+      }
+    }
+
+    &.statement {
+      --color: #fff;
+      --cut: #000;
+      --blend: screen;
+
+      mix-blend-mode: var(--blend);
+
+      .marquee {
+        display: flex;
+        flex-direction: column;
+        align-items: flex-start;
+        justify-content: center;
+        overflow: hidden;
+        gap: 1.6rem;
+      }
+
+      p {
+        margin: 0;
+        color: var(--color);
+        font-family: var(--avenue);
+        font-size: clamp(7rem, 10vw, 11rem);
+        letter-spacing: 0.05ch;
+        line-height: 1.1;
+        text-align: center;
+        text-transform: uppercase;
+        white-space: nowrap;
+        margin-right: 3.2rem;
+      }
+
+      strong {
+        --padding: 0.8rem;
+
+        display: inline;
+        align-items: center;
+        justify-content: center;
+        padding: 0 var(--padding);
+        background-color: var(--color);
+        border-left: 1px solid var(--color);
+        border-right: 1px solid var(--color);
+        box-decoration-break: clone;
+        box-shadow: var(--padding) 0 0 var(--color),
+          calc(var(--padding) * -1) 0 0 var(--color);
+        color: var(--cut);
+        font-weight: normal;
       }
     }
   }
