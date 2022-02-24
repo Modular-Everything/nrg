@@ -83,5 +83,38 @@ export default {
         ],
       },
     },
+
+    // Headline / Copy Settings
+    {
+      name: "copy",
+      title: "Headline / Copy",
+      type: "object",
+      hidden: ({ parent }) =>
+        parent.layoutType === "headline" || !parent.layoutType,
+      description:
+        "Be careful to only use one H1 per page. H1 and H2 are styled the same.",
+      fields: [
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [
+                { title: "Normal", value: "normal" },
+                { title: "H1", value: "h1" },
+                { title: "H2", value: "h2" },
+              ],
+              lists: [],
+              marks: {
+                annotations: [],
+                decorators: [],
+              },
+            },
+          ],
+        },
+      ],
+    },
   ],
 };
