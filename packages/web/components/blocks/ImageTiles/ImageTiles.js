@@ -1,7 +1,7 @@
-import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 
 import { Container } from "../../core/Container";
+import { Copy } from "../../elements/Copy/Copy";
 import { Image } from "../../elements/Image";
 import { LinkToRef } from "../../elements/LinkToRef";
 import * as S from "./ImageTiles.styles";
@@ -16,7 +16,7 @@ function Tile({ data }) {
       </div>
       {data?.bodyCopy?.copy && (
         <div className="tile__meta">
-          <PortableText value={data.bodyCopy.copy} />
+          <Copy data={data.bodyCopy.copy} />
           {data?.linkToRef?.link && (
             <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
           )}

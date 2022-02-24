@@ -18,10 +18,6 @@ export const MediaBodyCopy = styled.div`
     h3 {
       margin-bottom: 1rem;
     }
-
-    h2 {
-      font-size: 2rem;
-    }
   }
 
   .mediaBody__media span {
