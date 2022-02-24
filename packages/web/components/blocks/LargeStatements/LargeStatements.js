@@ -9,7 +9,7 @@ export function LargeStatements({ data }) {
   return (
     <S.LargeStatements>
       <Container>
-        {data?.images.length >= 1 && (
+        {data?.images?.length >= 1 && (
           <div className="statement__image statement__image--1">
             <Image
               src={data.images[0]}
@@ -24,7 +24,7 @@ export function LargeStatements({ data }) {
           <PortableText value={data?.statement?.statement} />
         </div>
 
-        {data?.images.length >= 2 && (
+        {data?.images?.length >= 2 && (
           <div className="statement__image statement__image--2">
             <Image
               src={data.images[1]}
