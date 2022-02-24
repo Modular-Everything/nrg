@@ -15,7 +15,7 @@ export const Footer = styled.footer`
   position: relative;
   overflow: hidden;
   width: 100%;
-  box-shadow: 0 0 0 100vh var(--nrg-black);
+  box-shadow: 0 100vh 0 100vh var(--nrg-black);
 
   .container {
     display: grid;
