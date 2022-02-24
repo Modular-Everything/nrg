@@ -6810,6 +6810,11 @@ get-value@^2.0.3, get-value@^2.0.6:
   resolved "https://registry.yarnpkg.com/get-value/-/get-value-2.0.6.tgz#dc15ca1c672387ca76bd37ac0a395ba2042a2c28"
   integrity sha1-3BXKHGcjh8p2vTesCjlbogQqLCg=
 
+get-video-id@^3.5.3:
+  version "3.5.3"
+  resolved "https://registry.yarnpkg.com/get-video-id/-/get-video-id-3.5.3.tgz#01234a3bc9b23a7579095d3f9ae4c22a8c7f46ee"
+  integrity sha512-YU+v0a0pI45U7TrzDUPsXGV4THacPPviHsAlWTjD0CsVc1uolpybFE8gYhbye0MFyFoPW+yIYGrqu7bF07Q6fw==
+
 getpass@^0.1.1:
   version "0.1.7"
   resolved "https://registry.yarnpkg.com/getpass/-/getpass-0.1.7.tgz#5eff8e3e684d569ae4cb2b1282604e8ba62149fa"
