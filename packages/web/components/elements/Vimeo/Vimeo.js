@@ -5,7 +5,7 @@ import * as S from "./Vimeo.styles";
 
 export function Vimeo({ url }) {
   return (
-    <S.Vimeo>
+    <S.Vimeo className="vimeo">
       {url && (
         <iframe
           src={`https://player.vimeo.com/video/${
