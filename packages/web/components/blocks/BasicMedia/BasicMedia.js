@@ -14,7 +14,7 @@ export function BasicMedia({ data }) {
       image: <Image src={data?.image} objectFit="cover" />,
       vimeo: <Vimeo url={data?.vimeo} />,
     };
-    return layouts[type] || layouts.body;
+    return layouts[type] || null;
   }
 
   return (
@@ -27,7 +27,7 @@ export function BasicMedia({ data }) {
             </div>
           )}
 
-          {data?.layoutType === "text" && (
+          {data?.layoutType === "headline" && (
             <div className="copy">
               <PortableText value={data?.copy?.content} />
             </div>

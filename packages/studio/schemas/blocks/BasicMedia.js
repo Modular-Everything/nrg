@@ -17,7 +17,6 @@ export default {
         list: [
           { title: "Standalone Media", value: "basic" },
           { title: "Media & Bolt", value: "bolt" },
-          { title: "Media & Text", value: "text" },
           { title: "Media & Statement", value: "statement" },
           { title: "Media & Statement & Text", value: "statementText" },
           { title: "Media & Headline & Text", value: "headline" },
@@ -90,7 +89,7 @@ export default {
       title: "Headline / Copy",
       type: "object",
       hidden: ({ parent }) =>
-        parent.layoutType === "headline" || !parent.layoutType,
+        !parent.layoutType || parent.layoutType !== "headline",
       description:
         "Be careful to only use one H1 per page. H1 and H2 are styled the same.",
       fields: [

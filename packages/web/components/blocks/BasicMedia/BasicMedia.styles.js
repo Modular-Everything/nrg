@@ -51,7 +51,7 @@ export const BasicMedia = styled.div`
       }
     }
 
-    &.text {
+    &.headline {
       color: var(--white);
       background-color: rgba(0, 0, 0, 0.9);
       text-align: center;
