@@ -51,6 +51,13 @@ export const BasicMedia = styled.div`
       }
     }
 
+    &.headline,
+    &.headlineAlt p {
+      margin: 0;
+      font-family: var(--simplonNorm);
+      font-size: clamp(1.4rem, 3vw, 1.6rem);
+    }
+
     &.headline {
       color: var(--white);
       background-color: rgba(0, 0, 0, 0.9);
@@ -63,18 +70,35 @@ export const BasicMedia = styled.div`
 
       h1,
       h2 {
-        margin: 0;
+        margin: 0 0 1.6rem;
         font-family: var(--avenue);
         text-transform: uppercase;
         font-size: clamp(3.2rem, 7vw, 5.6rem);
         line-height: 1;
-        margin-bottom: 1.6rem;
+      }
+    }
+
+    &.headlineAlt {
+      background: linear-gradient(black, 25%, rgba(0, 0, 0, 0));
+      color: var(--white);
+      padding: 5%;
+
+      .copy {
+        width: 90%;
+        max-width: 42rem;
       }
 
-      p {
-        margin: 0;
-        font-family: var(--simplonNorm);
-        font-size: clamp(1.4rem, 3vw, 1.6rem);
+      h1,
+      h2 {
+        margin: 0 0 0.4rem;
+        font-family: var(--grotesque);
+        font-size: 2.2rem;
+        line-height: 2.4rem;
+        text-transform: uppercase;
+      }
+
+      a:hover .arrow {
+        transform: translateX(0.8rem);
       }
     }
   }

@@ -89,7 +89,7 @@ export default {
       title: "Headline / Copy",
       type: "object",
       hidden: ({ parent }) =>
-        !parent.layoutType || parent.layoutType !== "headline",
+        !parent.layoutType || !parent.layoutType.includes("headline"),
       description:
         "Be careful to only use one H1 per page. H1 and H2 are styled the same.",
       fields: [
@@ -111,6 +111,32 @@ export default {
                 decorators: [],
               },
             },
+          ],
+        },
+      ],
+    },
+    {
+      name: "linkToRef",
+      title: "Link",
+      type: "object",
+      hidden: ({ parent }) => parent.layoutType !== "headlineAlt",
+      fields: [
+        {
+          name: "label",
+          title: "Label",
+          type: "string",
+          initialValue: "View Project",
+        },
+        {
+          name: "link",
+          title: "Link",
+          type: "reference",
+          to: [
+            { type: "newsPost" },
+            { type: "homepage" },
+            { type: "page" },
+            { type: "project" },
+            { type: "service" },
           ],
         },
       ],
