@@ -40,20 +40,6 @@ export default {
       },
     },
 
-    // Bolt Settings
-    {
-      name: "bolt",
-      title: "Bolt Icon",
-      type: "string",
-      hidden: ({ parent }) => parent.layoutType !== "bolt",
-      options: {
-        list: [
-          { title: "Small Icon", value: "small" },
-          { title: "Large Icon", value: "large" },
-        ],
-      },
-    },
-
     // Media Types
     {
       name: "vimeo",
@@ -82,6 +68,20 @@ export default {
           for this.
         </span>
       ),
+    },
+
+    // Bolt Settings
+    {
+      name: "bolt",
+      title: "Bolt Icon",
+      type: "string",
+      hidden: ({ parent }) => parent.layoutType !== "bolt",
+      options: {
+        list: [
+          { title: "Small Icon", value: "small" },
+          { title: "Large Icon", value: "large" },
+        ],
+      },
     },
   ],
 };
