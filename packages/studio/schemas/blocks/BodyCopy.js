@@ -16,9 +16,9 @@ export default {
         "This block offers a few configurations. Select the base layout here and customise it from there.",
       options: {
         list: [
-          { title: "Body Copy with Columns", value: "body" },
-          { title: "Body Copy with Lists", value: "list" },
-          { title: "Body Copy with Media", value: "media" },
+          { title: "Body Copy & Columns", value: "body" },
+          { title: "Body Copy & List", value: "list" },
+          { title: "Body Copy & Media", value: "media" },
         ],
       },
     },
