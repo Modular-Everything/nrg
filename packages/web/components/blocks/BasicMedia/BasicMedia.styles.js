@@ -14,6 +14,7 @@ export const BasicMedia = styled.div`
     &.headline,
     &.statementText,
     &.headlineAlt,
+    &.bolt,
     &.statement {
       display: flex;
       flex-direction: column;
@@ -28,6 +29,25 @@ export const BasicMedia = styled.div`
     &.headlineAlt {
       align-items: flex-start;
       justify-content: flex-start;
+    }
+
+    &.bolt {
+      overflow: hidden;
+      color: var(--white);
+
+      svg {
+        height: 100%;
+      }
+
+      .bolt--large {
+        height: 100%;
+      }
+
+      .bolt--small {
+        height: 100%;
+        max-height: 24rem;
+        padding: 0.8rem 0;
+      }
     }
   }
 

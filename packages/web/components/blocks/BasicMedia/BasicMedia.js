@@ -2,6 +2,7 @@ import PropTypes from "prop-types";
 
 import { Image } from "../../elements/Image";
 import { Vimeo } from "../../elements/Vimeo";
+import { OutlinedBolt, FilledBolt } from "../../icons/BigBolts";
 import * as S from "./BasicMedia.styles";
 
 export function BasicMedia({ data }) {
@@ -17,8 +18,11 @@ export function BasicMedia({ data }) {
     <S.BasicMedia className="media">
       {data?.layoutType !== "basic" && (
         <div className={`overlay ${data?.layoutType}`}>
-          <div>statement</div>
-          <div>read more</div>
+          {data?.layoutType === "bolt" && (
+            <div className={`bolt--${data?.bolt}`}>
+              {data?.bolt === "small" ? <FilledBolt /> : <OutlinedBolt />}
+            </div>
+          )}
         </div>
       )}
 

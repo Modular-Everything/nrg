@@ -73,13 +73,13 @@ export default {
     // Bolt Settings
     {
       name: "bolt",
-      title: "Bolt Icon",
+      title: "Bolt Overlay",
       type: "string",
       hidden: ({ parent }) => parent.layoutType !== "bolt",
       options: {
         list: [
-          { title: "Small Icon", value: "small" },
-          { title: "Large Icon", value: "large" },
+          { title: "Small Bolt", value: "small" },
+          { title: "Large Bolt", value: "large" },
         ],
       },
     },
