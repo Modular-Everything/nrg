@@ -7,8 +7,6 @@ import { LinkToRef } from "../../../elements/LinkToRef";
 import * as S from "./StandardCard.styles";
 
 export function StandardCard({ data }) {
-  console.log("StandardCard", data);
-
   function Content() {
     return (
       <>
