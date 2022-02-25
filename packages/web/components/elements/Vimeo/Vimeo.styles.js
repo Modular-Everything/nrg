@@ -4,8 +4,7 @@ export const Vimeo = styled.div`
   --video--width: 1920;
   --video--height: 1080;
 
-  position: relative;
-  padding-bottom: calc(var(--video--height) / var(--video--width) * 100%);
+  aspect-ratio: var(--video-width) / var(--video-height);
   overflow: hidden;
   max-width: 100%;
   background: var(--nrg-black);

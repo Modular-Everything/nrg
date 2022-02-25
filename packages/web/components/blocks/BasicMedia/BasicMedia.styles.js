@@ -26,6 +26,15 @@ export const BasicMedia = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+
+    .vimeo {
+      --video--width: 1200;
+      --video--height: 698;
+
+      iframe {
+        transform: scale(115%);
+      }
+    }
   }
 
   .overlay {
