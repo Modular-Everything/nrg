@@ -43,6 +43,7 @@ export const List = styled.section`
     }
 
     p {
+      font-family: var(--simplonNorm);
       font-size: 1.8rem;
       line-height: 2.4rem;
       margin: 0;
