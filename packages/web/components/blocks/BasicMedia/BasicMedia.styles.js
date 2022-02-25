@@ -11,14 +11,8 @@ const bob = keyframes`
 
 export const BasicMedia = styled.div`
   position: relative;
-  min-height: 69.8rem;
   display: flex;
   overflow: hidden;
-
-  @supports (aspect-ratio: 1/1) {
-    aspect-ratio: 1200/698;
-    min-height: unset;
-  }
 
   .background {
     position: absolute;
@@ -26,6 +20,13 @@ export const BasicMedia = styled.div`
     left: 0;
     width: 100%;
     height: 100%;
+
+    &.vimeo {
+      @supports (aspect-ratio: 1/1) {
+        aspect-ratio: 1200/698;
+        min-height: 100%;
+      }
+    }
 
     .vimeo {
       --video--width: 1200;
@@ -41,6 +42,16 @@ export const BasicMedia = styled.div`
     position: relative;
     z-index: 10;
     width: 100%;
+
+    &.headline,
+    &.headlineAlt,
+    &.bolt,
+    &.read {
+      @supports (aspect-ratio: 1/1) {
+        aspect-ratio: 1200/698;
+        min-height: 100%;
+      }
+    }
 
     &.headline,
     &.statementText,
@@ -132,6 +143,12 @@ export const BasicMedia = styled.div`
 
       a:hover .arrow {
         transform: translateX(0.8rem);
+      }
+    }
+
+    &.statement {
+      .marquee {
+        margin: 16rem 0;
       }
     }
 

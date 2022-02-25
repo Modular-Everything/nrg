@@ -84,7 +84,9 @@ export function BasicMedia({ data }) {
         </div>
       )}
 
-      <div className="background">{getMedia(data?.mediaType, data)}</div>
+      <div className={`background ${data?.mediaType}`}>
+        {getMedia(data?.mediaType, data)}
+      </div>
     </S.BasicMedia>
   );
 }
