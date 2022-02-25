@@ -31,6 +31,7 @@ export function ImageSlideGallery({ data }) {
           }}
           spaceBetween={16}
           slidesPerView={1}
+          loop
           breakpoints={{
             640: {
               slidesPerView: 3,
