@@ -10,6 +10,7 @@ import "swiper/css/scrollbar";
 import { Container } from "../../core/Container";
 import { Copy } from "../../elements/Copy";
 import { Image } from "../../elements/Image";
+import { NavigationArrow } from "../../elements/NavigationArrow";
 import * as S from "./ImageSlideGallery.styles";
 
 export function ImageSlideGallery({ data }) {
@@ -61,13 +62,8 @@ export function ImageSlideGallery({ data }) {
             </SwiperSlide>
           ))}
 
-          <S.NavigationArrow type="button" className="prev" ref={swiperPrev}>
-            &larr;
-          </S.NavigationArrow>
-
-          <S.NavigationArrow type="button" className="next" ref={swiperNext}>
-            &rarr;
-          </S.NavigationArrow>
+          <NavigationArrow direction="prev" ref={swiperPrev} />
+          <NavigationArrow direction="next" ref={swiperNext} />
         </Swiper>
       </Container>
     </S.ImageSlideGallery>
