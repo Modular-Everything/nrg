@@ -13,7 +13,7 @@ import * as S from "./Carousel.styles";
 import { StandardCard } from "./StandardCard/StandardCard";
 
 export function Carousel({ data }) {
-  console.log(data);
+  // console.log(data);
   const swiperPrev = useRef(null);
   const swiperNext = useRef(null);
 
