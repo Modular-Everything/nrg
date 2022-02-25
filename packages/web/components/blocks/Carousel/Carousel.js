@@ -1,3 +1,4 @@
+/* eslint-disable no-unused-vars */
 /* eslint-disable import/no-unresolved */
 import { useRef } from "react";
 import { Navigation, Scrollbar, A11y } from "swiper";
