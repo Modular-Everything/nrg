@@ -152,6 +152,13 @@ export default {
       name: "image",
       title: "Image",
       type: "image",
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
       hidden: ({ parent }) => parent.layoutType !== "media",
       description: (
         <span>

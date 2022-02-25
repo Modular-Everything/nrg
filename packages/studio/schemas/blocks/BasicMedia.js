@@ -53,6 +53,13 @@ export default {
       name: "image",
       title: "Image",
       type: "image",
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
       hidden: ({ parent }) =>
         !parent.layoutType || !parent.mediaType || parent.mediaType === "vimeo",
       description: (
