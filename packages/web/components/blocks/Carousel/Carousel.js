@@ -31,21 +31,25 @@ export function Carousel({ data }) {
             swiper.params.navigation.prevEl = swiperPrev.current;
           }}
           spaceBetween={16}
-          slidesPerView={1}
           loopAdditionalSlides={1}
-          breakpoints={{
-            640: {
-              slidesPerView: 2,
-            },
-          }}
+          slidesPerView="auto"
           loop
         >
           {data?.layoutType === "standard" &&
-            data?.standardCards.map((card) => (
-              <SwiperSlide key={card._key}>
-                <StandardCard data={card} />
-              </SwiperSlide>
-            ))}
+            data?.standardCards.map((card) => {
+              const [assetType, _id, dimensions, filetype] =
+                card.image.asset._ref.split("-");
+              const [width, height] = dimensions.split("x");
+
+              return (
+                <SwiperSlide
+                  key={card._key}
+                  className={width > height ? "landscape" : "portrait"}
+                >
+                  <StandardCard data={card} />
+                </SwiperSlide>
+              );
+            })}
 
           <NavigationArrow direction="prev" ref={swiperPrev} />
           <NavigationArrow direction="next" ref={swiperNext} />

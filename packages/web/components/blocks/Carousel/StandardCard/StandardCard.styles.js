@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const StandardCard = styled.article`
   .imageElement {
-    aspect-ratio: 512 / 320;
     position: relative;
     margin-bottom: 2.4rem;
 
@@ -23,6 +22,7 @@ export const StandardCard = styled.article`
 
   .copy {
     margin-bottom: 0.2rem;
+    padding-right: 1.2rem;
   }
 
   a:hover .arrow {
