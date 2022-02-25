@@ -17,8 +17,9 @@ export default {
         list: [
           { title: "Standalone Media", value: "basic" },
           { title: "Media & Bolt", value: "bolt" },
+          { title: "Media & Read More", value: "read" },
           { title: "Media & Statement", value: "statement" },
-          { title: "Media & Statement & Text", value: "statementText" },
+          { title: "Media & Statement & Read More", value: "statementread" },
           { title: "Media & Headline & Text", value: "headline" },
           { title: "Media & Headline & Text (Alt.)", value: "headlineAlt" },
         ],
@@ -114,6 +115,43 @@ export default {
           ],
         },
       ],
+    },
+
+    // Basic Copy
+    {
+      name: "basicCopy",
+      title: "Footer Copy",
+      type: "object",
+      hidden: ({ parent }) =>
+        !parent.layoutType || !parent.layoutType.includes("read"),
+      fields: [
+        {
+          name: "content",
+          title: "Content",
+          type: "array",
+          of: [
+            {
+              type: "block",
+              styles: [],
+              lists: [],
+              marks: {
+                annotations: [],
+                decorators: [],
+              },
+            },
+          ],
+        },
+      ],
+    },
+
+    // Read more label
+    {
+      name: "readMore",
+      title: "'Learn More' Label",
+      type: "string",
+      initialValue: "Learn more",
+      hidden: ({ parent }) =>
+        !parent.layoutType || !parent.layoutType.includes("read"),
     },
 
     // Call to action link
