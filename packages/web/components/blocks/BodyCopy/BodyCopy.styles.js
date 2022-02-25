@@ -7,7 +7,7 @@ export const BodyCopy = styled.section`
   h2,
   h3 {
     column-span: all;
-    margin: 0 0 4rem 0;
+    margin: 0 0 1.6rem 0;
     padding: 0;
   }
 
