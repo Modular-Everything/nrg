@@ -1,6 +1,7 @@
 import { groq } from "next-sanity";
 
 export function getQueryFromSlug(slugArray = []) {
+  console.log("slugArray", slugArray);
   const blocks = `
     ...,
     blocks[] {
@@ -54,11 +55,17 @@ export function getQueryFromSlug(slugArray = []) {
   // Keep extending this section to match the slug against the docQuery object keys
   let docType;
 
-  // eslint-disable-next-line no-prototype-builtins
-  if (docQuery.hasOwnProperty(slugStart)) {
+  if (
+    slugStart === "projects" ||
+    slugStart === "services" ||
+    slugStart === "news"
+  ) {
+    docType = "page";
+    // eslint-disable-next-line no-prototype-builtins
+  } else if (docQuery.hasOwnProperty(slugStart)) {
     docType = slugStart;
   } else {
-    docType = `page`;
+    docType = "page";
   }
 
   return {
