@@ -31,6 +31,7 @@ export const LogoGrid = styled.section`
 
     .imageElement {
       display: flex;
+      height: 100%;
     }
   }
 `;
