@@ -29,8 +29,8 @@ export const BasicMedia = styled.div`
     }
 
     .vimeo {
-      --video--width: 1200;
-      --video--height: 698;
+      --video-width: 1200;
+      --video-height: 698;
 
       iframe {
         transform: scale(115%);
