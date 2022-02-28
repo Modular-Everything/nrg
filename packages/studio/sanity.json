@@ -12,7 +12,8 @@
     "@sanity/default-layout",
     "@sanity/default-login",
     "@sanity/desk-tool",
-    "iframe-pane"
+    "iframe-pane",
+    "netlify-deploy-status-badge"
   ],
   "env": {
     "development": {
