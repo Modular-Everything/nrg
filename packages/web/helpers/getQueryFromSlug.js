@@ -1,7 +1,6 @@
 import { groq } from "next-sanity";
 
 export function getQueryFromSlug(slugArray = []) {
-  console.log("slugArray", slugArray);
   const blocks = `
     ...,
     blocks[] {
