@@ -55,9 +55,10 @@ export function getQueryFromSlug(slugArray = []) {
   let docType;
 
   if (
-    slugStart === "projects" ||
-    slugStart === "services" ||
-    slugStart === "news"
+    slugArray.length === 0 &&
+    (slugStart === "projects" ||
+      slugStart === "services" ||
+      slugStart === "news")
   ) {
     docType = "page";
     // eslint-disable-next-line no-prototype-builtins
