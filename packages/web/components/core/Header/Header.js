@@ -1,6 +1,7 @@
 import Link from "next/link";
+import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import { Fragment, useRef, useState } from "react";
+import { Fragment, useRef, useState, useEffect } from "react";
 
 import { Logo } from "../../icons/Logo";
 import { Container } from "../Container";
@@ -27,6 +28,18 @@ function handleMenuOpen(e, blackBarRef, { menu }) {
 export function Header({ data }) {
   const [activeMenu, setActiveMenu] = useState(null);
   const blackBarRef = useRef(null);
+  const formRef = useRef(null);
+  const wrapperRef = useRef(null);
+  const router = useRouter();
+
+  useEffect(() => {
+    const form = formRef.current;
+    const blackBar = blackBarRef.current;
+
+    form.reset();
+    blackBar.classList.remove("open");
+    blackBar.classList.add("closed");
+  }, [router]);
 
   return (
     <S.Header>
@@ -38,43 +51,50 @@ export function Header({ data }) {
         </Link>
 
         <S.Nav role="navigation">
-          <ul className="nav__wrap--outer">
-            {data?.navigation.map((topLevel, index) => {
-              const loopLength = data?.navigation.length - 1;
+          <form ref={formRef}>
+            <ul className="nav__wrap--outer" ref={wrapperRef}>
+              {data?.navigation.map((topLevel, index) => {
+                const loopLength = data?.navigation.length - 1;
 
-              return (
-                <Fragment key={topLevel._key}>
-                  <li className="nav__item--outer">
-                    <label>
-                      <input
-                        type="radio"
-                        name="nav"
-                        aria-label="Open Menu"
-                        data-id={topLevel._key}
-                        onClick={(e) =>
-                          handleMenuOpen(e, blackBarRef, {
-                            menu: { activeMenu, setActiveMenu },
-                          })
-                        }
-                      />
-                      <span className="nav__item--title">{topLevel.label}</span>
-                      <ul className="nav__wrap--inner">
-                        {topLevel.children.map((children) => (
-                          <li key={children._key} className="nav__item--inner">
-                            <Link href={children.target.slug.current}>
-                              <a>{children.label}</a>
-                            </Link>
-                          </li>
-                        ))}
-                      </ul>
-                    </label>
-                  </li>
+                return (
+                  <Fragment key={topLevel._key}>
+                    <li className="nav__item--outer">
+                      <label>
+                        <input
+                          type="radio"
+                          name="nav"
+                          aria-label="Open Menu"
+                          data-id={topLevel._key}
+                          onClick={(e) =>
+                            handleMenuOpen(e, blackBarRef, {
+                              menu: { activeMenu, setActiveMenu },
+                            })
+                          }
+                        />
+                        <span className="nav__item--title">
+                          {topLevel.label}
+                        </span>
+                        <ul className="nav__wrap--inner">
+                          {topLevel.children.map((children) => (
+                            <li
+                              key={children._key}
+                              className="nav__item--inner"
+                            >
+                              <Link href={children.target.slug.current}>
+                                <a>{children.label}</a>
+                              </Link>
+                            </li>
+                          ))}
+                        </ul>
+                      </label>
+                    </li>
 
-                  {index !== loopLength && <li className="divider" />}
-                </Fragment>
-              );
-            })}
-          </ul>
+                    {index !== loopLength && <li className="divider" />}
+                  </Fragment>
+                );
+              })}
+            </ul>
+          </form>
         </S.Nav>
       </Container>
 
