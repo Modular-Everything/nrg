@@ -7,7 +7,7 @@ import { LinkToRef } from "../LinkToRef";
 import * as S from "./Card.styles";
 
 export function Card({ data }) {
-  if (!data?.image || !data?.linkToRef?.link) {
+  if (!data?.image) {
     return <pre style={{ display: "none" }}>Error: Missing required image</pre>;
   }
 
