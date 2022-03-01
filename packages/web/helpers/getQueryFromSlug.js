@@ -55,7 +55,7 @@ export function getQueryFromSlug(slugArray = []) {
   let docType;
 
   if (
-    slugArray.length === 0 &&
+    slugArray.length === 1 &&
     (slugStart === "projects" ||
       slugStart === "services" ||
       slugStart === "news")
