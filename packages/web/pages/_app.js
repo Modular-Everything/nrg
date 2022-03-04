@@ -7,7 +7,9 @@ function MyApp({ Component, pageProps }) {
   return (
     <>
       <Script id="logrocket">
-        {typeof window !== "undefined" && LogRocket.init("rpltij/nrg")}
+        {typeof window !== "undefined" &&
+          process.env.NODE_ENV !== "development" &&
+          LogRocket.init("rpltij/nrg")}
       </Script>
       <Component {...pageProps} />
     </>
