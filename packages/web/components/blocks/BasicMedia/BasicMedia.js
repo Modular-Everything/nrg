@@ -24,8 +24,6 @@ function handleReadMore(bannerRef, bannerHeight, setBannerHeight) {
 }
 
 export function BasicMedia({ data }) {
-  console.log(data);
-
   const [bannerHeight, setBannerHeight] = useState(0);
   const bannerRef = useRef(null);
 
