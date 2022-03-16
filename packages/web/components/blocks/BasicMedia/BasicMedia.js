@@ -45,7 +45,7 @@ export function BasicMedia({ data }) {
             </div>
           )}
 
-          {data?.layoutType.includes("headline") && (
+          {data?.layoutType?.includes("headline") && (
             <div className="copy">
               <PortableText value={data?.copy?.content} />
               {data?.layoutType === "headlineAlt" && data?.linkToRef?.link && (
@@ -60,13 +60,13 @@ export function BasicMedia({ data }) {
             </div>
           )}
 
-          {data?.layoutType.includes("statement") && (
+          {data?.layoutType?.includes("statement") && (
             <div className="marquee">
               <PortableText value={data?.statement?.statement} />
             </div>
           )}
 
-          {data?.layoutType.includes("read") && (
+          {data?.layoutType?.includes("read") && (
             <button
               type="button"
               className="readMore"
