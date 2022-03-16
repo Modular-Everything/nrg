@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import { useState, useRef } from "react";
+import { useState, useRef, useEffect } from "react";
 
 import { Image } from "../../elements/Image";
 import { LinkToRef } from "../../elements/LinkToRef";
@@ -13,11 +13,13 @@ function handleReadMore(bannerRef, bannerHeight, setBannerHeight) {
   if (typeof window !== "undefined") {
     window.addEventListener(
       "resize",
-      setBannerHeight(bannerRef.current.clientHeight)
+      setBannerHeight(
+        bannerRef.current.scrollHeight + bannerRef.current.clientHeight
+      )
     );
 
     window.scroll({
-      top: bannerHeight - 32,
+      top: bannerHeight,
       behavior: "smooth",
     });
   }
@@ -26,6 +28,12 @@ function handleReadMore(bannerRef, bannerHeight, setBannerHeight) {
 export function BasicMedia({ data }) {
   const [bannerHeight, setBannerHeight] = useState(0);
   const bannerRef = useRef(null);
+
+  useEffect(() => {
+    setBannerHeight(
+      bannerRef.current.scrollHeight + bannerRef.current.clientHeight
+    );
+  }, []);
 
   function getMedia(type, data) {
     const layouts = {
