@@ -80,9 +80,9 @@ export function Header({ data }) {
                               key={children._key}
                               className="nav__item--inner"
                             >
-                              <Link href={children.target.slug.current}>
-                                <a>{children.label}</a>
-                              </Link>
+                              <a href={children.target.slug.current}>
+                                {children.label}
+                              </a>
                             </li>
                           ))}
                         </ul>
