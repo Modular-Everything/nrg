@@ -1,7 +1,7 @@
 import styled from "styled-components";
 
 export const PreviewMode = styled.div`
-  position: absolute;
+  position: fixed;
   top: 0.8rem;
   right: 0.8rem;
   background: var(--nrg-red);
