@@ -21,6 +21,15 @@ export const BasicMedia = styled.div`
     width: 100%;
     height: 100%;
 
+    &.standalone {
+      position: relative;
+      min-height: 75vh;
+
+      .imageElement {
+        height: 100%;
+      }
+    }
+
     &.vimeo {
       @supports (aspect-ratio: 1/1) {
         aspect-ratio: 1200/698;
