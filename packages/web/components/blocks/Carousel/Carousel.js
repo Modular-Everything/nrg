@@ -34,9 +34,10 @@ export function Carousel({ data }) {
             spaceBetween={16}
             loopAdditionalSlides={1}
             slidesPerView="auto"
-            loop
+            loop={data?.standardCards?.length > 3}
           >
             {data?.standardCards?.map((card) => {
+              // eslint-disable-next-line no-unused-vars
               const [assetType, _id, dimensions, filetype] =
                 card.image.asset._ref.split("-");
               const [width, height] = dimensions.split("x");
@@ -44,7 +45,9 @@ export function Carousel({ data }) {
               return (
                 <SwiperSlide
                   key={card._key}
-                  className={width > height ? "landscape" : "portrait"}
+                  className={
+                    Number(width) < Number(height) ? "portrait" : "landscape"
+                  }
                 >
                   <StandardCard data={card} />
                 </SwiperSlide>
