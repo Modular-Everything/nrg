@@ -5,6 +5,7 @@ export const Header = styled.header`
 
   background-color: var(--nrg-black);
   color: var(--white);
+  position: fixed;
   z-index: 1000;
   top: 0;
   width: 100%;

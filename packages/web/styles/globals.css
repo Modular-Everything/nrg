@@ -105,3 +105,8 @@ a {
   background: var(--nrg-red);
   color: var(--white);
 }
+
+.wrapper {
+  position: relative;
+  top: var(--headerHeight);
+}
