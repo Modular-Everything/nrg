@@ -4,6 +4,7 @@ import Head from "next/head";
 import { Footer } from "../components/core/Footer";
 import { Header } from "../components/core/Header";
 import { Page } from "../components/core/Page";
+import { PreviewMode } from "../components/core/PreviewMode";
 import { filterDataToSingleItem } from "../helpers/filterDataToSingleItem";
 import { getQueryFromSlug } from "../helpers/getQueryFromSlug";
 import { usePreviewSubscription } from "../lib/sanity";
@@ -28,6 +29,8 @@ export default function Home({ data, preview }) {
         <title>{page?.title}</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
+
+      {preview && <PreviewMode />}
 
       <Header data={globalSettings} />
 
