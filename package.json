@@ -1,0 +1,17 @@
+{
+  "name": "@nrg/root",
+  "private": true,
+  "license": "UNLICENSED",
+  "scripts": {
+    "dev": "lerna run dev --stream",
+    "build": "lerna run build --stream",
+    "start": "lerna run start --stream",
+    "postinstall": "lerna bootstrap"
+  },
+  "workspaces": [
+    "packages/*"
+  ],
+  "devDependencies": {
+    "lerna": "^4.0.0"
+  }
+}

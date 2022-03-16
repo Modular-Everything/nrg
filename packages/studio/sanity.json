@@ -1,0 +1,35 @@
+{
+  "root": true,
+  "project": {
+    "name": "NRG"
+  },
+  "api": {
+    "projectId": "vg8y9z13",
+    "dataset": "production-new"
+  },
+  "plugins": [
+    "@sanity/base",
+    "@sanity/default-layout",
+    "@sanity/default-login",
+    "@sanity/desk-tool",
+    "iframe-pane",
+    "netlify-deploy-status-badge"
+  ],
+  "env": {
+    "development": {
+      "plugins": [
+        "@sanity/vision"
+      ]
+    }
+  },
+  "parts": [
+    {
+      "name": "part:@sanity/base/schema",
+      "path": "./schemas/schema"
+    },
+    {
+      "name": "part:@sanity/desk-tool/structure",
+      "path": "./deskStructure.js"
+    }
+  ]
+}

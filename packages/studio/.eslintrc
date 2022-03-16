@@ -1,0 +1,7 @@
+{
+  "extends": "galex",
+  "rules": {
+    "import/no-anonymous-default-export": [2, { "allowObject": true }],
+    "import/no-default-export": 0
+  }
+}
