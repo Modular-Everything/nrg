@@ -35,4 +35,16 @@ export default {
       },
     },
   ],
+  preview: {
+    select: {
+      spacing: "spacing",
+      backgroundColor: "backgroundColor",
+    },
+    prepare({ spacing, backgroundColor }) {
+      return {
+        title: "Divider",
+        subtitle: `Spacing: ${spacing}px / color: ${backgroundColor}`,
+      };
+    },
+  },
 };

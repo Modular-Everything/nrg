@@ -223,4 +223,17 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      media: "image",
+      subtitle: "layoutType",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Basic Media",
+        subtitle,
+        media,
+      };
+    },
+  },
 };

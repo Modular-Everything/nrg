@@ -33,4 +33,17 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      media: "listItems[0].image",
+      subtitle: "listItems.length",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "List",
+        subtitle: `x${subtitle || 0} items`,
+        media,
+      };
+    },
+  },
 };

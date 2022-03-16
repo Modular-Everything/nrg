@@ -17,4 +17,17 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      media: "tiles[0].image",
+      subtitle: "tiles.length",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Image Tiles",
+        subtitle: `x${subtitle || 0} tiles`,
+        media,
+      };
+    },
+  },
 };

@@ -14,4 +14,17 @@ export default {
       of: [image],
     },
   ],
+  preview: {
+    select: {
+      media: "images[0].image",
+      subtitle: "images.length",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Large Statements",
+        subtitle: `x${subtitle || 0} images`,
+        media,
+      };
+    },
+  },
 };

@@ -18,4 +18,17 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      media: "items[0].image",
+      subtitle: "items.length",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Project Navigation",
+        subtitle: `x${subtitle || 0} items`,
+        media,
+      };
+    },
+  },
 };

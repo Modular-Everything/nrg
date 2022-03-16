@@ -17,4 +17,17 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      media: "items[0].image",
+      subtitle: "items.length",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Image Slide Gallery",
+        subtitle: `x${subtitle || 0} slides`,
+        media,
+      };
+    },
+  },
 };

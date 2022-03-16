@@ -187,4 +187,17 @@ export default {
       },
     },
   ],
+  preview: {
+    select: {
+      media: "image",
+      subtitle: "layoutType",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Body Copy",
+        subtitle,
+        media,
+      };
+    },
+  },
 };

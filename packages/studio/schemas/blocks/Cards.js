@@ -18,4 +18,17 @@ export default {
       validation: (Rule) => Rule.length(2),
     },
   ],
+  preview: {
+    select: {
+      media: "allCards[0].image",
+      subtitle: "allCards.length",
+    },
+    prepare({ media, subtitle }) {
+      return {
+        title: "Cards",
+        subtitle: `x${subtitle || 0} cards`,
+        media,
+      };
+    },
+  },
 };

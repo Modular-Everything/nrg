@@ -26,4 +26,15 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      subtitle: "logos.length",
+    },
+    prepare({ subtitle }) {
+      return {
+        title: "Logo Grid",
+        subtitle: `x${subtitle || 0} logos`,
+      };
+    },
+  },
 };

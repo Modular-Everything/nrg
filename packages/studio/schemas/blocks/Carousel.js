@@ -63,4 +63,15 @@ export default {
       ],
     },
   ],
+  preview: {
+    select: {
+      subtitle: "layoutType",
+    },
+    prepare({ subtitle }) {
+      return {
+        title: "Carousel",
+        subtitle,
+      };
+    },
+  },
 };
