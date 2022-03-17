@@ -85,7 +85,7 @@ export const Nav = styled.nav`
     display: flex;
     flex-direction: column;
     align-items: flex-end;
-    top: calc(var(--headerHeight) - var(--navHeight) + 2.4rem);
+    top: calc(var(--headerHeight) - var(--navHeight) + 100%);
   }
 
   .nav__item--inner {
