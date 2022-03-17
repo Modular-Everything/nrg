@@ -25,7 +25,6 @@ function cardPicker(type, card) {
 }
 
 export function Carousel({ data }) {
-  console.log(data);
   const swiperPrev = useRef(null);
   const swiperNext = useRef(null);
 
