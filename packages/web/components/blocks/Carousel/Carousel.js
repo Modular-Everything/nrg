@@ -10,8 +10,19 @@ import "swiper/css/scrollbar";
 import { Container } from "../../core/Container";
 import { NavigationArrow } from "../../elements/NavigationArrow";
 import * as S from "./Carousel.styles";
+import { HoverCTA } from "./HoverCTA";
 import { HoverCopyCard } from "./HoverCopyCard";
 import { StandardCard } from "./StandardCard";
+
+function cardPicker(type, card) {
+  const types = {
+    standard: <StandardCard data={card} />,
+    hoverCopy: <HoverCopyCard data={card} />,
+    hoverCTA: <HoverCTA data={card} />,
+  };
+
+  return types[type] || null;
+}
 
 export function Carousel({ data }) {
   console.log(data);
@@ -37,6 +48,10 @@ export function Carousel({ data }) {
           loop={data?.standardCards?.length > 3}
         >
           {data?.standardCards?.map((card) => {
+            if (!card?.image?.asset) {
+              return null;
+            }
+
             // eslint-disable-next-line no-unused-vars
             const [assetType, _id, dimensions, filetype] =
               card.image.asset._ref.split("-");
@@ -50,12 +65,7 @@ export function Carousel({ data }) {
                 }
               >
                 {data?.standardCards?.length > 0 &&
-                  (data?.layoutType === "standard" && (
-                    <StandardCard data={card} />
-                  ),
-                  data?.layoutType === "hoverCopy" && (
-                    <HoverCopyCard data={card} />
-                  ))}
+                  cardPicker(data?.layoutType, card)}
               </SwiperSlide>
             );
           })}

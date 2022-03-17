@@ -23,6 +23,10 @@ export function getQueryFromSlug(slugArray = []) {
         ...,
         linkToRef {..., "link": link->slug.current},
       },
+      standardCards[] {
+        ...,
+        linkToRef {..., "link": link->slug.current},
+      },
       linkToRef {
         ...,
         "link": link->slug.current
