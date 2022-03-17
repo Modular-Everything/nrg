@@ -76,7 +76,7 @@
 
 @media (min-width: 640px) {
   :root {
-    --headerHeight: 13.8rem;
+    --headerHeight: 10rem;
   }
 }
 

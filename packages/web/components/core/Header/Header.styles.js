@@ -19,7 +19,7 @@ export const Header = styled.header`
   }
 
   .logo {
-    max-width: 13.2rem;
+    max-width: 10rem;
     width: 25%;
 
     svg {
