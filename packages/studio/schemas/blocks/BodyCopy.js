@@ -1,5 +1,6 @@
 import React from "react";
 
+import { allRefs } from "../fields/allRefs";
 import { brandColors } from "../fields/brandColors";
 
 export default {
@@ -50,7 +51,40 @@ export default {
               ],
               lists: [],
               marks: {
-                annotations: [],
+                annotations: [
+                  {
+                    name: "internalLink",
+                    type: "object",
+                    title: "Internal link",
+                    icon: <>📍</>,
+                    fields: [
+                      {
+                        name: "reference",
+                        type: "reference",
+                        title: "Reference",
+                        to: allRefs,
+                      },
+                    ],
+                  },
+                  {
+                    name: "link",
+                    type: "object",
+                    title: "External link",
+                    icon: <>🌐</>,
+                    fields: [
+                      {
+                        name: "href",
+                        type: "url",
+                        title: "URL",
+                      },
+                      {
+                        title: "Open in new tab",
+                        name: "blank",
+                        type: "boolean",
+                      },
+                    ],
+                  },
+                ],
                 decorators: [],
               },
             },

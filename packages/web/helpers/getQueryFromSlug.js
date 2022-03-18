@@ -5,6 +5,18 @@ export function getQueryFromSlug(slugArray = []) {
     ...,
     blocks[] {
       ...,
+      copy {
+        ...,
+        content[] {
+          ...,
+          markDefs[] {
+            ...,
+            _type == "internalLink" => {
+              "slug": @.reference->slug
+            }
+          }
+        }
+      },
       allCards[] {
         ...,
         linkToRef {

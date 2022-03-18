@@ -7,4 +7,8 @@ export const SimpleBodyCopy = styled.div`
       column-gap: 2.4rem;
     }
   }
+
+  a {
+    text-decoration: underline;
+  }
 `;
