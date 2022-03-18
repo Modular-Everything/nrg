@@ -25,6 +25,7 @@ export default {
       title: "Standard Cards",
       type: "array",
       hidden: ({ parent }) => !parent.layoutType,
+      validation: (Rule) => Rule.required(),
       of: [
         {
           name: "cards",
