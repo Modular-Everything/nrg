@@ -24,7 +24,7 @@ export function ProjectNavigation({ data }) {
             <div className="projectNav__meta">
               {item?.subtitle && <h5>{item.subtitle}</h5>}
               {item?.title && <h4>{item.title}</h4>}
-              <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
+              <LinkToRef label={item?.linkToRef?.label || "Find out more"} />
             </div>
           </a>
         </Link>
