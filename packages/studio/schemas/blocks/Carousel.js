@@ -1,4 +1,4 @@
-import { image, linkToRef, title, subtitle, bodyCopy } from "../fields";
+import { image, linkToRef, subtitle, bodyCopy } from "../fields";
 
 export default {
   name: "carousel",
