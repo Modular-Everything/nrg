@@ -65,8 +65,6 @@ export function BodyCopy({ data }) {
     .replace(")", "");
   const theme = getTheme(themeColor);
 
-  console.log(data);
-
   return (
     <S.BodyCopy columns={data?.columns} theme={theme}>
       {getLayout(data?.layoutType, data, theme)}
