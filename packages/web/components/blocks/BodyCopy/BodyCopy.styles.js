@@ -3,6 +3,7 @@ import styled from "styled-components";
 export const BodyCopy = styled.section`
   padding: 2.4rem 0;
   background-color: ${({ theme }) => theme.background};
+  color: ${({ theme }) => theme.copy};
 
   h2,
   h3 {
