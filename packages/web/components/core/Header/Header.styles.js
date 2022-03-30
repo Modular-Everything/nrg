@@ -137,7 +137,7 @@ export const Nav = styled.nav`
 export const BlackBar = styled.div`
   height: var(--headerHeight);
   width: 100%;
-  background: var(--black);
+  background: var(--nrg-black);
   display: block !important;
   transition: 250ms ease height;
 
