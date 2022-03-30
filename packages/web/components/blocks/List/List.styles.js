@@ -4,12 +4,11 @@ export const List = styled.section`
   padding: 6.4rem 0;
 
   h3 {
-    font-family: var(--avenue);
-    font-weight: bold;
-    font-size: clamp(4rem, 8vw, 7rem);
-    line-height: clamp(4rem, 8vw, 7rem);
-    margin: 0 0 6.4rem;
+    font-family: var(--grotesque);
+    font-size: 2.2rem;
+    line-height: 2.4rem;
     text-transform: uppercase;
+    width: 23rem;
   }
 
   .grid {
