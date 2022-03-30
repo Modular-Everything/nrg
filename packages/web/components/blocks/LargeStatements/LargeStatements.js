@@ -7,7 +7,9 @@ import * as S from "./LargeStatements.styles";
 
 export function LargeStatements({ data }) {
   return (
-    <S.LargeStatements>
+    <S.LargeStatements
+      className={`${data?.images?.length ? "has-images" : ""}`}
+    >
       <Container>
         {data?.images?.length >= 1 && (
           <div className="statement__image statement__image--1">

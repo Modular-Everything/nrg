@@ -1,14 +1,23 @@
 import styled from "styled-components";
 
 export const LargeStatements = styled.section`
-  --padding: 3.2rem;
+  --padding: 1.6rem;
+
+  &.has-images {
+    --padding: 3.2rem;
+  }
 
   background-color: var(--nrg-black);
   padding: var(--padding);
   position: relative;
 
   @media (min-width: 768px) {
-    --padding: 6.4rem;
+    --padding: 1.6rem;
+
+    &.has-images {
+      --padding: 6.4rem;
+    }
+
     padding: calc(var(--padding) * 3) var(--padding);
   }
 
