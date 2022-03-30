@@ -174,7 +174,22 @@ export default {
                 { title: "Ordered List", value: "number" },
               ],
               marks: {
-                annotations: [],
+                annotations: [
+                  {
+                    name: "internalLink",
+                    type: "object",
+                    title: "Internal link",
+                    icon: <>📍</>,
+                    fields: [
+                      {
+                        name: "reference",
+                        type: "reference",
+                        title: "Reference",
+                        to: allRefs,
+                      },
+                    ],
+                  },
+                ],
                 decorators: [],
               },
             },

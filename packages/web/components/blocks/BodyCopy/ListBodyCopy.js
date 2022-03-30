@@ -7,6 +7,18 @@ import { Bolt } from "../../icons/BadgeBolt";
 import * as S from "./ListBodyCopy.styles";
 
 export function ListBodyCopy({ data, theme }) {
+  const copyComponents = {
+    marks: {
+      internalLink: ({ children, value }) => {
+        return (
+          <Link href={`/${value?.slug?.current}`}>
+            <a>{children}</a>
+          </Link>
+        );
+      },
+    },
+  };
+
   return (
     <S.ListBodyCopy theme={theme}>
       <Container>
@@ -32,7 +44,10 @@ export function ListBodyCopy({ data, theme }) {
         </div>
 
         <div className="listBody__list">
-          <PortableText value={data?.aside?.content} />
+          <PortableText
+            value={data?.aside?.content}
+            components={copyComponents}
+          />
         </div>
       </Container>
     </S.ListBodyCopy>
