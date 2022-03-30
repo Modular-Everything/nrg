@@ -14,6 +14,7 @@ import largeStatements from "./blocks/LargeStatements";
 import list from "./blocks/List";
 import logoGrid from "./blocks/LogoGrid";
 import projectNavigation from "./blocks/ProjectNavigation";
+import video from "./blocks/Video";
 import globalSettings from "./globalSettings";
 import homepage from "./pages/homepage";
 import newsPost from "./pages/newsPost";
@@ -48,5 +49,6 @@ export default createSchema({
     project,
     projectNavigation,
     service,
+    video,
   ],
 });

@@ -12,6 +12,7 @@ import {
   List,
   LogoGrid,
   ProjectNavigation,
+  Video,
 } from "../components/blocks";
 
 export function getBlock(block) {
@@ -29,6 +30,7 @@ export function getBlock(block) {
     list: <List />,
     logoGrid: <LogoGrid />,
     projectNavigation: <ProjectNavigation />,
+    video: <Video />,
   };
 
   return (

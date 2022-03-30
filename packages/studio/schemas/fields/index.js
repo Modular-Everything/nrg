@@ -180,5 +180,6 @@ export const blocks = {
     { type: "list" },
     { type: "logoGrid" },
     { type: "projectNavigation" },
+    { type: "video" },
   ],
 };

@@ -3,9 +3,9 @@ import PropTypes from "prop-types";
 
 import * as S from "./Vimeo.styles";
 
-export function Vimeo({ url }) {
+export function Vimeo({ url, contained }) {
   return (
-    <S.Vimeo className="vimeo">
+    <S.Vimeo className={`vimeo ${contained ? "contained" : "full"}`}>
       {url && (
         <iframe
           src={`https://player.vimeo.com/video/${
@@ -25,4 +25,9 @@ export function Vimeo({ url }) {
 
 Vimeo.propTypes = {
   url: PropTypes.string.isRequired,
+  contained: PropTypes.bool,
+};
+
+Vimeo.defaultProps = {
+  contained: false,
 };
