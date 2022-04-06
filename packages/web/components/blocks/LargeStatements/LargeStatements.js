@@ -5,10 +5,41 @@ import { Container } from "../../core/Container";
 import { Image } from "../../elements/Image";
 import * as S from "./LargeStatements.styles";
 
+function getTheme(color) {
+  const red = "var(--nrg-red)";
+  const black = "var(--nrg-black)";
+  const white = "var(--nrg-white)";
+
+  const theme = {
+    red: {
+      background: red,
+      text: white,
+    },
+    black: {
+      background: black,
+      text: white,
+    },
+    white: {
+      background: white,
+      text: black,
+    },
+  };
+
+  return theme[color] || theme.white;
+}
 export function LargeStatements({ data }) {
+  let theme = getTheme("black");
+  if (data.backgroundColor) {
+    const themeColor = data.backgroundColor
+      .replace("var(--nrg-", "")
+      .replace(")", "");
+    theme = getTheme(themeColor);
+  }
+
   return (
     <S.LargeStatements
       className={`${data?.images?.length ? "has-images" : ""}`}
+      theme={theme}
     >
       <Container>
         {data?.images?.length >= 1 && (

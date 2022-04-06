@@ -7,7 +7,7 @@ export const LargeStatements = styled.section`
     --padding: 3.2rem;
   }
 
-  background-color: var(--nrg-black);
+  background-color: ${({ theme }) => theme.background};
   padding: var(--padding);
   position: relative;
 
@@ -71,14 +71,15 @@ export const LargeStatements = styled.section`
     p {
       max-width: 96rem;
       margin: 0 auto;
-      color: #fff;
+      color: ${({ theme }) => (theme.background === "white" ? "#fff" : "#000")};
       font-family: var(--avenue);
       font-size: clamp(2.4rem, 5vw, 6.4rem);
       letter-spacing: 0.05ch;
       line-height: 1.1;
       text-align: center;
       text-transform: uppercase;
-      mix-blend-mode: screen;
+      mix-blend-mode: ${({ theme }) =>
+        theme.background === "white" ? "screen" : "multiply"};
     }
 
     strong {
@@ -87,10 +88,10 @@ export const LargeStatements = styled.section`
       align-items: center;
       justify-content: center;
       padding: 0 var(--padding);
-      background-color: #fff;
+      background-color: ${({ theme }) =>
+        theme.background === "white" ? "#fff" : "#000"};
       box-decoration-break: clone;
-      /* box-shadow: var(--padding) 0 0 #fff, calc(var(--padding) * -1) 0 0 #fff; */
-      color: #000;
+      color: ${({ theme }) => (theme.background === "white" ? "#000" : "#fff")};
       font-weight: normal;
     }
 
