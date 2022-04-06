@@ -8,7 +8,7 @@ import * as S from "./ImageTiles.styles";
 
 function Tile({ data }) {
   return (
-    <>
+    <div className="tile">
       <div className="tile__image">
         {data.image && (
           <Image src={data.image} alt="" objectFit="cover" quality={95} />
@@ -22,7 +22,7 @@ function Tile({ data }) {
           )}
         </div>
       )}
-    </>
+    </div>
   );
 }
 
