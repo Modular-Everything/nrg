@@ -71,7 +71,8 @@ export const LargeStatements = styled.section`
     p {
       max-width: 96rem;
       margin: 0 auto;
-      color: ${({ theme }) => (theme.background === "white" ? "#fff" : "#000")};
+      color: ${({ theme }) =>
+        theme.background.includes("white") ? "#000" : "#fff"};
       font-family: var(--avenue);
       font-size: clamp(2.4rem, 5vw, 6.4rem);
       letter-spacing: 0.05ch;
@@ -79,7 +80,7 @@ export const LargeStatements = styled.section`
       text-align: center;
       text-transform: uppercase;
       mix-blend-mode: ${({ theme }) =>
-        theme.background === "white" ? "screen" : "multiply"};
+        theme.background.includes("white") ? "multiply" : "screen"};
     }
 
     strong {
@@ -89,9 +90,10 @@ export const LargeStatements = styled.section`
       justify-content: center;
       padding: 0 var(--padding);
       background-color: ${({ theme }) =>
-        theme.background === "white" ? "#fff" : "#000"};
+        theme.background.includes("white") ? "#000" : "#fff"};
       box-decoration-break: clone;
-      color: ${({ theme }) => (theme.background === "white" ? "#000" : "#fff")};
+      color: ${({ theme }) =>
+        theme.background.includes("white") ? "#fff" : "#000"};
       font-weight: normal;
     }
 

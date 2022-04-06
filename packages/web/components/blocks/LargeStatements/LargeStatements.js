@@ -36,6 +36,8 @@ export function LargeStatements({ data }) {
     theme = getTheme(themeColor);
   }
 
+  console.log(theme);
+
   return (
     <S.LargeStatements
       className={`${data?.images?.length ? "has-images" : ""}`}
