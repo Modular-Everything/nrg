@@ -5,6 +5,20 @@ export const BodyCopy = styled.section`
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.copy};
 
+  a {
+    color: var(--nrg-red);
+    transition: 250ms ease color;
+
+    &:hover {
+      color: var(--nrg-black);
+
+      .arrow {
+        transform: translateX(0.8rem);
+        color: inherit;
+      }
+    }
+  }
+
   h2,
   h3 {
     column-span: all;
@@ -47,9 +61,5 @@ export const BodyCopy = styled.section`
     margin-top: 1.6rem;
     padding: 0.4rem 0.8rem 0.4rem 0;
     color: ${({ theme }) => theme.cta};
-  }
-
-  a:hover .arrow {
-    transform: translateX(0.8rem);
   }
 `;
