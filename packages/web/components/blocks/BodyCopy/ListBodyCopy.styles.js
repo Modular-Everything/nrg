@@ -50,6 +50,10 @@ export const ListBodyCopy = styled.div`
       display: none;
     }
 
+    a {
+      color: ${({ theme }) => theme.bullets.text};
+    }
+
     ol,
     ul {
       margin: 0;
