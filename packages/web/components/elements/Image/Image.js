@@ -33,6 +33,7 @@ export function Image({ src, saturate, layout, ...rest }) {
         alt={src.alt || ""}
         {...rest}
       />
+      {src?.caption && <small className="image__caption">{src.caption}</small>}
     </S.Image>
   );
 }

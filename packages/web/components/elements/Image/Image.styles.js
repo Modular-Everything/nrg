@@ -27,4 +27,13 @@ export const Image = styled.div`
   & > span {
     z-index: 0;
   }
+
+  .image__caption {
+    font-family: var(--simplonNorm);
+    font-size: 1.2rem;
+    line-height: 1.6rem;
+    display: block;
+    margin-bottom: 0.8rem;
+    color: var(--nrg-lt-grey);
+  }
 `;

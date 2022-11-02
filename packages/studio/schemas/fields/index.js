@@ -129,6 +129,11 @@ export const image = {
       title: "Alt",
       type: "string",
     },
+    {
+      name: "caption",
+      title: "Caption",
+      type: "string",
+    },
   ],
   validation: (Rule) => Rule.required(),
   description: (
