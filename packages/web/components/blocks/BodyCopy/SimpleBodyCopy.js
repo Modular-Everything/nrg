@@ -30,11 +30,12 @@ export function SimpleBodyCopy({ data, theme }) {
   };
 
   return (
-    <S.SimpleBodyCopy columns={data?.columns} theme={theme}>
+    <S.SimpleBodyCopy theme={theme}>
       <Container>
         <S.Wrapper
           textAlign={data?.copyPosition}
           position={data?.copyPosition}
+          columns={data?.columns}
           style={
             data?.layoutType === "body" && data?.columns === 1
               ? { maxWidth: "68rem" }
