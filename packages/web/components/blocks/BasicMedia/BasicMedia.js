@@ -1,7 +1,7 @@
 import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 import PropTypes from "prop-types";
-import { useState, useRef, useEffect } from "react";
+import { useState, useCallback } from "react";
 
 import { Image } from "../../elements/Image";
 import { LinkToRef } from "../../elements/LinkToRef";
@@ -9,31 +9,21 @@ import { Vimeo } from "../../elements/Vimeo";
 import { OutlinedBolt, FilledBolt } from "../../icons/BigBolts";
 import * as S from "./BasicMedia.styles";
 
-function handleReadMore(bannerRef, bannerHeight, setBannerHeight) {
-  if (typeof window !== "undefined") {
-    window.addEventListener(
-      "resize",
-      setBannerHeight(
-        bannerRef.current.scrollHeight + bannerRef.current.clientHeight
-      )
-    );
+export function BasicMedia({ data }) {
+  const [bannerNode, setBannerNode] = useState(null);
 
+  const bannerRef = useCallback((node) => {
+    if (node !== null) {
+      setBannerNode(node);
+    }
+  }, []);
+
+  function scrollBelowBanner() {
     window.scroll({
-      top: bannerHeight,
+      top: bannerNode.offsetHeight,
       behavior: "smooth",
     });
   }
-}
-
-export function BasicMedia({ data }) {
-  const [bannerHeight, setBannerHeight] = useState(0);
-  const bannerRef = useRef(null);
-
-  useEffect(() => {
-    setBannerHeight(
-      bannerRef.current.scrollHeight + bannerRef.current.clientHeight
-    );
-  }, []);
 
   function getMedia(type, data) {
     const layouts = {
@@ -78,9 +68,7 @@ export function BasicMedia({ data }) {
             <button
               type="button"
               className="readMore"
-              onClick={() =>
-                handleReadMore(bannerRef, bannerHeight, setBannerHeight)
-              }
+              onClick={() => scrollBelowBanner()}
             >
               <PortableText value={data?.basicCopy?.content} />
               <div className="label">
