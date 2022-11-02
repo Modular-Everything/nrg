@@ -2,9 +2,10 @@ import { PortableText } from "@portabletext/react";
 import Link from "next/link";
 
 import { Container } from "../../core/Container";
+import { Bolt } from "../../icons/BadgeBolt";
 import * as S from "./SimpleBodyCopy.styles";
 
-export function SimpleBodyCopy({ data }) {
+export function SimpleBodyCopy({ data, theme }) {
   const copyComponents = {
     marks: {
       internalLink: ({ children, value }) => {
@@ -29,7 +30,7 @@ export function SimpleBodyCopy({ data }) {
   };
 
   return (
-    <S.SimpleBodyCopy columns={data?.columns}>
+    <S.SimpleBodyCopy columns={data?.columns} theme={theme}>
       <Container
         style={
           data?.layoutType === "body" && data?.columns === 1
@@ -37,6 +38,12 @@ export function SimpleBodyCopy({ data }) {
             : {}
         }
       >
+        {data?.bolt && (
+          <div className="simpleBody__bolt">
+            <Bolt />
+          </div>
+        )}
+
         <PortableText value={data?.copy?.content} components={copyComponents} />
       </Container>
     </S.SimpleBodyCopy>

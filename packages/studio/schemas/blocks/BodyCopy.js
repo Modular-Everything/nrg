@@ -3,6 +3,22 @@ import React from "react";
 import { allRefs } from "../fields/allRefs";
 import { brandColors } from "../fields/brandColors";
 
+function Pre({ children }) {
+  return (
+    <pre
+      style={{
+        display: "inline",
+        border: "1px solid green",
+        background: "rgb(0 255 0 / 10%)",
+        borderRadius: "8px",
+        padding: "2px",
+      }}
+    >
+      {children}
+    </pre>
+  );
+}
+
 export default {
   name: "bodyCopy",
   title: "Body Copy",
@@ -29,6 +45,14 @@ export default {
       initialValue: 1,
       validation: (Rule) => Rule.required().min(1).max(2),
       hidden: ({ parent }) => parent.layoutType !== "body",
+    },
+    {
+      name: "bolt",
+      title: "Bolt Icon",
+      type: "boolean",
+      description: "Show or hide the bolt icon",
+      hidden: ({ parent }) => parent.layoutType === "media",
+      initialValue: true,
     },
     {
       name: "copy",
@@ -69,7 +93,7 @@ export default {
                   {
                     name: "link",
                     type: "object",
-                    title: "External link/email",
+                    title: "External link",
                     icon: <>🌐</>,
                     fields: [
                       {
@@ -78,17 +102,10 @@ export default {
                         title: "URL/email",
                         description: (
                           <p>
-                            Use <pre style={{ display: "inline" }}>mailto:</pre>{" "}
-                            to for emails,{" "}
-                            <pre style={{ display: "inline" }}>https://</pre>{" "}
-                            etc for web. For example{" "}
-                            <pre style={{ display: "inline" }}>
-                              mailto:gavin@madewithnrg.com
-                            </pre>{" "}
-                            or{" "}
-                            <pre style={{ display: "inline" }}>
-                              https://madewithnrg.com
-                            </pre>
+                            Use <Pre>mailto:</Pre> to for emails,{" "}
+                            <Pre>https://</Pre> etc for web. For example{" "}
+                            <Pre>mailto:gavin@madewithnrg.com</Pre> or{" "}
+                            <Pre>https://madewithnrg.com</Pre>
                           </p>
                         ),
                         validation: (Rule) =>
@@ -110,14 +127,6 @@ export default {
           ],
         },
       ],
-    },
-    {
-      name: "bolt",
-      title: "Bolt Icon",
-      type: "boolean",
-      description: "Show or hide the bolt icon",
-      hidden: ({ parent }) => parent.layoutType !== "list",
-      initialValue: true,
     },
     {
       name: "headline",
