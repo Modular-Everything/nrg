@@ -29,8 +29,6 @@ export function SimpleBodyCopy({ data, theme }) {
     },
   };
 
-  console.log(data);
-
   return (
     <S.SimpleBodyCopy columns={data?.columns} theme={theme}>
       <Container>
