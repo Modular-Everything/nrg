@@ -29,22 +29,31 @@ export function SimpleBodyCopy({ data, theme }) {
     },
   };
 
+  console.log(data);
+
   return (
     <S.SimpleBodyCopy columns={data?.columns} theme={theme}>
-      <Container
-        style={
-          data?.layoutType === "body" && data?.columns === 1
-            ? { maxWidth: "68rem" }
-            : {}
-        }
-      >
-        {data?.bolt && (
-          <div className="simpleBody__bolt">
-            <Bolt />
-          </div>
-        )}
+      <Container>
+        <S.Wrapper
+          textAlign={data?.copyPosition}
+          position={data?.copyPosition}
+          style={
+            data?.layoutType === "body" && data?.columns === 1
+              ? { maxWidth: "68rem" }
+              : {}
+          }
+        >
+          {data?.bolt && (
+            <div className="simpleBody__bolt">
+              <Bolt />
+            </div>
+          )}
 
-        <PortableText value={data?.copy?.content} components={copyComponents} />
+          <PortableText
+            value={data?.copy?.content}
+            components={copyComponents}
+          />
+        </S.Wrapper>
       </Container>
     </S.SimpleBodyCopy>
   );

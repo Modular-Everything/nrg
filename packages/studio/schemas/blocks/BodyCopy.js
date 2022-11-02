@@ -55,6 +55,17 @@ export default {
       initialValue: true,
     },
     {
+      name: "copyPosition",
+      title: "Copy Position",
+      type: "string",
+      description: "Position the copy over to the left, rather than the center",
+      hidden: ({ parent }) => parent.layoutType !== "body",
+      initialValue: "center",
+      options: {
+        list: ["left", "center", "right"],
+      },
+    },
+    {
       name: "copy",
       title: "Body Copy",
       type: "object",
