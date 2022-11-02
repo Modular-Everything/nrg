@@ -1,6 +1,12 @@
 import styled from "styled-components";
 
-export const ListBodyCopy = styled.div`
+export const ListBodyCopy = styled.div.attrs((props) => ({
+  gridTemplateColumns:
+    props.columns === 3
+      ? "minmax(15rem, 25%) 1fr minmax(20rem, 20%)"
+      : "minmax(15rem, 25%) 1fr",
+  // bodyWidth: props.columns === 3 ? '56rem' : 'unset'
+}))`
   color: ${({ theme }) => theme.copy};
 
   h3 {
@@ -14,11 +20,12 @@ export const ListBodyCopy = styled.div`
 
     @media (min-width: 680px) {
       grid-column-gap: 2.4rem;
-      grid-template-columns: minmax(15rem, 20%) 1fr minmax(20rem, 25%);
+      grid-template-columns: ${({ gridTemplateColumns }) =>
+        gridTemplateColumns};
     }
 
     @media (min-width: 768px) {
-      grid-column-gap: 6.4rem;
+      grid-column-gap: 4.8rem;
     }
   }
 
@@ -33,11 +40,7 @@ export const ListBodyCopy = styled.div`
   }
 
   .listBody__body p {
-    max-width: 40rem;
-
-    @media (min-width: 680px) {
-      max-width: unset;
-    }
+    max-width: 56rem;
   }
 
   .listBody__list {

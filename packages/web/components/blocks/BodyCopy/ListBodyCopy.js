@@ -19,8 +19,13 @@ export function ListBodyCopy({ data, theme }) {
     },
   };
 
+  let columns = 2;
+  if (data?.aside?.content) {
+    columns = 3;
+  }
+
   return (
-    <S.ListBodyCopy theme={theme}>
+    <S.ListBodyCopy theme={theme} columns={columns}>
       <Container>
         {data?.bolt && (
           <div className="listBody__bolt">
@@ -43,12 +48,14 @@ export function ListBodyCopy({ data, theme }) {
           )}
         </div>
 
-        <div className="listBody__list">
-          <PortableText
-            value={data?.aside?.content}
-            components={copyComponents}
-          />
-        </div>
+        {data?.aside?.content && (
+          <div className="listBody__list">
+            <PortableText
+              value={data?.aside?.content}
+              components={copyComponents}
+            />
+          </div>
+        )}
       </Container>
     </S.ListBodyCopy>
   );
