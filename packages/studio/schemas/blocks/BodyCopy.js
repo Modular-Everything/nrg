@@ -69,13 +69,32 @@ export default {
                   {
                     name: "link",
                     type: "object",
-                    title: "External link",
+                    title: "External link/email",
                     icon: <>🌐</>,
                     fields: [
                       {
                         name: "href",
                         type: "url",
-                        title: "URL",
+                        title: "URL/email",
+                        description: (
+                          <p>
+                            Use <pre style={{ display: "inline" }}>mailto:</pre>{" "}
+                            to for emails,{" "}
+                            <pre style={{ display: "inline" }}>https://</pre>{" "}
+                            etc for web. For example{" "}
+                            <pre style={{ display: "inline" }}>
+                              mailto:gavin@madewithnrg.com
+                            </pre>{" "}
+                            or{" "}
+                            <pre style={{ display: "inline" }}>
+                              https://madewithnrg.com
+                            </pre>
+                          </p>
+                        ),
+                        validation: (Rule) =>
+                          Rule.uri({
+                            scheme: ["http", "https", "mailto", "tel"],
+                          }),
                       },
                       {
                         title: "Open in new tab",
