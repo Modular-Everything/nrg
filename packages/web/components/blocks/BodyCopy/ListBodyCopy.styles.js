@@ -20,11 +20,6 @@ export const ListBodyCopy = styled.div`
     @media (min-width: 768px) {
       grid-column-gap: 6.4rem;
     }
-
-    /* @media (min-width: 900px) {
-
-      grid-template-columns: minmax(18rem, 15%) 1fr minmax(25rem, 25%);
-    } */
   }
 
   .listBody__bolt {
