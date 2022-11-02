@@ -1,4 +1,6 @@
-import { image, statement } from "../fields";
+import React from "react";
+
+import { statement } from "../fields";
 import { brandColors } from "../fields/brandColors";
 
 export default {
@@ -8,13 +10,6 @@ export default {
   fields: [
     statement,
     {
-      name: "images",
-      type: "array",
-      validation: (Rule) => Rule.length(2),
-      description: "Top right and bottom left images",
-      of: [image],
-    },
-    {
       name: "backgroundColor",
       title: "Background Color",
       type: "string",
@@ -22,20 +17,44 @@ export default {
       description: "Font colours adapt automatically",
       validation: (Rule) => Rule.required(),
       options: {
-        list: brandColors,
+        list: [...brandColors, { title: "Image", value: "image" }],
       },
+    },
+    {
+      name: "image",
+      title: "Background Image",
+      type: "image",
+      fields: [
+        {
+          name: "alt",
+          title: "Alt",
+          type: "string",
+        },
+      ],
+      hidden: ({ parent }) => parent.backgroundColor !== "image",
+      description: (
+        <span>
+          Consider compressing your images before uploading them. We recommend{" "}
+          <a
+            href="https://squoosh.app/"
+            target="_blank"
+            rel="noreferrer noopener"
+          >
+            Squoosh App
+          </a>{" "}
+          for this.
+        </span>
+      ),
     },
   ],
   preview: {
     select: {
-      media: "images[0].image",
-      subtitle: "images.length",
+      bg: "backgroundColor",
     },
-    prepare({ media, subtitle }) {
+    prepare({ bg }) {
       return {
         title: "Large Statements",
-        subtitle: `x${subtitle || 0} images`,
-        media,
+        subtitle: `Background: ${bg}`,
       };
     },
   },

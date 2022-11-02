@@ -3,63 +3,22 @@ import styled from "styled-components";
 export const LargeStatements = styled.section`
   --padding: 1.6rem;
 
-  &.has-images {
-    --padding: 3.2rem;
-  }
-
   background-color: ${({ theme }) => theme.background};
   padding: var(--padding);
   position: relative;
+  overflow: hidden;
 
   @media (min-width: 768px) {
     --padding: 1.6rem;
-
-    &.has-images {
-      --padding: 6.4rem;
-    }
 
     padding: calc(var(--padding) * 3) var(--padding);
   }
 
   .container {
+    z-index: 10;
     position: relative;
-  }
-
-  .statement__image {
-    aspect-ratio: 248/158;
-    position: relative;
-    border-radius: 0.8rem;
-    box-shadow: var(--drop);
-    overflow: hidden;
-    width: 100%;
-    z-index: 50;
-
-    @media (min-width: 768px) {
-      position: absolute;
-      width: calc(100% - (var(--padding)));
-      max-width: 24.8rem;
-    }
-
-    &--1 {
-      @media (min-width: 768px) {
-        bottom: calc(var(--padding) + 25vw * -1);
-      }
-
-      @media (min-width: 1000px) {
-        bottom: calc(var(--padding) * -2.25);
-      }
-    }
-
-    &--2 {
-      @media (min-width: 768px) {
-        right: var(--padding);
-        top: calc(var(--padding) + 25vw * -1);
-      }
-
-      @media (min-width: 1000px) {
-        top: calc(var(--padding) * -2.25);
-      }
-    }
+    mix-blend-mode: ${({ theme }) =>
+      theme.background.includes("white") ? "multiply" : "screen"};
   }
 
   .statement {
@@ -79,8 +38,6 @@ export const LargeStatements = styled.section`
       line-height: 1.1;
       text-align: center;
       text-transform: uppercase;
-      mix-blend-mode: ${({ theme }) =>
-        theme.background.includes("white") ? "multiply" : "screen"};
     }
 
     strong {
@@ -110,4 +67,13 @@ export const LargeStatements = styled.section`
       }
     }
   }
+`;
+
+export const BGImage = styled.div`
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  z-index: 0;
 `;
