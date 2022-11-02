@@ -6,7 +6,7 @@ export const SimpleBodyCopy = styled.div`
   }
 
   .simpleBody__bolt {
-    margin: 0 0 1.6rem 0;
+    padding: 0 0 1.6rem 0;
 
     svg path {
       fill: ${({ theme }) => theme.bolt};
