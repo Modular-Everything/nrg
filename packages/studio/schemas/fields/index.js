@@ -50,12 +50,12 @@ export const statement = {
               {
                 title: "Add background to text",
                 value: "strong",
-                // blockEditor: { icon: "🖊" },
+                blockEditor: { icon: <>🖊</> },
               },
               {
                 title: "Add small text",
                 value: "em",
-                // blockEditor: { icon: "🤏" },
+                blockEditor: { icon: <>🤏</> },
               },
             ],
           },
@@ -63,16 +63,6 @@ export const statement = {
       ],
     },
   ],
-  // preview: {
-  //   select: {
-  //     title: "statement",
-  //   },
-  //   prepare: ({ title }) => ({
-  //     title: `${title[0].children[0].text}...`,
-  //     media: <Icon />,
-  //     subtitle: "Statement",
-  //   }),
-  // },
 };
 
 export const bodyCopy = {
