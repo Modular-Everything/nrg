@@ -25,6 +25,7 @@ export const Vimeo = styled.div`
       background: var(--nrg-black);
       position: absolute;
       top: 0;
+      pointer-events: none;
       left: 0;
       width: 100%;
       height: 100%;
