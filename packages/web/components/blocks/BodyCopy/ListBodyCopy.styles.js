@@ -5,7 +5,6 @@ export const ListBodyCopy = styled.div.attrs((props) => ({
     props.columns === 3
       ? "minmax(15rem, 25%) 1fr minmax(20rem, 20%)"
       : "minmax(15rem, 25%) 1fr",
-  // bodyWidth: props.columns === 3 ? '56rem' : 'unset'
 }))`
   color: ${({ theme }) => theme.copy};
 
