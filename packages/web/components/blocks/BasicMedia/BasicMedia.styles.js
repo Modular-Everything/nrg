@@ -13,6 +13,7 @@ export const BasicMedia = styled.div`
   position: relative;
   display: flex;
   overflow: hidden;
+  height: 75vh;
 
   .background {
     position: absolute;
@@ -23,26 +24,9 @@ export const BasicMedia = styled.div`
 
     &.standalone {
       position: relative;
-      min-height: 75vh;
 
       .imageElement {
         height: 100%;
-      }
-    }
-
-    &.vimeo {
-      @supports (aspect-ratio: 1/1) {
-        aspect-ratio: 1200/698;
-        min-height: 100%;
-      }
-    }
-
-    .vimeo {
-      --video-width: 1200;
-      --video-height: 698;
-
-      iframe {
-        transform: scale(115%);
       }
     }
   }
@@ -51,16 +35,6 @@ export const BasicMedia = styled.div`
     position: relative;
     z-index: 10;
     width: 100%;
-
-    &.headline,
-    &.headlineAlt,
-    &.bolt,
-    &.read {
-      @supports (aspect-ratio: 1/1) {
-        aspect-ratio: 1200/698;
-        min-height: 100%;
-      }
-    }
 
     &.headline,
     &.statementText,
