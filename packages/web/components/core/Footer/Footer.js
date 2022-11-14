@@ -1,5 +1,9 @@
 import Link from "next/link";
-import { BsLinkedin as LiIcon, BsInstagram as InstaIcon } from "react-icons/bs";
+import {
+  BsLinkedin as LiIcon,
+  BsInstagram as InstaIcon,
+  BsVimeo as VimeoIcon,
+} from "react-icons/bs";
 
 import { Bolt, FooterBadge } from "../../icons/BadgeBolt";
 import { Container } from "../Container";
@@ -9,26 +13,44 @@ export function Footer() {
   return (
     <S.Footer>
       <Container>
-        {" "}
         <div className="contact-socials">
           <div className="contact">
             <h4>Connect with us</h4>
-            <Link href="/">
-              <a>madewithnrg.com</a>
-            </Link>
-            <a href="mailto:info@madewithnrg.com">info@madewithnrg.com</a>
+            <span>
+              E. <a href="mailto:info@madewithnrg.com">info@madewithnrg.com</a>
+            </span>
+            <span>
+              Tel. <a href="tel:310.255.7995">310.255.7995</a>
+            </span>
           </div>
 
           <div className="socials">
             <ul>
               <li>
-                <a href="https://instagram.com/madewithnrg">
+                <a
+                  href="https://instagram.com/madewithnrg"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <InstaIcon />
                 </a>
               </li>
               <li>
-                <a href="https://www.linkedin.com/company/nrg-marketing-llc/">
+                <a
+                  href="https://www.linkedin.com/company/nrg-marketing-llc/"
+                  target="_blank"
+                  rel="noreferrer"
+                >
                   <LiIcon />
+                </a>
+              </li>
+              <li>
+                <a
+                  href="https://vimeo.com/madewithnrg"
+                  target="_blank"
+                  rel="noreferrer"
+                >
+                  <VimeoIcon />
                 </a>
               </li>
             </ul>
