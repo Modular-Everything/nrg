@@ -9,7 +9,6 @@ export const sanityClient = createClient(config);
 export const previewClient = createClient({
   ...config,
   useCdn: false,
-  documentLimit: 4000,
   token: process.env.SANITY_API_TOKEN,
 });
 
