@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { useRef } from "react";
-import { Navigation, Scrollbar, A11y } from "swiper";
+import { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -28,11 +28,17 @@ export function Carousel({ data }) {
   const swiperPrev = useRef(null);
   const swiperNext = useRef(null);
 
+  const autoplay = !(
+    data?.autoPlayCarousel === 0 ||
+    data?.autoPlayCarousel === null ||
+    data?.autoPlayCarousel === undefined
+  );
+
   return (
     <S.Carousel>
       <Container>
         <Swiper
-          modules={[Navigation, Scrollbar, A11y]}
+          modules={[Navigation, Scrollbar, A11y, Autoplay]}
           navigation={{
             nextEl: swiperNext.current,
             prevEl: swiperPrev.current,
@@ -45,6 +51,12 @@ export function Carousel({ data }) {
           loopAdditionalSlides={1}
           slidesPerView="auto"
           loop={data?.standardCards?.length > 3}
+          autoplay={{
+            enabled: autoplay,
+            delay: data?.autoPlayCarousel || 3000,
+            disableOnInteraction: false,
+            waitForTransition: false,
+          }}
         >
           {data?.standardCards?.map((card) => {
             if (!card?.image?.asset) {

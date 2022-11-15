@@ -22,7 +22,7 @@ export default {
     },
     {
       name: "standardCards",
-      title: "Standard Cards",
+      title: "Cards",
       type: "array",
       hidden: ({ parent }) => !parent.layoutType,
       validation: (Rule) => Rule.required(),
@@ -33,6 +33,13 @@ export default {
           fields: [subtitle, image, bodyCopy, linkToRef],
         },
       ],
+    },
+    {
+      name: "autoPlayCarousel",
+      title: "Autoplay Carousel",
+      type: "number",
+      description: "Set a value in seconds to enable carousel autoplaying",
+      hidden: ({ parent }) => !parent.layoutType,
     },
   ],
   preview: {
