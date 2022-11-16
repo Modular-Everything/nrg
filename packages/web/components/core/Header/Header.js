@@ -1,32 +1,43 @@
 import Link from "next/link";
 import { useRouter } from "next/router";
 import PropTypes from "prop-types";
-import { Fragment, useRef, useState, useEffect } from "react";
+import { Fragment, useRef, useEffect } from "react";
 
 import { Logo } from "../../icons/Logo";
 import { Container } from "../Container";
 import * as S from "./Header.styles";
 
-function handleMenuOpen(e, blackBarRef, { menu }) {
-  const { activeMenu, setActiveMenu } = menu;
-  const wrapOuter = e.target.parentNode.parentNode.parentNode;
+function handleMenuOpen(e, blackBarRef) {
+  const target = e.target.parentNode.querySelector("input");
+  const wrapOuter = target.parentNode.parentNode.parentNode;
 
-  if (e.target.dataset.id === activeMenu) {
-    setActiveMenu(null);
-    wrapOuter.classList.remove("open");
-    e.target.checked = false;
-  } else {
-    const subMenuHeight =
-      e.target.parentNode.querySelector(".nav__wrap--inner").clientHeight;
-
-    setActiveMenu(e.target.dataset.id);
+  if (target.checked) {
+    target.checked = false;
+    target.removeAttribute("checked");
     wrapOuter.classList.add("open");
+    blackBarRef.current.classList.remove("closed");
+  } else {
+    target.checked = true;
+    wrapOuter.classList.add("open");
+    const subMenuHeight =
+      target.parentNode.querySelector(".nav__wrap--inner").clientHeight;
+    blackBarRef.current.classList.remove("closed");
     blackBarRef.current.style.height = `calc(${subMenuHeight}px + (2.4rem) * 2)`;
   }
 }
 
+function closeMenu(blackBarRef) {
+  const { current: blackBar } = blackBarRef;
+  const menuForm = document.querySelector("header form");
+
+  if (!blackBar.classList.contains("closed")) {
+    blackBar.classList.add("closed");
+    blackBar.removeAttribute("style");
+    menuForm.reset();
+  }
+}
+
 export function Header({ data }) {
-  const [activeMenu, setActiveMenu] = useState(null);
   const blackBarRef = useRef(null);
   const formRef = useRef(null);
   const wrapperRef = useRef(null);
@@ -40,6 +51,16 @@ export function Header({ data }) {
     blackBar.classList.remove("open");
     blackBar.classList.add("closed");
   }, [router]);
+
+  useEffect(() => {
+    const wrapper = document.querySelector(".wrapper");
+    wrapper.addEventListener("mouseover", () => {
+      closeMenu(blackBarRef);
+    });
+    wrapper.addEventListener("touchstart", () => {
+      closeMenu(blackBarRef);
+    });
+  }, []);
 
   return (
     <S.Header>
@@ -65,13 +86,14 @@ export function Header({ data }) {
                           name="nav"
                           aria-label="Open Menu"
                           data-id={topLevel._key}
-                          onClick={(e) =>
-                            handleMenuOpen(e, blackBarRef, {
-                              menu: { activeMenu, setActiveMenu },
-                            })
-                          }
                         />
-                        <span className="nav__item--title">
+                        <span
+                          className="nav__item--title"
+                          role="button"
+                          tabIndex={-1}
+                          onMouseOver={(e) => handleMenuOpen(e, blackBarRef)}
+                          onFocus={(e) => handleMenuOpen(e, blackBarRef)}
+                        >
                           {topLevel.label}
                         </span>
                         <ul className="nav__wrap--inner">
@@ -98,10 +120,7 @@ export function Header({ data }) {
         </S.Nav>
       </Container>
 
-      <S.BlackBar
-        ref={blackBarRef}
-        className={activeMenu ? "open" : "closed"}
-      />
+      <S.BlackBar ref={blackBarRef} />
     </S.Header>
   );
 }
