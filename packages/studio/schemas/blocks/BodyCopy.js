@@ -19,6 +19,55 @@ function Pre({ children }) {
   );
 }
 
+const marks = {
+  annotations: [
+    {
+      name: "internalLink",
+      type: "object",
+      title: "Internal link",
+      icon: <>📍</>,
+      fields: [
+        {
+          name: "reference",
+          type: "reference",
+          title: "Reference",
+          to: allRefs,
+        },
+      ],
+    },
+    {
+      name: "link",
+      type: "object",
+      title: "External link",
+      icon: <>🌐</>,
+      fields: [
+        {
+          name: "href",
+          type: "url",
+          title: "URL/email",
+          description: (
+            <p>
+              Use <Pre>mailto:</Pre> to for emails, <Pre>https://</Pre> etc for
+              web. For example <Pre>mailto:gavin@madewithnrg.com</Pre> or{" "}
+              <Pre>https://madewithnrg.com</Pre>
+            </p>
+          ),
+          validation: (Rule) =>
+            Rule.uri({
+              scheme: ["http", "https", "mailto", "tel"],
+            }),
+        },
+        {
+          title: "Open in new tab",
+          name: "blank",
+          type: "boolean",
+        },
+      ],
+    },
+  ],
+  decorators: [],
+};
+
 export default {
   name: "bodyCopy",
   title: "Body Copy",
@@ -85,55 +134,7 @@ export default {
                 { title: "H3", value: "h3" },
               ],
               lists: [],
-              marks: {
-                annotations: [
-                  {
-                    name: "internalLink",
-                    type: "object",
-                    title: "Internal link",
-                    icon: <>📍</>,
-                    fields: [
-                      {
-                        name: "reference",
-                        type: "reference",
-                        title: "Reference",
-                        to: allRefs,
-                      },
-                    ],
-                  },
-                  {
-                    name: "link",
-                    type: "object",
-                    title: "External link",
-                    icon: <>🌐</>,
-                    fields: [
-                      {
-                        name: "href",
-                        type: "url",
-                        title: "URL/email",
-                        description: (
-                          <p>
-                            Use <Pre>mailto:</Pre> to for emails,{" "}
-                            <Pre>https://</Pre> etc for web. For example{" "}
-                            <Pre>mailto:gavin@madewithnrg.com</Pre> or{" "}
-                            <Pre>https://madewithnrg.com</Pre>
-                          </p>
-                        ),
-                        validation: (Rule) =>
-                          Rule.uri({
-                            scheme: ["http", "https", "mailto", "tel"],
-                          }),
-                      },
-                      {
-                        title: "Open in new tab",
-                        name: "blank",
-                        type: "boolean",
-                      },
-                    ],
-                  },
-                ],
-                decorators: [],
-              },
+              marks,
             },
           ],
         },
@@ -159,10 +160,7 @@ export default {
               type: "block",
               styles: [],
               lists: [],
-              marks: {
-                annotations: [],
-                decorators: [],
-              },
+              marks,
             },
           ],
         },
@@ -212,25 +210,7 @@ export default {
                 { title: "Tag List", value: "bullet" },
                 { title: "Ordered List", value: "number" },
               ],
-              marks: {
-                annotations: [
-                  {
-                    name: "internalLink",
-                    type: "object",
-                    title: "Internal link",
-                    icon: <>📍</>,
-                    fields: [
-                      {
-                        name: "reference",
-                        type: "reference",
-                        title: "Reference",
-                        to: allRefs,
-                      },
-                    ],
-                  },
-                ],
-                decorators: [],
-              },
+              marks,
             },
           ],
         },

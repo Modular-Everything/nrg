@@ -16,6 +16,17 @@ export function ListBodyCopy({ data, theme }) {
           </Link>
         );
       },
+      link: ({ children, value }) => {
+        return (
+          <a
+            href={value.href}
+            rel="noreferrer noopener"
+            target={value.blank ? "_blank" : "_self"}
+          >
+            {children}
+          </a>
+        );
+      },
     },
   };
 
@@ -38,7 +49,10 @@ export function ListBodyCopy({ data, theme }) {
         </div>
 
         <div className="listBody__body">
-          <PortableText value={data?.copyNoHeadlines?.content} />
+          <PortableText
+            value={data?.copyNoHeadlines?.content}
+            components={copyComponents}
+          />
           {data?.linkToRef?.link && (
             <Link href={data?.linkToRef?.link ?? "#"}>
               <a>

@@ -29,6 +29,18 @@ export function getQueryFromSlug(slugArray = []) {
           }
         }
       },
+      copyNoHeadlines {
+        ...,
+        content[] {
+          ...,
+          markDefs[] {
+            ...,
+            _type == "internalLink" => {
+              "slug": @.reference->slug
+            }
+          }
+        }
+      },
       allCards[] {
         ...,
         linkToRef {
