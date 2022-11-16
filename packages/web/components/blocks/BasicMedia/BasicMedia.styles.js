@@ -24,6 +24,7 @@ export const BasicMedia = styled.div`
 
     &.standalone {
       position: relative;
+      pointer-events: none;
 
       .imageElement {
         height: 100%;
