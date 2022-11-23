@@ -12,15 +12,16 @@ export const Header = styled.header`
 
   .container {
     height: var(--headerHeight);
-    display: flex;
-    justify-content: space-between;
+    display: grid;
+    grid-template-columns: 1fr auto 1fr;
+    width: 100%;
     align-items: center;
     gap: 1.2rem;
   }
 
   .logo {
     max-width: 10rem;
-    width: 25%;
+    width: 100%;
 
     svg {
       width: 100%;
@@ -29,7 +30,6 @@ export const Header = styled.header`
 `;
 
 export const Nav = styled.nav`
-  width: 100%;
   height: 100%;
 
   form {
@@ -38,7 +38,7 @@ export const Nav = styled.nav`
 
   .nav__wrap--outer {
     display: flex;
-    justify-content: flex-end;
+    justify-content: start;
     align-items: center;
     position: relative;
     gap: 0.8rem;
@@ -119,6 +119,7 @@ export const Nav = styled.nav`
   }
 
   .nav__item--title {
+    white-space: nowrap;
     cursor: pointer;
     text-transform: uppercase;
     font-size: clamp(1.8rem, 4vw, 2.4rem);

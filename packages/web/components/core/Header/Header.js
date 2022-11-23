@@ -5,6 +5,7 @@ import { Fragment, useRef, useEffect } from "react";
 
 import { Logo } from "../../icons/Logo";
 import { Container } from "../Container";
+import { SearchIcon } from "../Search";
 import * as S from "./Header.styles";
 
 function handleMenuOpen(e, blackBarRef) {
@@ -65,12 +66,6 @@ export function Header({ data }) {
   return (
     <S.Header>
       <Container>
-        <Link href="/">
-          <a className="logo">
-            <Logo />
-          </a>
-        </Link>
-
         <S.Nav role="navigation">
           <form ref={formRef}>
             <ul className="nav__wrap--outer" ref={wrapperRef}>
@@ -118,6 +113,14 @@ export function Header({ data }) {
             </ul>
           </form>
         </S.Nav>
+
+        <Link href="/">
+          <a className="logo">
+            <Logo />
+          </a>
+        </Link>
+
+        <SearchIcon />
       </Container>
 
       <S.BlackBar ref={blackBarRef} />

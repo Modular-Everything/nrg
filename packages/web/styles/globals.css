@@ -101,3 +101,35 @@ a {
   position: relative;
   top: var(--headerHeight);
 }
+
+.aa-Panel .aa-PanelLayout {
+  padding: var(--aa-spacing-half) !important;
+}
+
+.aa-List .aa-Item {
+  padding: 0.6rem 0 0.4rem !important;
+}
+
+.aa-List .aa-Item:not(:last-of-type) {
+  margin-bottom: calc(var(--aa-spacing-half) / 2);
+}
+
+.aa-Item .aa-ItemIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center !important;
+}
+
+.aa-ItemContent {
+  gap: 0.4rem !important;
+}
+
+.aa-Panel {
+  border-radius: 0 !important;
+  margin-top: 0 !important;
+}
+
+.disable-scroll {
+  position: fixed;
+  width: 100%;
+}

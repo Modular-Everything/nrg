@@ -19,6 +19,13 @@ function MyApp({ Component, pageProps }) {
             siteId: 'f06b5bae-3b08-4cb3-ab6c-3d2cca356d75',
             branch: 'main',
             selector: 'div#search',
+            theme: {
+              mark: 'var(--nrg-red)',
+              background: 'var(--nrg-white)',
+              selected: 'var(--nrg-lt-grey)',
+              text: 'var(--nrg-black)',
+              colorSourceIcon: 'var(--nrg-dk-grey)',
+            }
           });
         `}
       </Script>

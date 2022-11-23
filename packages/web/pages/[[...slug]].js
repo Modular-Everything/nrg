@@ -5,6 +5,7 @@ import { Footer } from "../components/core/Footer";
 import { Header } from "../components/core/Header";
 import { Page } from "../components/core/Page";
 import { PreviewMode } from "../components/core/PreviewMode";
+import { Search, SearchSkrim } from "../components/core/Search";
 import { filterDataToSingleItem } from "../helpers/filterDataToSingleItem";
 import { getQueryFromSlug } from "../helpers/getQueryFromSlug";
 import { usePreviewSubscription } from "../lib/sanity";
@@ -33,6 +34,9 @@ export default function Home({ data, preview }) {
       {preview && <PreviewMode />}
 
       <Header data={globalSettings} />
+
+      <Search />
+      <SearchSkrim />
 
       <div className="wrapper">
         <Page data={page} />
