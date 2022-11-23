@@ -15,7 +15,7 @@ function MyApp({ Component, pageProps }) {
         {`
           algoliasearchNetlify({
             appId: 'P87ZSQJCNB',
-            apiKey: '6df980169d75276753cd28a8e3aacfb0',
+            apiKey: 'ee281042e56b76f587ebd3b02c53c81f',
             siteId: 'f06b5bae-3b08-4cb3-ab6c-3d2cca356d75',
             branch: 'main',
             selector: 'div#search',
