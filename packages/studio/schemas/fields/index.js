@@ -126,7 +126,7 @@ export const image = {
   fields: [
     {
       name: "alt",
-      title: "Alt",
+      title: "Descriptive label for SEO & screen readers",
       type: "string",
     },
     {
@@ -176,5 +176,40 @@ export const blocks = {
     { type: "logoGrid" },
     { type: "projectNavigation" },
     { type: "video" },
+  ],
+};
+
+export const seo = {
+  title: "SEO & social",
+  name: "seo",
+  type: "object",
+  options: {
+    collapsible: true,
+    collapsed: true,
+  },
+  fields: [
+    {
+      name: "title",
+      type: "string",
+      title: "Title for SEO & social sharing",
+      description:
+        "Optional: the settings in 'Site Settings' will be used if you left blank",
+      validation: (Rule) =>
+        Rule.max(70).warning(`A title shouldn't be more than 70 characters.`),
+    },
+    {
+      name: "description",
+      type: "text",
+      title: "Short paragraph for SEO & social sharing (meta description)",
+      description:
+        "Optional: the settings in 'Site Settings' will be used if you left blank",
+      validation: (Rule) =>
+        Rule.max(160).warning(`A title shouldn't be more than 160 characters.`),
+    },
+    {
+      name: "image",
+      title: "Image for social sharing",
+      type: "image",
+    },
   ],
 };

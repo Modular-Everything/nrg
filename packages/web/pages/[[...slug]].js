@@ -7,6 +7,7 @@ import { Page } from "../components/core/Page";
 import { PreviewMode } from "../components/core/PreviewMode";
 import { Search, SearchSkrim } from "../components/core/Search";
 import { filterDataToSingleItem } from "../helpers/filterDataToSingleItem";
+import { getImgUrl } from "../helpers/getImgUrl";
 import { getQueryFromSlug } from "../helpers/getQueryFromSlug";
 import { usePreviewSubscription } from "../lib/sanity";
 import { getClient } from "../lib/sanity.server";
@@ -27,8 +28,42 @@ export default function Home({ data, preview }) {
   return (
     <>
       <Head>
-        <title>{page?.title}</title>
+        <title>{page?.seo?.title || globalSettings?.seo?.title}</title>
+        <meta
+          name="description"
+          content={page?.seo?.description || globalSettings?.seo?.description}
+        />
         <link rel="icon" href="/favicon.ico" />
+        <meta chartset="utf-8" />
+        <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+        <meta
+          property="og:title"
+          content={page?.seo?.title || globalSettings?.seo?.title}
+        />
+        <meta property="og:type" content="website" />
+        <meta
+          property="og:image"
+          content={getImgUrl(page?.seo?.image || globalSettings?.seo?.image)
+            .width(1200)
+            .height(627)}
+        />
+        <meta
+          property="twitter:title"
+          content={page?.seo?.title || globalSettings?.seo?.title}
+        />
+        <meta property="twitter:card" content="summary_large_image" />
+        <meta
+          property="twitter:description"
+          content={page?.seo?.description || globalSettings?.seo?.description}
+        />
+        <meta
+          property="twitter:image"
+          content={getImgUrl(page?.seo?.image || globalSettings?.seo?.image)
+            .width(1200)
+            .height(627)}
+        />
+        <meta name="theme-color" content="#ff0000" />
+        <base href="/" />
       </Head>
 
       {preview && <PreviewMode />}

@@ -1,4 +1,4 @@
-import { title, blocks } from "../fields";
+import { title, blocks, seo } from "../fields";
 
 export default {
   name: "homepage",
@@ -13,5 +13,6 @@ export default {
       hidden: true,
     },
     blocks,
+    seo,
   ],
 };

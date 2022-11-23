@@ -1,19 +1,15 @@
+import { seo } from "./fields";
 import { allRefs } from "./fields/allRefs";
 
 export default {
   name: "globalSettings",
   title: "Global Settings",
   type: "document",
-  fieldsets: [
-    { name: "seo", title: "SEO" },
-    { name: "headerNav", title: "Header Navigation" },
-  ],
   fields: [
     {
       name: "navigation",
       title: "Navigation Items",
       type: "array",
-      fieldset: "headerNav",
       of: [
         {
           name: "link",
@@ -54,5 +50,6 @@ export default {
         },
       ],
     },
+    seo,
   ],
 };
