@@ -189,7 +189,7 @@ export const seo = {
   },
   fields: [
     {
-      name: "title",
+      name: "seoTitle",
       type: "string",
       title: "Title for SEO & social sharing",
       description:
@@ -198,7 +198,7 @@ export const seo = {
         Rule.max(70).warning(`A title shouldn't be more than 70 characters.`),
     },
     {
-      name: "description",
+      name: "seoDescription",
       type: "text",
       title: "Short paragraph for SEO & social sharing (meta description)",
       description:
@@ -207,7 +207,7 @@ export const seo = {
         Rule.max(160).warning(`A title shouldn't be more than 160 characters.`),
     },
     {
-      name: "image",
+      name: "seoImage",
       title: "Image for social sharing",
       type: "image",
     },

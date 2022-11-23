@@ -28,37 +28,45 @@ export default function Home({ data, preview }) {
   return (
     <>
       <Head>
-        <title>{page?.seo?.title || globalSettings?.seo?.title}</title>
+        <title>{page?.seo?.seoTitle || globalSettings?.seo?.seoTitle}</title>
         <meta
           name="description"
-          content={page?.seo?.description || globalSettings?.seo?.description}
+          content={
+            page?.seo?.seoDescription || globalSettings?.seo?.seoDescription
+          }
         />
         <link rel="icon" href="/favicon.svg" />
         <meta chartset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           property="og:title"
-          content={page?.seo?.title || globalSettings?.seo?.title}
+          content={page?.seo?.seoTitle || globalSettings?.seo?.seoTitle}
         />
         <meta property="og:type" content="website" />
         <meta
           property="og:image"
-          content={getImgUrl(page?.seo?.image || globalSettings?.seo?.image)
+          content={getImgUrl(
+            page?.seo?.seoImage || globalSettings?.seo?.seoImage
+          )
             ?.width(1200)
             ?.height(627)}
         />
         <meta
           property="twitter:title"
-          content={page?.seo?.title || globalSettings?.seo?.title}
+          content={page?.seo?.seoTitle || globalSettings?.seo?.seoTitle}
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta
           property="twitter:description"
-          content={page?.seo?.description || globalSettings?.seo?.description}
+          content={
+            page?.seo?.seoDescription || globalSettings?.seo?.seoDescription
+          }
         />
         <meta
           property="twitter:image"
-          content={getImgUrl(page?.seo?.image || globalSettings?.seo?.image)
+          content={getImgUrl(
+            page?.seo?.seoImage || globalSettings?.seo?.seoImage
+          )
             ?.width(1200)
             ?.height(627)}
         />
