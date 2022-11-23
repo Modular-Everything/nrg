@@ -29,7 +29,7 @@ export default function Home({ data, preview }) {
     <>
       <Head>
         <title>
-          {page?.seo?.title ||
+          {page?.seo?.seoTitle ||
             `${page?.title} | ${globalSettings?.seo?.seoTitle}`}
         </title>
         <meta
@@ -44,7 +44,7 @@ export default function Home({ data, preview }) {
         <meta
           property="og:title"
           content={
-            page?.seo?.title ||
+            page?.seo?.seoTitle ||
             `${page?.title} | ${globalSettings?.seo?.seoTitle}`
           }
         />
@@ -60,7 +60,7 @@ export default function Home({ data, preview }) {
         <meta
           property="twitter:title"
           content={
-            page?.seo?.title ||
+            page?.seo?.seoTitle ||
             `${page?.title} | ${globalSettings?.seo?.seoTitle}`
           }
         />
