@@ -17,7 +17,6 @@
     "@portabletext/react": "^1.0.3",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
-    "algoliasearch": "^4.14.2",
     "babel-plugin-styled-components": "^2.0.3",
     "get-video-id": "^3.5.3",
     "logrocket": "^2.2.0",
@@ -27,7 +26,6 @@
     "react": "17.0.2",
     "react-dom": "17.0.2",
     "react-icons": "^4.3.1",
-    "sanity-algolia": "^1.0.2",
     "styled-components": "^5.3.3",
     "swiper": "^8.0.6"
   },
