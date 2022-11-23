@@ -28,7 +28,10 @@ export default function Home({ data, preview }) {
   return (
     <>
       <Head>
-        <title>{page?.seo?.seoTitle || globalSettings?.seo?.seoTitle}</title>
+        <title>
+          {page?.seo?.title ||
+            `${page?.title} | ${globalSettings?.seo?.seoTitle}`}
+        </title>
         <meta
           name="description"
           content={
@@ -40,7 +43,10 @@ export default function Home({ data, preview }) {
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
           property="og:title"
-          content={page?.seo?.seoTitle || globalSettings?.seo?.seoTitle}
+          content={
+            page?.seo?.title ||
+            `${page?.title} | ${globalSettings?.seo?.seoTitle}`
+          }
         />
         <meta property="og:type" content="website" />
         <meta
@@ -53,7 +59,10 @@ export default function Home({ data, preview }) {
         />
         <meta
           property="twitter:title"
-          content={page?.seo?.seoTitle || globalSettings?.seo?.seoTitle}
+          content={
+            page?.seo?.title ||
+            `${page?.title} | ${globalSettings?.seo?.seoTitle}`
+          }
         />
         <meta property="twitter:card" content="summary_large_image" />
         <meta
