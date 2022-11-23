@@ -22,7 +22,7 @@ function MyApp({ Component, pageProps }) {
             theme: {
               mark: 'var(--nrg-red)',
               background: 'var(--nrg-white)',
-              selected: 'var(--nrg-lt-grey)',
+              selected: '#ddd',
               text: 'var(--nrg-black)',
               colorSourceIcon: 'var(--nrg-dk-grey)',
             }
