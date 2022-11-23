@@ -1,9 +1,29 @@
 import "../styles/sanitize.css";
 import "../styles/globals.css";
+import "../styles/algoliasearchNetlify.css";
+
+import Script from "next/script";
 
 function MyApp({ Component, pageProps }) {
   return (
-    <Component {...pageProps} />
+    <>
+      <Script
+        src="https://cdn.jsdelivr.net/npm/@algolia/algoliasearch-netlify-frontend@1/dist/algoliasearchNetlify.js"
+        strategy="beforeInteractive"
+      />
+      <Script id="algolia-search">
+        {`
+          algoliasearchNetlify({
+            appId: 'P87ZSQJCNB',
+            apiKey: '6df980169d75276753cd28a8e3aacfb0',
+            siteId: 'f06b5bae-3b08-4cb3-ab6c-3d2cca356d75',
+            branch: 'main',
+            selector: 'div#search',
+          });
+        `}
+      </Script>
+      <Component {...pageProps} />
+    </>
   );
 }
 

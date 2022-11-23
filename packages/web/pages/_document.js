@@ -32,7 +32,9 @@ export default class MyDocument extends Document {
     return (
       <Html>
         <Head />
+
         <body>
+          <div id="search" />
           <Main />
           <NextScript />
         </body>
