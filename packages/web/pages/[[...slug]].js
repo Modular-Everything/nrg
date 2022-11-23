@@ -44,8 +44,8 @@ export default function Home({ data, preview }) {
         <meta
           property="og:image"
           content={getImgUrl(page?.seo?.image || globalSettings?.seo?.image)
-            .width(1200)
-            .height(627)}
+            ?.width(1200)
+            ?.height(627)}
         />
         <meta
           property="twitter:title"
@@ -59,8 +59,8 @@ export default function Home({ data, preview }) {
         <meta
           property="twitter:image"
           content={getImgUrl(page?.seo?.image || globalSettings?.seo?.image)
-            .width(1200)
-            .height(627)}
+            ?.width(1200)
+            ?.height(627)}
         />
         <meta name="theme-color" content="#ff0000" />
         <base href="/" />
