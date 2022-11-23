@@ -128,8 +128,8 @@ a {
 }
 
 .aa-Panel {
-  border-radius: 0 !important;
-  margin-top: 0 !important;
+  border-radius: 0.8rem !important;
+  margin-top: 0.8rem !important;
 }
 
 .disable-scroll {

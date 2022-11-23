@@ -26,7 +26,7 @@ export const Search = styled.div`
 
   .aa-Form {
     border: 0;
-    border-radius: 0;
+    border-radius: 0.8rem;
   }
 
   .aa-Input {
