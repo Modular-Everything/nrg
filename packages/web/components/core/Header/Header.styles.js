@@ -99,14 +99,19 @@ export const Nav = styled.nav`
     pointer-events: none;
     transition: 250ms ease all;
     right: 0;
-    text-align: right;
     width: 100%;
     position: absolute;
     top: 100%;
     display: flex;
     flex-direction: column;
     align-items: flex-end;
+    text-align: right;
     top: calc(var(--headerHeight) - var(--navHeight) + 100%);
+
+    @media (min-width: 768px) {
+      align-items: flex-start;
+      text-align: left;
+    }
   }
 
   .nav__item--inner {
