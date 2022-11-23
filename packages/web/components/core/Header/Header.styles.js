@@ -13,15 +13,29 @@ export const Header = styled.header`
   .container {
     height: var(--headerHeight);
     display: grid;
-    grid-template-columns: 1fr auto 1fr;
     width: 100%;
     align-items: center;
     gap: 1.2rem;
+    grid-template-columns: auto 1fr auto;
+
+    @media (min-width: 768px) {
+      grid-template-columns: 1fr auto 1fr;
+    }
   }
 
   .logo {
-    max-width: 10rem;
+    max-width: 7rem;
     width: 100%;
+    order: 1;
+    justify-self: start;
+    padding-right: 0.8rem;
+
+    @media (min-width: 768px) {
+      margin-right: 0;
+      order: 2;
+      justify-self: center;
+      max-width: 10rem;
+    }
 
     svg {
       width: 100%;
@@ -31,6 +45,13 @@ export const Header = styled.header`
 
 export const Nav = styled.nav`
   height: 100%;
+  order: 2;
+  justify-self: end;
+
+  @media (min-width: 768px) {
+    order: 1;
+    justify-self: start;
+  }
 
   form {
     height: 100%;

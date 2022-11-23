@@ -57,6 +57,9 @@
 
   --ease-in-out: cubic-bezier(0.785, 0.135, 0.15, 0.86);
   --drop: 0 0.4rem 1rem rgba(0, 0, 0, 0.15);
+
+  --aa-detached-media-query: "none" !important;
+  --aa-detached-modal-media-query: "none" !important;
 }
 
 @media (min-width: 400px) {

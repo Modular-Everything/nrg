@@ -1,16 +1,20 @@
 import styled from "styled-components";
 
 export const Search = styled.div`
-  position: fixed;
-  top: 20%;
-  left: 50%;
-  width: 100%;
   max-width: 50rem;
   max-height: 50rem;
   z-index: 1100;
   opacity: 0;
+  padding: 2.4rem;
+  position: fixed;
+  top: 20%;
+  width: 100%;
   transition: 220ms ease opacity;
-  transform: translateX(-50%);
+
+  @media (min-width: 500px) {
+    left: 50%;
+    transform: translateX(-50%);
+  }
 
   &.open {
     opacity: 1;
@@ -53,6 +57,7 @@ export const SearchButton = styled.button`
   cursor: pointer;
   display: grid;
   place-content: center;
+  order: 3;
   justify-self: end;
 
   @media (min-width: 640px) {
