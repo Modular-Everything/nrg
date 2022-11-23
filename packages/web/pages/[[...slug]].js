@@ -33,7 +33,7 @@ export default function Home({ data, preview }) {
           name="description"
           content={page?.seo?.description || globalSettings?.seo?.description}
         />
-        <link rel="icon" href="/favicon.ico" />
+        <link rel="icon" href="/favicon.svg" />
         <meta chartset="utf-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
         <meta
