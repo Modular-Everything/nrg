@@ -15,11 +15,11 @@ export const Header = styled.header`
     display: grid;
     width: 100%;
     align-items: center;
-    gap: 1.2rem;
+    gap: 1.8rem;
     grid-template-columns: auto 1fr auto;
 
     @media (min-width: 768px) {
-      grid-template-columns: 1fr auto 1fr;
+      gap: 4rem;
     }
   }
 
@@ -29,13 +29,6 @@ export const Header = styled.header`
     order: 1;
     justify-self: start;
     padding-right: 0.8rem;
-
-    @media (min-width: 768px) {
-      margin-right: 0;
-      order: 2;
-      justify-self: center;
-      max-width: 10rem;
-    }
 
     svg {
       width: 100%;
@@ -47,11 +40,6 @@ export const Nav = styled.nav`
   height: 100%;
   order: 2;
   justify-self: end;
-
-  @media (min-width: 768px) {
-    order: 1;
-    justify-self: start;
-  }
 
   form {
     height: 100%;
@@ -107,11 +95,6 @@ export const Nav = styled.nav`
     align-items: flex-end;
     text-align: right;
     top: calc(var(--headerHeight) - var(--navHeight) + 100%);
-
-    @media (min-width: 768px) {
-      align-items: flex-start;
-      text-align: left;
-    }
   }
 
   .nav__item--inner {
