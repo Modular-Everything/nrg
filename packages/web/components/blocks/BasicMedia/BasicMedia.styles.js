@@ -13,7 +13,11 @@ export const BasicMedia = styled.div`
   position: relative;
   display: flex;
   overflow: hidden;
-  height: 75vh;
+  height: 50vh;
+
+  @media (min-width: 768px) {
+    height: 75vh;
+  }
 
   .background {
     position: absolute;
