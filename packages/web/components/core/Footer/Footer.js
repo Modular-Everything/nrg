@@ -57,7 +57,7 @@ export function Footer() {
           </div>
         </div>
         <div className="newsletter">
-          <form>
+          {/* <form>
             <label>
               <h4>Sign up to our newsletter</h4>
               <div className="input">
@@ -69,7 +69,7 @@ export function Footer() {
                 <button type="submit">Submit</button>
               </div>
             </label>
-          </form>
+          </form> */}
         </div>
         <div className="badge-copyright">
           <div className="badge">
