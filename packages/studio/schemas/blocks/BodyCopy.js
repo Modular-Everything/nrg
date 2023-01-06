@@ -170,6 +170,7 @@ export default {
       name: "linkToRef",
       title: "Call to Action",
       type: "object",
+      description: "Link to either an internal document or external website.",
       hidden: ({ parent }) => parent.layoutType === "body",
       fields: [
         {
@@ -180,7 +181,7 @@ export default {
         },
         {
           name: "link",
-          title: "Link",
+          title: "Internal Link",
           type: "reference",
           to: [
             { type: "newsPost" },
@@ -189,6 +190,13 @@ export default {
             { type: "project" },
             { type: "service" },
           ],
+        },
+        {
+          name: "externalLink",
+          title: "External Link",
+          description:
+            "Setting an internal link will take priority. To use an external link, be sure to clear the internal link first.",
+          type: "url",
         },
       ],
     },

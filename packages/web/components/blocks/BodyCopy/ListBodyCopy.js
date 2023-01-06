@@ -53,8 +53,8 @@ export function ListBodyCopy({ data, theme }) {
             value={data?.copyNoHeadlines?.content}
             components={copyComponents}
           />
-          {data?.linkToRef?.link && (
-            <Link href={data?.linkToRef?.link ?? "#"}>
+          {(data?.linkToRef?.link || data?.linkToRef?.externalLink) && (
+            <Link href={data?.linkToRef?.link ?? data?.linkToRef?.externalLink}>
               <a>
                 <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
               </a>
