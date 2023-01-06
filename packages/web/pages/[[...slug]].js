@@ -79,7 +79,7 @@ export default function Home({ data, preview }) {
             ?.width(1200)
             ?.height(627)}
         />
-        <meta name="theme-color" content="#ff0000" />
+        <meta name="theme-color" content="#191919" />
         <base href="/" />
       </Head>
 
