@@ -10,6 +10,7 @@ export const Search = styled.div`
   top: 20%;
   width: 100%;
   transition: 220ms ease opacity;
+  pointer-events: none;
 
   @media (min-width: 500px) {
     left: 50%;
@@ -18,6 +19,7 @@ export const Search = styled.div`
 
   &.open {
     opacity: 1;
+    pointer-events: all;
   }
 
   .aa-Autocomplete {
