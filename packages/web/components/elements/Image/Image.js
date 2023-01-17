@@ -23,9 +23,10 @@ export function Image({ src, saturate, layout, ...rest }) {
         </>
       )}
       <NextImage
-        src={image.url()}
-        placeholder="blur"
-        blurDataURL={image.blur().url()}
+        src={image
+          .fit("crop")
+          .width(width < 2500 ? width : 2500)
+          .url()}
         layout={layout}
         width={layout === "fill" ? null : width}
         height={layout === "fill" ? null : height}
