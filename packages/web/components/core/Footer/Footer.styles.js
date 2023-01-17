@@ -95,6 +95,13 @@ export const Footer = styled.footer`
       }
     }
 
+    .newsletter__errors {
+      display: block;
+      font-size: 1.2rem;
+      margin-top: 0.4rem;
+      color: var(--nrg-red);
+    }
+
     .input {
       display: grid;
       grid-template-columns: 1fr auto;

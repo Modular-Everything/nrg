@@ -1,15 +1,23 @@
 import Link from "next/link";
+import { useForm } from "react-hook-form";
 import {
   BsLinkedin as LiIcon,
   BsInstagram as InstaIcon,
   BsVimeo as VimeoIcon,
 } from "react-icons/bs";
+import MailchimpSubscribe from "react-mailchimp-subscribe";
 
 import { Bolt, FooterBadge } from "../../icons/BadgeBolt";
 import { Container } from "../Container";
 import * as S from "./Footer.styles";
 
 export function Footer() {
+  const {
+    register,
+    handleSubmit,
+    formState: { errors },
+  } = useForm();
+
   return (
     <S.Footer>
       <Container>
@@ -56,21 +64,48 @@ export function Footer() {
             </ul>
           </div>
         </div>
+
         <div className="newsletter">
-          {/* <form>
-            <label>
-              <h4>Sign up to our newsletter</h4>
-              <div className="input">
-                <input
-                  type="email"
-                  id="newsletter-email"
-                  aria-label="Sign up to our newsletter"
-                />
-                <button type="submit">Submit</button>
-              </div>
-            </label>
-          </form> */}
+          <h4>Sign up to our newsletter</h4>
+          <MailchimpSubscribe
+            url={`https://anonaddy.us1.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`}
+            render={({ subscribe, status, message }) => {
+              const onSubmit = (data) =>
+                subscribe({
+                  EMAIL: data.email,
+                });
+
+              return (
+                <form onSubmit={handleSubmit(onSubmit)}>
+                  <label htmlFor="newsletter-email">
+                    <div className="input">
+                      <input
+                        type="email"
+                        id="newsletter-email"
+                        aria-label="Sign up to our newsletter"
+                        {...register("email", { required: true })}
+                      />
+                      <button type="submit">Submit</button>
+                      {errors.email && (
+                        <span className="newsletter__errors">
+                          This field is required
+                        </span>
+                      )}
+                      {status && (
+                        <span
+                          className="newsletter__errors"
+                          // eslint-disable-next-line react/no-danger
+                          dangerouslySetInnerHTML={{ __html: message }}
+                        />
+                      )}
+                    </div>
+                  </label>
+                </form>
+              );
+            }}
+          />
         </div>
+
         <div className="badge-copyright">
           <div className="badge">
             <Link href="/">
