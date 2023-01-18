@@ -68,11 +68,12 @@ export function Footer() {
         <div className="newsletter">
           <h4>Sign up to our newsletter</h4>
           <MailchimpSubscribe
-            url={`https://anonaddy.us1.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`}
+            url={`https://madewithNRG.us7.list-manage.com/subscribe/post?u=${process.env.NEXT_PUBLIC_MAILCHIMP_U}&id=${process.env.NEXT_PUBLIC_MAILCHIMP_ID}`}
             render={({ subscribe, status, message }) => {
               const onSubmit = (data) =>
                 subscribe({
                   EMAIL: data.email,
+                  "group[84801][1]": "1",
                 });
 
               return (
