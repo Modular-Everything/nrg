@@ -11,8 +11,8 @@ export function Vimeo({ url, contained, paused }) {
           src={`https://player.vimeo.com/video/${
             getVideoId(url).id
           }?h=0f405f633e${
-            !paused && "&amp;muted=1&amp;autoplay=1&amp;loop=1&amp;background=1"
-          }&amp;app_id=122963`}
+            !paused && "&muted=1&autoplay=1&loop=1&background=1"
+          }&app_id=122963`}
           title="Vimeo"
           width="1920"
           height="1080"
