@@ -19,7 +19,9 @@ export const BodyCopy = styled.section`
     }
   }
 
-  h2 {
+  h2,
+  h3,
+  h4 {
     column-span: all;
     margin: 0 0 1.6rem 0;
     padding: 0;
@@ -42,7 +44,8 @@ export const BodyCopy = styled.section`
     }
 
     & + h2,
-    & + h3 {
+    & + h3,
+    & + h4 {
       margin-top: 4rem;
     }
   }
