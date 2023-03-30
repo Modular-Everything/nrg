@@ -8,7 +8,7 @@ export const ListBodyCopy = styled.div.attrs((props) => ({
 }))`
   color: ${({ theme }) => theme.copy};
 
-  h3 {
+  h2 {
     margin: 0;
     color: ${({ theme }) => theme.title};
   }

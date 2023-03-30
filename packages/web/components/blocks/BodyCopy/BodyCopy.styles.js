@@ -32,7 +32,7 @@ export const BodyCopy = styled.section`
     font-weight: 500;
   }
 
-  h3 {
+  h2 {
     font-family: var(--grotesque);
     font-size: 2.2rem;
     line-height: 2.4rem;
