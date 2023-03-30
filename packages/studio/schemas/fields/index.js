@@ -204,8 +204,6 @@ export const seo = {
       title: "Short paragraph for SEO & social sharing (meta description)",
       description:
         "Optional: the settings in 'Site Settings' will be used if you left blank",
-      validation: (Rule) =>
-        Rule.max(160).warning(`A title shouldn't be more than 160 characters.`),
     },
     {
       name: "seoImage",
