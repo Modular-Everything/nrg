@@ -130,6 +130,7 @@ export default {
               type: "block",
               styles: [
                 { title: "Normal", value: "normal" },
+                { title: "H1", value: "h1" },
                 { title: "H2", value: "h2" },
                 { title: "H3", value: "h3" },
               ],
@@ -145,6 +146,23 @@ export default {
       title: "Headline",
       type: "string",
       hidden: ({ parent }) => parent.layoutType !== "list",
+    },
+    {
+      name: "headlineHeading",
+      title: "Headline Heading",
+      type: "string",
+      initialValue: "h2",
+      description:
+        "Which heading (h1, h2, etc) to use for this title. Always styled the same. H2 is used if left blank.",
+      hidden: ({ parent }) => parent.layoutType !== "list",
+      options: {
+        list: [
+          { title: "H1", value: "h1" },
+          { title: "H2", value: "h2" },
+          { title: "H3", value: "h3" },
+          { title: "H4", value: "h4" },
+        ],
+      },
     },
     {
       name: "copyNoHeadlines",
