@@ -45,7 +45,7 @@ export function ListBodyCopy({ data, theme }) {
         )}
 
         <div className="listBody__headline">
-          {data?.headline && <h2>{data.headline}</h2>}
+          {data?.headline && <h3>{data.headline}</h3>}
         </div>
 
         <div className="listBody__body">
