@@ -19,14 +19,14 @@ export const BodyCopy = styled.section`
     }
   }
 
-  h2,
-  h3 {
+  h1,
+  h2 {
     column-span: all;
     margin: 0 0 1.6rem 0;
     padding: 0;
   }
 
-  h2 {
+  h1 {
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 500;
