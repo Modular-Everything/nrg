@@ -44,7 +44,7 @@ export function List({ data }) {
   return (
     <S.List style={{ backgroundColor: background }}>
       <Container>
-        {data?.title && <h3 style={{ color: title }}>{data.title}</h3>}
+        {data?.title && <h2 style={{ color: title }}>{data.title}</h2>}
 
         <ul className="grid">
           {data?.listItems?.map((item, index) => {

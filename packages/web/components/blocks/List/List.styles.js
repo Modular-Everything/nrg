@@ -3,7 +3,7 @@ import styled from "styled-components";
 export const List = styled.section`
   padding: 6.4rem 0;
 
-  h3 {
+  h2 {
     font-family: var(--grotesque);
     font-size: 2.2rem;
     line-height: 2.4rem;
