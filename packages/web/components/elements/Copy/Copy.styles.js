@@ -7,13 +7,13 @@ export const Copy = styled.div`
     padding: 0;
   }
 
-  h1 {
+  h2 {
     font-size: 2.4rem;
     line-height: 3.2rem;
     font-weight: 500;
   }
 
-  h2 {
+  h3 {
     font-family: var(--grotesque);
     font-size: 2.2rem;
     line-height: 2.4rem;
