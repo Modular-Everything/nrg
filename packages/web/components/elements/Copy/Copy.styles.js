@@ -1,18 +1,12 @@
 import styled from "styled-components";
 
 export const Copy = styled.div`
-  h2,
-  h3 {
+  h2 {
     margin: 0 0 1rem 0;
     padding: 0;
   }
 
-  h2 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    font-weight: 500;
-  }
-
+  h2,
   h3 {
     font-family: var(--grotesque);
     font-size: 2.2rem;

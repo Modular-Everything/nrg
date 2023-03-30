@@ -30,15 +30,8 @@ export const HoverCTA = styled.article`
     left: 0;
     z-index: 10;
 
+    h2,
     h3 {
-      font-family: var(--grotesque);
-      font-size: 1.6rem;
-      line-height: 2rem;
-      text-transform: uppercase;
-      margin-top: 0;
-    }
-
-    h2 {
       font-family: var(--simplon);
       font-style: normal;
       font-weight: 600;
