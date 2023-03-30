@@ -6,6 +6,22 @@ import { LinkToRef } from "../../elements/LinkToRef";
 import { Bolt } from "../../icons/BadgeBolt";
 import * as S from "./ListBodyCopy.styles";
 
+function setHeaderLevel(level, children) {
+  if (level === "h1") {
+    return <h1>{children}</h1>;
+  }
+  if (level === "h2") {
+    return <h2>{children}</h2>;
+  }
+  if (level === "h3") {
+    return <h3>{children}</h3>;
+  }
+  if (level === "h4") {
+    return <h4>{children}</h4>;
+  }
+  return <h2>{children}</h2>;
+}
+
 export function ListBodyCopy({ data, theme }) {
   const copyComponents = {
     marks: {
@@ -45,7 +61,8 @@ export function ListBodyCopy({ data, theme }) {
         )}
 
         <div className="listBody__headline">
-          {data?.headline && <h2>{data.headline}</h2>}
+          {data?.headline &&
+            setHeaderLevel(data?.headlineHeading, data.headline)}
         </div>
 
         <div className="listBody__body">
