@@ -7,6 +7,12 @@ export default {
   type: "document",
   fields: [
     {
+      name: "title",
+      title: "Title",
+      type: "string",
+      hidden: true,
+    },
+    {
       name: "navigation",
       title: "Navigation Items",
       type: "array",

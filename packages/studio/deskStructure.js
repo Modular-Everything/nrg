@@ -1,4 +1,3 @@
-import S from "@sanity/desk-tool/structure-builder";
 import {
   GiHouse as HomepageIcon,
   GiScrollQuill as PageIcon,
@@ -13,7 +12,7 @@ import resolveProductionUrl from "./resolveProductionUrl";
 
 // ---
 
-export const getDefaultDocumentNode = () =>
+export const getDefaultDocumentNode = (S) =>
   S.document().views([
     S.view.form(),
     S.view
@@ -26,8 +25,8 @@ export const getDefaultDocumentNode = () =>
 
 // ---
 
-export default function deskStructure() {
-  return S.list()
+const deskStructure = (S) =>
+  S.list()
     .title("Content")
     .items([
       S.listItem()
@@ -51,28 +50,26 @@ export default function deskStructure() {
       S.listItem()
         .title("Pages")
         .icon(PageIcon)
-        .child(() => S.documentTypeList("page")),
+        .child(() => S.documentTypeList("page").title("Pages")),
       S.listItem()
         .title("News")
         .icon(NewsIcon)
-        .child(() => S.documentTypeList("newsPost")),
+        .child(() => S.documentTypeList("newsPost").title("News")),
       S.listItem()
         .title("Projects")
         .icon(ProjectIcon)
-        .child(() => S.documentTypeList("project")),
+        .child(() => S.documentTypeList("project").title("Projects")),
       S.listItem()
         .title("Services")
         .icon(ServiceIcon)
-        .child(() => S.documentTypeList("service")),
+        .child(() => S.documentTypeList("service").title("Services")),
       S.divider(),
       S.listItem()
         .title("Site Settings")
         .icon(SettingsIcon)
         .child(
-          S.document()
-            .schemaType("globalSettings")
-            .documentId("globalSettings")
-            .title("Site Settings")
+          S.document().schemaType("globalSettings").documentId("globalSettings")
         ),
     ]);
-}
+
+export default deskStructure;
