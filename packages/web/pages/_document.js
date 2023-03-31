@@ -31,10 +31,26 @@ export default class MyDocument extends Document {
   render() {
     return (
       <Html>
-        <Head />
+        <Head>
+          <meta
+            name="google-site-verification"
+            content="xQZ8qBqsVjO2ayr_oAabedR_59AzqCz7-ANMoEAgKDo"
+          />
+        </Head>
 
         <body>
+          <noscript>
+            <iframe
+              src="https://www.googletagmanager.com/ns.html?id=GTM-NB3FPC2"
+              height="0"
+              width="0"
+              style={{ display: "none", visibility: "hidden" }}
+              title="google-tag-manager"
+            />
+          </noscript>
+
           <Main />
+
           <NextScript />
         </body>
       </Html>

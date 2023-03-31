@@ -19,20 +19,13 @@ export const BodyCopy = styled.section`
     }
   }
 
+  h1,
   h2,
-  h3 {
+  h3,
+  h4 {
     column-span: all;
     margin: 0 0 1.6rem 0;
     padding: 0;
-  }
-
-  h2 {
-    font-size: 2.4rem;
-    line-height: 3.2rem;
-    font-weight: 500;
-  }
-
-  h3 {
     font-family: var(--grotesque);
     font-size: 2.2rem;
     line-height: 2.4rem;
@@ -51,8 +44,10 @@ export const BodyCopy = styled.section`
       margin: 0;
     }
 
+    & + h1,
     & + h2,
-    & + h3 {
+    & + h3,
+    & + h4 {
       margin-top: 4rem;
     }
   }

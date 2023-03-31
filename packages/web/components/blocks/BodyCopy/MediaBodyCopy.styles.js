@@ -14,8 +14,10 @@ export const MediaBodyCopy = styled.div`
   .mediaBody__copy {
     max-width: 42.6rem;
 
+    h1,
     h2,
-    h3 {
+    h3,
+    h4 {
       margin-bottom: 1rem;
     }
   }

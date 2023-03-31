@@ -1,8 +1,7 @@
 import styled from "styled-components";
 
 export const Copy = styled.div`
-  h2,
-  h3 {
+  h2 {
     margin: 0 0 1rem 0;
     padding: 0;
   }

@@ -30,14 +30,6 @@ export const HoverCTA = styled.article`
     left: 0;
     z-index: 10;
 
-    h3 {
-      font-family: var(--grotesque);
-      font-size: 1.6rem;
-      line-height: 2rem;
-      text-transform: uppercase;
-      margin-top: 0;
-    }
-
     h2 {
       font-family: var(--simplon);
       font-style: normal;
@@ -45,6 +37,15 @@ export const HoverCTA = styled.article`
       font-size: clamp(1.8rem, 3vw, 2.8rem);
       line-height: clamp(2rem, 3vw, 3rem);
       margin-bottom: 0;
+    }
+
+    h3,
+    h4 {
+      font-family: var(--grotesque);
+      font-size: 1.6rem;
+      line-height: 2rem;
+      text-transform: uppercase;
+      margin-top: 0;
     }
 
     p {

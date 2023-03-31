@@ -30,7 +30,7 @@ export function Image({ src, saturate, layout, ...rest }) {
         layout={layout}
         width={layout === "fill" ? null : width}
         height={layout === "fill" ? null : height}
-        loading="eager"
+        loading="lazy"
         alt={src.alt || ""}
         {...rest}
       />
