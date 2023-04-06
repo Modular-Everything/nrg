@@ -7,7 +7,6 @@ import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
 
-import { Container } from "../../core/Container";
 import { Copy } from "../../elements/Copy";
 import { Image } from "../../elements/Image";
 import { NavigationArrow } from "../../elements/NavigationArrow";
@@ -16,8 +15,6 @@ import * as S from "./HeroCarousel.styles";
 export function HeroCarousel({ data }) {
   const swiperPrev = useRef(null);
   const swiperNext = useRef(null);
-
-  console.log(data);
 
   return (
     <S.HeroCarousel>
