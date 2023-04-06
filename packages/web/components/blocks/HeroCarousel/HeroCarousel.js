@@ -10,6 +10,7 @@ import "swiper/css/scrollbar";
 import { Copy } from "../../elements/Copy";
 import { Image } from "../../elements/Image";
 import { NavigationArrow } from "../../elements/NavigationArrow";
+import { Vimeo } from "../../elements/Vimeo";
 import * as S from "./HeroCarousel.styles";
 
 export function HeroCarousel({ data }) {
@@ -41,7 +42,12 @@ export function HeroCarousel({ data }) {
                     <Copy data={item.copy.content} />
                   </S.Copy>
                 )}
-                <Image src={item.image} layout="fill" objectFit="cover" />
+
+                {item._type === "item" ? (
+                  <Image src={item.image} layout="fill" objectFit="cover" />
+                ) : (
+                  <Vimeo url={item.vimeo} />
+                )}
               </div>
             </SwiperSlide>
           );
