@@ -21,6 +21,7 @@ export const Vimeo = styled.div`
     background: var(--nrg-black);
 
     iframe {
+      pointer-events: none;
       position: absolute;
       top: 25%;
       left: 50%;
