@@ -4,6 +4,7 @@ import { getBlock } from "../../../helpers/getBlock";
 import * as S from "./Page.styles";
 
 export function Page({ data }) {
+  console.log(data);
   return (
     <S.Page>
       {data?.blocks?.map((block) => {

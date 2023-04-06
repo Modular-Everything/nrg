@@ -8,6 +8,7 @@ import bodyCopy from "./blocks/BodyCopy";
 import cards from "./blocks/Cards";
 import carousel from "./blocks/Carousel";
 import divider from "./blocks/Divider";
+import heroCarousel from "./blocks/HeroCarousel";
 import imageSlideGallery from "./blocks/ImageSlideGallery";
 import imageTiles from "./blocks/ImageTiles";
 import largeStatements from "./blocks/LargeStatements";
@@ -34,13 +35,14 @@ export default createSchema({
     ...schemaTypes,
     basicMedia,
     bodyCopy,
+    cards,
     carousel,
     divider,
     globalSettings,
+    heroCarousel,
     homepage,
     imageSlideGallery,
     imageTiles,
-    cards,
     largeStatements,
     list,
     logoGrid,

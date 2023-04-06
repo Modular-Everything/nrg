@@ -170,6 +170,7 @@ export const blocks = {
     { type: "cards" },
     { type: "carousel" },
     { type: "divider" },
+    { type: "heroCarousel" },
     { type: "imageSlideGallery" },
     { type: "imageTiles" },
     { type: "largeStatements" },
