@@ -1,6 +1,6 @@
 /* eslint-disable import/no-unresolved */
 import { useRef } from "react";
-import { Navigation, Scrollbar, A11y } from "swiper";
+import { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
 import "swiper/css/navigation";
@@ -20,7 +20,7 @@ export function HeroCarousel({ data }) {
   return (
     <S.HeroCarousel>
       <Swiper
-        modules={[Navigation, Scrollbar, A11y]}
+        modules={[Navigation, Scrollbar, A11y, Autoplay]}
         navigation={{
           nextEl: swiperNext.current,
           prevEl: swiperPrev.current,
@@ -31,6 +31,10 @@ export function HeroCarousel({ data }) {
         }}
         spaceBetween={0}
         slidesPerView={1}
+        autoplay={{
+          delay: 4000,
+          pauseOnMouseEnter: true,
+        }}
         loop
       >
         {data.items.map((item) => {
