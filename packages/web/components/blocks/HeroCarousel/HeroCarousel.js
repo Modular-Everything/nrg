@@ -33,7 +33,6 @@ export function HeroCarousel({ data }) {
         slidesPerView={1}
         autoplay={{
           delay: 4000,
-          pauseOnMouseEnter: true,
         }}
         loop
       >
