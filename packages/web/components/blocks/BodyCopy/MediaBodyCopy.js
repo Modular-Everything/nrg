@@ -19,6 +19,15 @@ export function MediaBodyCopy({ data }) {
               </a>
             </Link>
           )}
+          {data?.linkToRef?.externalLink && (
+            <a
+              href={data.linkToRef.externalLink}
+              target="_blank"
+              rel="noreferrer noopener"
+            >
+              <LinkToRef label={data?.linkToRef?.label || "Find out more"} />
+            </a>
+          )}
         </div>
 
         <div className="mediaBody__media">
