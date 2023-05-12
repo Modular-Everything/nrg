@@ -25,7 +25,8 @@ export function Footer() {
           <div className="contact">
             <h4>Connect with us</h4>
             <span>
-              E. <a href="mailto:info@madewithnrg.com">info@madewithnrg.com</a>
+              E.{" "}
+              <a href="mailto:hello@madewithnrg.com">hello@madewithnrg.com</a>
             </span>
             <span>
               Tel. <a href="tel:310.255.7995">310.255.7995</a>
