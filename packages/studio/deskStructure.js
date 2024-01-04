@@ -1,4 +1,3 @@
-import S from "@sanity/desk-tool/structure-builder";
 import {
   GiHouse as HomepageIcon,
   GiScrollQuill as PageIcon,
@@ -13,7 +12,7 @@ import resolveProductionUrl from "./resolveProductionUrl";
 
 // ---
 
-export const getDefaultDocumentNode = () =>
+export const getDefaultDocumentNode = (S) =>
   S.document().views([
     S.view.form(),
     S.view
@@ -26,8 +25,9 @@ export const getDefaultDocumentNode = () =>
 
 // ---
 
-export default function deskStructure() {
-  return S.list()
+// eslint-disable-next-line import/no-anonymous-default-export
+export default (S) =>
+  S.list()
     .title("Content")
     .items([
       S.listItem()
@@ -75,4 +75,3 @@ export default function deskStructure() {
             .title("Site Settings")
         ),
     ]);
-}
