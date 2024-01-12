@@ -136,7 +136,6 @@ export const image = {
       type: "string",
     },
   ],
-  validation: (Rule) => Rule.required(),
   description: (
     <span>
       Consider compressing your images before uploading them. We recommend{" "}

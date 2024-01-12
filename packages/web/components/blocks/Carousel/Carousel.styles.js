@@ -8,6 +8,10 @@ export const Carousel = styled.section`
     overflow: visible;
   }
 
+  .swiper-wrapper {
+    align-items: center;
+  }
+
   .landscape,
   .portrait {
     width: 100%;

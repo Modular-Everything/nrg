@@ -1,4 +1,5 @@
 import { image, linkToRef, subtitle, bodyCopy } from "../fields";
+import { brandColors } from "../fields/brandColors";
 
 export default {
   name: "carousel",
@@ -17,6 +18,7 @@ export default {
           { title: "Standard Cards", value: "standard" },
           { title: "Hover & Copy", value: "hoverCopy" },
           { title: "Hover & CTA", value: "hoverCTA" },
+          { title: "Testimonial", value: "testimonial" },
         ],
       },
     },
@@ -24,13 +26,58 @@ export default {
       name: "standardCards",
       title: "Cards",
       type: "array",
-      hidden: ({ parent }) => !parent.layoutType,
-      validation: (Rule) => Rule.required(),
+      hidden: ({ parent }) =>
+        !parent.layoutType || parent.layoutType === "testimonial",
       of: [
         {
           name: "cards",
           type: "object",
           fields: [subtitle, image, bodyCopy, linkToRef],
+        },
+      ],
+    },
+    {
+      name: "testimonialCards",
+      title: "Testimonial Cards",
+      type: "array",
+      hidden: ({ parent }) => parent.layoutType !== "testimonial",
+      of: [
+        {
+          name: "cards",
+          type: "object",
+          fields: [
+            {
+              name: "content",
+              title: "Content",
+              type: "text",
+            },
+            {
+              name: "source",
+              title: "Source",
+              type: "string",
+            },
+            {
+              name: "backgroundColor",
+              title: "Background Color",
+              type: "string",
+              initialValue: "var(--nrg-white)",
+              validation: (Rule) => Rule.required(),
+              options: {
+                list: brandColors,
+              },
+            },
+          ],
+          preview: {
+            select: {
+              title: "source",
+            },
+            prepare({ title }) {
+              return {
+                title,
+                subtitle: "Testimonial",
+              };
+            },
+          },
         },
       ],
     },
