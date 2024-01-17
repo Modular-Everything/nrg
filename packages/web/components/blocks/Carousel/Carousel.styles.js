@@ -9,7 +9,11 @@ export const Carousel = styled.section`
   }
 
   .swiper-wrapper {
-    align-items: center;
+    align-items: stretch;
+  }
+
+  .swiper-slide {
+    height: unset;
   }
 
   .landscape,

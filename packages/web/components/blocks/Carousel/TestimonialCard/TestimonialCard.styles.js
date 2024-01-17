@@ -2,7 +2,6 @@ import styled from "styled-components";
 
 export const TestimonialCard = styled.article`
   text-align: center;
-  // aspect-ratio: 512 / 320;
   min-height: 320px;
   display: flex;
   align-items: center;
@@ -12,6 +11,7 @@ export const TestimonialCard = styled.article`
   border-radius: 0.8rem;
   overflow: hidden;
   box-shadow: var(--drop);
+  height: 100%;
 
   background-color: ${({ theme }) => theme.background};
   color: ${({ theme }) => theme.copy};
