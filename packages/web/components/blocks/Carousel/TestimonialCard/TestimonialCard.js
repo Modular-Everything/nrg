@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 
+import { Bolt } from "../../../icons/BadgeBolt";
 import * as S from "./TestimonialCard.styles";
 
 function getTheme(color) {
@@ -11,14 +12,17 @@ function getTheme(color) {
     red: {
       background: red,
       copy: white,
+      bolt: black,
     },
     black: {
       background: black,
       copy: white,
+      bolt: red,
     },
     white: {
       background: white,
       copy: black,
+      bolt: red,
     },
   };
 
@@ -31,12 +35,19 @@ export function TestimonialCard({ data }) {
     .replace(")", "");
   const theme = getTheme(themeColor);
 
-  console.log(data);
-
   return (
     <S.TestimonialCard theme={theme}>
       {data?.content && <p>{data.content}</p>}
-      {data?.source && <strong>{data.source}</strong>}
+
+      <S.TestimonialCardAuthor theme={theme}>
+        <Bolt />
+        <p>
+          <strong>
+            {data?.sourcePerson && <span>{data.sourcePerson}</span>}
+            {data?.sourceBusiness && <span>{data.sourceBusiness}</span>}
+          </strong>
+        </p>
+      </S.TestimonialCardAuthor>
     </S.TestimonialCard>
   );
 }
