@@ -34,7 +34,7 @@ export const TestimonialCardAuthor = styled.div`
   margin-top: 1.6rem;
 
   svg {
-    margin-right: 0.8rem;
+    margin-right: 1.6rem;
   }
 
   svg path {
