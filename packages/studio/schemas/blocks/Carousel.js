@@ -52,8 +52,13 @@ export default {
               type: "text",
             },
             {
-              name: "source",
-              title: "Source",
+              name: "sourcePerson",
+              title: "Person",
+              type: "string",
+            },
+            {
+              name: "sourceBusiness",
+              title: "Business/company",
               type: "string",
             },
             {
@@ -69,11 +74,12 @@ export default {
           ],
           preview: {
             select: {
-              title: "source",
+              person: "sourcePerson",
+              business: "sourceBusiness",
             },
-            prepare({ title }) {
+            prepare({ person, business }) {
               return {
-                title,
+                title: `${person} - ${business}`,
                 subtitle: "Testimonial",
               };
             },
