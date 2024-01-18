@@ -22,6 +22,19 @@ export const NavigationArrow = styled.div`
   &.next {
     left: unset;
     right: 0.8rem;
+
+    @media (min-width: 1250px) {
+      right: -10rem;
+    }
+  }
+
+  &.prev {
+    left: 0.8rem;
+    right: unset;
+
+    @media (min-width: 1250px) {
+      left: -10rem;
+    }
   }
 
   &:hover {
