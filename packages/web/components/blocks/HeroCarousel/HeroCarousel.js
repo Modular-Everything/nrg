@@ -1,5 +1,5 @@
 /* eslint-disable import/no-unresolved */
-import { useRef } from "react";
+import { useEffect, useRef } from "react";
 import { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
 import "swiper/css";
@@ -14,12 +14,20 @@ import { Vimeo } from "../../elements/Vimeo";
 import * as S from "./HeroCarousel.styles";
 
 export function HeroCarousel({ data }) {
+  const swiper = useRef(null);
   const swiperPrev = useRef(null);
   const swiperNext = useRef(null);
+
+  useEffect(() => {
+    if (data?.items?.length === 1) {
+      swiper?.current?.swiper?.disable();
+    }
+  }, [swiper, data]);
 
   return (
     <S.HeroCarousel>
       <Swiper
+        ref={swiper}
         modules={[Navigation, Scrollbar, A11y, Autoplay]}
         navigation={{
           nextEl: swiperNext.current,
@@ -56,8 +64,12 @@ export function HeroCarousel({ data }) {
           );
         })}
 
-        <NavigationArrow direction="prev" ref={swiperPrev} />
-        <NavigationArrow direction="next" ref={swiperNext} />
+        {data?.items?.length > 1 && (
+          <>
+            <NavigationArrow direction="prev" ref={swiperPrev} />
+            <NavigationArrow direction="next" ref={swiperNext} />
+          </>
+        )}
       </Swiper>
     </S.HeroCarousel>
   );

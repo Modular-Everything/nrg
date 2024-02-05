@@ -15,7 +15,7 @@ export function Vimeo({ url, contained, paused }) {
           }&app_id=122963`}
           title="Vimeo"
           width="1920"
-          height="1080"
+          height="auto"
           frameBorder="0"
           allow="autoplay; fullscreen; picture-in-picture"
           allowFullScreen

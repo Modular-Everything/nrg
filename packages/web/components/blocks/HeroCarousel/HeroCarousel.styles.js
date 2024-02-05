@@ -18,12 +18,8 @@ export const HeroCarousel = styled.section`
   }
 
   .swiper-slide {
-    height: 50vh;
+    aspect-ratio: 16/9;
     position: relative;
-
-    @media (min-width: 768px) {
-      height: 75vh;
-    }
 
     img {
       z-index: 0;
