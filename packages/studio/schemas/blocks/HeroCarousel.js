@@ -94,6 +94,19 @@ export default {
               description: "A link to a Vimeo video",
               validation: (Rule) => Rule.required(),
             },
+            {
+              name: "link",
+              title: "Link to",
+              type: "reference",
+              description: "An internal link",
+              to: [
+                { type: "homepage" },
+                { type: "newsPost" },
+                { type: "page" },
+                { type: "project" },
+                { type: "service" },
+              ],
+            },
           ],
           preview: {
             prepare() {

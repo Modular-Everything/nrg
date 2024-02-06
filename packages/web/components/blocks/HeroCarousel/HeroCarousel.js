@@ -1,4 +1,5 @@
 /* eslint-disable import/no-unresolved */
+import Link from "next/link";
 import { useEffect, useRef } from "react";
 import { Navigation, Scrollbar, A11y, Autoplay } from "swiper";
 import { Swiper, SwiperSlide } from "swiper/react";
@@ -13,13 +14,56 @@ import { NavigationArrow } from "../../elements/NavigationArrow";
 import { Vimeo } from "../../elements/Vimeo";
 import * as S from "./HeroCarousel.styles";
 
+function Slide({ item, key }) {
+  return (
+    <SwiperSlide key={key}>
+      <div>
+        {item.copy && (
+          <S.Copy>
+            <Copy data={item.copy.content} />
+          </S.Copy>
+        )}
+
+        {item._type === "item" ? (
+          <Image src={item.image} layout="fill" objectFit="cover" />
+        ) : (
+          <Vimeo url={item.vimeo} />
+        )}
+      </div>
+    </SwiperSlide>
+  );
+}
+
+function SlideLink({ item, key }) {
+  return (
+    <SwiperSlide key={key}>
+      <Link href={item.link.link}>
+        <a>
+          {item.copy && (
+            <S.Copy>
+              <Copy data={item.copy.content} />
+            </S.Copy>
+          )}
+          {item._type === "item" ? (
+            <Image src={item.image} layout="fill" objectFit="cover" />
+          ) : (
+            <Vimeo url={item.vimeo} />
+          )}
+        </a>
+      </Link>
+    </SwiperSlide>
+  );
+}
+
 export function HeroCarousel({ data }) {
   const swiper = useRef(null);
   const swiperPrev = useRef(null);
   const swiperNext = useRef(null);
 
+  console.log(data);
+
   useEffect(() => {
-    if (data?.items?.length === 1) {
+    if (data?.heroItems?.length === 1) {
       swiper?.current?.swiper?.disable();
     }
   }, [swiper, data]);
@@ -44,27 +88,14 @@ export function HeroCarousel({ data }) {
         }}
         loop
       >
-        {data.items.map((item) => {
-          return (
-            <SwiperSlide key={item._key}>
-              <div>
-                {item.copy && (
-                  <S.Copy>
-                    <Copy data={item.copy.content} />
-                  </S.Copy>
-                )}
-
-                {item._type === "item" ? (
-                  <Image src={item.image} layout="fill" objectFit="cover" />
-                ) : (
-                  <Vimeo url={item.vimeo} />
-                )}
-              </div>
-            </SwiperSlide>
-          );
+        {data?.heroItems?.map((item) => {
+          if (item?.link?.link) {
+            return <SlideLink key={item._key} item={item} />;
+          }
+          return <Slide key={item._key} item={item} />;
         })}
 
-        {data?.items?.length > 1 && (
+        {data?.heroItems?.length > 1 && (
           <>
             <NavigationArrow direction="prev" ref={swiperPrev} />
             <NavigationArrow direction="next" ref={swiperNext} />

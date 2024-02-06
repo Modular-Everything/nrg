@@ -5,6 +5,13 @@ export function getQueryFromSlug(slugArray = []) {
     ...,
     blocks[] {
       ...,
+      "heroItems": items[] {
+        ...,
+        link {
+          ...,
+          "link": @->slug.current
+        },
+      },
       aside {
         ...,
         content[] {
