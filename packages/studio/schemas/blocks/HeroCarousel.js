@@ -44,6 +44,19 @@ export default {
               ],
             },
             image,
+            {
+              name: "link",
+              title: "Link to",
+              type: "reference",
+              description: "An internal link",
+              to: [
+                { type: "homepage" },
+                { type: "newsPost" },
+                { type: "page" },
+                { type: "project" },
+                { type: "service" },
+              ],
+            },
           ],
           preview: {
             prepare() {
