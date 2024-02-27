@@ -13,11 +13,7 @@ export const BasicMedia = styled.div`
   position: relative;
   display: flex;
   overflow: hidden;
-  height: 50vh;
-
-  @media (min-width: 768px) {
-    height: 75vh;
-  }
+  height: auto;
 
   .background {
     position: absolute;
@@ -53,6 +49,11 @@ export const BasicMedia = styled.div`
       flex-direction: column;
       align-items: center;
       justify-content: center;
+      height: 50vh;
+
+      @media (min-width: 768px) {
+        height: 75vh;
+      }
     }
 
     &.statementText {
