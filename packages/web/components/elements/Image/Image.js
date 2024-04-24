@@ -32,6 +32,7 @@ export function Image({ src, saturate, layout, ...rest }) {
         height={layout === "fill" ? null : height}
         loading="lazy"
         alt={src.alt || ""}
+        key={src.asset._ref}
         {...rest}
       />
       {src?.caption && <small className="image__caption">{src.caption}</small>}
