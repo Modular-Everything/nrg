@@ -14,8 +14,7 @@
     "postbuild": "next-sitemap"
   },
   "dependencies": {
-    "@netlify/plugin-lighthouse": "^6.0.0",
-    "@netlify/plugin-nextjs": "^5.1.2",
+    "@netlify/plugin-nextjs": "^4.29.1",
     "@portabletext/react": "^1.0.3",
     "@sanity/client": "^3.4.1",
     "@sanity/image-url": "^1.0.1",
