@@ -27,9 +27,24 @@ export const BodyCopy = styled.section`
     margin: 0 0 1.6rem 0;
     padding: 0;
     font-family: var(--grotesque);
+    font-size: 2.4rem;
+    line-height: 2.6rem;
+    text-transform: uppercase;
+  }
+
+  h2 {
     font-size: 2.2rem;
     line-height: 2.4rem;
-    text-transform: uppercase;
+  }
+
+  h3 {
+    font-size: 1.9rem;
+    line-height: 2.1rem;
+  }
+
+  h4 {
+    font-size: 1.6rem;
+    line-height: 1.8rem;
   }
 
   p,
