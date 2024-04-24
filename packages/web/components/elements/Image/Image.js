@@ -23,6 +23,7 @@ export function Image({ src, saturate, layout, ...rest }) {
         </>
       )}
       <NextImage
+        unoptimized
         src={image
           .fit("crop")
           .width(width < 2500 ? width : 2500)
