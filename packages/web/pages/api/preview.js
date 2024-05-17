@@ -1,6 +1,10 @@
 export default function preview(req, res) {
   const { secret, slug } = req.query;
 
+  console.log(secret, slug);
+
+  return;
+
   if (!secret) {
     return res.status(401).json({ message: "No secret token" });
   }
