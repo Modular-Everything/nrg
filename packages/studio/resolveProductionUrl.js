@@ -4,7 +4,7 @@ import get from "lodash/get";
 const previewSecret = "bW9kdWxhciBldmVyeXRoaW5nIHIwMGx6";
 
 // Replace with your deployed studio when you go live
-const remoteUrl = `https://nrg-v2.netlify.app`;
+const remoteUrl = `https://madewithnrg.com`;
 const localUrl = `http://localhost:3000`;
 
 export default function resolveProductionUrl(doc, slugField = `slug.current`) {
