@@ -1,10 +1,6 @@
 export default function preview(req, res) {
   const { secret, slug } = req.query;
 
-  console.log(secret, slug);
-
-  return;
-
   if (!secret) {
     return res.status(401).json({ message: "No secret token" });
   }
@@ -26,5 +22,5 @@ export default function preview(req, res) {
   // We don't redirect to req.query.slug as that might lead to open redirect vulnerabilities
 
   res.writeHead(307, { Location: slug ? `${slug}` : `/` });
-  return res.end();
+  return res.end("Preview mode enabled");
 }
